@@ -1,0 +1,36 @@
+{
+	"name": "pyrokar/aoc",
+	"description": "My advent of Code implementations",
+	"authors": [{
+		"name": "Gunter Solf",
+		"email": "gunter.solf@gmail.com"
+	}],
+	"type": "project",
+	"platform": {
+		"php": "8.1"
+	},
+	"require": {
+		"thecodingmachine/safe": "~2.2"
+	},
+	"require-dev": {
+		"phpstan/phpstan": "~1.7",
+		"phpunit/phpunit": "~9.5",
+		"roave/security-advisories": "dev-latest",
+		"friendsofphp/php-cs-fixer": "~3.8",
+		"thecodingmachine/phpstan-safe-rule": "~1.2"
+	},
+	"autoload": {
+		"psr-4": {
+			"AOC\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"AOCTest\\": "tests/"
+		}
+	},
+	"scripts": {
+		"phpstan": "./vendor/bin/phpstan analyse",
+		"fix-style": "./vendor/bin/php-cs-fixer fix"
+	}
+}
