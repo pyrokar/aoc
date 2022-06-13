@@ -4,4 +4,5 @@ parameters:
         - src
         - tests
 includes:
+    - phpstan-baseline.neon
     - vendor/thecodingmachine/phpstan-safe-rule/phpstan-safe-rule.neon

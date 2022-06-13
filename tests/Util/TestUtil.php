@@ -12,101 +12,116 @@ use function Safe\fopen;
 
 trait TestUtil
 {
-	/**
-	 * @throws ReflectionException|FilesystemException
-	 */
-	public function testPartOneTestInput(): void
-	{
-		$this->testInput($this->partOneTestInput(), 'One');
-	}
+    /**
+     * @throws ReflectionException|FilesystemException
+     */
+    public function testPartOneTestInput(): void
+    {
+        $this->testInput($this->partOneTestInput(), 'One');
+    }
 
-	/**
-	 * @throws ReflectionException|FilesystemException
-	 */
-	public function testPartTwoTestInput(): void
-	{
-		$this->testInput($this->partTwoTestInput(), 'Two');
-	}
+    /**
+     * @throws ReflectionException|FilesystemException
+     */
+    public function testPartTwoTestInput(): void
+    {
+        $this->testInput($this->partTwoTestInput(), 'Two');
+    }
 
-	/**
-	 * @param array<int, array<mixed>> $inputs
-	 * @param string $part
-	 *
-	 * @throws FilesystemException
-	 * @throws ReflectionException
-	 */
-	private function testInput(array $inputs, string $part): void
-	{
-		$method = 'solvePart' . $part;
+    /**
+     * @param array<int, array<mixed>> $inputs
+     * @param string $part
+     *
+     * @throws FilesystemException
+     * @throws ReflectionException
+     */
+    private function testInput(array $inputs, string $part): void
+    {
+        $method = 'solvePart' . $part;
 
-		/** @var SolutionInterface $solutionProvider */
-		$solutionProvider = new (static::$solutionClass)();
+        /** @var SolutionInterface $solutionProvider */
+        $solutionProvider = new (static::$solutionClass)();
 
-		/**
-		 * @var  string $input
-		 * @var  mixed $output
-		 */
-		foreach ($inputs as [$input, $output]) {
-			if (is_string($input)) {
-				$this->assertEquals($output, $solutionProvider->{$method}(self::getGenerator([$input])));
-			}
-		}
+        $testClassReflector = new ReflectionClass($this);
+        $dir = dirname($testClassReflector->getFileName());
 
-		$reflector = new ReflectionClass(static::$solutionClass);
+        if (empty($inputs)) {
+            $this->expectNotToPerformAssertions();
+        }
 
-		$filename = dirname($reflector->getFileName()) . DIRECTORY_SEPARATOR . 'input.txt';
+        /**
+         * @var  string $input
+         * @var  mixed $output
+         */
+        foreach ($inputs as [$input, $output]) {
+            if (!is_string($input)) {
+                continue;
+            }
 
-		$result = $solutionProvider->{$method}(self::getGeneratorFromFile($filename));
+            if (is_file($dir . DIRECTORY_SEPARATOR . $input)) {
+                $input = self::getGeneratorFromFile($dir . DIRECTORY_SEPARATOR . $input);
+            } else {
+                $input = self::getGenerator([$input]);
+            }
 
-		echo 'Part ' . $part . ': ' . $result . "\n";
-	}
+            $this->assertEquals($output, $solutionProvider->{$method}($input));
+        }
 
-	/**
-	 * @return array<int, array<mixed>>
-	 */
-	public function partOneTestInput(): array
-	{
-		return [];
-	}
+        /*$solutionClassReflector = new ReflectionClass(static::$solutionClass);
 
-	/**
-	 * @param array<mixed> $values
-	 *
-	 * @return Generator
-	 */
-	private static function getGenerator(array $values): Generator
-	{
-		foreach ($values as $value) {
-			yield $value;
-		}
-	}
+        $filename = dirname($solutionClassReflector->getFileName()) . DIRECTORY_SEPARATOR . 'input.txt';
 
-	/** @var array<resource> */
-	private static array $openFiles = [];
+        $result = $solutionProvider->{$method}(self::getGeneratorFromFile($filename));
 
-	/**
-	 * @param string $filename
-	 *
-	 * @return Generator
-	 * @throws FilesystemException
-	 */
-	private static function getGeneratorFromFile(string $filename): Generator
-	{
-		$file = fopen($filename, 'rb');
-		self::$openFiles[] = $file;
-		while (($line = fgets($file)) !== false) {
-			yield $line;
-		}
-	}
+        echo 'Part ' . $part . ': ' . $result . "\n";*/
+    }
 
-	/**
-	 * @throws FilesystemException
-	 */
-	public function __destruct()
-	{
-		foreach (self::$openFiles as $i => $openFile) {
-			fclose($openFile);
-			unset(self::$openFiles[$i]);
-		}
-	}
+    /**
+     * @return array<int, array<mixed>>
+     */
+    public function partOneTestInput(): array
+    {
+        return [];
+    }
+
+    /**
+     * @param array<mixed> $values
+     *
+     * @return Generator
+     */
+    private static function getGenerator(array $values): Generator
+    {
+        foreach ($values as $value) {
+            yield $value;
+        }
+    }
+
+    /** @var array<resource> */
+    private static array $openFiles = [];
+
+    /**
+     * @param string $filename
+     *
+     * @return Generator
+     * @throws FilesystemException
+     */
+    private static function getGeneratorFromFile(string $filename): Generator
+    {
+        $file = fopen($filename, 'rb');
+        self::$openFiles[] = $file;
+        while (($line = fgets($file)) !== false) {
+            yield $line;
+        }
+    }
+
+    /**
+     * @throws FilesystemException
+     */
+    public function __destruct()
+    {
+        foreach (self::$openFiles as $i => $openFile) {
+            fclose($openFile);
+            unset(self::$openFiles[$i]);
+        }
+    }
 }

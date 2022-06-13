@@ -6,6 +6,6 @@ use Generator;
 
 interface SolutionInterface
 {
-	public function solvePartOne(Generator $input): mixed;
-	public function solvePartTwo(Generator $input): mixed;
+    public function solvePartOne(Generator $input): mixed;
+    public function solvePartTwo(Generator $input): mixed;
 }

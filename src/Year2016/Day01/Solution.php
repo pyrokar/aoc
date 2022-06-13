@@ -14,81 +14,81 @@ use function Safe\preg_match;
 
 class Solution implements SolutionInterface
 {
-	use SolutionUtil;
+    use SolutionUtil;
 
-	private CompassDirection $direction;
-	private Position2D $position;
+    private CompassDirection $direction;
+    private Position2D $position;
 
-	public function __construct()
-	{
-		$this->direction = CompassDirection::North;
-	}
+    public function __construct()
+    {
+        $this->direction = CompassDirection::North;
+    }
 
 
-	/**
-	 * @param Generator<string> $input
-	 *
-	 * @return int
-	 * @throws Exception
-	 *
-	 * @throws PcreException
-	 */
-	public function solvePartOne(Generator $input): int
-	{
-		$this->position = new Position2D(0, 0);
+    /**
+     * @param Generator<string> $input
+     *
+     * @return int
+     * @throws Exception
+     *
+     * @throws PcreException
+     */
+    public function solvePartOne(Generator $input): int
+    {
+        $this->position = new Position2D(0, 0);
 
-		$directions = explode(', ', $input->current());
+        $directions = explode(', ', $input->current());
 
-		foreach ($directions as $direction) {
-			preg_match('/([LR])(\d+)/', $direction, $m);
+        foreach ($directions as $direction) {
+            preg_match('/([LR])(\d+)/', $direction, $m);
 
-			$this->direction = match ($m[1]) {
-				'L' => $this->direction->turnLeft(),
-				'R' => $this->direction->turnRight(),
-				default => throw new Exception(),
-			};
+            $this->direction = match ($m[1]) {
+                'L' => $this->direction->turnLeft(),
+                'R' => $this->direction->turnRight(),
+                default => throw new Exception(),
+            };
 
-			$this->position->move($this->direction, (int) $m[2]);
-		}
+            $this->position->move($this->direction, (int) $m[2]);
+        }
 
-		return $this->position->calcManhattanDistanceTo(new Point2D(0, 0));
-	}
+        return $this->position->calcManhattanDistanceTo(new Point2D(0, 0));
+    }
 
-	/**
-	 * @param Generator<void, string, void, void> $input
-	 *
-	 * @throws PcreException
-	 * @throws Exception
-	 *
-	 * @return int
-	 */
-	public function solvePartTwo(Generator $input): int
-	{
-		$this->position = new Position2D(0, 0);
-		$path = [Point2D::key(0, 0)];
+    /**
+     * @param Generator<void, string, void, void> $input
+     *
+     * @throws PcreException
+     * @throws Exception
+     *
+     * @return int
+     */
+    public function solvePartTwo(Generator $input): int
+    {
+        $this->position = new Position2D(0, 0);
+        $path = [Point2D::key(0, 0)];
 
-		$directions = explode(', ', (string) $input->current());
+        $directions = explode(', ', (string) $input->current());
 
-		foreach ($directions as $direction) {
-			preg_match('/([LR])(\d+)/', $direction, $m);
+        foreach ($directions as $direction) {
+            preg_match('/([LR])(\d+)/', $direction, $m);
 
-			$this->direction = match ($m[1]) {
-				'L' => $this->direction->turnLeft(),
-				'R' => $this->direction->turnRight(),
-				default => throw new Exception(),
-			};
+            $this->direction = match ($m[1]) {
+                'L' => $this->direction->turnLeft(),
+                'R' => $this->direction->turnRight(),
+                default => throw new Exception(),
+            };
 
-			foreach ($this->position->walk($this->direction, (int) $m[2]) as $point) {
-				$key = $point->getKey();
+            foreach ($this->position->walk($this->direction, (int) $m[2]) as $point) {
+                $key = $point->getKey();
 
-				if (isset($path[$key])) {
-					return $point->calcManhattanDistanceTo(new Point2D(0, 0));
-				}
+                if (isset($path[$key])) {
+                    return $point->calcManhattanDistanceTo(new Point2D(0, 0));
+                }
 
-				$path[$key] = 1;
-			}
-		}
+                $path[$key] = 1;
+            }
+        }
 
-		return 0;
-	}
+        return 0;
+    }
 }

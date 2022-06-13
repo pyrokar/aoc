@@ -10,18 +10,18 @@ use Safe\Exceptions\FilesystemException;
  */
 class ReflectionClass extends \ReflectionClass
 {
-	/**
-	 * @throws FilesystemException
-	 */
-	public function getFileName(): string
-	{
-		error_clear_last();
-		$result = parent::getFileName();
+    /**
+     * @throws FilesystemException
+     */
+    public function getFileName(): string
+    {
+        error_clear_last();
+        $result = parent::getFileName();
 
-		if ($result === false) {
-			throw FilesystemException::createFromPhpError();
-		}
+        if ($result === false) {
+            throw FilesystemException::createFromPhpError();
+        }
 
-		return $result;
-	}
+        return $result;
+    }
 }

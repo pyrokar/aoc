@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace AOCTest\Year2016\Day01;
+namespace AOCTest\Year2016\Day02;
 
-use AOC\Year2016\Day01\Solution;
+use AOC\Year2016\Day02\Solution;
 use AOCTest\Util\TestUtil;
 use PHPUnit\Framework\TestCase;
 
@@ -19,10 +19,8 @@ class SolutionTest extends TestCase
     public function partOneTestInput(): array
     {
         return [
-            ['R2, L3', 5],
-            ['R2, R2, R2', 2],
-            ['R5, L5, R5, R3', 12],
-            ['input', 301],
+            ['test', '1985'],
+            ['input', '24862'],
         ];
     }
 
@@ -32,8 +30,8 @@ class SolutionTest extends TestCase
     public function partTwoTestInput(): array
     {
         return [
-            ['R8, R4, R4, R8', 4],
-            ['input', 130],
+            ['test', '5DB3'],
+            ['input', '46C91'],
         ];
     }
 }

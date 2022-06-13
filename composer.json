@@ -31,6 +31,7 @@
 	},
 	"scripts": {
 		"phpstan": "./vendor/bin/phpstan analyse",
+		"phpstan-generate-baseline": "./vendor/bin/phpstan analyse --generate-baseline",
 		"fix-style": "./vendor/bin/php-cs-fixer fix"
 	}
 }
