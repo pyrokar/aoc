@@ -20,6 +20,9 @@
 		"thecodingmachine/phpstan-safe-rule": "~1.2"
 	},
 	"autoload": {
+        "files": [
+            "src/Util/functions.php"
+        ],
 		"psr-4": {
 			"AOC\\": "src/"
 		}
