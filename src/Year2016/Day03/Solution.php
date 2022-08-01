@@ -6,6 +6,7 @@ use AOC\Util\SolutionInterface;
 use AOC\Util\SolutionUtil;
 use Generator;
 use Safe\Exceptions\PcreException;
+
 use function Safe\preg_match;
 
 class Solution implements SolutionInterface

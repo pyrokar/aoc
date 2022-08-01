@@ -1,6 +1,6 @@
 {
 	"name": "pyrokar/aoc",
-	"description": "My advent of Code implementations",
+	"description": "My Advent of Code implementations",
 	"authors": [{
 		"name": "Gunter Solf",
 		"email": "gunter.solf@gmail.com"

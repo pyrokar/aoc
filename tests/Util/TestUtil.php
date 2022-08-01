@@ -7,6 +7,7 @@ use AOC\Util\SolutionInterface;
 use Generator;
 use ReflectionException;
 use Safe\Exceptions\FilesystemException;
+
 use function Safe\fclose;
 use function Safe\fopen;
 

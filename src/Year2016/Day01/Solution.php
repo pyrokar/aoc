@@ -10,6 +10,7 @@ use AOC\Util\SolutionUtil;
 use Exception;
 use Generator;
 use Safe\Exceptions\PcreException;
+
 use function Safe\preg_match;
 
 class Solution implements SolutionInterface
