@@ -52,9 +52,9 @@ trait TestUtil
 
         /**
          * @var  string $input
-         * @var  mixed $output
+         * @var  mixed $expected
          */
-        foreach ($inputs as [$input, $output]) {
+        foreach ($inputs as [$input, $expected]) {
             if (!is_string($input)) {
                 continue;
             }
@@ -65,16 +65,8 @@ trait TestUtil
                 $input = self::getGenerator([$input]);
             }
 
-            $this->assertEquals($output, $solutionProvider->{$method}($input));
+            $this->assertEquals($expected, $solutionProvider->{$method}($input));
         }
-
-        /*$solutionClassReflector = new ReflectionClass(static::$solutionClass);
-
-        $filename = dirname($solutionClassReflector->getFileName()) . DIRECTORY_SEPARATOR . 'input.txt';
-
-        $result = $solutionProvider->{$method}(self::getGeneratorFromFile($filename));
-
-        echo 'Part ' . $part . ': ' . $result . "\n";*/
     }
 
     /**
