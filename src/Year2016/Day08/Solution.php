@@ -11,6 +11,11 @@ use Safe\Exceptions\PcreException;
 
 use function Safe\preg_match;
 
+/**
+ * Additional command at top to get the screen width and height:
+ * ``screen <width> <height>``
+ */
+
 class Solution implements SolutionInterface
 {
     use SolutionUtil;
