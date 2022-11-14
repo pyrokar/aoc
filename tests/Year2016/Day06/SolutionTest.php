@@ -3,7 +3,7 @@
 namespace AOCTest\Year2016\Day06;
 
 use AOC\Year2016\Day06\Solution;
-use AOCTest\Util\TestUtil;
+use AOC\Test\Util\TestUtil;
 use PHPUnit\Framework\TestCase;
 
 /**
