@@ -3,35 +3,25 @@
 namespace AOC\Year2016\Day08;
 
 use AOC\Util\Display2D;
-use AOC\Util\SolutionInterface;
-use AOC\Util\SolutionUtil;
 use Generator;
 
 use Safe\Exceptions\PcreException;
 
 use function Safe\preg_match;
 
-/**
- * Additional command at top to get the screen width and height:
- * ``screen <width> <height>``
- */
-
-class Solution implements SolutionInterface
+class Solution
 {
-    use SolutionUtil;
-
     /**
      * @param Generator<void, string, void, void> $input
-     *
+     * @param int $width
+     * @param int $height
      * @return int
      *
      * @throws PcreException
      */
-    public function solvePartOne(Generator $input): int
+    public function __invoke(Generator $input, int $width, int $height): int
     {
-        preg_match('/screen (?<width>\d+) (?<height>\d+)/', $input->current(), $screenSize);
-
-        $display = new Display2D((int) $screenSize['width'], (int) $screenSize['height']);
+        $display = new Display2D($width, $height);
 
         foreach ($input as $line) {
             $line = trim($line);
@@ -55,17 +45,5 @@ class Solution implements SolutionInterface
         echo $display;
 
         return $display->countPixels();
-    }
-
-    /**
-     * @param Generator<void, string, void, void> $input
-     *
-     * @return int
-     *
-     * @throws PcreException
-     */
-    public function solvePartTwo(Generator $input): int
-    {
-        return $this->solvePartOne($input);
     }
 }
