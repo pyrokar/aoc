@@ -36,5 +36,4 @@ class PartOne
 
         return -1;
     }
-
 }

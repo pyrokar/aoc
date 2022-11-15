@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace AOCTest\Year2016\Day05;
 
@@ -7,7 +7,6 @@ use AOC\Test\Util\SolutionTest;
 
 class PartOneTest extends SolutionTest
 {
-
     protected string $solutionClass = PartOne::class;
     /**
      * @inheritDoc

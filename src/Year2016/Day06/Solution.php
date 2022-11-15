@@ -43,5 +43,4 @@ trait Solution
     }
 
     abstract public function getNeedle(array $charCounts): int;
-
 }

@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace AOCTest\Year2016\Day06;
+namespace AOCTest\Year2016\Day07;
 
-use AOC\Year2016\Day06\PartOne;
+use AOC\Year2016\Day07\PartOne;
 
 class PartOneTest extends \AOC\Test\Util\SolutionTest
 {
@@ -14,8 +14,8 @@ class PartOneTest extends \AOC\Test\Util\SolutionTest
     public function data(): array
     {
         return [
-            [['test'], 'easter'],
-            [['input'], 'ygjzvzib'],
+            [['test_part1'], 2],
+            [['input'], 118],
         ];
     }
 }

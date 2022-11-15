@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace AOC\Test\Util;
 
@@ -7,6 +7,7 @@ use Generator;
 use PHPUnit\Framework\TestCase;
 use ReflectionException;
 use Safe\Exceptions\FilesystemException;
+
 use function Safe\fclose;
 use function Safe\fopen;
 

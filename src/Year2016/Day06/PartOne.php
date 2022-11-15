@@ -1,14 +1,14 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace AOC\Year2016\Day06;
 
 use Generator;
 use Safe\Exceptions\ArrayException;
+
 use function AOC\Util\Safe\max;
 
 class PartOne
 {
-
     use Solution;
 
     /**

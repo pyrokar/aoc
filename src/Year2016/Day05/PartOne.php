@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace AOC\Year2016\Day05;
 
@@ -6,7 +6,6 @@ use Generator;
 
 class PartOne
 {
-
     /**
      * @param Generator<void, string, void, void> $input
      *

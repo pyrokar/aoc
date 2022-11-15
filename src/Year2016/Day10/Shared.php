@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace AOC\Year2016\Day10;
 
@@ -7,7 +7,6 @@ use SplMaxHeap;
 
 trait Shared
 {
-
     protected array $outputs;
     /**
      * @var SplMaxHeap<int>

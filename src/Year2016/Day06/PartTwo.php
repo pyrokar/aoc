@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace AOC\Year2016\Day06;
 
