@@ -21,7 +21,8 @@
 	},
 	"autoload": {
         "files": [
-            "src/Util/functions.php"
+            "src/Util/functions.php",
+            "src/Util/Safe/math.php"
         ],
 		"psr-4": {
 			"AOC\\": "src/"

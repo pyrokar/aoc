@@ -2,41 +2,18 @@
 
 namespace AOC\Year2016\Day06;
 
-use AOC\Util\SolutionInterface;
-use AOC\Util\SolutionUtil;
 use Generator;
+use Safe\Exceptions\ArrayException;
 
-class Solution implements SolutionInterface
+trait Solution
 {
-    use SolutionUtil;
-
     /**
      * @param Generator<void, string, void, void> $input
      *
      * @return string
+     * @throws ArrayException
      */
-    public function solvePartOne(Generator $input): string
-    {
-        return $this->solve($input, 1);
-    }
-
-    /**
-     * @param Generator<void, string, void, void> $input
-     *
-     * @return string
-     */
-    public function solvePartTwo(Generator $input): string
-    {
-        return $this->solve($input, 2);
-    }
-
-    /**
-     * @param Generator<void, string, void, void> $input
-     * @param int $part
-     *
-     * @return string
-     */
-    private function solve(Generator $input, int $part): string
+    private function solve(Generator $input): string
     {
         $message = '';
         $columns = [];
@@ -58,10 +35,13 @@ class Solution implements SolutionInterface
         }
 
         foreach ($columns as $charCounts) {
-            $needle = $part === 1 ? max($charCounts) : min($charCounts);
+            $needle = $this->getNeedle($charCounts);
             $message .= array_search($needle, $charCounts, true);
         }
 
         return $message;
     }
+
+    abstract public function getNeedle(array $charCounts): int;
+
 }

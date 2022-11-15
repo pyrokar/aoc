@@ -12,10 +12,13 @@ use function Safe\fopen;
 
 abstract class SolutionTest extends TestCase
 {
+    /**
+     * @var class-string of callable
+     */
     protected string $solutionClass;
 
     /**
-     * @return array<mixed>
+     * @return array<array<mixed>, mixed>
      */
     abstract public function data(): array;
 
