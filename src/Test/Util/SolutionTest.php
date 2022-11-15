@@ -37,6 +37,7 @@ abstract class SolutionTest extends TestCase
             return;
         }
 
+        /** @var callable $solutionProvider */
         $solutionProvider = new ($this->solutionClass)();
 
         $testClassReflector = new ReflectionClass($this);

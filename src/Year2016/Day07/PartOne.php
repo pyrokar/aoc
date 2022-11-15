@@ -5,6 +5,8 @@ namespace AOC\Year2016\Day07;
 use Generator;
 use Safe\Exceptions\PcreException;
 
+use function Safe\preg_match;
+
 class PartOne
 {
     /**

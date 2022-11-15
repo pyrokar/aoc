@@ -5,13 +5,23 @@ namespace AOC\Year2016\Day10;
 use Generator;
 use SplMaxHeap;
 
+use function Safe\preg_match;
+
 trait Shared
 {
+    /**
+     * @var array<int, int>
+     */
     protected array $outputs;
+
     /**
      * @var SplMaxHeap<int>
      */
     protected SplMaxHeap $botsWithTwoValues;
+
+    /**
+     * @var array<int, array<string, int>>
+     */
     protected array $instructions;
     /**
      * @var array<int, int[]>

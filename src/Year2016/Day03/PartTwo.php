@@ -12,9 +12,9 @@ class PartTwo
     /**
      * @param Generator<int, string, void, void> $input
      *
-     * @throws PcreException
-     *
      * @return int
+     *
+     * @throws PcreException
      */
     public function __invoke(Generator $input): int
     {

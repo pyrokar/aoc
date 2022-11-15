@@ -13,8 +13,8 @@ class PartOne
      * @param Generator<void, string, void, void> $input
      *
      * @return int
-     * @throws PcreException
      *
+     * @throws PcreException
      */
     public function __invoke(Generator $input): int
     {

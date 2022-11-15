@@ -1,11 +1,11 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Parameter \\#2 \\$keypad of method AOC\\\\Year2016\\\\Day02\\\\Solution\\:\\:solve\\(\\) expects array\\<string, array\\<string, string\\>\\>, array\\<int, array\\<string, string\\>\\> given\\.$#"
+			message: "#^Parameter \\#2 \\$keypad of method AOC\\\\Year2016\\\\Day02\\\\PartOne\\:\\:solve\\(\\) expects array\\<string, array\\<string, string\\>\\>, array\\<int, array\\<string, string\\>\\> given\\.$#"
 			count: 1
-			path: src/Year2016/Day02/Solution.php
+			path: src/Year2016/Day02/PartOne.php
 
 		-
-			message: "#^Parameter \\#2 \\$keypad of method AOC\\\\Year2016\\\\Day02\\\\Solution\\:\\:solve\\(\\) expects array\\<string, array\\<string, string\\>\\>, array\\<int\\|string, array\\<string, string\\>\\> given\\.$#"
+			message: "#^Parameter \\#2 \\$keypad of method AOC\\\\Year2016\\\\Day02\\\\PartTwo\\:\\:solve\\(\\) expects array\\<string, array\\<string, string\\>\\>, array\\<int\\|string, array\\<string, string\\>\\> given\\.$#"
 			count: 1
-			path: src/Year2016/Day02/Solution.php
+			path: src/Year2016/Day02/PartTwo.php

@@ -2,11 +2,10 @@
 
 namespace AOCTest\Year2016\Day08;
 
+use AOC\Test\Util\SolutionTest;
 use AOC\Year2016\Day08\Solution;
-use AOC\Test\Util\TestUtil;
-use PHPUnit\Framework\TestCase;
 
-class SolutionTest extends \AOC\Test\Util\SolutionTest #
+class Test extends SolutionTest
 {
     protected string $solutionClass = Solution::class;
 
