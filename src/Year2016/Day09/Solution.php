@@ -2,42 +2,12 @@
 
 namespace AOC\Year2016\Day09;
 
-use AOC\Util\SolutionInterface;
-use AOC\Util\SolutionUtil;
-use Generator;
-
 use Safe\Exceptions\PcreException;
 
 use function Safe\preg_match;
 
-class Solution implements SolutionInterface
+trait Solution
 {
-    use SolutionUtil;
-
-    /**
-     * @param Generator<void, string, void, void> $input
-     *
-     * @return int
-     *
-     * @throws PcreException
-     */
-    public function solvePartOne(Generator $input): int
-    {
-        return $this->decompress(trim($input->current()), false);
-    }
-
-    /**
-     * @param Generator<void, string, void, void> $input
-     *
-     * @return int
-     *
-     * @throws PcreException
-     */
-    public function solvePartTwo(Generator $input): int
-    {
-        return $this->decompress(trim($input->current()), true);
-    }
-
     /**
      * @throws PcreException
      */

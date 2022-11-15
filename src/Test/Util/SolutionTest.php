@@ -19,7 +19,7 @@ abstract class SolutionTest extends TestCase
     protected string $solutionClass;
 
     /**
-     * @return array<array<mixed>, mixed>
+     * @return array<mixed>
      */
     abstract public function data(): array;
 
