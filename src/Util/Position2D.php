@@ -12,7 +12,14 @@ class Position2D
     ) {
     }
 
-    public function move(CompassDirection $direction, int $distance): void
+    /**
+     * @mutable
+     *
+     * @param CompassDirection $direction
+     * @param int $distance
+     * @return Position2D
+     */
+    public function move(CompassDirection $direction, int $distance): self
     {
         switch ($direction) {
             case CompassDirection::North:
@@ -28,6 +35,17 @@ class Position2D
                 $this->x -= $distance;
                 break;
         }
+
+        return $this;
+    }
+
+    /**
+     * @param CompassDirection $direction
+     * @return Position2D
+     */
+    public function getPositionForDirection(CompassDirection $direction): Position2D
+    {
+        return (clone $this)->move($direction, 1);
     }
 
     /**
