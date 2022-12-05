@@ -72,7 +72,7 @@ abstract class SolutionTest extends TestCase
     private static function getGenerator(array $values): Generator
     {
         foreach ($values as $value) {
-            yield $value;
+            yield trim($value);
         }
     }
 
@@ -87,7 +87,7 @@ abstract class SolutionTest extends TestCase
         $file = fopen($filename, 'rb');
         try {
             while ($line = fgets($file)) {
-                yield $line;
+                yield trim($line);
             }
         } finally {
             fclose($file);
