@@ -4,13 +4,16 @@ namespace AOC\Year2022\Day05;
 
 use Generator;
 
-use function Safe\preg_match_all;
+use Safe\Exceptions\PcreException;
+use function Safe\preg_match;
 
 class PartOne
 {
     /**
      * @param Generator<void, string, void, void> $input
+     * @param array<int, array<string>> $startingStacks
      * @return string
+     * @throws PcreException
      */
     public function __invoke(Generator $input, array $startingStacks): string
     {
