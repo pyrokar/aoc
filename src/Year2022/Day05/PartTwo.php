@@ -14,7 +14,6 @@ class PartTwo
      */
     public function __invoke(Generator $input, array $startingStacks): string
     {
-
         $message = '';
 
         foreach ($input as $line) {
