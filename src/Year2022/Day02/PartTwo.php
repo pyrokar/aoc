@@ -37,7 +37,7 @@ class PartTwo
         $score = 0;
 
         foreach ($input as $line) {
-            $score += $map[trim($line)];
+            $score += $map[$line];
         }
 
         return $score;

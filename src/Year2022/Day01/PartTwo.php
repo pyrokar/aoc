@@ -4,8 +4,6 @@ namespace AOC\Year2022\Day01;
 
 use Generator;
 
-use function Safe\preg_match_all;
-
 class PartTwo
 {
     /**
@@ -18,15 +16,13 @@ class PartTwo
         $currentElf = 0;
 
         foreach ($input as $line) {
-            $i = trim($line);
-
-            if ($i === '') {
+            if ($line === '') {
                 $elfs[] = $currentElf;
                 $currentElf = 0;
                 continue;
             }
 
-            $currentElf += (int) $i;
+            $currentElf += (int) $line;
         }
         $elfs[] = $currentElf;
 

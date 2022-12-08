@@ -18,9 +18,7 @@ class PartOne
         $currentElf = 0;
 
         foreach ($input as $line) {
-            $i = trim($line);
-
-            if ($i === '') {
+            if ($line === '') {
                 if ($currentElf > $max) {
                     $max = $currentElf;
                 }
@@ -28,7 +26,7 @@ class PartOne
                 continue;
             }
 
-            $currentElf += (int) $i;
+            $currentElf += (int) $line;
         }
 
         return $max;
