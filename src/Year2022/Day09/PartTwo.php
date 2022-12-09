@@ -30,12 +30,14 @@ class PartTwo
             'L' => CompassDirection::West,
         ];
 
-        $tailPath[$rope->tail->getKey()] = 1;
+        $tailPath[$rope->getTail()->getKey()] = 1;
 
         foreach ($input as $line) {
             if (!preg_match('/(?<dir>[RULD]) (?<amount>\d+)/', $line, $m)) {
                 continue;
             }
+
+//            echo '== ' . $line . ' ==' . PHP_EOL;
 
             $dir = $directionMap[$m['dir']];
             $amount = (int) $m['amount'];
@@ -44,11 +46,13 @@ class PartTwo
 
                 $rope->moveHead($dir);
 
-                $key = $rope->tail->getKey();
+                $key = $rope->getTail()->getKey();
 
                 if (!isset($tailPath[$key])) {
                     $tailPath[$key] = 1;
                 }
+
+                //$rope->printPath();
             }
 
         }

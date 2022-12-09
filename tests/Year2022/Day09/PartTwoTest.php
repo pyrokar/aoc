@@ -21,7 +21,7 @@ class PartTwoTest extends SolutionTest
         return [
             [['test'], 1],
             [['test2'], 36],
-            [['input'], 0],
+            [['input'], 2467],
         ];
     }
 }
