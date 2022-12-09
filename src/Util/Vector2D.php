@@ -14,7 +14,7 @@ trait Vector2D
         return self::key($this->x, $this->y);
     }
 
-    public function calcManhattanDistanceTo(Point2D $point): int
+    public function calcManhattanDistanceTo(Position2D $point): int
     {
         return (int) abs($this->x - $point->x) + abs($this->y - $point->y);
     }

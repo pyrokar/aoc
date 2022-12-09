@@ -65,7 +65,7 @@ abstract class SolutionTest extends TestCase
     }
 
     /**
-     * @param array<mixed> $values
+     * @param array<string> $values
      *
      * @return Generator
      */

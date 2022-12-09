@@ -69,4 +69,18 @@ class Position2D
             CompassDirection::West  => array_map(static fn ($step) => new Point2D($startX - $step, $startY), $steps),
         };
     }
+
+    /**
+     * @param Position2D $position
+     * @return bool
+     */
+    public function isDiagonalFrom(Position2D $position): bool
+    {
+        return ($this->x !== $position->x && $this->y !== $position->y);
+    }
+
+    public function isOrthogonalFrom(Position2D $position2D): bool
+    {
+        return ($this->x === $position2D->x || $this->y === $position2D->y);
+    }
 }
