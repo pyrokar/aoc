@@ -6,11 +6,11 @@ use AOC\Util\CompassDirection;
 use Generator;
 
 use Safe\Exceptions\PcreException;
+
 use function Safe\preg_match;
 
 class PartTwo
 {
-
     /**
      * @param Generator<void, string, void, void> $input
      * @return int
@@ -43,7 +43,6 @@ class PartTwo
             $amount = (int) $m['amount'];
 
             for ($i = 0; $i < $amount; $i++) {
-
                 $rope->moveHead($dir);
 
                 $key = $rope->getTail()->getKey();
@@ -54,7 +53,6 @@ class PartTwo
 
                 //$rope->printPath();
             }
-
         }
 
         return count($tailPath);

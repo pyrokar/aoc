@@ -6,6 +6,7 @@ use AOC\Util\CompassDirection;
 use AOC\Util\Position2D;
 use Generator;
 use Safe\Exceptions\PcreException;
+
 use function Safe\preg_match;
 
 class PartOne
@@ -40,7 +41,6 @@ class PartOne
             $amount = (int) $m['amount'];
 
             for ($i = 0; $i < $amount; $i++) {
-
                 $rope->moveHead($dir);
 
                 $key = $rope->getTail()->getKey();
@@ -49,7 +49,6 @@ class PartOne
                     $tailPath[$key] = 1;
                 }
             }
-
         }
 
         return count($tailPath);

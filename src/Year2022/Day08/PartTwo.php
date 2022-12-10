@@ -8,7 +8,6 @@ use Safe\Exceptions\PcreException;
 
 class PartTwo
 {
-
     /**
      * @param Generator<void, string, void, void> $input
      * @return int

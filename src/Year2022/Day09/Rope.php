@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace AOC\Year2022\Day09;
 
@@ -89,7 +89,6 @@ class Rope
                 $knot->move(CompassDirection::West, 1);
             }
         }
-
     }
 
     public function printPath(): void
@@ -119,5 +118,4 @@ class Rope
         }
         echo PHP_EOL;
     }
-
 }

@@ -7,7 +7,6 @@ use Generator;
 
 class PartOne
 {
-
     /**
      * @param Generator<void, string, void, void> $input
      * @param int $gridSize
@@ -30,7 +29,6 @@ class PartOne
                 if ($x === $gridSize - 1 || $y === $gridSize - 1) {
                     $tree->isVisible = true;
                 }
-
             }
         }
 
@@ -87,6 +85,8 @@ class PartOne
         }
 
 
-        return count(array_filter($grid, static function (Tree $tree) { return $tree->isVisible; } ));
+        return count(array_filter($grid, static function (Tree $tree) {
+            return $tree->isVisible;
+        }));
     }
 }
