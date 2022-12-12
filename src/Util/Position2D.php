@@ -9,6 +9,7 @@ class Position2D
     public function __construct(
         public int $x,
         public int $y,
+        public mixed $payload = null,
     ) {
     }
 
@@ -68,6 +69,14 @@ class Position2D
             CompassDirection::South => array_map(static fn ($step) => new Point2D($startX, $startY - $step), $steps),
             CompassDirection::West  => array_map(static fn ($step) => new Point2D($startX - $step, $startY), $steps),
         };
+    }
+
+    /**
+     * @return array<Position2D>
+     */
+    public function getOrthogonalNeighbors(): array
+    {
+        return array_map(fn (CompassDirection $dir) => $this->getPositionForDirection($dir), CompassDirection::cases());
     }
 
     /**
