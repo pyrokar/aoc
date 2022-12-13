@@ -5,9 +5,7 @@ namespace AOCTest\Year2022\Day08;
 use AOC\Year2022\Day08\PartTwo;
 use AOC\Test\Util\SolutionTest;
 
-/**
- * @large
- */
+
 class PartTwoTest extends SolutionTest
 {
     /** @var class-string */
@@ -19,8 +17,8 @@ class PartTwoTest extends SolutionTest
     public function data(): array
     {
         return [
-            [['test'], 8],
-            [['input'], 0],
+            [['test', 5], 8],
+            [['input', 99], 392080],
         ];
     }
 }
