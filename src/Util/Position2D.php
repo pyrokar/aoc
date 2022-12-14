@@ -71,12 +71,45 @@ class Position2D
         };
     }
 
+    public function walkTo(Position2D $position): array
+    {
+        $dir = $this->getOrthogonalDirectionTo($position);
+        $distance = $this->calcManhattanDistanceTo($position);
+
+        if (!$dir) {
+            return [];
+        }
+
+        return $this->walk($dir, $distance);
+    }
+
     /**
      * @return array<Position2D>
      */
     public function getOrthogonalNeighbors(): array
     {
         return array_map(fn (CompassDirection $dir) => $this->getPositionForDirection($dir), CompassDirection::cases());
+    }
+
+    public function getOrthogonalDirectionTo(Position2D $position): ?CompassDirection
+    {
+        if ($this->x > $position->x) {
+            return CompassDirection::West;
+        }
+
+        if ($this->x < $position->x) {
+            return CompassDirection::East;
+        }
+
+        if ($this->y > $position->y) {
+            return CompassDirection::South;
+        }
+
+        if ($this->y < $position->y) {
+            return CompassDirection::North;
+        }
+
+        return null;
     }
 
     /**
