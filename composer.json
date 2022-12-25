@@ -22,7 +22,8 @@
 	"autoload": {
         "files": [
             "src/Util/functions.php",
-            "src/Util/Safe/math.php"
+            "src/Util/Safe/math.php",
+            "src/Year2022/Day25/snafu.php"
         ],
 		"psr-4": {
 			"AOC\\": "src/"
