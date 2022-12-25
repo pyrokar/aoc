@@ -6,11 +6,24 @@ class Position2D
 {
     use Vector2D;
 
+    public static int $yDirection = 1; // or -1 for inverted
+
+    public static function invertY(): void
+    {
+        static::$yDirection = -1;
+    }
+
     public function __construct(
         public int $x,
         public int $y,
         public mixed $payload = null,
     ) {
+    }
+
+    public static function fromKey(string $key): self
+    {
+        [$x, $y] = explode('|', $key);
+        return new self((int) $x, (int) $y);
     }
 
     /**
@@ -24,13 +37,13 @@ class Position2D
     {
         switch ($direction) {
             case CompassDirection::North:
-                $this->y += $distance;
+                $this->y += $distance * static::$yDirection;
                 break;
             case CompassDirection::East:
                 $this->x += $distance;
                 break;
             case CompassDirection::South:
-                $this->y -= $distance;
+                $this->y -= $distance * static::$yDirection;
                 break;
             case CompassDirection::West:
                 $this->x -= $distance;
@@ -71,6 +84,10 @@ class Position2D
         };
     }
 
+    /**
+     * @param Position2D $position
+     * @return Point2D[]
+     */
     public function walkTo(Position2D $position): array
     {
         $dir = $this->getOrthogonalDirectionTo($position);
@@ -90,6 +107,73 @@ class Position2D
     {
         return array_map(fn (CompassDirection $dir) => $this->getPositionForDirection($dir), CompassDirection::cases());
     }
+
+    /**
+     * @return array<string>
+     */
+    public function getNeighborKeys(): array
+    {
+        return [
+            self::key($this->x - 1, $this->y - static::$yDirection),
+            self::key($this->x - 1, $this->y),
+            self::key($this->x - 1, $this->y + static::$yDirection),
+            self::key($this->x, $this->y - static::$yDirection),
+            self::key($this->x, $this->y + static::$yDirection),
+            self::key($this->x + 1, $this->y - static::$yDirection),
+            self::key($this->x + 1, $this->y),
+            self::key($this->x + 1, $this->y + static::$yDirection),
+        ];
+    }
+
+    /**
+     * @return array<string>
+     */
+    public function getNorthernNeighborKeys(): array
+    {
+        return [
+            self::key($this->x - 1, $this->y + static::$yDirection),
+            self::key($this->x, $this->y + static::$yDirection),
+            self::key($this->x + 1, $this->y + static::$yDirection),
+        ];
+    }
+
+    /**
+     * @return array<string>
+     */
+    public function getEasternNeighborKeys(): array
+    {
+        return [
+            self::key($this->x + 1, $this->y + static::$yDirection),
+            self::key($this->x + 1, $this->y),
+            self::key($this->x + 1, $this->y - static::$yDirection),
+        ];
+    }
+
+    /**
+     * @return array<string>
+     */
+    public function getSouthernNeighborKeys(): array
+    {
+        return [
+            self::key($this->x - 1, $this->y - static::$yDirection),
+            self::key($this->x, $this->y - static::$yDirection),
+            self::key($this->x + 1, $this->y - static::$yDirection),
+        ];
+    }
+
+    /**
+     * @return array<string>
+     */
+    public function getWesternNeighborKeys(): array
+    {
+        return [
+            self::key($this->x - 1, $this->y + static::$yDirection),
+            self::key($this->x - 1, $this->y),
+            self::key($this->x - 1, $this->y - static::$yDirection),
+        ];
+    }
+
+
 
     public function getOrthogonalDirectionTo(Position2D $position): ?CompassDirection
     {

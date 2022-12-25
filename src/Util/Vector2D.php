@@ -6,7 +6,7 @@ trait Vector2D
 {
     public static function key(int $x, int $y): string
     {
-        return '(' . $x . '|' . $y . ')';
+        return $x . '|' . $y;
     }
 
     public function getKey(): string
