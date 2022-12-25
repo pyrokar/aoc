@@ -2,9 +2,13 @@
 
 namespace AOCTest\Year2016\Day05;
 
+use AOC\Test\Util\SolutionTest;
 use AOC\Year2016\Day05\PartTwo;
 
-class PartTwoTest extends \AOC\Test\Util\SolutionTest
+/**
+ * @large
+ */
+class PartTwoTest extends SolutionTest
 {
     protected string $solutionClass = PartTwo::class;
 

@@ -5,6 +5,9 @@ namespace AOCTest\Year2016\Day05;
 use AOC\Year2016\Day05\PartOne;
 use AOC\Test\Util\SolutionTest;
 
+/**
+ * @large
+ */
 class PartOneTest extends SolutionTest
 {
     protected string $solutionClass = PartOne::class;

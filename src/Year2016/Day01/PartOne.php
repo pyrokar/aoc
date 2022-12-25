@@ -38,6 +38,6 @@ class PartOne
             $position->move($currentDirection, (int) $m[2]);
         }
 
-        return $position->calcManhattanDistanceTo(new Point2D(0, 0));
+        return $position->calcManhattanDistanceTo(new Position2D(0, 0));
     }
 }

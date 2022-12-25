@@ -40,7 +40,7 @@ class PartTwo
                 $key = $point->getKey();
 
                 if (isset($path[$key])) {
-                    return $point->calcManhattanDistanceTo(new Point2D(0, 0));
+                    return $point->calcManhattanDistanceTo(new Position2D(0, 0));
                 }
 
                 $path[$key] = 1;
