@@ -8,6 +8,8 @@ use Generator;
 
 class PartOne
 {
+    use Util;
+
     /**
      * @param Generator<int, string, void, void> $input
      * @return int
@@ -106,48 +108,4 @@ class PartOne
         return $emptyTiles;
     }
 
-    private function getNextDirection(CompassDirection $direction): CompassDirection
-    {
-        return match ($direction) {
-            CompassDirection::North => CompassDirection::South,
-            CompassDirection::South => CompassDirection::West,
-            CompassDirection::West => CompassDirection::East,
-            CompassDirection::East => CompassDirection::North,
-        };
-    }
-
-    private function getNeighborKeysForDirection(Position2D $position, CompassDirection $direction): array
-    {
-        return match ($direction) {
-            CompassDirection::North => $position->getNorthernNeighborKeys(),
-            CompassDirection::South => $position->getSouthernNeighborKeys(),
-            CompassDirection::East => $position->getEasternNeighborKeys(),
-            CompassDirection::West => $position->getWesternNeighborKeys(),
-        };
-    }
-}
-
-class Dimension2D
-{
-    public function __construct(
-        public int $xMin,
-        public int $xMax,
-        public int $yMin,
-        public int $yMax,
-    ) {
-    }
-
-    public function expand(int $x, int $y): void
-    {
-        if ($x < $this->xMin) {
-            $this->xMin = $x;
-        } elseif ($x >= $this->xMax) {
-            $this->xMax = $x + 1;
-        }
-        if ($y < $this->yMin) {
-            $this->yMin = $y;
-        } elseif ($y >= $this->yMax) {
-            $this->yMax = $y + 1;
-        }
-    }
 }

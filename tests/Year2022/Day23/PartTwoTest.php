@@ -19,8 +19,8 @@ class PartTwoTest extends SolutionTest
     public function data(): array
     {
         return [
-            //[['test_2'], 20],
-            //[['input'], 0],
+            [['test_2'], 20],
+            [['input'], 980],
         ];
     }
 }
