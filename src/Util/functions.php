@@ -8,12 +8,24 @@
  *
  * @return array<T>
  *
- * @see \sort()
+ * @see sort
  */
 function array_sort(array $array, int $flags = SORT_REGULAR): array
 {
     sort($array, $flags);
     return $array;
+}
+
+/**
+ * @param callable(int, mixed, mixed...): void | null $callback
+ * @param array $array
+ * @param array ...$arrays
+ *
+ * @return array
+ */
+function array_map_key(?callable $callback, array $array, array ...$arrays): array
+{
+    return array_map($callback, array_keys($array), $array, ...$arrays);
 }
 
 /**

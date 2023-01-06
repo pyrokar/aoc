@@ -22,6 +22,8 @@
 	"autoload": {
         "files": [
             "src/Util/functions.php",
+            "src/Util/reduceInputByLine.php",
+            "src/Util/reduceLineByChar.php",
             "src/Util/Safe/math.php",
             "src/Year2022/Day25/snafu.php"
         ],
