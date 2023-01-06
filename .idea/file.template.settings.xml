@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExportableFileTemplateSettings">
+    <default_templates>
+      <template name="AOC New Day.php" file-name="src/Year$Year/Day$Day/PartOne" reformat="true" live-template-enabled="false">
+        <template name="AOC New Day.php.child.0.php" file-name="tests/Year$Year/Day$Day/PartOneTest" reformat="true" live-template-enabled="false" />
+        <template name="AOC New Day.php.child.1.txt" file-name="tests/Year$Year/Day$Day/input" reformat="false" live-template-enabled="false" />
+        <template name="AOC New Day.php.child.2.txt" file-name="tests/Year$Year/Day$Day/test" reformat="false" live-template-enabled="false" />
+        <template name="AOC New Day.php.child.3.php" file-name="src/Year$Year/Day$Day/PartTwo" reformat="true" live-template-enabled="false" />
+        <template name="AOC New Day.php.child.0.php.child.0.php" file-name="tests/Year$Year/Day$Day/PartTwoTest" reformat="true" live-template-enabled="false" />
+      </template>
+      <template name="AOC New Day.php.child.0.php" file-name="tests/Year$Year/Day$Day/PartOneTest" reformat="true" live-template-enabled="false" />
+      <template name="AOC New Day.php.child.0.php.child.0.php" file-name="tests/Year$Year/Day$Day/PartTwoTest" reformat="true" live-template-enabled="false" />
+      <template name="AOC New Day.php.child.1.txt" file-name="tests/Year$Year/Day$Day/input" reformat="false" live-template-enabled="false" />
+      <template name="AOC New Day.php.child.2.txt" file-name="tests/Year$Year/Day$Day/test" reformat="false" live-template-enabled="false" />
+      <template name="AOC New Day.php.child.3.php" file-name="src/Year$Year/Day$Day/PartTwo" reformat="true" live-template-enabled="false" />
+    </default_templates>
+  </component>
+</project>
