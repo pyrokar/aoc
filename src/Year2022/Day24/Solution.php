@@ -6,6 +6,9 @@ use AOC\Util\CompassDirection;
 use AOC\Util\Position2D;
 use Generator;
 
+/**
+ * thanks to https://www.reddit.com/r/adventofcode/comments/zuibs3/2022_day_24_part_2_hail_of_arrows/
+ */
 trait Solution
 {
     /** @var array<string, int> $blizzardKeys */
@@ -14,6 +17,8 @@ trait Solution
     protected array $blizzardKeys;
     /** @var array<Blizzard> */
     protected array $blizzards;
+
+    protected array $positions;
 
     protected int $maxX;
     protected int $maxY;
@@ -74,9 +79,8 @@ trait Solution
         $this->blizzardKeys = $newBlizzardKeys;
     }
 
-    protected function findMinDistance(Position2D $start, Position2D $end): int
+    protected function findMinDistance(Position2D $start, Position2D $end, $currentMinute = 0): int
     {
-        $currentMinute = 0;
         $newPositions = [];
         $lastPositions = [$start];
 
@@ -84,11 +88,14 @@ trait Solution
             $this->calcBlizzards();
             $currentMinute++;
 
+            // echo 'Minute ' . $currentMinute . PHP_EOL;
+
             foreach ($lastPositions as $lastPosition) {
                 $neighbors = $this->getNeighbors($lastPosition);
 
                 foreach ($neighbors as $neighbor) {
                     if ($neighbor->getKey() === $end->getKey()) {
+                        // echo 'end found at ' . $currentMinute . PHP_EOL;
                         return $currentMinute;
                     }
 
@@ -98,8 +105,11 @@ trait Solution
                 }
             }
 
+            $this->positions = $newPositions;
             $lastPositions = $newPositions;
             $newPositions = [];
+
+            // $this->printBlizzards();
         }
     }
 
@@ -129,10 +139,29 @@ trait Solution
             $neighbors[] = $neighbor;
         }
 
-        if (empty($neighbors)) {
+        if (!isset($this->blizzardKeys[$current->getKey()])) {
             $neighbors[] = new Position2D($current->x, $current->y);
         }
 
         return $neighbors;
+    }
+
+    public function printBlizzards(): void
+    {
+        for ($y = 1; $y <= $this->maxY; $y++) {
+            for ($x = 1; $x <= $this->maxX; $x++) {
+                $key = Position2D::key($x, $y);
+                if (isset($this->blizzardKeys[$key])) {
+                    echo '#';
+                } elseif (isset($this->positions[$key])) {
+                    echo 'o';
+                } else {
+                    echo '.';
+                }
+            }
+
+            echo PHP_EOL;
+        }
+        echo PHP_EOL;
     }
 }
