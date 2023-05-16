@@ -29,6 +29,18 @@ function array_map_key(?callable $callback, array $array, array ...$arrays): arr
 }
 
 /**
+ * Returns all keys with the maximum value
+ *
+ * @param array<string, mixed> $array
+ * @return array<string>
+ */
+function max_value_keys(array $array): array
+{
+    $maxValue = max($array);
+    return array_keys(array_filter($array, static fn ($el) => $el === $maxValue));
+}
+
+/**
  * @link https://www.php.net/manual/de/function.str-rot13.php#107475
  *
  * @param string $s
