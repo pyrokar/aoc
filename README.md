@@ -7,12 +7,12 @@ for training and presentation purposes.
 
 ## TODO
 
-- [] Complete all Puzzles with TDD (obvious)
-- [] GitHub actions
-- [] document all algorithms and datastructures
-- [] github page for documentation
-- [] play with some other tools :-)
-  - [] mutation tests
-  - [] ...
-- [] test with newer php versions
-- [] get rid of phpstan baseline :sigh:
+- [ ] Complete all Puzzles with TDD (obvious)
+- [ ] GitHub actions
+- [ ] document all algorithms and datastructures
+- [ ] github page for documentation
+- [ ] play with some other tools :-)
+  - [ ] mutation tests
+  - [ ] ...
+- [ ] test with newer php versions
+- [ ] get rid of phpstan baseline :sigh:
