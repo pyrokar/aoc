@@ -1,0 +1,51 @@
+name: Tests
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+
+    runs-on: ubuntu-latest
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version:
+          - "7.4"
+          - "8.0"
+          - "8.1"
+          - "8.2"
+
+    steps:
+    - name: "Checkout"
+      uses: actions/checkout@v3
+
+    - name: "Install PHP"
+      uses: "shivammathur/setup-php@v2"
+      with:
+        coverage: "none"
+        php-version: "${{ matrix.php-version }}"
+        ini-file: development
+        extensions: ext-ds
+
+    - name: Cache Composer packages
+      id: composer-cache
+      uses: actions/cache@v3
+      with:
+        path: vendor
+        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-php-
+
+    - name: Install dependencies
+      run: composer install --no-interaction --no-progress
+
+    - name: "Tests"
+      run: vendor/bin/phpunit --configuration phpunit.xml
+        
