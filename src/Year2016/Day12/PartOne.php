@@ -2,7 +2,6 @@
 
 namespace AOC\Year2016\Day12;
 
-use AOC\Util\CPU;
 use Generator;
 
 class PartOne
