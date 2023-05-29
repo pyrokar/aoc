@@ -1,10 +1,27 @@
-<phpunit bootstrap="vendor/autoload.php">
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         beStrictAboutTestsThatDoNotTestAnything="true"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         failOnRisky="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         bootstrap="vendor/autoload.php"
+>
     <testsuites>
-        <testsuite name="all">
-            <directory>tests</directory>
-        </testsuite>
-        <testsuite name="2016">
-            <directory>tests/Year2016</directory>
+        <testsuite name="Unit Tests Fast">
+            <directory>./tests/</directory>
         </testsuite>
     </testsuites>
+
+    <groups>
+        <include>
+            <group>small</group>
+        </include>
+    </groups>
 </phpunit>
