@@ -30,8 +30,6 @@ jobs:
       with:
         coverage: "none"
         php-version: "${{ matrix.php-version }}"
-        ini-file: development
-        extensions: ext-ds
 
     - name: Cache Composer packages
       id: composer-cache

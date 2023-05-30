@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3038bb4349f62c4b55dde23a5fc59685",
+    "content-hash": "396969ad9997ad5c893bf4f0fdb71d6d",
     "packages": [
         {
             "name": "thecodingmachine/safe",
@@ -4587,9 +4587,7 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {
-        "ext-ds": "*"
-    },
+    "platform": [],
     "platform-dev": [],
     "plugin-api-version": "2.3.0"
 }

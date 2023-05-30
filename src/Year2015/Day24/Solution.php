@@ -2,6 +2,7 @@
 
 namespace AOC\Year2015\Day24;
 
+use AOC\Util\Set;
 use Generator;
 
 trait Solution
@@ -38,22 +39,24 @@ trait Solution
         }
 
         $minQE = INF;
-        $c = [];
+        $combinationFound = false;
+
+        $set = new Set($weights);
 
         while (true) {
-            foreach ($this->getCombinations($weights, $groupSize) as $combination) {
+            foreach ($set->getCombinationsOfSize($groupSize) as $combination) {
                 if (array_sum($combination) !== $groupWeight) {
                     continue;
                 }
 
-                $c[] = $combination;
+                $combinationFound = true;
 
                 $qe = array_product($combination);
 
                 $minQE = min($minQE, $qe);
             }
 
-            if (empty($c)) {
+            if (!$combinationFound) {
                 ++$groupSize;
             } else {
                 break;
@@ -61,30 +64,5 @@ trait Solution
         }
 
         return (int)$minQE;
-    }
-
-    /**
-     * @param List<int> $list
-     * @param int $length
-     * @param int $start
-     * @param array $partial
-     *
-     * @return Generator<int, List<int>>
-     */
-    protected function getCombinations(array $list, int $length, int $start = 0, array $partial = []): Generator
-    {
-        if ($length === 1) {
-            foreach (array_slice($list, $start) as $el) {
-                yield [...$partial, $el];
-            }
-
-            return;
-        }
-
-        $listLength = count($list);
-
-        foreach (range($start, $listLength - $length) as $i) {
-            yield from $this->getCombinations($list, $length - 1, $i + 1, [...$partial, $list[$i]]);
-        }
     }
 }
