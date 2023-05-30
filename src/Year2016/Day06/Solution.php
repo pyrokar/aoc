@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace AOC\Year2016\Day06;
 
@@ -10,8 +12,9 @@ trait Solution
     /**
      * @param Generator<void, string, void, void> $input
      *
-     * @return string
      * @throws ArrayException
+     *
+     * @return string
      */
     private function solve(Generator $input): string
     {

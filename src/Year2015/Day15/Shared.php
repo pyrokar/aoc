@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace AOC\Year2015\Day15;
@@ -11,6 +12,7 @@ trait Shared
 
     /**
      * @param int $dimensions
+     *
      * @return Generator<int, array<int>, void, void>
      */
     protected function amounts(int $dimensions): Generator
@@ -37,6 +39,7 @@ trait Shared
 
     /**
      * @param array<int> $amounts
+     *
      * @return int
      */
     protected function calculateScore(array $amounts): int

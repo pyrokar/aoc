@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AOC\Year2022\Day23;
 
 use AOC\Util\CompassDirection;
@@ -7,7 +9,6 @@ use AOC\Util\Position2D;
 
 trait Util
 {
-
     protected function getNeighborKeysForDirection(Position2D $position, CompassDirection $direction): array
     {
         return match ($direction) {

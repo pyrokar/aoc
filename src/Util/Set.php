@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AOC\Util;
 
 use Generator;
@@ -18,6 +20,7 @@ class Set
 
     /**
      * @param T $element
+     *
      * @return void
      */
     public function addElement(mixed $element): void
@@ -37,6 +40,7 @@ class Set
      * @param int $size
      * @param int $start
      * @param List<T> $partial
+     *
      * @return Generator<int, List<T>>
      */
     public function getCombinationsOfSize(int $size, int $start = 0, array $partial = []): Generator

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace AOC\Test\Util;
 
@@ -24,9 +26,10 @@ abstract class SolutionTest extends TestCase
     abstract public function data(): array;
 
     /**
-     * @return void
      * @throws ReflectionException
      * @throws FilesystemException
+     *
+     * @return void
      */
     public function test(): void
     {
@@ -79,8 +82,9 @@ abstract class SolutionTest extends TestCase
     /**
      * @param string $filename
      *
-     * @return Generator
      * @throws FilesystemException
+     *
+     * @return Generator
      */
     private static function getGeneratorFromFile(string $filename): Generator
     {

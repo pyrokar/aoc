@@ -6,6 +6,7 @@ namespace AOC\Year2015\Day10;
 
 use Generator;
 use Safe\Exceptions\PcreException;
+
 use function Safe\preg_match_all;
 
 class PartOne
@@ -14,9 +15,10 @@ class PartOne
      * @param Generator<int, string, void, void> $input
      * @param int $times
      *
+     * @throws PcreException
+     *
      * @return int
      *
-     * @throws PcreException
      */
     public function __invoke(Generator $input, int $times): int
     {

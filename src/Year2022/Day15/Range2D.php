@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AOC\Year2022\Day15;
 
 use DomainException;
@@ -9,8 +11,7 @@ class Range2D
     public function __construct(
         public int $start,
         public int $end,
-    )
-    {
+    ) {
         assert($start <= $end);
     }
 

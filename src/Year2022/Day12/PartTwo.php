@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace AOC\Year2022\Day12;
 
@@ -7,6 +9,7 @@ use AOC\Util\Position2D;
 use DomainException;
 use Generator;
 use Safe\Exceptions\ArrayException;
+
 use function AOC\Util\Safe\min;
 
 class PartTwo extends AStar
@@ -15,8 +18,10 @@ class PartTwo extends AStar
 
     /**
      * @param Generator<void, string, void, void> $input
-     * @return int
+     *
      * @throws ArrayException
+     *
+     * @return int
      */
     public function __invoke(Generator $input): int
     {

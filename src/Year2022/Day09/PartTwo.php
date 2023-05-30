@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace AOC\Year2022\Day09;
 
@@ -13,8 +15,10 @@ class PartTwo
 {
     /**
      * @param Generator<void, string, void, void> $input
-     * @return int
+     *
      * @throws PcreException
+     *
+     * @return int
      */
     public function __invoke(Generator $input): int
     {
@@ -37,7 +41,7 @@ class PartTwo
                 continue;
             }
 
-//            echo '== ' . $line . ' ==' . PHP_EOL;
+            //            echo '== ' . $line . ' ==' . PHP_EOL;
 
             $dir = $directionMap[$m['dir']];
             $amount = (int) $m['amount'];

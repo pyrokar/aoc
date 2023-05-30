@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AOC\Year2022\Day24;
 
 use AOC\Util\CompassDirection;
@@ -25,6 +27,7 @@ trait Solution
 
     /**
      * @param Generator<int, string, void, void> $input
+     *
      * @return Position2D
      */
     protected function getEnd(Generator $input): Position2D
@@ -115,6 +118,7 @@ trait Solution
 
     /**
      * @param Position2D $current
+     *
      * @return array<Position2D>
      */
     protected function getNeighbors(Position2D $current): array

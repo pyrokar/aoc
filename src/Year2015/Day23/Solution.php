@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AOC\Year2015\Day23;
 
 use AOC\Util\CPU;
@@ -11,6 +13,7 @@ trait Solution
      * @param Generator<int, string> $input
      * @param string $register
      * @param array $initRegisters
+     *
      * @return int
      */
     public function getRegisterContent(Generator $input, string $register, array $initRegisters = []): int

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace AOC\Year2015\Day12;
@@ -9,8 +10,10 @@ class PartTwo
 {
     /**
      * @param Generator<int, string, void, void> $input
-     * @return int
+     *
      * @throws \JsonException
+     *
+     * @return int
      */
     public function __invoke(Generator $input): int
     {

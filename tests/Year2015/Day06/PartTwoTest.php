@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace AOCTest\Year2015\Day06;
@@ -7,7 +8,7 @@ use AOC\Year2015\Day06\PartTwo;
 use AOC\Test\Util\SolutionTest;
 
 /**
- * @large 
+ * @large
  */
 class PartTwoTest extends SolutionTest
 {

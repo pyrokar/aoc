@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace AOC\Year2016\Day13;
 
@@ -72,6 +74,7 @@ trait Shared
 
     /**
      * @param Position2D $point
+     *
      * @return array<Position2D>
      */
     private function getOpenNeighbors(Position2D $point): array

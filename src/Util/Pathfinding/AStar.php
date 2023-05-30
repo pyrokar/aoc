@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AOC\Util\Pathfinding;
 
 use AOC\Util\Position2D;
@@ -51,6 +53,7 @@ abstract class AStar
 
     /**
      * @param Position2D $current
+     *
      * @return array<Position2D>
      */
     abstract protected function getNeighbors(Position2D $current): array;

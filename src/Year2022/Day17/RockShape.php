@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AOC\Year2022\Day17;
 
 use AOC\Util\Position2D;
@@ -20,6 +22,7 @@ class RockShape
 
     /**
      * @param Position2D $position
+     *
      * @return array<string, int>
      */
     public function getPositionKeys(Position2D $position): array

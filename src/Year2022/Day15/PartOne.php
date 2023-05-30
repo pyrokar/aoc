@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace AOC\Year2022\Day15;
 
@@ -7,10 +9,10 @@ use Generator;
 
 class PartOne
 {
-
     /**
      * @param Generator<void, string, void, void> $input
      * @param int $rowY
+     *
      * @return int
      */
     public function __invoke(Generator $input, int $rowY): int

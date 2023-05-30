@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AOC\Year2022\Day24;
 
 use AOC\Util\CompassDirection;
@@ -11,8 +13,7 @@ class Blizzard extends Position2D
         int                              $x,
         int                              $y,
         public readonly CompassDirection $direction
-    )
-    {
+    ) {
         parent::__construct($x, $y);
     }
 

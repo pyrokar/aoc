@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AOC\Year2022\Day11;
 
 use function Safe\preg_match;
@@ -8,9 +10,11 @@ trait Util
 {
     /**
      * @param $input
-     * @return array<Monkey>
+     *
      * @throws \Safe\Exceptions\JsonException
      * @throws \Safe\Exceptions\PcreException
+     *
+     * @return array<Monkey>
      */
     private function inputToMonkeys($input): array
     {

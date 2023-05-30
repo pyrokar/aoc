@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace AOC\Year2016\Day07;
 
@@ -11,8 +13,10 @@ class PartOne
 {
     /**
      * @param string $ip
-     * @return bool
+     *
      * @throws PcreException
+     *
+     * @return bool
      */
     public static function doesSupportTls(string $ip): bool
     {
@@ -31,9 +35,11 @@ class PartOne
 
     /**
      * @param Generator<void, string, void, void> $input
-     * @return int
      *
      * @throws PcreException
+     *
+     * @return int
+     *
      */
     public function __invoke(Generator $input): int
     {

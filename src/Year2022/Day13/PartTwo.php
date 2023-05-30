@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace AOC\Year2022\Day13;
 
@@ -10,8 +12,10 @@ class PartTwo
     use Comparator;
     /**
      * @param Generator<void, string, void, void> $input
-     * @return int
+     *
      * @throws ArrayException
+     *
+     * @return int
      */
     public function __invoke(Generator $input): int
     {

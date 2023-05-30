@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace AOC\Year2016\Day12;
 
@@ -10,6 +12,7 @@ trait Machine
     /**
      * @param Generator<void, string, void, void> $input
      * @param array<string, int> $initRegisters
+     *
      * @return CPU
      */
     public function runMaschine(Generator $input, array $initRegisters = []): CPU

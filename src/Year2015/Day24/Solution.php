@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AOC\Year2015\Day24;
 
 use AOC\Util\Set;
@@ -7,10 +9,10 @@ use Generator;
 
 trait Solution
 {
-
     /**
      * @param Generator<int, string, void, void> $input
      * @param int $numberOfGroups
+     *
      * @return int
      */
     public function __invoke(Generator $input, int $numberOfGroups): int

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace AOC\Year2022\Day05;
 
@@ -13,8 +15,10 @@ class PartTwo
     /**
      * @param Generator<void, string, void, void> $input
      * @param array<int, array<string>> $startingStacks
-     * @return string
+     *
      * @throws PcreException
+     *
+     * @return string
      */
     public function __invoke(Generator $input, array $startingStacks): string
     {

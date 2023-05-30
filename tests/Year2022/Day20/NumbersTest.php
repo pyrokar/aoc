@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AOCTest\Year2022\Day20;
 
 use AOC\Year2022\Day20\Numbers;

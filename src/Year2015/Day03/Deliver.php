@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AOC\Year2015\Day03;
 
 use AOC\Util\CompassDirection;

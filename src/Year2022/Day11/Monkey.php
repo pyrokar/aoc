@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AOC\Year2022\Day11;
 
 class Monkey
@@ -29,6 +31,7 @@ class Monkey
 
     /**
      * @param array<Monkey> $monkeys
+     *
      * @return void
      */
     public function inspectAndThrowItem(array $monkeys): void

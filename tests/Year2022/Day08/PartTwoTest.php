@@ -1,10 +1,11 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace AOCTest\Year2022\Day08;
 
 use AOC\Year2022\Day08\PartTwo;
 use AOC\Test\Util\SolutionTest;
-
 
 class PartTwoTest extends SolutionTest
 {

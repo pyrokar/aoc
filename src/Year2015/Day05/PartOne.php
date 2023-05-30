@@ -1,9 +1,11 @@
 <?php
+
 declare(strict_types=1);
 
 namespace AOC\Year2015\Day05;
 
 use Generator;
+
 use function AOC\Util\reduceInputByLine;
 use function AOC\Util\reduceLineByChar;
 
@@ -11,6 +13,7 @@ class PartOne
 {
     /**
      * @param Generator<int, string, void, void> $input
+     *
      * @return int
      */
     public function __invoke(Generator $input): int
@@ -32,7 +35,7 @@ class PartOne
                     $containsDoubleLetter = true;
                 }
 
-                if (in_array($lastChar . $char, ['ab', 'cd', 'pq', 'xy'])) {
+                if (in_array($lastChar . $char, ['ab', 'cd', 'pq', 'xy'], true)) {
                     $containsNotNaughty = false;
                 }
 

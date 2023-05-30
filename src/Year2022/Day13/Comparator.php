@@ -1,10 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AOC\Year2022\Day13;
 
 trait Comparator
 {
-
     private function compare(array $first, array $second): int
     {
         for ($i = 0; $i >= 0; $i++) {

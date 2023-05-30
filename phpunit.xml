@@ -20,8 +20,9 @@
     </testsuites>
 
     <groups>
-        <include>
-            <group>small</group>
-        </include>
+        <exclude>
+            <group>medium</group>
+            <group>large</group>
+        </exclude>
     </groups>
 </phpunit>

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace AOC\Util\Safe;
 
@@ -8,8 +10,10 @@ use Safe\Exceptions\ArrayException;
  * @template T
  *
  * @param T[] $value
- * @return T
+ *
  * @throws ArrayException
+ *
+ * @return T
  */
 function max(array $value): mixed
 {
@@ -25,8 +29,10 @@ function max(array $value): mixed
  * @template T
  *
  * @param T[] $value
- * @return T
+ *
  * @throws ArrayException
+ *
+ * @return T
  */
 function min(array $value): mixed
 {

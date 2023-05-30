@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace AOC\Year2022\Day15;
 
@@ -10,6 +12,7 @@ class PartTwo
     /**
      * @param Generator<void, string, void, void> $input
      * @param int $max
+     *
      * @return int
      */
     public function __invoke(Generator $input, int $max): int

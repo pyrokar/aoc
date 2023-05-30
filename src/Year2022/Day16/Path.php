@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AOC\Year2022\Day16;
 
 class Path
@@ -35,6 +37,7 @@ class Path
 
     /**
      * @param string $player
+     *
      * @return array{string, int}
      */
     public function getCurrent(string $player): array

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AOC\Year2022\Day16;
 
 use AOC\Util\ShortestPath\AStar;
@@ -18,6 +20,7 @@ trait Shared
 
     /**
      * @param Generator<int, string> $input
+     *
      * @return void
      */
     protected function init(Generator $input): void

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace AOC\Util\Safe;
 
@@ -6,6 +8,7 @@ use Safe\Exceptions\FilesystemException;
 
 /**
  * @template T of object
+ *
  * @extends \ReflectionClass<T>
  */
 class ReflectionClass extends \ReflectionClass

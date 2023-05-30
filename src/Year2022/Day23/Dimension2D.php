@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AOC\Year2022\Day23;
 
 class Dimension2D
@@ -9,8 +11,7 @@ class Dimension2D
         public int $xMax,
         public int $yMin,
         public int $yMax,
-    )
-    {
+    ) {
     }
 
     public function expand(int $x, int $y): void

@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AOCTest\Year2022\Day25;
 
 use PHPUnit\Framework\TestCase;
+
 use function AOC\Year2022\Day25\decToSnafu;
 use function AOC\Year2022\Day25\snafuToDec;
 
@@ -25,6 +28,7 @@ class SnafuTest extends TestCase
      *
      * @param string $snafu
      * @param int $expectedDec
+     *
      * @return void
      */
     public function testSnafuToDec(string $snafu, int $expectedDec): void
@@ -56,6 +60,7 @@ class SnafuTest extends TestCase
      *
      * @param int $dec
      * @param string $expectedSnafu
+     *
      * @return void
      */
     public function testDecToSnafu(int $dec, string $expectedSnafu): void

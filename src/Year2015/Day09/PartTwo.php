@@ -7,14 +7,17 @@ namespace AOC\Year2015\Day09;
 use AOC\Util\Pathfinding\MaxGraph;
 use Generator;
 use Safe\Exceptions\PcreException;
+
 use function Safe\preg_match;
 
 class PartTwo
 {
     /**
      * @param Generator<int, string, void, void> $input
-     * @return int
+     *
      * @throws PcreException
+     *
+     * @return int
      */
     public function __invoke(Generator $input): int
     {

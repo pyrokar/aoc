@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace AOC\Util;
 
@@ -31,6 +33,7 @@ class Position2D
      *
      * @param CompassDirection $direction
      * @param int $distance
+     *
      * @return Position2D
      */
     public function move(CompassDirection $direction, int $distance): self
@@ -55,6 +58,7 @@ class Position2D
 
     /**
      * @param CompassDirection $direction
+     *
      * @return Position2D
      */
     public function getPositionForDirection(CompassDirection $direction): Position2D
@@ -86,6 +90,7 @@ class Position2D
 
     /**
      * @param Position2D $position
+     *
      * @return Point2D[]
      */
     public function walkTo(Position2D $position): array
@@ -198,6 +203,7 @@ class Position2D
 
     /**
      * @param Position2D $position
+     *
      * @return bool
      */
     public function isDiagonalFrom(Position2D $position): bool

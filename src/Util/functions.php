@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 /**
  * @template T
@@ -32,6 +34,7 @@ function array_map_key(?callable $callback, array $array, array ...$arrays): arr
  * Returns all keys with the maximum value
  *
  * @param array<string, mixed> $array
+ *
  * @return array<string>
  */
 function max_value_keys(array $array): array

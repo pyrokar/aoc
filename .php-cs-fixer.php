@@ -13,10 +13,14 @@ $config
 return $config
     ->setFinder($finder)
     ->setRules([
-        '@PSR12' => true,
-        'blank_line_after_opening_tag' => false,
-        'declare_strict_types' => true,
-        'strict_param' => true,
-        'array_syntax' => ['syntax' => 'short'],
+        '@PER' => true,
 
+        'declare_strict_types' => true,
+        'strict_comparison' => true,
+        'strict_param' => true,
+
+        'array_syntax' => true,
+
+        'phpdoc_order' => true,
+        'phpdoc_separation' => true,
     ]);

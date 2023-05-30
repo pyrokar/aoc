@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace AOC\Year2016\Day06;
 
@@ -13,6 +15,7 @@ class PartOne
 
     /**
      * @param Generator<void, string, void, void> $input
+     *
      * @return string
      */
     public function __invoke(Generator $input): string
@@ -23,8 +26,10 @@ class PartOne
 
     /**
      * @param array<int> $charCounts
-     * @return int
+     *
      * @throws ArrayException
+     *
+     * @return int
      */
     public function getNeedle(array $charCounts): int
     {

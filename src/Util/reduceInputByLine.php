@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace AOC\Util;
@@ -16,14 +17,14 @@ use Generator;
  */
 function reduceInputByLine(Generator $input, callable $callback, mixed $initial = null): mixed
 {
-	foreach ($input as $line) {
-		$line = trim($line);
-		if ($line === '') {
-			continue;
-		}
+    foreach ($input as $line) {
+        $line = trim($line);
+        if ($line === '') {
+            continue;
+        }
 
-		$initial = $callback($initial, $line);
-	}
+        $initial = $callback($initial, $line);
+    }
 
-	return $initial;
+    return $initial;
 }
