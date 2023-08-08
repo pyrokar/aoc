@@ -12,6 +12,9 @@ use Safe\Exceptions\FilesystemException;
 
 use function Safe\fclose;
 use function Safe\fopen;
+use function Safe\define;
+
+define('DS', DIRECTORY_SEPARATOR);
 
 abstract class SolutionTest extends TestCase
 {
@@ -43,50 +46,19 @@ abstract class SolutionTest extends TestCase
         /** @var callable $solutionProvider */
         $solutionProvider = new ($this->solutionClass)();
 
-        $testClassReflector = new ReflectionClass($this);
-        $dir = dirname($testClassReflector->getFileName());
-
         /**
          * @var  array<mixed> $args
          * @var  mixed $expected
          */
         foreach ($data as [$args, $expected]) {
-            $input = array_shift($args);
-
-            if (!is_string($input)) {
-                continue;
-            }
-
-            if (is_file($dir . DIRECTORY_SEPARATOR . $input)) {
-                $input = self::getGeneratorFromFile($dir . DIRECTORY_SEPARATOR . $input);
-            } else {
-                $input = self::getGenerator([$input]);
-            }
-
-            $this->assertEquals($expected, $solutionProvider($input, ...$args));
+            $this->assertEquals($expected, $solutionProvider(...$args));
         }
     }
 
     /**
-     * @param array<string> $values
-     *
-     * @return Generator
-     */
-    private static function getGenerator(array $values): Generator
-    {
-        foreach ($values as $value) {
-            yield trim($value);
-        }
-    }
-
-    /**
-     * @param string $filename
-     *
      * @throws FilesystemException
-     *
-     * @return Generator
      */
-    private static function getGeneratorFromFile(string $filename): Generator
+    protected function generatorFromFile(string $filename): Generator
     {
         $file = fopen($filename, 'rb');
         try {
@@ -96,5 +68,22 @@ abstract class SolutionTest extends TestCase
         } finally {
             fclose($file);
         }
+    }
+
+    protected function generatorFromString(string $input): Generator
+    {
+        yield $input;
+    }
+
+    /**
+     * @throws FilesystemException
+     */
+    protected function lineFromFile(string $filename): string
+    {
+        $file = fopen($filename, 'rb');
+        $line = trim(fgets($file) ?: '');
+        fclose($file);
+
+        return $line;
     }
 }

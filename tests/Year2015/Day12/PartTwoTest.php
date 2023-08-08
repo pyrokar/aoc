@@ -6,6 +6,7 @@ namespace AOCTest\Year2015\Day12;
 
 use AOC\Year2015\Day12\PartTwo;
 use AOC\Test\Util\SolutionTest;
+use Safe\Exceptions\FilesystemException;
 
 class PartTwoTest extends SolutionTest
 {
@@ -14,12 +15,13 @@ class PartTwoTest extends SolutionTest
 
     /**
      * @return array<int, array<mixed>>
+     * @throws FilesystemException
      */
     public function data(): array
     {
         return [
-            [['test.json'], 11],
-            [['input.json'], 68466],
+            [[$this->lineFromFile(__DIR__ . DS . 'test.json')], 11],
+            [[$this->lineFromFile(__DIR__ . DS . 'input.json')], 68466],
         ];
     }
 }

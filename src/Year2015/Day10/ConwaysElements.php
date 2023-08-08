@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace AOC\Year2015\Day10;
 
+use AOC\Util\Chemistry\Element;
+
 final class ConwaysElements
 {
     /**

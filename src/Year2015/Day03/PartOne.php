@@ -5,18 +5,16 @@ declare(strict_types=1);
 namespace AOC\Year2015\Day03;
 
 use AOC\Util\Position2D;
-use Generator;
 
 class PartOne
 {
     use Deliver;
 
     /**
-     * @param Generator<int, string, void, void> $input
-     *
+     * @param string $input
      * @return int
      */
-    public function __invoke(Generator $input): int
+    public function __invoke(string $input): int
     {
         $santaPosition = new Position2D(0, 0);
 
@@ -26,7 +24,7 @@ class PartOne
 
         array_map(function (string $char) use ($santaPosition) {
             $this->deliver($santaPosition, $char);
-        }, str_split($input->current()));
+        }, str_split($input));
 
         return count($this->grid);
     }

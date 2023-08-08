@@ -6,6 +6,7 @@ namespace AOCTest\Year2015\Day06;
 
 use AOC\Year2015\Day06\PartTwo;
 use AOC\Test\Util\SolutionTest;
+use Safe\Exceptions\FilesystemException;
 
 /**
  * @large
@@ -17,13 +18,14 @@ class PartTwoTest extends SolutionTest
 
     /**
      * @return array<int, array<mixed>>
+     * @throws FilesystemException
      */
     public function data(): array
     {
         return [
-            [['turn on 0,0 through 0,0'], 1],
-            [['toggle 0,0 through 999,999'], 2000000],
-            [['input.txt'], 17836115],
+            [[$this->generatorFromString('turn on 0,0 through 0,0')], 1],
+            [[$this->generatorFromString('toggle 0,0 through 999,999')], 2000000],
+            [[$this->generatorFromFile(__DIR__ . DS . 'input.txt')], 17836115],
         ];
     }
 }

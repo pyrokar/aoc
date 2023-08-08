@@ -12,17 +12,16 @@ use function Safe\preg_match_all;
 class PartOne
 {
     /**
-     * @param Generator<int, string, void, void> $input
-     *
-     * @throws PcreException
+     * @param string $input
      *
      * @return int
+     * @throws PcreException
      */
-    public function __invoke(Generator $input): int
+    public function __invoke(string $input): int
     {
         $result = 0;
 
-        if (preg_match_all('/-?\d+/', $input->current(), $m)) {
+        if (preg_match_all('/-?\d+/', $input, $m)) {
             $result += array_sum($m[0]);
         }
 

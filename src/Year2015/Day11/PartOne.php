@@ -12,15 +12,12 @@ use function Safe\preg_match;
 class PartOne
 {
     /**
-     * @param Generator<int, string, void, void> $input
-     *
-     * @throws PcreException
-     *
+     * @param string $password
      * @return string
+     * @throws PcreException
      */
-    public function __invoke(Generator $input): string
+    public function __invoke(string $password): string
     {
-        $password = $input->current();
         $password = $this->incPassword($password);
 
         while (!$this->isValid($password)) {

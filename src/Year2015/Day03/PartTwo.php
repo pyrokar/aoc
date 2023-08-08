@@ -12,11 +12,11 @@ class PartTwo
     use Deliver;
 
     /**
-     * @param Generator<int, string, void, void> $input
+     * @param string $input
      *
      * @return int
      */
-    public function __invoke(Generator $input): int
+    public function __invoke(string $input): int
     {
         $santaPosition = new Position2D(0, 0);
         $roboPosition = new Position2D(0, 0);
@@ -31,7 +31,7 @@ class PartTwo
             } else {
                 $this->deliver($roboPosition, $char);
             }
-        }, str_split($input->current()));
+        }, str_split($input));
 
         return count($this->grid);
     }

@@ -54,8 +54,6 @@ class MinGraph
         }
 
         for ($i = 1; $i < $count; $i++) {
-            $maxEdgeValue = max($this->cost[$i - 1]);
-
             foreach ($this->cost[$i - 1] as $pathKey => $v) {
 
                 $path = explode($this->sep, $pathKey);
@@ -66,10 +64,6 @@ class MinGraph
                     }
 
                     $cost = $this->cost[$i - 1][$pathKey] + $value;
-                    /*if ($cost > $maxEdgeValue) {
-                        continue;
-                    }*/
-
                     $this->cost[$i][$third . $this->sep . $pathKey] = $cost;
                 }
 
@@ -79,10 +73,6 @@ class MinGraph
                     }
 
                     $cost = $this->cost[$i - 1][$pathKey] + $value;
-                    /*if ($cost > $maxEdgeValue) {
-                        continue;
-                    }*/
-
                     $this->cost[$i][$pathKey . $this->sep . $third] = $cost;
                 }
             }

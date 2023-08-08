@@ -15,7 +15,6 @@ class MaxGraph
     {
     }
 
-
     public function addVertex(string $vertex): void
     {
         if (!isset($this->adjacencyList[$vertex])) {

@@ -6,6 +6,7 @@ namespace AOCTest\Year2015\Day01;
 
 use AOC\Year2015\Day01\PartTwo;
 use AOC\Test\Util\SolutionTest;
+use Safe\Exceptions\FilesystemException;
 
 class PartTwoTest extends SolutionTest
 {
@@ -14,13 +15,14 @@ class PartTwoTest extends SolutionTest
 
     /**
      * @return array<int, array<mixed>>
+     * @throws FilesystemException
      */
     public function data(): array
     {
         return [
             [[')'], 1],
             [['()())'], 5],
-            [['input.txt'], 1783],
+            [[$this->lineFromFile(__DIR__ . DS . 'input.txt')], 1783],
         ];
     }
 }

@@ -21,7 +21,7 @@ class PartTwoTest extends SolutionTest
     public function data(): array
     {
         return [
-            [['29000000'], 705600],
+            [[29000000], 705600],
         ];
     }
 }

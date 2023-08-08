@@ -9,14 +9,14 @@ use Generator;
 class PartTwo
 {
     /**
-     * @param Generator<int, string, void, void> $input
+     * @param string $input
      * @param int $times
      *
      * @return int
      */
-    public function __invoke(Generator $input, int $times): int
+    public function __invoke(string $input, int $times): int
     {
-        $elements = [array_flip(ConwaysElements::$sequence)[trim($input->current())]];
+        $elements = [array_flip(ConwaysElements::$sequence)[$input]];
         $result = [];
 
         while (0 < $times--) {

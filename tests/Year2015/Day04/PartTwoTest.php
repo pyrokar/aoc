@@ -22,7 +22,6 @@ class PartTwoTest extends SolutionTest
     {
         return [
             [['bgvyzdsv'], 1038736],
-
         ];
     }
 }

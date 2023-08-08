@@ -12,30 +12,26 @@ use function Safe\preg_match_all;
 class PartOne
 {
     /**
-     * @param Generator<int, string, void, void> $input
+     * @param string $input
      * @param int $times
      *
-     * @throws PcreException
-     *
      * @return int
-     *
+     * @throws PcreException
      */
-    public function __invoke(Generator $input, int $times): int
+    public function __invoke(string $input, int $times): int
     {
-        $string = trim($input->current());
-
         $result = '';
 
         while (0 < $times--) {
             $result = '';
-            preg_match_all('/(?P<m>(\d)\2*)/', $string, $m);
+            preg_match_all('/(?P<m>(\d)\2*)/', $input, $m);
 
             $numbers = is_array($m['m']) ? $m['m'] : [$m['m']];
 
             foreach ($numbers as $number) {
                 $result .= strlen($number).$number[0];
             }
-            $string = $result;
+            $input = $result;
         }
 
         return strlen($result);

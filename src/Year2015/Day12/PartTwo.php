@@ -9,15 +9,14 @@ use Generator;
 class PartTwo
 {
     /**
-     * @param Generator<int, string, void, void> $input
-     *
-     * @throws \JsonException
+     * @param string $input
      *
      * @return int
+     * @throws \JsonException
      */
-    public function __invoke(Generator $input): int
+    public function __invoke(string $input): int
     {
-        $json = json_decode($input->current(), false, 512, JSON_THROW_ON_ERROR);
+        $json = json_decode($input, false, 512, JSON_THROW_ON_ERROR);
 
         return $this->sumJson($json);
     }

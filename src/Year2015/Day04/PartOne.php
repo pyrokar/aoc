@@ -9,18 +9,14 @@ use Generator;
 class PartOne
 {
     /**
-     * @param Generator<int, string, void, void> $input
-     *
+     * @param string $secretKey
      * @return int
      */
-    public function __invoke(Generator $input): int
+    public function __invoke(string $secretKey): int
     {
-        $secretKey = $input->current();
-
         $i = 0;
 
         while (true) {
-
             $test = md5($secretKey . ++$i);
 
             if (str_starts_with($test, '00000')) {

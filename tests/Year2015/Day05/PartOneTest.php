@@ -6,6 +6,7 @@ namespace AOCTest\Year2015\Day05;
 
 use AOC\Year2015\Day05\PartOne;
 use AOC\Test\Util\SolutionTest;
+use Safe\Exceptions\FilesystemException;
 
 class PartOneTest extends SolutionTest
 {
@@ -14,16 +15,17 @@ class PartOneTest extends SolutionTest
 
     /**
      * @return array<int, array<mixed>>
+     * @throws FilesystemException
      */
     public function data(): array
     {
         return [
-            [['ugknbfddgicrmopn'], 1],
-            [['aaa'], 1],
-            [['jchzalrnumimnmhp'], 0],
-            [['haegwjzuvuyypxyu'], 0],
-            [['dvszwmarrgswjxmb'], 0],
-            [['input.txt'], 255],
+            [[$this->generatorFromString('ugknbfddgicrmopn')], 1],
+            [[$this->generatorFromString('aaa')], 1],
+            [[$this->generatorFromString('jchzalrnumimnmhp')], 0],
+            [[$this->generatorFromString('haegwjzuvuyypxyu')], 0],
+            [[$this->generatorFromString('dvszwmarrgswjxmb')], 0],
+            [[$this->generatorFromFile(__DIR__ . DS . 'input.txt')], 255],
         ];
     }
 }

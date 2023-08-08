@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace AOC\Year2015\Day10;
+namespace AOC\Util\Chemistry;
 
 final class Element
 {

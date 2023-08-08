@@ -21,9 +21,9 @@ class PartOneTest extends SolutionTest
     public function data(): array
     {
         return [
-            [['130'], 8],
-            [['120'], 6],
-            [['29000000'], 665280],
+            [[130], 8],
+            [[120], 6],
+            [[29000000], 665280],
         ];
     }
 }
