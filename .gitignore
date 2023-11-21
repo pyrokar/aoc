@@ -4,4 +4,4 @@ vendor
 !.idea/fileTemplates
 
 .php-cs-fixer.cache
-.phpunit.result.cache
+.phpunit.cache

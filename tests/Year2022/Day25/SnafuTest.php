@@ -11,7 +11,7 @@ use function AOC\Year2022\Day25\snafuToDec;
 
 class SnafuTest extends TestCase
 {
-    public function dataSnafuToDec(): array
+    public static function dataSnafuToDec(): array
     {
         return [
             ['1=-0-2', 1747],
@@ -36,7 +36,7 @@ class SnafuTest extends TestCase
         self::assertEquals($expectedDec, snafuToDec($snafu));
     }
 
-    public function dataDecToSnafu(): array
+    public static function dataDecToSnafu(): array
     {
         return [
             [1, '1'],
