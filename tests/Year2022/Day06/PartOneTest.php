@@ -7,9 +7,6 @@ namespace AOCTest\Year2022\Day06;
 use AOC\Year2022\Day06\PartOne;
 use AOC\Test\Util\SolutionTest;
 
-/**
- * @large
- */
 class PartOneTest extends SolutionTest
 {
     /** @var class-string */
@@ -21,12 +18,12 @@ class PartOneTest extends SolutionTest
     public function data(): array
     {
         return [
-            [['mjqjpqmgbljsphdztnvjfqwrcgsmlb'], 7],
-            [['bvwbjplbgvbhsrlpgdmjqwftvncz'], 5],
-            [['nppdvjthqldpwncqszvftbrmjlhg'], 6],
-            [['nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg'], 10],
-            [['zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw'], 11],
-            [['input'], 1142],
+            [[$this->generatorFromString('mjqjpqmgbljsphdztnvjfqwrcgsmlb')], 7],
+            [[$this->generatorFromString('bvwbjplbgvbhsrlpgdmjqwftvncz')], 5],
+            [[$this->generatorFromString('nppdvjthqldpwncqszvftbrmjlhg')], 6],
+            [[$this->generatorFromString('nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg')], 10],
+            [[$this->generatorFromString('zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw')], 11],
+            [[$this->generatorFromFile(__DIR__ . DS . 'input')], 1142],
         ];
     }
 }

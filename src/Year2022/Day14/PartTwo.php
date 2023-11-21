@@ -32,7 +32,7 @@ class PartTwo
             $l = count($points);
             for ($i = 0; $i < $l - 1; $i++) {
                 $p1 = explode(',', $points[$i]);
-                $p2 = explode(',', $points[$i+1]);
+                $p2 = explode(',', $points[$i + 1]);
 
                 if ($p1[1] > $maxY) {
                     $maxY = $p1[1];

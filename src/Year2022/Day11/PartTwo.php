@@ -22,7 +22,7 @@ class PartTwo
      * @throws PcreException
      * @throws JsonException
      *
-     * @return string
+     * @return int
      */
     public function __invoke(Generator $input): int
     {
@@ -32,7 +32,6 @@ class PartTwo
 
         for ($round = 0; $round < 10000; $round++) {
             foreach ($monkeys as $i => $monkey) {
-                // echo 'Monkey ' . $i . ':' . PHP_EOL;
                 while ($monkey->hasItems()) {
                     $monkey->inspectAndThrowItem($monkeys);
                 }

@@ -13,8 +13,10 @@ class PartOne
 {
     /**
      * @param string $password
-     * @return string
+     *
      * @throws PcreException
+     *
+     * @return string
      */
     public function __invoke(string $password): string
     {

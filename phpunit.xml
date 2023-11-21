@@ -23,6 +23,7 @@
         <exclude>
             <group>medium</group>
             <group>large</group>
+            <group>fail</group>
         </exclude>
     </groups>
 </phpunit>

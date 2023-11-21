@@ -14,8 +14,9 @@ class PartOne
     /**
      * @param string $input
      *
-     * @return int
      * @throws PcreException
+     *
+     * @return int
      */
     public function __invoke(string $input): int
     {

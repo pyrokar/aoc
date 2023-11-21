@@ -20,8 +20,8 @@ class PartTwoTest extends SolutionTest
     public function data(): array
     {
         return [
-            [['abc'], '05ace8e3'],
-            [['uqwqemis'], '694190cd'],
+            [[$this->generatorFromString('abc')], '05ace8e3'],
+            [[$this->generatorFromString('uqwqemis')], '694190cd'],
         ];
     }
 }

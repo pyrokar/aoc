@@ -19,14 +19,15 @@ class PartTwoTest extends SolutionTest
     public string $solutionClass = PartTwo::class;
 
     /**
-     * @return array<int, array<mixed>>
      * @throws FilesystemException
+     *
+     * @return array<int, array<mixed>>
      */
     public function data(): array
     {
         return [
-            [[$this->generatorFromFile(__DIR__ . DS . 'test.txt')], 982],
-            [[$this->generatorFromFile(__DIR__ . DS . 'input.txt')], 804],
+            [[$this->generatorFromFile(__DIR__ . DS . 'test')], 982],
+            [[$this->generatorFromFile(__DIR__ . DS . 'input')], 804],
         ];
     }
 }

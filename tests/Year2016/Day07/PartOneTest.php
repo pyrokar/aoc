@@ -16,8 +16,8 @@ class PartOneTest extends \AOC\Test\Util\SolutionTest
     public function data(): array
     {
         return [
-            [['test_part1'], 2],
-            [['input'], 118],
+            [[$this->generatorFromFile(__DIR__ . DS . 'test_part1')], 2],
+            [[$this->generatorFromFile(__DIR__ . DS . 'input')], 118],
         ];
     }
 }

@@ -14,14 +14,15 @@ class PartOneTest extends SolutionTest
     public string $solutionClass = PartOne::class;
 
     /**
-     * @return array<int, array<mixed>>
      * @throws FilesystemException
+     *
+     * @return array<int, array<mixed>>
      */
     public function data(): array
     {
         return [
-            [[$this->generatorFromFile(__DIR__ . DS . 'test.txt'), 1000], 1120],
-            [[$this->generatorFromFile(__DIR__ . DS . 'input.txt'), 2503], 2660],
+            [[$this->generatorFromFile(__DIR__ . DS . 'test'), 1000], 1120],
+            [[$this->generatorFromFile(__DIR__ . DS . 'input'), 2503], 2660],
         ];
     }
 }

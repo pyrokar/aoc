@@ -7,9 +7,6 @@ namespace AOCTest\Year2022\Day01;
 use AOC\Year2022\Day01\PartOne;
 use AOC\Test\Util\SolutionTest;
 
-/**
- * @large
- */
 class PartOneTest extends SolutionTest
 {
     /** @var class-string */
@@ -21,8 +18,8 @@ class PartOneTest extends SolutionTest
     public function data(): array
     {
         return [
-            [['test'], 24000],
-            [['input'], 71023],
+            [[$this->generatorFromFile(__DIR__ . DS . 'test')], 24000],
+            [[$this->generatorFromFile(__DIR__ . DS . 'input')], 71023],
         ];
     }
 }

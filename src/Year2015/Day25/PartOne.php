@@ -9,6 +9,7 @@ class PartOne
     /**
      * @param int $row
      * @param int $column
+     *
      * @return int
      */
     public function __invoke(int $row, int $column): int

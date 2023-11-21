@@ -8,7 +8,7 @@ use AOC\Year2022\Day11\PartOne;
 use AOC\Test\Util\SolutionTest;
 
 /**
- * @large
+ * @group fail
  */
 class PartOneTest extends SolutionTest
 {
@@ -21,8 +21,8 @@ class PartOneTest extends SolutionTest
     public function data(): array
     {
         return [
-            [['test'], 10605],
-            // [['input'], 151312],
+            [[$this->generatorFromFile(__DIR__ . DS . 'test')], 10605],
+            [[$this->generatorFromFile(__DIR__ . DS . 'input')], 151312],
         ];
     }
 }

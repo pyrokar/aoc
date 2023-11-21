@@ -11,8 +11,9 @@ class PartTwo
     /**
      * @param string $input
      *
-     * @return int
      * @throws \JsonException
+     *
+     * @return int
      */
     public function __invoke(string $input): int
     {

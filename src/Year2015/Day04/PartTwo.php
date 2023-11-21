@@ -10,6 +10,7 @@ class PartTwo
 {
     /**
      * @param string $secretKey
+     *
      * @return int
      */
     public function __invoke(string $secretKey): int

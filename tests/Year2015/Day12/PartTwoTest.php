@@ -14,8 +14,9 @@ class PartTwoTest extends SolutionTest
     public string $solutionClass = PartTwo::class;
 
     /**
-     * @return array<int, array<mixed>>
      * @throws FilesystemException
+     *
+     * @return array<int, array<mixed>>
      */
     public function data(): array
     {

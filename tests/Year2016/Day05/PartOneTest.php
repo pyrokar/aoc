@@ -19,8 +19,8 @@ class PartOneTest extends SolutionTest
     public function data(): array
     {
         return [
-            [['abc'], '18f47a30'],
-            [['uqwqemis'], '1a3099aa'],
+            [[$this->generatorFromString('abc')], '18f47a30'],
+            [[$this->generatorFromString('uqwqemis')], '1a3099aa'],
         ];
     }
 }

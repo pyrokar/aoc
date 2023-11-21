@@ -7,6 +7,7 @@ namespace AOC\Year2015\Day02;
 use Generator;
 
 use Safe\Exceptions\PcreException;
+
 use function AOC\Util\reduceInputByLine;
 use function Safe\preg_match;
 
@@ -15,8 +16,9 @@ class PartOne
     /**
      * @param Generator<int, string, void, void> $input
      *
-     * @return int
      * @throws PcreException
+     *
+     * @return int
      */
     public function __invoke(Generator $input): int
     {

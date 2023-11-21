@@ -14,8 +14,9 @@ class PartTwoTest extends SolutionTest
     public string $solutionClass = PartTwo::class;
 
     /**
-     * @return array<int, array<mixed>>
      * @throws FilesystemException
+     *
+     * @return array<int, array<mixed>>
      */
     public function data(): array
     {
@@ -23,7 +24,7 @@ class PartTwoTest extends SolutionTest
             [['^v'], 3],
             [['^>v<'], 3],
             [['^v^v^v^v^v'], 11],
-            [[$this->lineFromFile(__dir__ . DS . 'input.txt')], 2341],
+            [[$this->lineFromFile(__dir__ . DS . 'input')], 2341],
         ];
     }
 }

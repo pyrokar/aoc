@@ -14,8 +14,9 @@ class PartOneTest extends SolutionTest
     public string $solutionClass = PartOne::class;
 
     /**
-     * @return array<int, array<mixed>>
      * @throws FilesystemException
+     *
+     * @return array<int, array<mixed>>
      */
     public function data(): array
     {

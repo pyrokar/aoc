@@ -14,13 +14,13 @@ class PartOne
     private string $targetKey;
 
     /**
-     * @param Generator<void, string, void, void> $input
+     * @param string $input
      * @param int $x
      * @param int $y
      *
      * @return int
      */
-    public function __invoke(Generator $input, int $x, int $y): int
+    public function __invoke(string $input, int $x, int $y): int
     {
         $this->targetKey = Position2D::key($x, $y);
 

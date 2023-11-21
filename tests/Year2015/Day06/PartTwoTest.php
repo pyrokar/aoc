@@ -17,15 +17,16 @@ class PartTwoTest extends SolutionTest
     public string $solutionClass = PartTwo::class;
 
     /**
-     * @return array<int, array<mixed>>
      * @throws FilesystemException
+     *
+     * @return array<int, array<mixed>>
      */
     public function data(): array
     {
         return [
             [[$this->generatorFromString('turn on 0,0 through 0,0')], 1],
             [[$this->generatorFromString('toggle 0,0 through 999,999')], 2000000],
-            [[$this->generatorFromFile(__DIR__ . DS . 'input.txt')], 17836115],
+            [[$this->generatorFromFile(__DIR__ . DS . 'input')], 17836115],
         ];
     }
 }

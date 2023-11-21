@@ -6,14 +6,17 @@ namespace AOC\Year2015\Day20;
 
 use Generator;
 use Safe\Exceptions\InfoException;
+
 use function Safe\ini_set;
 
 class PartOne
 {
     /**
      * @param int $input
-     * @return int
+     *
      * @throws InfoException
+     *
+     * @return int
      */
     public function __invoke(int $input): int
     {

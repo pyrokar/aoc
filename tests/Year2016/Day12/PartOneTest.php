@@ -6,9 +6,10 @@ namespace AOCTest\Year2016\Day12;
 
 use AOC\Year2016\Day12\PartOne;
 use AOC\Test\Util\SolutionTest;
+use Safe\Exceptions\FilesystemException;
 
 /**
- * @large
+ * @medium
  */
 class PartOneTest extends SolutionTest
 {
@@ -16,13 +17,15 @@ class PartOneTest extends SolutionTest
     public string $solutionClass = PartOne::class;
 
     /**
+     * @throws FilesystemException
+     *
      * @return array<int, array<mixed>>
      */
     public function data(): array
     {
         return [
-            [['test'], 42],
-            [['input'], 318007],
+            [[$this->generatorFromFile(__DIR__ . DS . 'test')], 42],
+            [[$this->generatorFromFile(__DIR__ . DS . 'input')], 318007],
         ];
     }
 }

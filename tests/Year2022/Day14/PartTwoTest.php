@@ -21,8 +21,8 @@ class PartTwoTest extends SolutionTest
     public function data(): array
     {
         return [
-            [['test'], 93],
-            [['input'], 27623],
+            [[$this->generatorFromFile(__DIR__ . DS . 'test')], 93],
+            [[$this->generatorFromFile(__DIR__ . DS . 'input')], 27623],
         ];
     }
 }

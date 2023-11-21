@@ -7,9 +7,6 @@ namespace AOCTest\Year2016\Day13;
 use AOC\Year2016\Day13\PartTwo;
 use AOC\Test\Util\SolutionTest;
 
-/**
- * @large
- */
 class PartTwoTest extends SolutionTest
 {
     /** @var class-string */

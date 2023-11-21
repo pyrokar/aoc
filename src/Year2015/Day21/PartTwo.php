@@ -13,6 +13,7 @@ class PartTwo
      * @param int $bossDamage
      * @param int $bossArmor
      * @param int $playerHitpoints
+     *
      * @return int
      */
     public function __invoke(int $bossHitpoints, int $bossDamage, int $bossArmor, int $playerHitpoints): int

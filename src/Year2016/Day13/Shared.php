@@ -7,7 +7,6 @@ namespace AOC\Year2016\Day13;
 use AOC\Util\CompassDirection;
 use AOC\Util\Position2D;
 use SplQueue;
-use Generator;
 
 trait Shared
 {
@@ -26,11 +25,11 @@ trait Shared
     /**
      * Breadth First Search
      *
-     * @param Generator<void, string, void, void> $input
+     * @param string $input
      */
-    private function solve(Generator $input): void
+    private function solve(string $input): void
     {
-        $this->number = (int) trim($input->current());
+        $this->number = (int) $input;
 
         $this->distanceMap = [];
 

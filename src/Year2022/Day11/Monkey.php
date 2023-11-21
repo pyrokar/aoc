@@ -57,10 +57,8 @@ class Monkey
         }
 
         if ($item->isDivisibleBy($this->divisibleBy)) {
-            // echo '  is disvisible by ' . $this->divisibleBy . PHP_EOL;
             $monkeys[$this->trueToMonkey]->items[] = $item;
         } else {
-            // echo '  is not disvisible by ' . $this->divisibleBy . PHP_EOL;
             $monkeys[$this->falseToMonkey]->items[] = $item;
         }
     }

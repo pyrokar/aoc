@@ -14,15 +14,16 @@ class PartTwoTest extends SolutionTest
     public string $solutionClass = PartTwo::class;
 
     /**
-     * @return array<int, array<mixed>>
      * @throws FilesystemException
+     *
+     * @return array<int, array<mixed>>
      */
     public function data(): array
     {
         return [
             [[')'], 1],
             [['()())'], 5],
-            [[$this->lineFromFile(__DIR__ . DS . 'input.txt')], 1783],
+            [[$this->lineFromFile(__DIR__ . DS . 'input')], 1783],
         ];
     }
 }

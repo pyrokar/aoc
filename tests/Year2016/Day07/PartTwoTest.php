@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace AOCTest\Year2016\Day07;
 
 use AOC\Year2016\Day07\PartTwo;
+use Safe\Exceptions\FilesystemException;
 
 class PartTwoTest extends \AOC\Test\Util\SolutionTest
 {
@@ -12,12 +13,14 @@ class PartTwoTest extends \AOC\Test\Util\SolutionTest
 
     /**
      * @inheritDoc
+     *
+     * @throws FilesystemException
      */
     public function data(): array
     {
         return [
-            [['test_part2'], 3],
-            [['input'], 260],
+            [[$this->generatorFromFile(__DIR__ . DS . 'test_part2')], 3],
+            [[$this->generatorFromFile(__DIR__ . DS . 'input')], 260],
         ];
     }
 }

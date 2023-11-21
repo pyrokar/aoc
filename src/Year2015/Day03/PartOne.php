@@ -12,6 +12,7 @@ class PartOne
 
     /**
      * @param string $input
+     *
      * @return int
      */
     public function __invoke(string $input): int

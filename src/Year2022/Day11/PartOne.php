@@ -28,7 +28,6 @@ class PartOne
 
         for ($round = 0; $round < 20; $round++) {
             foreach ($monkeys as $i => $monkey) {
-                echo 'Monkey ' . $i . ':' . PHP_EOL;
                 while ($monkey->hasItems()) {
                     $monkey->inspectAndThrowItem($monkeys, true);
                 }

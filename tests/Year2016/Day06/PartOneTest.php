@@ -4,20 +4,24 @@ declare(strict_types=1);
 
 namespace AOCTest\Year2016\Day06;
 
+use AOC\Test\Util\SolutionTest;
 use AOC\Year2016\Day06\PartOne;
+use Safe\Exceptions\FilesystemException;
 
-class PartOneTest extends \AOC\Test\Util\SolutionTest
+class PartOneTest extends SolutionTest
 {
     protected string $solutionClass = PartOne::class;
 
     /**
      * @inheritDoc
+     *
+     * @throws FilesystemException
      */
     public function data(): array
     {
         return [
-            [['test'], 'easter'],
-            [['input'], 'ygjzvzib'],
+            [[$this->generatorFromFile(__DIR__ . DS . 'test')], 'easter'],
+            [[$this->generatorFromFile(__DIR__ . DS . 'input')], 'ygjzvzib'],
         ];
     }
 }
