@@ -11,9 +11,10 @@ class MinGraph
      */
     private array $adjacencyList = [];
 
-    public function __construct(private readonly string $sep = '_')
-    {
-    }
+    /**
+     * @param non-empty-string $sep
+     */
+    public function __construct(private readonly string $sep = '_') {}
 
     public function addVertex(string $vertex): void
     {

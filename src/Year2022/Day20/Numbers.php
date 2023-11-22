@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace AOC\Year2022\Day20;
 
+use Exception;
+
 class Numbers
 {
     public int $length = 0;
@@ -37,7 +39,7 @@ class Numbers
         $this->list[] = $n;
         $this->length++;
 
-        if (!$this->head) {
+        if (!$this->head || !$this->tail) {
             $this->head = $n;
             $this->tail = $n;
         } else {
@@ -55,9 +57,6 @@ class Numbers
     {
         foreach ($this->list as $node) {
             $this->move($node);
-
-            //echo "after " . $node->number . PHP_EOL;
-            //$this->print();
         }
     }
 
@@ -101,8 +100,15 @@ class Numbers
         $a = 0;
     }
 
+    /**
+     * @throws Exception
+     */
     public function getNthNumber(int $n): int
     {
+        if (!$this->zero) {
+            throw new Exception();
+        }
+
         $node = $this->zero;
         for ($i = 0; $i < $n; $i++) {
             $node = $node->next;
@@ -114,6 +120,11 @@ class Numbers
     public function print(): void
     {
         $pos = $this->head;
+
+        if (!$pos) {
+            echo '--empty--' . PHP_EOL;
+            return;
+        }
 
         do {
             echo $pos->number . PHP_EOL;

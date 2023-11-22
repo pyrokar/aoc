@@ -19,15 +19,17 @@ function array_sort(array $array, int $flags = SORT_REGULAR): array
 }
 
 /**
- * @param callable(int, mixed, mixed...): void | null $callback
- * @param array $array
- * @param array ...$arrays
+ * @template TKey of (int|string)
+ * @template TValue
  *
- * @return array
+ * @param callable(TKey, TValue): void | null $callback
+ * @param array<TKey, TValue> $array
+ *
+ * @return array<mixed>
  */
-function array_map_key(?callable $callback, array $array, array ...$arrays): array
+function array_map_key(?callable $callback, array $array): array
 {
-    return array_map($callback, array_keys($array), $array, ...$arrays);
+    return array_map($callback, array_keys($array), $array);
 }
 
 /**
@@ -40,7 +42,7 @@ function array_map_key(?callable $callback, array $array, array ...$arrays): arr
 function max_value_keys(array $array): array
 {
     $maxValue = max($array);
-    return array_keys(array_filter($array, static fn ($el) => $el === $maxValue));
+    return array_keys(array_filter($array, static fn($el) => $el === $maxValue));
 }
 
 /**

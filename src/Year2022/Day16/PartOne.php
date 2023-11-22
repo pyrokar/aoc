@@ -65,7 +65,7 @@ class PartOne
             }
 
             if (!empty($newPaths)) {
-                uasort($newPaths, static fn (Path $p1, Path $p2) => $p2->pressure <=> $p1->pressure);
+                uasort($newPaths, static fn(Path $p1, Path $p2) => $p2->pressure <=> $p1->pressure);
 
                 $topPressure = current($newPaths)->pressure;
                 if ($topPressure > $max) {

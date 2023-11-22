@@ -9,9 +9,9 @@ use Generator;
 class PartOne
 {
     /**
-     * @param Generator<void, string, void, void> $input
+     * @param Generator<string> $input
      *
-     * @return int
+     * @return string
      */
     public function __invoke(Generator $input): string
     {

@@ -11,8 +11,7 @@ class Dimension2D
         public int $xMax,
         public int $yMin,
         public int $yMax,
-    ) {
-    }
+    ) {}
 
     public function expand(int $x, int $y): void
     {

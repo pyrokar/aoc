@@ -17,7 +17,7 @@ class PartTwo
     use Util;
 
     /**
-     * @param Generator<void, string, void, void> $input
+     * @param Generator<string> $input
      *
      * @throws PcreException
      * @throws JsonException
@@ -38,7 +38,7 @@ class PartTwo
             }
         }
 
-        usort($monkeys, fn (Monkey $m1, Monkey $m2) => $m2->countInspections <=> $m1->countInspections);
+        usort($monkeys, fn(Monkey $m1, Monkey $m2) => $m2->countInspections <=> $m1->countInspections);
 
         return $monkeys[0]->countInspections * $monkeys[1]->countInspections;
 

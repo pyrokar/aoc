@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace AOC\Year2015\Day04;
 
-use Generator;
-
 class PartTwo
 {
     /**

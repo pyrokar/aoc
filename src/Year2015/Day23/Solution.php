@@ -12,7 +12,7 @@ trait Solution
     /**
      * @param Generator<int, string> $input
      * @param string $register
-     * @param array $initRegisters
+     * @param array<string, int> $initRegisters
      *
      * @return int
      */

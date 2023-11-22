@@ -17,7 +17,7 @@ class PartTwo extends AStar
     use Neighbors;
 
     /**
-     * @param Generator<void, string, void, void> $input
+     * @param Generator<int, string> $input
      *
      * @throws ArrayException
      *

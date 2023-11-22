@@ -6,12 +6,16 @@ namespace AOC\Year2022\Day04;
 
 use Generator;
 
-use function Safe\preg_match_all;
+use Safe\Exceptions\PcreException;
+
+use function Safe\preg_match;
 
 class PartOne
 {
     /**
      * @param Generator<void, string, void, void> $input
+     *
+     * @throws PcreException
      *
      * @return int
      */

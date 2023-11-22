@@ -9,6 +9,12 @@ use AOC\Util\Position2D;
 
 trait Util
 {
+    /**
+     * @param Position2D $position
+     * @param CompassDirection $direction
+     *
+     * @return list<string>
+     */
     protected function getNeighborKeysForDirection(Position2D $position, CompassDirection $direction): array
     {
         return match ($direction) {

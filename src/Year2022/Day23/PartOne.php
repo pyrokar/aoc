@@ -23,18 +23,14 @@ class PartOne
 
         /** @var array<int, array<string, Position2D>> $elfPositions */
         $elfPositions = [0 => []];
-        $dimensions = null;
+        $dimensions = new Dimension2D(0, 0, 0, 0);
 
         foreach ($input as $y => $line) {
             foreach (str_split($line) as $x => $char) {
                 if ($char === '#') {
                     $elfPositions[0][Position2D::key($x, $y)] = new Position2D($x, $y);
 
-                    if (!$dimensions) {
-                        $dimensions = new Dimension2D($x, $x + 1, $y, $y + 1);
-                    } else {
-                        $dimensions->expand($x, $y);
-                    }
+                    $dimensions->expand($x, $y);
                 }
             }
         }
@@ -47,7 +43,7 @@ class PartOne
             $lastElfPositions = $elfPositions[$round - 1];
 
             foreach ($lastElfPositions as $elfPosition) {
-                $neighborElves = array_filter($elfPosition->getNeighborKeys(), static fn (string $neighborKey) => isset($lastElfPositions[$neighborKey]));
+                $neighborElves = array_filter($elfPosition->getNeighborKeys(), static fn(string $neighborKey) => isset($lastElfPositions[$neighborKey]));
 
                 if (empty($neighborElves)) {
                     $newPositions[$elfPosition->getKey()] = [$elfPosition];
@@ -59,7 +55,7 @@ class PartOne
                 $elfMoved = false;
 
                 for ($i = 0; $i < 4; $i++) {
-                    $adjacentElves = array_filter($this->getNeighborKeysForDirection($elfPosition, $elfDirection), static fn (string $neighborKey) => isset($lastElfPositions[$neighborKey]));
+                    $adjacentElves = array_filter($this->getNeighborKeysForDirection($elfPosition, $elfDirection), static fn(string $neighborKey) => isset($lastElfPositions[$neighborKey]));
 
                     if (empty($adjacentElves)) {
                         $newPosition = $elfPosition->getPositionForDirection($elfDirection);

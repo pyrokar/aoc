@@ -6,13 +6,16 @@ namespace AOC\Year2015\Day22;
 
 trait WizardGame
 {
+    /** @var array<string, array{cost: int, damage?: int, heal?: int, turns: int}>  */
     protected array $spellsStats = [
-        'magicMissile' => ['cost' => 53, 'damage' => 4],
-        'drain' => ['cost' => 73, 'damage' => 2, 'heal' => 2],
+        'magicMissile' => ['cost' => 53, 'damage' => 4, 'turns' => 0],
+        'drain' => ['cost' => 73, 'damage' => 2, 'heal' => 2, 'turns' => 0],
         'shield' => ['cost' => 113, 'armor' => 7, 'turns' => 6],
         'poison' => ['cost' => 173, 'damage' => 3, 'turns' => 6],
         'recharge' => ['cost' => 229, 'mana' => 101, 'turns' => 5],
     ];
+
+    /** @var list<string>  */
     protected array $spells = ['magicMissile', 'drain', 'shield', 'poison', 'recharge'];
     protected int $bossDamage;
     protected int $minCost;
@@ -76,7 +79,7 @@ trait WizardGame
 
         // cast spell
         foreach ($this->spells as $spell) {
-            if (isset($newState->activeSpells[$spell])) {
+            if (isset($state->activeSpells[$spell])) {
                 continue;
             }
 

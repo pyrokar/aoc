@@ -11,6 +11,5 @@ class Point2D
     public function __construct(
         readonly public int $x,
         readonly public int $y,
-    ) {
-    }
+    ) {}
 }

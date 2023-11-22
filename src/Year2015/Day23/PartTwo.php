@@ -11,7 +11,7 @@ class PartTwo
     use Solution;
 
     /**
-     * @param Generator<int, string, void, void> $input
+     * @param Generator<int, string> $input
      * @param string $register
      *
      * @return int

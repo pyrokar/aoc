@@ -30,7 +30,7 @@ class PartOne
             $numbers = is_array($m['m']) ? $m['m'] : [$m['m']];
 
             foreach ($numbers as $number) {
-                $result .= strlen($number).$number[0];
+                $result .= strlen($number) . $number[0];
             }
             $input = $result;
         }

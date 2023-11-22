@@ -5,13 +5,16 @@ declare(strict_types=1);
 namespace AOC\Year2015\Day07;
 
 use Generator;
+use Safe\Exceptions\PcreException;
 
 class PartOne
 {
     use Wires;
 
     /**
-     * @param Generator<int, string, void, void> $input
+     * @param Generator<string> $input
+     *
+     * @throws PcreException
      *
      * @return int
      */

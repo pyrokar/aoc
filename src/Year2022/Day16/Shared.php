@@ -7,6 +7,10 @@ namespace AOC\Year2022\Day16;
 use AOC\Util\ShortestPath\AStar;
 use Generator;
 
+use Safe\Exceptions\PcreException;
+
+use function Safe\preg_match;
+
 trait Shared
 {
     /**
@@ -20,6 +24,8 @@ trait Shared
 
     /**
      * @param Generator<int, string> $input
+     *
+     * @throws PcreException
      *
      * @return void
      */

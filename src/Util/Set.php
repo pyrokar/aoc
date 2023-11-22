@@ -14,9 +14,7 @@ class Set
     /**
      * @param List<T> $array
      */
-    public function __construct(private array $array = [])
-    {
-    }
+    public function __construct(private array $array = []) {}
 
     /**
      * @param T $element

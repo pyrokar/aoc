@@ -6,12 +6,19 @@ namespace AOC\Year2022\Day13;
 
 use Generator;
 
+use Safe\Exceptions\JsonException;
+
+use function Safe\json_decode;
+
 class PartOne
 {
     use Comparator;
 
     /**
-     * @param Generator<void, string, void, void> $input
+     * @param Generator<string> $input
+     *
+     * @throws JsonException
+     * @throws \JsonException
      *
      * @return int
      */
@@ -29,10 +36,12 @@ class PartOne
 
             $pairIndex++;
 
-            $first = json_decode($line);
+            /** @var array<mixed> $first */
+            $first = json_decode($line, true, 512, JSON_THROW_ON_ERROR);
             $input->next();
             $line = $input->current();
-            $second = json_decode($line);
+            /** @var array<mixed> $second */
+            $second = json_decode($line, true, 512, JSON_THROW_ON_ERROR);
 
             if ($this->compare($first, $second) === -1) {
                 $sum += $pairIndex;

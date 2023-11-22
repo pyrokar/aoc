@@ -8,6 +8,7 @@ class Path
 {
     public static int $totalMinutes = 0;
 
+    /** @var array<string, string> */
     public array $positions = [];
 
     /**
@@ -17,6 +18,9 @@ class Path
 
     public int $pressure = 0;
 
+    /**
+     * @param array<string, string> $startPositions
+     */
     public function __construct(array $startPositions)
     {
         $this->positions = $startPositions;

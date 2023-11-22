@@ -8,6 +8,7 @@ use Generator;
 
 trait Shared
 {
+    /** @var array<string, array<string, int>> $ingredients */
     protected array $ingredients;
 
     /**

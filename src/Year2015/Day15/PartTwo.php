@@ -14,7 +14,7 @@ class PartTwo
     use Shared;
 
     /**
-     * @param Generator<int, string, void, void> $input
+     * @param Generator<string> $input
      *
      * @throws PcreException
      *
@@ -29,7 +29,7 @@ class PartTwo
                 continue;
             }
 
-            $this->ingredients[$m['ingredient']] = [
+            $this->ingredients[(string) $m['ingredient']] = [
                 'capacity' => (int) $m['capacity'],
                 'durability' => (int) $m['durability'],
                 'flavor' => (int) $m['flavor'],
@@ -53,6 +53,11 @@ class PartTwo
         return $maxScore;
     }
 
+    /**
+     * @param array<int, int> $amounts
+     *
+     * @return int
+     */
     private function calculateCalories(array $amounts): int
     {
         $calories = 0;

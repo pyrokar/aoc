@@ -10,7 +10,10 @@ use Generator;
 
 trait Solution
 {
+    /** @var non-empty-list<RockShape>  */
     protected static array $rockShapes;
+
+    /** @var array<string, int>  */
     protected array $ground;
     protected int $height;
 
@@ -90,6 +93,12 @@ trait Solution
         return false;
     }
 
+    /**
+     * @param Generator<string> $input
+     * @param int $rounds
+     *
+     * @return int
+     */
     private function getHeight(Generator $input, int $rounds): int
     {
         self::initRockShapes();

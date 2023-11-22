@@ -6,6 +6,7 @@ namespace AOC\Year2022\Day24;
 
 use AOC\Util\CompassDirection;
 use AOC\Util\Position2D;
+use Exception;
 use Generator;
 
 /**
@@ -13,13 +14,18 @@ use Generator;
  */
 trait Solution
 {
-    /** @var array<string, int> $blizzardKeys */
+    /** @var array<string, int> $wallKeys */
     protected array $wallKeys;
+
     /** @var array<string, int> $blizzardKeys */
     protected array $blizzardKeys;
+
     /** @var array<Blizzard> */
     protected array $blizzards;
 
+    /**
+     * @var array<string, Position2D>
+     */
     protected array $positions;
 
     protected int $maxX;
@@ -27,6 +33,8 @@ trait Solution
 
     /**
      * @param Generator<int, string, void, void> $input
+     *
+     * @throws Exception
      *
      * @return Position2D
      */
@@ -55,13 +63,19 @@ trait Solution
                     '>' => new Blizzard($x, $y, CompassDirection::East),
                     '<' => new Blizzard($x, $y, CompassDirection::West),
                     '^' => new Blizzard($x, $y, CompassDirection::North),
-                    'v' => new Blizzard($x, $y, CompassDirection::South)
+                    'v' => new Blizzard($x, $y, CompassDirection::South),
+                    default => throw new Exception(),
                 };
 
                 $this->blizzards[] = $newBlizzard;
                 $this->blizzardKeys[$newBlizzard->getKey()] = 1;
             }
         }
+
+        if (!isset($end)) {
+            throw new Exception();
+        }
+
         return $end;
     }
 
@@ -82,7 +96,7 @@ trait Solution
         $this->blizzardKeys = $newBlizzardKeys;
     }
 
-    protected function findMinDistance(Position2D $start, Position2D $end, $currentMinute = 0): int
+    protected function findMinDistance(Position2D $start, Position2D $end, int $currentMinute = 0): int
     {
         $newPositions = [];
         $lastPositions = [$start];

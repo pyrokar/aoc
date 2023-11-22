@@ -13,7 +13,7 @@ class PartTwo
     use Util;
 
     /**
-     * @param Generator<void, string, void, void> $input
+     * @param Generator<int, string> $input
      *
      * @return int
      */
@@ -21,20 +21,16 @@ class PartTwo
     {
         Position2D::invertY();
 
-        /** @var array<int, array<string, Position2D>> $elfPositions */
+        /** @var array<string, Position2D> $lastElfPositions */
         $lastElfPositions = [];
-        $dimensions = null;
+        $dimensions = new Dimension2D(0, 0, 0, 0);
 
         foreach ($input as $y => $line) {
             foreach (str_split($line) as $x => $char) {
                 if ($char === '#') {
                     $lastElfPositions[Position2D::key($x, $y)] = new Position2D($x, $y);
 
-                    if (!$dimensions) {
-                        $dimensions = new Dimension2D($x, $x + 1, $y, $y + 1);
-                    } else {
-                        $dimensions->expand($x, $y);
-                    }
+                    $dimensions->expand($x, $y);
                 }
             }
         }
@@ -49,7 +45,7 @@ class PartTwo
             $newPositions = [];
 
             foreach ($lastElfPositions as $elfPosition) {
-                $neighborElves = array_filter($elfPosition->getNeighborKeys(), static fn (string $neighborKey) => isset($lastElfPositions[$neighborKey]));
+                $neighborElves = array_filter($elfPosition->getNeighborKeys(), static fn(string $neighborKey) => isset($lastElfPositions[$neighborKey]));
 
                 if (empty($neighborElves)) {
                     $newPositions[$elfPosition->getKey()] = [$elfPosition];
@@ -61,7 +57,7 @@ class PartTwo
                 $elfMoved = false;
 
                 for ($i = 0; $i < 4; $i++) {
-                    $adjacentElves = array_filter($this->getNeighborKeysForDirection($elfPosition, $elfDirection), static fn (string $neighborKey) => isset($lastElfPositions[$neighborKey]));
+                    $adjacentElves = array_filter($this->getNeighborKeysForDirection($elfPosition, $elfDirection), static fn(string $neighborKey) => isset($lastElfPositions[$neighborKey]));
 
                     if (empty($adjacentElves)) {
                         $newPosition = $elfPosition->getPositionForDirection($elfDirection);

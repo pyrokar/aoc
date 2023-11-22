@@ -13,7 +13,7 @@ use Generator;
  * @param callable(R, string): R $callback
  * @param R $initial
  *
- * @return int
+ * @return R
  */
 function reduceInputByLine(Generator $input, callable $callback, mixed $initial = null): mixed
 {

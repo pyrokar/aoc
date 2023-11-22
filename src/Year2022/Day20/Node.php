@@ -11,6 +11,5 @@ class Node
 
     public function __construct(
         public int $number
-    ) {
-    }
+    ) {}
 }

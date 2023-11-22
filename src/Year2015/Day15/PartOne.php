@@ -29,7 +29,7 @@ class PartOne
                 continue;
             }
 
-            $this->ingredients[$m['ingredient']] = [
+            $this->ingredients[(string) $m['ingredient']] = [
                 'capacity' => (int) $m['capacity'],
                 'durability' => (int) $m['durability'],
                 'flavor' => (int) $m['flavor'],

@@ -8,6 +8,7 @@ use AOC\Util\Position2D;
 
 trait Neighbors
 {
+    /** @var array<string, int> */
     private array $heightMap;
 
     protected function getNeighbors(Position2D $current): array

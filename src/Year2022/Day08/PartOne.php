@@ -10,7 +10,7 @@ use Generator;
 class PartOne
 {
     /**
-     * @param Generator<void, string, void, void> $input
+     * @param Generator<int, string> $input
      * @param int $gridSize
      *
      * @return int

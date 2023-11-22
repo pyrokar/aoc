@@ -13,7 +13,11 @@ use function Safe\preg_replace;
 trait CalculateDirSize
 {
     /**
+     * @param Generator<string> $input
+     *
      * @throws PcreException
+     *
+     * @return array<string, int>
      */
     protected function calculateDirSize(Generator $input): array
     {
@@ -47,12 +51,12 @@ trait CalculateDirSize
 
             if (preg_match('/dir (?<dir>.*)/', $line, $m)) {
                 $dir = $m['dir'];
-                $ls[$cwd][] = ['dir' => ($cwd === '/') ? $cwd . $dir : $cwd . '/' . $dir];
+                $ls[$cwd][] = new Dir(($cwd === '/') ? $cwd . $dir : $cwd . '/' . $dir);
             }
 
             if (preg_match('/(?<size>\d+) .*/', $line, $m)) {
                 $size = (int) $m['size'];
-                $ls[$cwd][] = ['size' => $size];
+                $ls[$cwd][] = new File($size);
             }
         }
 
@@ -65,12 +69,34 @@ trait CalculateDirSize
         return $dirSizes;
     }
 
+    /**
+     * @param array<File|Dir> $dir
+     * @param array<string, array<File|Dir>> $dirs
+     *
+     * @return int
+     */
     private function totalSize(array $dir, array $dirs): int
     {
         $size = 0;
         foreach ($dir as $entry) {
-            $size += $entry['size'] ?? $this->totalSize($dirs[$entry['dir']], $dirs);
+            $size += $entry instanceof File ? $entry->size : $this->totalSize($dirs[$entry->name], $dirs);
         }
         return $size;
     }
+}
+
+class File
+{
+    public function __construct(
+        public readonly int $size,
+    ) {}
+
+}
+
+class Dir
+{
+    public function __construct(
+        public readonly string $name
+    ) {}
+
 }

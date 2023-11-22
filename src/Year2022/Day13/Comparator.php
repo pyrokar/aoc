@@ -6,9 +6,15 @@ namespace AOC\Year2022\Day13;
 
 trait Comparator
 {
+    /**
+     * @param array<mixed> $first
+     * @param array<mixed> $second
+     *
+     * @return int
+     */
     private function compare(array $first, array $second): int
     {
-        for ($i = 0; $i >= 0; $i++) {
+        for ($i = 0; ; $i++) {
             if (!isset($first[$i]) && !isset($second[$i])) {
                 return 0;
             }

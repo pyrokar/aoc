@@ -13,7 +13,7 @@ use Safe\Exceptions\PcreException;
 class PartTwo
 {
     /**
-     * @param Generator<void, string, void, void> $input
+     * @param Generator<int, string> $input
      *
      * @throws PcreException
      *

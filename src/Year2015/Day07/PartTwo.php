@@ -5,13 +5,16 @@ declare(strict_types=1);
 namespace AOC\Year2015\Day07;
 
 use Generator;
+use Safe\Exceptions\PcreException;
 
 class PartTwo
 {
     use Wires;
 
     /**
-     * @param Generator<int, string, void, void> $input
+     * @param Generator<string> $input
+     *
+     * @throws PcreException
      *
      * @return int
      */
@@ -22,7 +25,7 @@ class PartTwo
         $a = $this->wires->get('a');
 
         $this->wires->resetCache();
-        $this->wires->set('b', static fn (): int => $a);
+        $this->wires->set('b', static fn(): int => $a);
 
         return $this->wires->get('a');
     }

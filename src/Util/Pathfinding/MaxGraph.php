@@ -11,9 +11,10 @@ class MaxGraph
      */
     private array $adjacencyList = [];
 
-    public function __construct(private readonly string $sep = '_')
-    {
-    }
+    /**
+     * @param non-empty-string $sep
+     */
+    public function __construct(private readonly string $sep = '_') {}
 
     public function addVertex(string $vertex): void
     {
@@ -46,7 +47,15 @@ class MaxGraph
         $maxPathValue = $this->maxPath($start);
         $lastCost = end($this->cost);
 
+        if (!$lastCost) {
+            return 0;
+        }
+
         $maxEdge = array_search($maxPathValue, $lastCost, true);
+
+        if (!$maxEdge) {
+            return 0;
+        }
         $maxPath = explode($this->sep, $maxEdge);
 
         return $lastCost[$maxEdge] + $this->adjacencyList[reset($maxPath)][end($maxPath)];

@@ -19,8 +19,7 @@ class Position2D
         public int $x,
         public int $y,
         public mixed $payload = null,
-    ) {
-    }
+    ) {}
 
     public static function fromKey(string $key): self
     {
@@ -81,10 +80,10 @@ class Position2D
         $this->move($direction, $distance);
 
         return match ($direction) {
-            CompassDirection::North => array_map(static fn ($step) => new Point2D($startX, $startY + $step), $steps),
-            CompassDirection::East  => array_map(static fn ($step) => new Point2D($startX + $step, $startY), $steps),
-            CompassDirection::South => array_map(static fn ($step) => new Point2D($startX, $startY - $step), $steps),
-            CompassDirection::West  => array_map(static fn ($step) => new Point2D($startX - $step, $startY), $steps),
+            CompassDirection::North => array_map(static fn($step) => new Point2D($startX, $startY + $step), $steps),
+            CompassDirection::East  => array_map(static fn($step) => new Point2D($startX + $step, $startY), $steps),
+            CompassDirection::South => array_map(static fn($step) => new Point2D($startX, $startY - $step), $steps),
+            CompassDirection::West  => array_map(static fn($step) => new Point2D($startX - $step, $startY), $steps),
         };
     }
 
@@ -110,7 +109,7 @@ class Position2D
      */
     public function getOrthogonalNeighbors(): array
     {
-        return array_map(fn (CompassDirection $dir) => $this->getPositionForDirection($dir), CompassDirection::cases());
+        return array_map(fn(CompassDirection $dir) => $this->getPositionForDirection($dir), CompassDirection::cases());
     }
 
     /**

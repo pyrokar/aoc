@@ -11,12 +11,11 @@ use Safe\Exceptions\ArrayException;
 
 class PartTwo
 {
+    /** @var array<string, string> */
     private array $cave;
 
     /**
      * @param Generator<void, string, void, void> $input
-     *
-     * @throws ArrayException
      *
      * @return int
      */
@@ -35,10 +34,10 @@ class PartTwo
                 $p2 = explode(',', $points[$i + 1]);
 
                 if ($p1[1] > $maxY) {
-                    $maxY = $p1[1];
+                    $maxY = (int) $p1[1];
                 }
                 if ($p2[1] > $maxY) {
-                    $maxY = $p2[1];
+                    $maxY = (int) $p2[1];
                 }
 
                 $start = new Position2D((int) $p1[0], (int) $p1[1]);

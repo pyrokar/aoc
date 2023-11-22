@@ -21,8 +21,7 @@ class AStar
     public function __construct(
         private readonly Closure $getNeighbors,
         private readonly Closure $getDistance
-    ) {
-    }
+    ) {}
 
     /**
      * @param TString $start

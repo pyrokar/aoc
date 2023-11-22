@@ -6,6 +6,7 @@ namespace AOC\Year2015\Day03;
 
 use AOC\Util\CompassDirection;
 use AOC\Util\Position2D;
+use Exception;
 
 trait Deliver
 {
@@ -18,6 +19,8 @@ trait Deliver
      * @param Position2D $position
      * @param string $dir
      *
+     * @throws Exception
+     *
      * @return Position2D new Position
      */
     protected function deliver(Position2D $position, string $dir): Position2D
@@ -27,6 +30,7 @@ trait Deliver
             '>' => CompassDirection::East,
             'v' => CompassDirection::South,
             '<' => CompassDirection::West,
+            default => throw new Exception(),
         }, 1);
 
         $key = $position->getKey();

@@ -6,6 +6,7 @@ namespace AOC\Year2022\Day12;
 
 use AOC\Util\Pathfinding\AStar;
 use AOC\Util\Position2D;
+use Exception;
 use Generator;
 
 class PartOne extends AStar
@@ -13,7 +14,9 @@ class PartOne extends AStar
     use Neighbors;
 
     /**
-     * @param Generator<void, string, void, void> $input
+     * @param Generator<int, string> $input
+     *
+     * @throws Exception
      *
      * @return int
      */
@@ -36,6 +39,10 @@ class PartOne extends AStar
                 $key = Position2D::key($x, $y);
                 $this->heightMap[$key] = $charToHeight[$char];
             }
+        }
+
+        if (!$start) {
+            throw new Exception();
         }
 
         return $this->findMinDistance($start);

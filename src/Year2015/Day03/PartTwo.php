@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace AOC\Year2015\Day03;
 
 use AOC\Util\Position2D;
-use Generator;
+use Exception;
 
 class PartTwo
 {
@@ -13,6 +13,8 @@ class PartTwo
 
     /**
      * @param string $input
+     *
+     * @throws Exception
      *
      * @return int
      */

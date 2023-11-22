@@ -97,7 +97,5 @@ trait Shared
         return false;
     }
 
-    protected function processPoint(Position2D $point, int $distance): void
-    {
-    }
+    protected function processPoint(Position2D $point, int $distance): void {}
 }

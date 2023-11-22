@@ -10,7 +10,7 @@ class Monkey
 
     /**
      * @param array<ModuloNumber> $items
-     * @param array $operation
+     * @param array<mixed> $operation
      * @param int $divisibleBy
      * @param int $trueToMonkey
      * @param int $falseToMonkey
@@ -21,8 +21,7 @@ class Monkey
         public readonly int    $divisibleBy,
         private readonly int    $trueToMonkey,
         private readonly int    $falseToMonkey,
-    ) {
-    }
+    ) {}
 
     public function hasItems(): bool
     {

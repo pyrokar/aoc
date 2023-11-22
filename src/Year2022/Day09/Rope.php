@@ -10,13 +10,13 @@ use AOC\Util\Position2D;
 class Rope
 {
     public Position2D $head;
-    public Position2D $tail;
 
     /**
      * @var array<Position2D>
      */
     public array $knots = [];
 
+    /** @var array{x: array{int, int}, y: array{int, int}}  */
     private array $dimensions = ['x' => [0, 0], 'y' => [0, 0]];
 
     public function __construct(private readonly int $length = 1)

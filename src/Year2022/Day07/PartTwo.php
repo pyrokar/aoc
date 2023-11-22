@@ -13,7 +13,7 @@ class PartTwo
     use CalculateDirSize;
 
     /**
-     * @param Generator<void, string, void, void> $input
+     * @param Generator<string> $input
      *
      * @throws PcreException
      *

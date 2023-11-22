@@ -17,8 +17,7 @@ class RockShape
         private readonly array $rockPositions,
         public readonly int    $width,
         public readonly int    $height,
-    ) {
-    }
+    ) {}
 
     /**
      * @param Position2D $position
@@ -27,7 +26,7 @@ class RockShape
      */
     public function getPositionKeys(Position2D $position): array
     {
-        return array_flip(array_map(fn ($rockPosition) => $this->addPositions($position, $rockPosition)->getKey(), $this->rockPositions));
+        return array_flip(array_map(fn($rockPosition) => $this->addPositions($position, $rockPosition)->getKey(), $this->rockPositions));
     }
 
     /**

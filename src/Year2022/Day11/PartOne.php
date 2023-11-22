@@ -15,7 +15,7 @@ class PartOne
     use Util;
 
     /**
-     * @param Generator<void, string, void, void> $input
+     * @param Generator<string> $input
      *
      * @throws PcreException
      * @throws JsonException
@@ -29,12 +29,12 @@ class PartOne
         for ($round = 0; $round < 20; $round++) {
             foreach ($monkeys as $i => $monkey) {
                 while ($monkey->hasItems()) {
-                    $monkey->inspectAndThrowItem($monkeys, true);
+                    $monkey->inspectAndThrowItem($monkeys);
                 }
             }
         }
 
-        usort($monkeys, fn (Monkey $m1, Monkey $m2) => $m2->countInspections <=> $m1->countInspections);
+        usort($monkeys, fn(Monkey $m1, Monkey $m2) => $m2->countInspections <=> $m1->countInspections);
 
         return $monkeys[0]->countInspections * $monkeys[1]->countInspections;
     }
