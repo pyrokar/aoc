@@ -38,7 +38,7 @@
 		}
 	},
 	"scripts": {
-		"phpstan": "./vendor/bin/phpstan analyse",
+		"phpstan": "./vendor/bin/phpstan --memory-limit=512M analyse",
 		"phpstan-generate-baseline": "./vendor/bin/phpstan analyse --generate-baseline",
 		"fix-style": "./vendor/bin/php-cs-fixer fix",
 		"test-fast": "./vendor/bin/phpunit -c phpunit.xml"

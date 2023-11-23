@@ -22,6 +22,7 @@ trait Solution
         $possibleKeys = [];
         $keysFound = 0;
 
+        /** @var list<int> $keysFoundIndex */
         $keysFoundIndex = [];
 
         $regexTriplet = '/(?<char>.)\1\1/';
