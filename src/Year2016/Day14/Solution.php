@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AOC\Year2016\Day14;
 
 use Safe\Exceptions\PcreException;
@@ -10,8 +12,10 @@ trait Solution
 {
     /**
      * @param string $salt
-     * @return int
+     *
      * @throws PcreException
+     *
+     * @return int
      */
     public function __invoke(string $salt): int
     {
