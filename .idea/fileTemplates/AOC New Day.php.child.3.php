@@ -9,7 +9,7 @@ use Generator;
 class PartTwo
 {
     /**
-     * @param Generator<int, string, void, void> ${DS}input
+     * @param Generator<int, string> ${DS}input
      * @return int
      */
     public function __invoke(Generator ${DS}input): int
