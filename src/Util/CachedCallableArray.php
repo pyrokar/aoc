@@ -4,24 +4,28 @@ declare(strict_types=1);
 
 namespace AOC\Util;
 
-class CachedCallableIntArray
+/**
+ * @template TKey of (int | string)
+ * @template TValue
+ */
+class CachedCallableArray
 {
     /**
-     * @var array<string, callable(): int>
+     * @var array<TKey, callable(): TValue>
      */
     private array $array = [];
 
     /**
-     * @var array<string, int>
+     * @var array<TKey, TValue>
      */
     private array $cache = [];
 
     /**
-     * @param string $offset
+     * @param TKey $offset
      *
-     * @return int
+     * @return TValue
      */
-    public function get(string $offset): int
+    public function get(mixed $offset): mixed
     {
         if (!isset($this->cache[$offset])) {
             $this->cache[$offset] = $this->array[$offset]();
@@ -31,17 +35,22 @@ class CachedCallableIntArray
     }
 
     /**
-     * @param string $offset
-     * @param callable(): int $value
+     * @param TKey $offset
+     * @param callable(): TValue $value
      *
      * @return void
      */
-    public function set(string $offset, callable $value): void
+    public function set(mixed $offset, callable $value): void
     {
         $this->array[$offset] = $value;
     }
 
-    public function unset(string $offset): void
+    /**
+     * @param TKey $offset
+     *
+     * @return void
+     */
+    public function unset(mixed $offset): void
     {
         unset($this->array[$offset], $this->cache[$offset]);
     }

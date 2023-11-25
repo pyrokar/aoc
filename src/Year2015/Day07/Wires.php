@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace AOC\Year2015\Day07;
 
-use AOC\Util\CachedCallableIntArray;
+use AOC\Util\CachedCallableArray;
 use Generator;
 
 use Safe\Exceptions\PcreException;
@@ -13,7 +13,8 @@ use function Safe\preg_match;
 
 trait Wires
 {
-    private CachedCallableIntArray $wires;
+    /** @var CachedCallableArray<string, int>  */
+    private CachedCallableArray $wires;
 
     /**
      * @param Generator<string> $input
@@ -22,7 +23,7 @@ trait Wires
      */
     private function wireInput(Generator $input): void
     {
-        $this->wires = new CachedCallableIntArray();
+        $this->wires = new CachedCallableArray();
 
         foreach ($input as $line) {
             if (preg_match('/^(?P<in_01>\d+) -> (?P<out>[a-z]+)/', $line, $matches)) {
