@@ -55,6 +55,11 @@ class Position2D
         return $this;
     }
 
+    public function moveHexagonal(HexagonalDirection $direction): void
+    {
+        [$this->x, $this->y] = $this->applyDifferentials(HexagonalDirection::getDifferentials($direction));
+    }
+
     /**
      * @param CompassDirection $direction
      *
@@ -177,7 +182,38 @@ class Position2D
         ];
     }
 
+    /**
+     * @return non-empty-list<string>
+     */
+    public function getHexagonalNeighborKeys(): array
+    {
+        return array_map(fn(HexagonalDirection $direction) => $this->getHexagonalNeighborKeyForDirection($direction), HexagonalDirection::cases());
+    }
 
+    /**
+     * @param HexagonalDirection $direction
+     *
+     * @return string
+     */
+    public function getHexagonalNeighborKeyForDirection(HexagonalDirection $direction): string
+    {
+        return self::key(...$this->applyDifferentials(HexagonalDirection::getDifferentials($direction)));
+    }
+
+    public function getHexagonalNeighborForDirection(HexagonalDirection $direction): Position2D
+    {
+        return new self(...$this->applyDifferentials(HexagonalDirection::getDifferentials($direction)));
+    }
+
+    /**
+     * @param array{int, int} $differentials
+     *
+     * @return array{int, int}
+     */
+    private function applyDifferentials(array $differentials): array
+    {
+        return [$this->x + $differentials[0], $this->y + $differentials[1] * static::$yDirection];
+    }
 
     public function getOrthogonalDirectionTo(Position2D $position): ?CompassDirection
     {
