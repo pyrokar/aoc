@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace AOC\Year2016\Day04;
 
-use AOC\Util\SolutionUtil;
 use Generator;
 use Safe\Exceptions\PcreException;
 

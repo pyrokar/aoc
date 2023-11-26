@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace AOC\Year2016\Day13;
 
 use AOC\Util\Position2D;
-use Generator;
 
 class PartOne
 {

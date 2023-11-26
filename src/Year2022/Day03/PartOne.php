@@ -6,8 +6,6 @@ namespace AOC\Year2022\Day03;
 
 use Generator;
 
-use function Safe\preg_match_all;
-
 class PartOne
 {
     /**

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace AOC\Test\Util;
 
-use AOC\Util\Safe\ReflectionClass;
 use Generator;
 use PHPUnit\Framework\TestCase;
 use ReflectionException;

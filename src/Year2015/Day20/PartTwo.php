@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace AOC\Year2015\Day20;
 
-use Generator;
 use Safe\Exceptions\InfoException;
 
 use function Safe\ini_set;

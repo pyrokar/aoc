@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace AOC\Year2016\Day01;
 
 use AOC\Util\CompassDirection;
-use AOC\Util\Point2D;
 use AOC\Util\Position2D;
 use Generator;
 use RuntimeException;

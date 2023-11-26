@@ -4,13 +4,10 @@ declare(strict_types=1);
 
 namespace AOC\Year2022\Day11;
 
-use AOC\Util\Display2D;
 use Generator;
 
 use Safe\Exceptions\JsonException;
 use Safe\Exceptions\PcreException;
-
-use function Safe\preg_match;
 
 class PartTwo
 {

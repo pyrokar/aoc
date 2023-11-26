@@ -7,7 +7,6 @@ namespace AOC\Year2022\Day14;
 use AOC\Util\CompassDirection;
 use AOC\Util\Position2D;
 use Generator;
-use Safe\Exceptions\ArrayException;
 
 class PartTwo
 {

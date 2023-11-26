@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace AOC\Year2015\Day11;
 
-use Generator;
 use Safe\Exceptions\PcreException;
 
 use function Safe\preg_match;

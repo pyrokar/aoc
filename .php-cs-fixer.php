@@ -13,7 +13,7 @@ $config
 return $config
     ->setFinder($finder)
     ->setRules([
-        '@PER' => true,
+        '@PER-CS2.0' => true,
 
         'declare_strict_types' => true,
         'strict_comparison' => true,
@@ -23,4 +23,6 @@ return $config
 
         'phpdoc_order' => true,
         'phpdoc_separation' => true,
+
+        'no_unused_imports' => true,
     ]);

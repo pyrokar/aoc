@@ -8,8 +8,6 @@ use Generator;
 use Safe\Exceptions\JsonException;
 use Safe\Exceptions\PcreException;
 
-use function Safe\preg_match;
-
 class PartOne
 {
     use Util;

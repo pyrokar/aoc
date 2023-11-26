@@ -6,7 +6,6 @@ namespace AOC\Year2020\Day19;
 
 use AOC\Util\CachedCallableArray;
 use Generator;
-use Safe\Exceptions\PcreException;
 
 use function Safe\preg_match;
 
