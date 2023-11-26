@@ -6,7 +6,7 @@ namespace AOCTest\Year2016\Day09;
 
 use AOC\Year2016\Day09\PartTwo;
 
-class PartTwoTest extends \AOC\Test\Util\SolutionTest
+class PartTwoTest extends \AOCTest\Util\SolutionTest
 {
     protected string $solutionClass = PartTwo::class;
 

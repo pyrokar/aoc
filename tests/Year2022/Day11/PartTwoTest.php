@@ -6,7 +6,7 @@ namespace AOCTest\Year2022\Day11;
 
 use AOC\Year2022\Day11\ModuloNumber;
 use AOC\Year2022\Day11\PartTwo;
-use AOC\Test\Util\SolutionTest;
+use AOCTest\Util\SolutionTest;
 
 /**
  * @large

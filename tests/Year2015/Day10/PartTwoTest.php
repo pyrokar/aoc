@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace AOCTest\Year2015\Day10;
 
-use AOC\Test\Util\SolutionTest;
+use AOCTest\Util\SolutionTest;
 use AOC\Year2015\Day10\PartTwo;
 
 /**

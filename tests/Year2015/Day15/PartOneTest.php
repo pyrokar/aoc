@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace AOCTest\Year2015\Day15;
 
 use AOC\Year2015\Day15\PartOne;
-use AOC\Test\Util\SolutionTest;
+use AOCTest\Util\SolutionTest;
 use Safe\Exceptions\FilesystemException;
 
 /**

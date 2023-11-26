@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace AOCTest\Year2022\Day12;
 
 use AOC\Year2022\Day12\PartTwo;
-use AOC\Test\Util\SolutionTest;
+use AOCTest\Util\SolutionTest;
 
 /**
  * @large

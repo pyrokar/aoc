@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace AOC\Test\Util;
+namespace AOCTest\Util;
 
 use Generator;
 use PHPUnit\Framework\TestCase;

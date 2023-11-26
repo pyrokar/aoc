@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace AOCTest\Year2016\Day03;
 
 use AOC\Year2016\Day03\PartOne;
-use AOC\Test\Util\SolutionTest;
+use AOCTest\Util\SolutionTest;
 
 class PartOneTest extends SolutionTest
 {

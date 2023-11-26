@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace AOCTest\Year2016\Day01;
 
 use AOC\Year2016\Day01\PartOne;
-use AOC\Test\Util\SolutionTest;
+use AOCTest\Util\SolutionTest;
 use Safe\Exceptions\FilesystemException;
 
 class PartOneTest extends SolutionTest
