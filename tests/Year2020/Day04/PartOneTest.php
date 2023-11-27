@@ -2,27 +2,28 @@
 
 declare(strict_types=1);
 
-namespace AOCTest\Year${Year}\Day${Day};
+namespace AOCTest\Year2020\Day04;
 
-use AOC\Year${Year}\Day${Day}\PartOne;
+use AOC\Year2020\Day04\PartOne;
 use AOCTest\Util\SolutionTest;
 use Safe\Exceptions\FilesystemException;
 
 class PartOneTest extends SolutionTest
 {
     /** @var class-string */
-    public string ${DS}solutionClass = PartOne::class;
+    public string $solutionClass = PartOne::class;
 
     /**
      * @throws FilesystemException
      *
      * @return array<int, array<mixed>>
+     *
      */
     public function data(): array
     {
         return [
-            [[${DS}this->generatorFromFile(__DIR__ . DS . 'test')], 0],
-            [[${DS}this->generatorFromFile(__DIR__ . DS . 'input')], 0],
+            [[$this->generatorFromFile(__DIR__ . DS . 'test')], 2],
+            [[$this->generatorFromFile(__DIR__ . DS . 'input')], 202],
         ];
     }
 }
