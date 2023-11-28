@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace AOCTest\Year${Year}\Day${Day};
 
 use AOC\Year${Year}\Day${Day}\PartOne;
-use AOCTest\Util\SolutionTest;
+use AOCTest\Util\SolutionTestCase;
 use Safe\Exceptions\FilesystemException;
 
-class PartOneTest extends SolutionTest
+class PartOneTest extends SolutionTestCase
 {
     /** @var class-string */
     public string ${DS}solutionClass = PartOne::class;
