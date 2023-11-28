@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace AOCTest\Year2016\Day06;
 
-use AOCTest\Util\SolutionTest;
+use AOCTest\Util\SolutionTestCase;
 use AOC\Year2016\Day06\PartTwo;
 use Safe\Exceptions\FilesystemException;
 
-class PartTwoTest extends SolutionTest
+class PartTwoTest extends SolutionTestCase
 {
     protected string $solutionClass = PartTwo::class;
     /**

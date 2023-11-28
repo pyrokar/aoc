@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace AOCTest\Year2016\Day10;
 
 use AOC\Year2016\Day10\PartTwo;
-use AOCTest\Util\SolutionTest;
+use AOCTest\Util\SolutionTestCase;
 use Safe\Exceptions\FilesystemException;
 
-class PartTwoTest extends SolutionTest
+class PartTwoTest extends SolutionTestCase
 {
     /** @var class-string */
     public string $solutionClass = PartTwo::class;

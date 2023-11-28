@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace AOCTest\Year2022\Day12;
 
 use AOC\Year2022\Day12\PartTwo;
-use AOCTest\Util\SolutionTest;
+use AOCTest\Util\SolutionTestCase;
 
 /**
  * @large
  */
-class PartTwoTest extends SolutionTest
+class PartTwoTest extends SolutionTestCase
 {
     /** @var class-string */
     public string $solutionClass = PartTwo::class;

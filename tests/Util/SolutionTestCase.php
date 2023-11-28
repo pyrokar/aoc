@@ -11,11 +11,8 @@ use Safe\Exceptions\FilesystemException;
 
 use function Safe\fclose;
 use function Safe\fopen;
-use function Safe\define;
 
-define('DS', DIRECTORY_SEPARATOR);
-
-abstract class SolutionTest extends TestCase
+abstract class SolutionTestCase extends TestCase
 {
     /**
      * @var class-string of callable

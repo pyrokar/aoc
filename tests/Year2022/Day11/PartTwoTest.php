@@ -6,12 +6,12 @@ namespace AOCTest\Year2022\Day11;
 
 use AOC\Year2022\Day11\ModuloNumber;
 use AOC\Year2022\Day11\PartTwo;
-use AOCTest\Util\SolutionTest;
+use AOCTest\Util\SolutionTestCase;
 
 /**
  * @large
  */
-class PartTwoTest extends SolutionTest
+class PartTwoTest extends SolutionTestCase
 {
     /** @var class-string */
     public string $solutionClass = PartTwo::class;
