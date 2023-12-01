@@ -18,30 +18,15 @@ class PartOne
         $sum = 0;
 
         foreach ($input as $line) {
-            $first = 0;
-            $firstFound = false;
-            $last = 0;
-            $lastFound = false;
+            $numbers = [];
 
-            $l = strlen($line);
-
-            for ($i = 0; $i < $l; ++$i) {
-                if ($firstFound && $lastFound) {
-                    break;
-                }
-
-                if (is_numeric($line[$i]) && !$firstFound) {
-                    $first = (int) ($line[$i]);
-                    $firstFound = true;
-                }
-
-                if (is_numeric($line[$l - $i - 1]) && !$lastFound) {
-                    $last = (int) ($line[$l - $i - 1]);
-                    $lastFound = true;
+            for ($i = 0, $l = strlen($line); $i < $l; ++$i) {
+                if (is_numeric($line[$i])) {
+                    $numbers[] = (int) $line[$i];
                 }
             }
 
-            $sum += 10 * $first + $last;
+            $sum += 10 * $numbers[0] + array_pop($numbers);
         }
 
         return $sum;
