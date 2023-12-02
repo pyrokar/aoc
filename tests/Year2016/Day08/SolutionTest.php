@@ -8,7 +8,7 @@ use AOCTest\Util\SolutionTestCase;
 use AOC\Year2016\Day08\Solution;
 use Safe\Exceptions\FilesystemException;
 
-class Test extends SolutionTestCase
+class SolutionTest extends SolutionTestCase
 {
     protected string $solutionClass = Solution::class;
 

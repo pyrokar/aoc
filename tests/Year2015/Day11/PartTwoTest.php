@@ -22,7 +22,6 @@ class PartTwoTest extends SolutionTestCase
     {
         return [
             [['vzbxkghb'], 'vzbxxyzz'],
-
             [['vzbxxyzz'], 'vzcaabcc'],
         ];
     }

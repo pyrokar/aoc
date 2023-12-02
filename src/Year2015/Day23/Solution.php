@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace AOC\Year2015\Day23;
 
-use AOC\Util\CPU;
+use AOC\Util\CPU\CPU;
 use Generator;
 
 trait Solution
