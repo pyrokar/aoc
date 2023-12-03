@@ -3,6 +3,7 @@ parameters:
     paths:
         - src
         - tests
+    tmpDir: ./.phpstan.cache/
 includes:
     - phpstan-baseline.neon
     - vendor/thecodingmachine/phpstan-safe-rule/phpstan-safe-rule.neon
