@@ -46,7 +46,7 @@ class Solution
             }
         }
 
-        echo $display;
+        // echo $display;
 
         return $display->countPixels();
     }
