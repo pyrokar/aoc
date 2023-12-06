@@ -7,14 +7,17 @@ namespace AOC\Year2023\Day05;
 use Generator;
 
 use Safe\Exceptions\PcreException;
+
 use function Safe\preg_match;
 
 class PartOne
 {
     /**
      * @param Generator<int, string> $input
-     * @return int
+     *
      * @throws PcreException
+     *
+     * @return int
      */
     public function __invoke(Generator $input): int
     {
