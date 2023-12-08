@@ -27,6 +27,7 @@
             "src/Util/reduceInputByLine.php",
             "src/Util/reduceLineByChar.php",
             "src/Util/Safe/math.php",
+            "src/Util/Math/functions.php",
             "src/Year2022/Day25/snafu.php"
         ],
 		"psr-4": {
