@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace AOC\Util;
 
-enum CompassDirection
+enum CompassDirection: string
 {
-    case North;
-    case East;
-    case South;
-    case West;
+    case North = 'n';
+    case East = 'e';
+    case South = 's';
+    case West = 'w';
 
     public function turnLeft(): CompassDirection
     {
