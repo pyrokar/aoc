@@ -10,7 +10,9 @@
     stopOnFailure="false"
     bootstrap="tests/bootstrap.php"
     cacheDirectory=".phpunit.cache"
-    backupStaticProperties="false">
+    backupStaticProperties="false"
+    displayDetailsOnTestsThatTriggerWarnings="true"
+>
   <testsuites>
     <testsuite name="Unit Tests Fast">
       <directory>./tests/</directory>
