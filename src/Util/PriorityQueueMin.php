@@ -24,4 +24,15 @@ class PriorityQueueMin extends SplPriorityQueue
     {
         return parent::compare($priority2, $priority1);
     }
+
+    /**
+     * @return TValue
+     */
+    public function extract(): mixed
+    {
+        /** @phpstan-ignore-next-line */
+        return parent::extract();
+    }
+
+
 }
