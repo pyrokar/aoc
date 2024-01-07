@@ -10,6 +10,12 @@ class Position2D
 
     public static int $yDirection = 1; // or -1 for inverted
 
+    /**
+     * normal: north = y++
+     * inverted : north = y--
+     *
+     * @return void
+     */
     public static function invertY(): void
     {
         static::$yDirection = -1;
@@ -110,11 +116,14 @@ class Position2D
     }
 
     /**
-     * @return array<Position2D>
+     * @return array<string, Position2D>
      */
     public function getOrthogonalNeighbors(): array
     {
-        return array_map(fn(CompassDirection $dir) => $this->getPositionForDirection($dir), CompassDirection::cases());
+        return array_reduce(CompassDirection::cases(), function ($arr, CompassDirection $dir) {
+            $arr[$dir->value] = $this->getPositionForDirection($dir);
+            return $arr;
+        }, []);
     }
 
     /**
