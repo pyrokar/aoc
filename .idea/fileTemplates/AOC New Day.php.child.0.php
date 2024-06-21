@@ -2,27 +2,20 @@
 
 declare(strict_types=1);
 
-namespace AOCTest\Year${Year}\Day${Day};
+namespace AOC\Year${Year}\Day${Day};
 
-use AOC\Year${Year}\Day${Day}\PartOne;
-use AOCTest\Util\SolutionTestCase;
-use Safe\Exceptions\FilesystemException;
+use Generator;
 
-class PartOneTest extends SolutionTestCase
+class PartTwo
 {
-    /** @var class-string */
-    public string ${DS}solutionClass = PartOne::class;
-
     /**
-     * @throws FilesystemException
-     *
-     * @return array<int, array<mixed>>
+     * @param Generator<int, string> ${DS}input
+     * @return int
      */
-    public function data(): array
+    public function __invoke(Generator ${DS}input): int
     {
-        return [
-            [[${DS}this->generatorFromFile(__DIR__ . DS . 'test')], 0],
-            [[${DS}this->generatorFromFile(__DIR__ . DS . 'input')], 0],
-        ];
+        
+    
+        return 0;
     }
 }
