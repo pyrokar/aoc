@@ -129,6 +129,19 @@ class Position2D
     /**
      * @return array<string>
      */
+    public function getOrthogonalNeighborKeys(): array
+    {
+        return [
+            self::key($this->x - 1, $this->y),
+            self::key($this->x, $this->y - static::$yDirection),
+            self::key($this->x, $this->y + static::$yDirection),
+            self::key($this->x + 1, $this->y),
+        ];
+    }
+
+    /**
+     * @return array<string>
+     */
     public function getNeighborKeys(): array
     {
         return [
