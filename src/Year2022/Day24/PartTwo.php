@@ -32,7 +32,7 @@ class PartTwo
         $minutes = [
             $this->findMinDistance($start, $end),
             $this->findMinDistance($end, $start),
-            $this->findMinDistance($start, $end)
+            $this->findMinDistance($start, $end),
         ];
 
         return array_sum($minutes);

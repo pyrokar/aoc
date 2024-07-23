@@ -26,7 +26,7 @@ class PartOne
         foreach ($input as $line) {
             preg_match('/(\d+)\s+(\d+)\s+(\d+)/', trim($line), $m);
 
-            $sides = array_sort([(int)$m[1], (int)$m[2], (int)$m[3]]);
+            $sides = array_sort([(int) $m[1], (int) $m[2], (int) $m[3]]);
 
             $possibleCount += ($sides[0] + $sides[1] > $sides[2]) ? 1 : 0;
         }

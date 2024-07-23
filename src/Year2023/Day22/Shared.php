@@ -36,7 +36,7 @@ trait Shared
         foreach ($input as $brickId => $line) {
             [$from, $to] = array_map(
                 static fn(string $coordinates) => Position3D::fromKey($coordinates, ','),
-                explode('~', $line)
+                explode('~', $line),
             );
 
 
@@ -61,7 +61,7 @@ trait Shared
             }
             $brickCubes[] = $to;
 
-            $this->bricks[str_pad((string)$from->z, 3, '0', STR_PAD_LEFT) . '_' . $brickId] = $brickCubes;
+            $this->bricks[str_pad((string) $from->z, 3, '0', STR_PAD_LEFT) . '_' . $brickId] = $brickCubes;
         }
 
         // the key starts with the z coordinate, so this sorts the bricks by the z coordinate

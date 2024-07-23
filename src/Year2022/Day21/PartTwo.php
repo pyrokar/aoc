@@ -37,7 +37,7 @@ class PartTwo
 
         foreach ($input as $line) {
             if (preg_match('/(?<monkey>\w+): (?<number>\d+)/', $line, $m)) {
-                $this->monkeys[(string) $m['monkey']] = (int)$m['number'];
+                $this->monkeys[(string) $m['monkey']] = (int) $m['number'];
                 continue;
             }
 

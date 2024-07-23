@@ -31,10 +31,10 @@ class PartTwo
                 continue;
             }
 
-            $reindeer = (string)$m['r'];
-            $speed = (int)$m['speed'];
-            $flying = (int)$m['seconds'];
-            $rest = (int)$m['rest'];
+            $reindeer = (string) $m['r'];
+            $speed = (int) $m['speed'];
+            $flying = (int) $m['seconds'];
+            $rest = (int) $m['rest'];
 
             $reindeers[$reindeer] = [
                 'speed' => $speed,

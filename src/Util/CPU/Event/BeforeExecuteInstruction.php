@@ -20,6 +20,6 @@ final class BeforeExecuteInstruction implements Event
 
     public function __construct(
         readonly public CPU $cpu,
-        readonly public Instruction $instruction
+        readonly public Instruction $instruction,
     ) {}
 }

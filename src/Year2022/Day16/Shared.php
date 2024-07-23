@@ -39,8 +39,8 @@ trait Shared
                 continue;
             }
 
-            $valve = (string)$nextMinute['valve'];
-            $flow = (int)$nextMinute['flow'];
+            $valve = (string) $nextMinute['valve'];
+            $flow = (int) $nextMinute['flow'];
             $valves = explode(', ', $nextMinute['valves']);
 
             $this->valves[$valve] = ['flow' => $flow, 'valves' => $valves];

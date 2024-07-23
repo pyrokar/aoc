@@ -21,7 +21,7 @@ trait Solution
         $sum = 0;
 
         foreach ($input as $line) {
-            $weight = (int)$line;
+            $weight = (int) $line;
             $weights[] = $weight;
             $sum += $weight;
         }
@@ -65,6 +65,6 @@ trait Solution
             }
         }
 
-        return (int)$minQE;
+        return (int) $minQE;
     }
 }

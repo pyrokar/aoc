@@ -96,7 +96,7 @@ class File
 class Dir
 {
     public function __construct(
-        public readonly string $name
+        public readonly string $name,
     ) {}
 
 }

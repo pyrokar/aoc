@@ -19,7 +19,9 @@
 		"phpunit/phpunit": "~10.4",
 		"roave/security-advisories": "dev-latest",
 		"friendsofphp/php-cs-fixer": "~3.40",
-		"thecodingmachine/phpstan-safe-rule": "~1.2"
+		"thecodingmachine/phpstan-safe-rule": "~1.2",
+        "symfony/console": "~7",
+        "nette/php-generator": "~4"
 	},
 	"autoload": {
         "files": [

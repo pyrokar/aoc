@@ -39,13 +39,13 @@ trait Solution
         });
 
         $cpu->addOpCode('jmp', function (CPU $cpu, array $args) {
-            $offset = (int)$args[0];
+            $offset = (int) $args[0];
             $cpu->incrementInstructionPointer($offset);
         });
 
         $cpu->addOpCode('jie', function (CPU $cpu, array $args) {
             $register = $args[0];
-            $offset = (int)$args[1];
+            $offset = (int) $args[1];
 
             if ($cpu->readRegister($register) % 2 === 0) {
                 $cpu->incrementInstructionPointer($offset);
@@ -56,7 +56,7 @@ trait Solution
 
         $cpu->addOpCode('jio', function (CPU $cpu, array $args) {
             $register = $args[0];
-            $offset = (int)$args[1];
+            $offset = (int) $args[1];
 
             if ($cpu->readRegister($register) === 1) {
                 $cpu->incrementInstructionPointer($offset);

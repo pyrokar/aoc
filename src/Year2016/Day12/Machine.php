@@ -40,9 +40,9 @@ trait Machine
 
         $cpu->addOpCode('jnz', function (CPU $cpu, array $args) {
             if (!is_numeric($args[0]) && $cpu->readRegister($args[0]) !== 0) {
-                $cpu->incrementInstructionPointer((int)$args[1]);
+                $cpu->incrementInstructionPointer((int) $args[1]);
             } elseif ((int) $args[0] !== 0) {
-                $cpu->incrementInstructionPointer((int)$args[1]);
+                $cpu->incrementInstructionPointer((int) $args[1]);
             } else {
                 $cpu->incrementInstructionPointer();
             }

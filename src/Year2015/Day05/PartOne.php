@@ -44,7 +44,7 @@ class PartOne
                 return 0;
             });
 
-            return $niceStrings + (int)($countVowels >= 3 && $containsDoubleLetter && $containsNotNaughty);
+            return $niceStrings + (int) ($countVowels >= 3 && $containsDoubleLetter && $containsNotNaughty);
         }, 0);
     }
 }

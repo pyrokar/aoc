@@ -65,7 +65,7 @@ class PartTwo
             ($directions === ['e', 's'] || $directions === ['s', 'e']) => 'F',
             ($directions === ['s', 'w'] || $directions === ['w', 's']) => '7',
             ($directions === ['w', 'n'] || $directions === ['n', 'w']) => 'J',
-            default => 'S'
+            default => 'S',
         };
 
         $grid[$start] = $s;

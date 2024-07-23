@@ -10,6 +10,6 @@ class Node
     public Node $prev;
 
     public function __construct(
-        public int $number
+        public int $number,
     ) {}
 }

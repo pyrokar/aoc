@@ -32,7 +32,7 @@ function decToSnafu(int $dec): string
         1 => '-',
         2 => '0',
         3 => '1',
-        4 => '2'
+        4 => '2',
     ];
 
     $snafu = '';

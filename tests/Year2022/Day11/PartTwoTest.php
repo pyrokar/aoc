@@ -23,7 +23,7 @@ class PartTwoTest extends SolutionTestCase
     {
         return [
             [[$this->generatorFromFile(__DIR__ . DS . 'test')], 2713310158],
-            [[$this->generatorFromFile(__DIR__ . DS . 'input')], 51382025916]
+            [[$this->generatorFromFile(__DIR__ . DS . 'input')], 51382025916],
         ];
     }
 

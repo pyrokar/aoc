@@ -27,7 +27,7 @@ class PartTwo
             }
 
             $md5 = md5($doorID . $index);
-            $pos = is_numeric($md5[5]) ? (int)$md5[5] : $passwordLength;
+            $pos = is_numeric($md5[5]) ? (int) $md5[5] : $passwordLength;
 
             if ($pos >= $passwordLength || isset($password[$pos])) {
                 ++$index;

@@ -28,7 +28,7 @@ class PartTwo
 
             $repeatingLetters = preg_match('/([a-z]).\1/', $line);
 
-            return $niceStrings + (int)($pairTwoLetters && $repeatingLetters);
+            return $niceStrings + (int) ($pairTwoLetters && $repeatingLetters);
         }, 0);
     }
 }

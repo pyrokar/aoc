@@ -80,8 +80,8 @@ trait Shared
     {
         foreach ($input as $line) {
             if (preg_match('/value (?<value>\d+) goes to bot (?<bot>\d+)/', $line, $m)) {
-                $bot = (int)$m['bot'];
-                $value = (int)$m['value'];
+                $bot = (int) $m['bot'];
+                $value = (int) $m['value'];
 
                 $this->addValueToBot($value, $bot);
 
@@ -89,9 +89,9 @@ trait Shared
             }
 
             if (preg_match('/bot (?<bot>\d+) gives low to (bot|output) (?<low>\d+) and high to (bot|output) (?<high>\d+)/', $line, $m)) {
-                $bot = (int)$m['bot'];
-                $lowTo = (int)$m['low'];
-                $highTo = (int)$m['high'];
+                $bot = (int) $m['bot'];
+                $lowTo = (int) $m['low'];
+                $highTo = (int) $m['high'];
 
                 $instruction = [];
                 if ($m[2] === 'bot') {

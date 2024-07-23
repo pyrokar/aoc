@@ -12,7 +12,7 @@ class Blizzard extends Position2D
     public function __construct(
         int                              $x,
         int                              $y,
-        public readonly CompassDirection $direction
+        public readonly CompassDirection $direction,
     ) {
         parent::__construct($x, $y);
     }

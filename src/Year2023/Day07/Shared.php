@@ -31,7 +31,7 @@ trait Shared
         foreach ($input as $line) {
             [$hand, $bid] = explode(' ', $line);
 
-            $hands[$this->getStrength($hand)] = (int)$bid;
+            $hands[$this->getStrength($hand)] = (int) $bid;
         }
 
         ksort($hands);

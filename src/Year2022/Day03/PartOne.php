@@ -20,7 +20,7 @@ class PartOne
         $sum = 0;
 
         foreach ($input as $line) {
-            $l2 = (int)(strlen($line) / 2);
+            $l2 = (int) (strlen($line) / 2);
             $first = substr($line, 0, $l2);
             $second = substr($line, $l2);
 

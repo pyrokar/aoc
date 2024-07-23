@@ -20,7 +20,7 @@ class GameState
         public readonly int $playerArmor,
         public readonly int $playerMana,
         public readonly int $playerManaSpend,
-        public readonly array $activeSpells
+        public readonly array $activeSpells,
     ) {}
 
     public function bossWins(): bool

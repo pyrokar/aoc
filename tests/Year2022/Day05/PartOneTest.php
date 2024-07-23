@@ -21,7 +21,7 @@ class PartOneTest extends SolutionTestCase
             [[$this->generatorFromFile(__DIR__ . DS . 'test'), [
                 ['Z', 'N'],
                 ['M', 'C', 'D'],
-                ['P']
+                ['P'],
             ]], 'CMZ'],
             [[$this->generatorFromFile(__DIR__ . DS . 'input'), [
                 ['T', 'P', 'Z', 'C', 'S', 'L', 'Q', 'N'],
@@ -32,7 +32,7 @@ class PartOneTest extends SolutionTestCase
                 ['P', 'F', 'J', 'D', 'C', 'T', 'S', 'Z'],
                 ['V', 'W', 'G', 'B', 'D'],
                 ['N', 'J', 'S', 'Q', 'H', 'W'],
-                ['R', 'C', 'Q', 'F', 'S', 'L', 'V']
+                ['R', 'C', 'Q', 'F', 'S', 'L', 'V'],
             ]], 'SVFDLGLWV'],
         ];
     }

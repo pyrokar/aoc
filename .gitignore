@@ -1,8 +1,5 @@
 vendor
 
-!.idea/file.template.settings.xml
-!.idea/fileTemplates/AOC*
-
 .php-cs-fixer.cache
 .phpunit.cache
 .phpunit.result.cache

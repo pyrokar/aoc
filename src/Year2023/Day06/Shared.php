@@ -17,8 +17,8 @@ trait Shared
         $halfTime = $time / 2;
         $det = sqrt(($time * $time) / 4 - $distance);
 
-        $lowerPoint = (int)ceil($halfTime - $det + 0.0001);
-        $upperPoint = (int)floor($halfTime + $det - 0.0001);
+        $lowerPoint = (int) ceil($halfTime - $det + 0.0001);
+        $upperPoint = (int) floor($halfTime + $det - 0.0001);
 
         $options = $upperPoint - $lowerPoint + 1;
         return $options;
