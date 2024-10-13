@@ -18,7 +18,7 @@ class PartOne
      */
     public function __invoke(Generator $input): int
     {
-        return reduceInputByLine($input, static function ($niceStrings, $line) {
+        return reduceInputByLine($input, static function (int $niceStrings, string $line) {
 
             $countVowels = 0;
             $lastChar = '';

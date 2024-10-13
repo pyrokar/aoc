@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace AOC\Year2020\Day07;
 
 use Generator;
-
 use Safe\Exceptions\PcreException;
 
 use function Safe\preg_match;

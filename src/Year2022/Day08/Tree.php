@@ -11,8 +11,8 @@ class Tree extends Position2D
     public bool $isVisible;
 
     public function __construct(
-        public int          $x,
-        public int          $y,
+        int          $x,
+        int          $y,
         readonly public int $height,
     ) {
         parent::__construct($x, $y);

@@ -29,7 +29,7 @@ class PartOne
             }
         }
 
-        foreach($presents as $house => $count) {
+        foreach ($presents as $house => $count) {
             if ($count >= $target) {
                 return $house;
             }

@@ -4,20 +4,33 @@ declare(strict_types=1);
 
 namespace AOC\Util;
 
-trait Vector2D
+class Vector2D
 {
-    public static function key(int $x, int $y): string
+    use TwoDimensional;
+
+    public function __construct(
+        readonly public int $x,
+        readonly public int $y,
+    ) {}
+
+    public static function fromPoint(Point2D $point): self
     {
-        return $x . '|' . $y;
+        return new self($point->x, $point->y);
     }
 
-    public function getKey(): string
+    public function mul(int $k): self
     {
-        return self::key($this->x, $this->y);
+        return new self($this->x * $k, $this->y * $k);
     }
 
-    public function calcManhattanDistanceTo(Position2D $point): int
+    public function add(self $vector): self
     {
-        return (int) abs($this->x - $point->x) + abs($this->y - $point->y);
+        return new self($this->x + $vector->x, $this->y + $vector->y);
     }
+
+    public function toPoint(): Point2D
+    {
+        return new Point2D($this->x, $this->y);
+    }
+
 }

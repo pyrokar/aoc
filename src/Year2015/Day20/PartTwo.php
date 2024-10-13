@@ -33,7 +33,7 @@ class PartTwo
             }
         }
 
-        foreach($presents as $house => $count) {
+        foreach ($presents as $house => $count) {
             if ($count * 11 >= $target) {
                 return $house;
             }

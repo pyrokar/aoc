@@ -6,7 +6,6 @@ namespace AOC\Year2022\Day09;
 
 use AOC\Util\CompassDirection;
 use Generator;
-
 use Safe\Exceptions\PcreException;
 
 use function Safe\preg_match;

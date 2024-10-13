@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace AOC\Year2015\Day05;
 
 use Generator;
-
 use Safe\Exceptions\PcreException;
 
 use function AOC\Util\reduceInputByLine;
@@ -22,7 +21,7 @@ class PartTwo
      */
     public function __invoke(Generator $input): int
     {
-        return reduceInputByLine($input, static function ($niceStrings, $line) {
+        return reduceInputByLine($input, static function (int $niceStrings, string $line) {
 
             $pairTwoLetters = preg_match('/([a-z]{2}).*\1/', $line);
 

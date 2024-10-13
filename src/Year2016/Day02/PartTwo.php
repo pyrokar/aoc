@@ -17,6 +17,7 @@ class PartTwo
      */
     public function __invoke(Generator $input): string
     {
+        /** @var array<string, array<string, string>> $keypad */
         $keypad = [
             '1' => ['U' => '1', 'R' => '1', 'D' => '3', 'L' => '1'],
             '2' => ['U' => '2', 'R' => '3', 'D' => '6', 'L' => '2'],

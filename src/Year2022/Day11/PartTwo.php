@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace AOC\Year2022\Day11;
 
 use Generator;
-
 use Safe\Exceptions\JsonException;
 use Safe\Exceptions\PcreException;
 

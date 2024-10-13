@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace AOC\Year2023\Day01;
 
 use Generator;
-
 use Safe\Exceptions\PcreException;
 
 class PartTwo

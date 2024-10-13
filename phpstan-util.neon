@@ -1,9 +1,9 @@
 parameters:
     level: 8
     paths:
-        - src
-        - tests
-    tmpDir: ./.phpstan.cache/
+        - src/Util
+        - tests/Util
+    tmpDir: ./.phpstan-util.cache/
 includes:
     - phpstan-baseline.neon
     - vendor/thecodingmachine/phpstan-safe-rule/phpstan-safe-rule.neon

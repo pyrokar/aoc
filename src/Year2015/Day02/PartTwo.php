@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace AOC\Year2015\Day02;
 
 use Generator;
-
 use Safe\Exceptions\PcreException;
 
 use function AOC\Util\reduceInputByLine;
@@ -22,7 +21,7 @@ class PartTwo
      */
     public function __invoke(Generator $input): int
     {
-        return reduceInputByLine($input, function ($sum, string $line) {
+        return reduceInputByLine($input, function (int $sum, string $line) {
 
             if (!preg_match('/^(\d+)x(\d+)x(\d+)$/', $line, $matches)) {
                 return $sum;

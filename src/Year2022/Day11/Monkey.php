@@ -43,7 +43,7 @@ class Monkey
             return;
         }
 
-        switch($this->operation[0]) {
+        switch ($this->operation[0]) {
             case 'square':
                 $item->square();
                 break;

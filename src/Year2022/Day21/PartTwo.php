@@ -7,7 +7,6 @@ namespace AOC\Year2022\Day21;
 use Exception;
 use Generator;
 use Safe\Exceptions\ArrayException;
-
 use Safe\Exceptions\PcreException;
 
 use function Safe\preg_match;
@@ -77,7 +76,7 @@ class PartTwo
 
         $operation = $this->monkeys[$monkey];
 
-        return match($operation[0]) {
+        return match ($operation[0]) {
             '+' => $this->calculate($operation[1]) + $this->calculate($operation[2]),
             '-' => $this->calculate($operation[1]) - $this->calculate($operation[2]),
             '*' => $this->calculate($operation[1]) * $this->calculate($operation[2]),
@@ -100,7 +99,7 @@ class PartTwo
 
         if ($operation[1] === $monkey) {
             // humn is left side
-            return match($operation[0]) {
+            return match ($operation[0]) {
                 '+' => $this->reverseCalculate($parent) - $this->calculate($operation[2]),
                 '-' => $this->reverseCalculate($parent) + $this->calculate($operation[2]),
                 '*' => $this->reverseCalculate($parent) / $this->calculate($operation[2]),
@@ -111,7 +110,7 @@ class PartTwo
 
         if ($operation[2] === $monkey) {
             // humn is right side
-            return match($operation[0]) {
+            return match ($operation[0]) {
                 '+' => $this->reverseCalculate($parent) - $this->calculate($operation[1]),
                 '-' => $this->calculate($operation[1]) - $this->reverseCalculate($parent),
                 '*' => $this->reverseCalculate($parent) / $this->calculate($operation[1]),

@@ -6,7 +6,7 @@ namespace AOC\Util;
 
 class Position2D
 {
-    use Vector2D;
+    use TwoDimensional;
 
     public static int $yDirection = 1; // or -1 for inverted
 
@@ -21,17 +21,16 @@ class Position2D
         static::$yDirection = -1;
     }
 
-    public function __construct(
-        public int $x,
-        public int $y,
-        public mixed $payload = null,
-    ) {}
-
     public static function fromKey(string $key): self
     {
         [$x, $y] = explode('|', $key);
         return new self((int) $x, (int) $y);
     }
+
+    public function __construct(
+        public int $x,
+        public int $y,
+    ) {}
 
     /**
      * @mutable

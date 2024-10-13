@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace AOC\Year2023\Day14;
 
 use Generator;
-
 use Safe\Exceptions\PcreException;
 
 use function Safe\preg_match;
@@ -61,7 +60,7 @@ class PartTwo
         $newPlatform = [];
         $height = count($platform) - 1;
 
-        for($y = $height; $y >= 0; --$y) {
+        for ($y = $height; $y >= 0; --$y) {
             foreach ($platform[$y] as $x => $char) {
                 $newPlatform[$x][$height - $y] = $char;
             }

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace AOC\Year2022\Day13;
 
 use Generator;
-
 use Safe\Exceptions\JsonException;
 
 use function Safe\json_decode;

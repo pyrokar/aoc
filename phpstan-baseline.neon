@@ -1,14 +1,9 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Parameter \\#2 \\$keypad of method AOC\\\\Year2016\\\\Day02\\\\PartOne\\:\\:solve\\(\\) expects array\\<string, array\\<string, string\\>\\>, array\\<int, array\\<string, string\\>\\> given\\.$#"
-			count: 1
-			path: src/Year2016/Day02/PartOne.php
-
-		-
-			message: "#^Parameter \\#2 \\$keypad of method AOC\\\\Year2016\\\\Day02\\\\PartTwo\\:\\:solve\\(\\) expects array\\<string, array\\<string, string\\>\\>, array\\<int\\|string, array\\<string, string\\>\\> given\\.$#"
-			count: 1
-			path: src/Year2016/Day02/PartTwo.php
+			message: "#^Comparison operation \"\\>\" between int\\<1, max\\> and \\-1 is always true\\.$#"
+			count: 2
+			path: src/Year2023/Day03/PartTwo.php
 
 		-
 			message: "#^Parameter \\#1 \\$direction of method AOC\\\\Year2023\\\\Day10\\\\PartOne\\:\\:getNextPosition\\(\\) expects AOC\\\\Util\\\\CompassDirection, AOC\\\\Util\\\\CompassDirection\\|null given\\.$#"

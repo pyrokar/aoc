@@ -6,6 +6,11 @@ namespace AOC\Year2019\Day02;
 
 trait Shared
 {
+    /**
+     * @param array<int, int> $memory
+     * @param array<int, int> $overrideMem
+     * @return array<int, int>
+     */
     protected function run(array $memory, array $overrideMem = []): array
     {
         $memory = array_replace($memory, $overrideMem);

@@ -46,7 +46,7 @@ trait Shared
                 $this->addPosition($x, $y, $char);
 
                 if ($y === 0) {
-                    $source = new Position2D($x, 0, null);
+                    $source = new Position2D($x, 0);
                 }
             }
 

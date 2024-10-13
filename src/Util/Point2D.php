@@ -6,7 +6,7 @@ namespace AOC\Util;
 
 class Point2D
 {
-    use Vector2D;
+    use TwoDimensional;
 
     public function __construct(
         readonly public int $x,

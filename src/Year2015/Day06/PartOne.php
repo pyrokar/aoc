@@ -6,7 +6,6 @@ namespace AOC\Year2015\Day06;
 
 use AOC\Util\Position2D;
 use Generator;
-
 use Safe\Exceptions\PcreException;
 
 use function Safe\preg_match;

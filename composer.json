@@ -16,6 +16,7 @@
     },
 	"require-dev": {
 		"phpstan/phpstan": "~1.10",
+        "phpstan/phpstan-symfony": "~1.4",
 		"phpunit/phpunit": "~10.4",
 		"roave/security-advisories": "dev-latest",
 		"friendsofphp/php-cs-fixer": "~3.40",
@@ -43,6 +44,7 @@
 	},
 	"scripts": {
 		"phpstan": "./vendor/bin/phpstan --memory-limit=512M analyse",
+		"phpstan-util": "./vendor/bin/phpstan -cphpstan-util.neon --memory-limit=512M analyse",
 		"phpstan-generate-baseline": "./vendor/bin/phpstan analyse --generate-baseline",
 		"fix-style": "./vendor/bin/php-cs-fixer fix",
 		"test-fast": "./vendor/bin/phpunit -c phpunit.xml"
