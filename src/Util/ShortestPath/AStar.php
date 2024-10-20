@@ -12,15 +12,15 @@ use Stringable;
 /**
  * @template TString of string | Stringable
  */
-class AStar
+readonly class AStar
 {
     /**
      * @param Closure(TString): array<TString> $getNeighbors
      * @param Closure(TString, TString): int $getDistance
      */
     public function __construct(
-        private readonly Closure $getNeighbors,
-        private readonly Closure $getDistance,
+        private Closure $getNeighbors,
+        private Closure $getDistance,
     ) {}
 
     /**
@@ -29,7 +29,7 @@ class AStar
      *
      * @return int
      */
-    public function findMinDistance($start, $end): int
+    public function findMinDistance(mixed $start, mixed $end): int
     {
         /** @var PriorityQueueMin<int, TString> $frontier */
         $frontier = new PriorityQueueMin();
@@ -53,8 +53,8 @@ class AStar
                 if (!isset($costSoFar[$nextKey]) || $newCost < $costSoFar[$nextKey]) {
                     $costSoFar[$nextKey] = $newCost;
 
-                    $priority = $newCost + ($this->getDistance)($next, $end);
-                    $frontier->insert($next, $priority);
+                    $priority = $newCost + ($this->getDistance)($nextKey, $end);
+                    $frontier->insert($nextKey, $priority);
                 }
             }
         }

@@ -61,8 +61,10 @@ final class Graph
 
     public function addUndirectedEdge(string $source, string $target, int $weight = 1): void
     {
-        $this->addEdge($source, $target, $weight);
+        $this->addVertex($source);
+        $this->addVertex($target);
 
+        $this->adjacentList[$source][$target] = $weight;
         $this->adjacentList[$target][$source] = $weight;
     }
 
