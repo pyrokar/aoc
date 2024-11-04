@@ -17,20 +17,22 @@ trait Shared
         $memory = array_replace($memory, $overrideMem);
 
         $i = 0;
-        $opcode = $memory[$i];
 
-        while ($opcode !== 99) {
-            if ($opcode === 1) {
-                $memory[$memory[$i + 3]] = $memory[$memory[$i + 1]] + $memory[$memory[$i + 2]];
-
-                $i += 4;
-            } elseif ($opcode === 2) {
-                $memory[$memory[$i + 3]] = $memory[$memory[$i + 1]] * $memory[$memory[$i + 2]];
-
-                $i += 4;
-            }
-
+        while (true) {
             $opcode = $memory[$i];
+
+            switch ($opcode) {
+                case 1:
+                    $memory[$memory[$i + 3]] = $memory[$memory[$i + 1]] + $memory[$memory[$i + 2]];
+                    $i += 4;
+                    break;
+                case 2:
+                    $memory[$memory[$i + 3]] = $memory[$memory[$i + 1]] * $memory[$memory[$i + 2]];
+                    $i += 4;
+                    break;
+                default:
+                    break 2;
+            }
         }
 
         return $memory;
