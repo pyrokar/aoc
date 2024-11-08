@@ -8,6 +8,9 @@ use AOC\Year2019\Day02\PartTwo;
 use AOCTest\Util\SolutionTestCase;
 use Safe\Exceptions\FilesystemException;
 
+/**
+ * @group intcodecomputer
+ */
 final class PartTwoTest extends SolutionTestCase
 {
     /** @var class-string */

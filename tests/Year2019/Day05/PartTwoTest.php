@@ -4,14 +4,17 @@ declare(strict_types=1);
 
 namespace AOCTest\Year2019\Day05;
 
-use AOC\Year2019\Day05\PartTwo;
+use AOC\Year2019\Day05\Solution;
 use AOCTest\Util\SolutionTestCase;
 use Safe\Exceptions\FilesystemException;
 
+/**
+ * @group intcodecomputer
+ */
 final class PartTwoTest extends SolutionTestCase
 {
     /** @var class-string */
-    public string $solutionClass = PartTwo::class;
+    public string $solutionClass = Solution::class;
 
 
     /**

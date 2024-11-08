@@ -4,15 +4,19 @@ declare(strict_types=1);
 
 namespace AOC\Year2019\Day02;
 
+use AOC\Year2019\IntCodeComputer;
 use Generator;
+use Safe\Exceptions\ArrayException;
+
+use function Safe\array_replace;
 
 final class PartOne
 {
-    use Shared;
-
     /**
      * @param Generator<int, string> $input
      * @param array<int, int> $overrideMem
+     *
+     * @throws ArrayException
      *
      * @return int
      */
@@ -20,8 +24,10 @@ final class PartOne
     {
         $memory = array_map('intval', explode(',', $input->current()));
 
-        $memory = $this->run($memory, $overrideMem);
+        $icc = new IntCodeComputer(array_replace($memory, $overrideMem));
 
-        return $memory[0];
+        $icc->execute();
+
+        return $icc->getMemory()[0];
     }
 }

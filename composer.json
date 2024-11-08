@@ -47,6 +47,7 @@
 		"phpstan-util": "./vendor/bin/phpstan -cphpstan-util.neon --memory-limit=512M analyse",
 		"phpstan-generate-baseline": "./vendor/bin/phpstan analyse --generate-baseline",
 		"fix-style": "./vendor/bin/php-cs-fixer fix",
-		"test-fast": "./vendor/bin/phpunit -c phpunit.xml"
+		"test-fast": "./vendor/bin/phpunit -c phpunit.xml",
+        "test-intcodecomputer": "./vendor/bin/phpunit -c phpunit.xml --group intcodecomputer"
 	}
 }
