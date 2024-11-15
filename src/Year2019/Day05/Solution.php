@@ -22,7 +22,7 @@ final class Solution
     {
         $memory = array_map('intval', explode(',', $input->current()));
 
-        $icc = new IntCodeComputer($memory, $id);
+        $icc = new IntCodeComputer($memory, [$id]);
 
         $icc->execute();
 

@@ -29,6 +29,7 @@
             "src/Util/functions.php",
             "src/Util/reduceInputByLine.php",
             "src/Util/reduceLineByChar.php",
+            "src/Util/Safe/array.php",
             "src/Util/Safe/math.php",
             "src/Util/Math/functions.php",
             "src/Year2022/Day25/snafu.php"

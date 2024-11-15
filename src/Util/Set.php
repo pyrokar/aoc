@@ -6,6 +6,9 @@ namespace AOC\Util;
 
 use Generator;
 
+use function array_slice;
+use function count;
+
 /**
  * @template T
  */
@@ -67,6 +70,30 @@ class Set
 
         for ($size = 1; $size <= $setSize; ++$size) {
             yield from $this->getCombinationsOfSize($size);
+        }
+    }
+
+    /**
+     * @param List<T> $partial
+     * @param List<T>|null $rest
+     *
+     * @return Generator<int, List<T>>
+     */
+    public function getPermutations(array $partial = [], array $rest = null): Generator
+    {
+        if (!$rest) {
+            $rest = $this->array;
+        }
+
+        if (count($rest) === 1) {
+            yield [...$partial, ...$rest];
+            return;
+        }
+
+        foreach ($rest as $i => $el) {
+            $restCopy = $rest;
+            unset($restCopy[$i]);
+            yield from $this->getPermutations([...$partial, $el], $restCopy);
         }
     }
 }

@@ -4,8 +4,11 @@ declare(strict_types=1);
 
 namespace AOC\Year2019;
 
+use function array_map;
+use function explode;
 use function str_pad;
 use function str_split;
+use function AOC\Util\Safe\array_shift;
 
 use const STR_PAD_LEFT;
 
@@ -18,14 +21,40 @@ class IntCodeComputer
      */
     private array $output = [];
 
+    private bool $haltOnOutput = false;
+
+    private bool $hasFinished = false;
+
+    /**
+     * @var list<int>
+     */
+    private array $initialMemory;
+
     /**
      * @param list<int> $memory
-     * @param int $input
+     * @param list<int> $input
      */
     public function __construct(
         private array $memory = [],
-        private readonly int   $input = 0,
-    ) {}
+        private array $input = [0],
+    ) {
+        $this->initialMemory = $memory;
+    }
+
+    public static function fromString(string $input): IntCodeComputer
+    {
+        return new IntCodeComputer(self::parseMemory($input));
+    }
+
+    /**
+     * @param string $input
+     *
+     * @return list<int>
+     */
+    public static function parseMemory(string $input): array
+    {
+        return array_map('intval', explode(',', $input));
+    }
 
     /**
      * @param list<int> $memory
@@ -38,12 +67,36 @@ class IntCodeComputer
         $this->instructionPointer = 0;
     }
 
+    public function reset(): void
+    {
+        $this->memory = $this->initialMemory;
+        $this->instructionPointer = 0;
+        $this->input = [];
+        $this->output = [];
+        $this->hasFinished = false;
+    }
+
     /**
      * @return list<int>
      */
     public function getMemory(): array
     {
         return $this->memory;
+    }
+
+    /**
+     * @param list<int> $input
+     *
+     * @return void
+     */
+    public function setInput(array $input): void
+    {
+        $this->input = $input;
+    }
+
+    public function addInput(int $input): void
+    {
+        $this->input[] = $input;
     }
 
     /**
@@ -57,6 +110,16 @@ class IntCodeComputer
     public function getLastOutput(): int
     {
         return $this->output[count($this->output) - 1];
+    }
+
+    public function setHaltOnOutput(bool $haltOnOutput): void
+    {
+        $this->haltOnOutput = $haltOnOutput;
+    }
+
+    public function hasFinished(): bool
+    {
+        return $this->hasFinished;
     }
 
     private function incrementInstructionPointer(int $amount = 1): void
@@ -77,6 +140,7 @@ class IntCodeComputer
             $opcode = (int) ($instruction[3] . $instruction[4]);
 
             if ($opcode === 99) {
+                $this->hasFinished = true;
                 break;
             }
 
@@ -93,12 +157,18 @@ class IntCodeComputer
                     $this->incrementInstructionPointer(4);
                     break;
                 case 3:
-                    $this->memory[$this->memory[$this->instructionPointer + 1]] = $this->input;
+                    if (count($this->input) === 0) {
+                        break 2;
+                    }
+                    $this->memory[$this->memory[$this->instructionPointer + 1]] = array_shift($this->input);
                     $this->incrementInstructionPointer(2);
                     break;
                 case 4:
                     $this->output[] = $value1;
                     $this->incrementInstructionPointer(2);
+                    if ($this->haltOnOutput) {
+                        break 2;
+                    }
                     break;
                 case 5:
                     if ($value1 !== 0) {
