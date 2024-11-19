@@ -5,7 +5,9 @@ declare(strict_types=1);
 namespace AOC\Year2019;
 
 use function array_map;
+use function array_slice;
 use function explode;
+use function implode;
 use function str_pad;
 use function str_split;
 use function AOC\Util\Safe\array_shift;
@@ -14,6 +16,10 @@ use const STR_PAD_LEFT;
 
 class IntCodeComputer
 {
+    use Debug;
+
+    protected bool $debug = false;
+
     private int $instructionPointer = 0;
 
     /**
@@ -24,6 +30,8 @@ class IntCodeComputer
     private bool $haltOnOutput = false;
 
     private bool $hasFinished = false;
+
+    private int $relativeBase = 0;
 
     /**
      * @var list<int>
@@ -36,7 +44,7 @@ class IntCodeComputer
      */
     public function __construct(
         private array $memory = [],
-        private array $input = [0],
+        private array $input = [],
     ) {
         $this->initialMemory = $memory;
     }
@@ -134,6 +142,8 @@ class IntCodeComputer
 
     public function execute(): void
     {
+        $this->_th();
+
         while (true) {
             $instruction = str_split(str_pad((string) $this->memory[$this->instructionPointer], 5, '0', STR_PAD_LEFT));
 
@@ -144,33 +154,96 @@ class IntCodeComputer
                 break;
             }
 
-            $value1 = $instruction[2] === '0' ? $this->memory[$this->memory[$this->instructionPointer + 1]] : $this->memory[$this->instructionPointer + 1];
-            $value2 = $instruction[1] === '0' && isset($this->memory[$this->memory[$this->instructionPointer + 2]]) ? $this->memory[$this->memory[$this->instructionPointer + 2]] : $this->memory[$this->instructionPointer + 2];
+            $mod = implode('', array_slice($instruction, 0, 3));
+
+            /** @var int<0, 2> $mode1 */
+            $mode1 = (int) $instruction[2];
+            /** @var int<0, 2> $mode2 */
+            $mode2 = (int) $instruction[1];
+            /** @var int<0, 2> $mode3 */
+            $mode3 = (int) $instruction[0];
+
+            $arg1 = $this->memory[$this->instructionPointer + 1] ?? 0;
+            $arg2 = $this->memory[$this->instructionPointer + 2] ?? 0;
+            $arg3 = $this->memory[$this->instructionPointer + 3] ?? 0;
+
+            $addr1 = match ($mode1) {
+                1 => -1,
+                2 => $this->relativeBase + $arg1,
+                default => $arg1,
+            };
+
+            $addr2 = match ($mode2) {
+                1 => -1,
+                2 => $this->relativeBase + $arg2,
+                default => $arg2,
+            };
+
+            $addr3 = match ($mode3) {
+                1 => -1,
+                2 => $this->relativeBase + $arg3,
+                default => $arg3,
+            };
+
+            $value1 = match ($mode1) {
+                1 => $arg1,
+                default => $this->memory[$addr1] ?? 0,
+            };
+
+            $value2 = match ($mode2) {
+                1 => $arg2,
+                default => $this->memory[$addr2] ?? 0,
+            };
 
             switch ($opcode) {
                 case 1:
-                    $this->memory[$this->memory[$this->instructionPointer + 3]] = $value1 + $value2;
+                    $this->memory[$addr3] = $value1 + $value2;
+                    $this->_td([
+                        'mod' => $mod,'opc' => 'ADD',
+                        'val1' => $value1, 'addr1' => $addr1,
+                        'val2' => $value2, 'addr2' => $addr2,
+                        'val3' => $this->memory[$addr3], 'addr3' => $addr3,
+                    ]);
                     $this->incrementInstructionPointer(4);
                     break;
                 case 2:
-                    $this->memory[$this->memory[$this->instructionPointer + 3]] = $value1 * $value2;
+                    $this->memory[$addr3] = $value1 * $value2;
+                    $this->_td([
+                        'mod' => $mod, 'opc' => 'MUL',
+                        'val1' => $value1, 'addr1' => $addr1,
+                        'val2' => $value2, 'addr2' => $addr2,
+                        'val3' => $this->memory[$addr3], 'addr3' => $addr3,
+                    ]);
                     $this->incrementInstructionPointer(4);
                     break;
                 case 3:
                     if (count($this->input) === 0) {
                         break 2;
                     }
-                    $this->memory[$this->memory[$this->instructionPointer + 1]] = array_shift($this->input);
+                    $this->memory[$addr1] = array_shift($this->input);
+                    $this->_td([
+                        'mod' => $mod, 'opc' => 'INPUT',
+                        'val1' => $this->memory[$arg1], 'addr1' => $addr1,
+                    ]);
                     $this->incrementInstructionPointer(2);
                     break;
                 case 4:
                     $this->output[] = $value1;
+                    $this->_td([
+                        'mod' => $mod, 'opc' => 'OUTPUT',
+                        'val1' => $value1, 'addr1' => $addr1,
+                    ]);
                     $this->incrementInstructionPointer(2);
                     if ($this->haltOnOutput) {
                         break 2;
                     }
                     break;
                 case 5:
+                    $this->_td([
+                        'mod' => $mod, 'opc' => 'JMP !0',
+                        'val1' => $value1, 'addr1' => $addr1,
+                        'val2' => $value2, 'addr2' => $addr2,
+                    ]);
                     if ($value1 !== 0) {
                         $this->setInstructionPointer($value2);
                     } else {
@@ -178,6 +251,11 @@ class IntCodeComputer
                     }
                     break;
                 case 6:
+                    $this->_td([
+                        'mod' => $mod, 'opc' => 'JMP =0',
+                        'val1' => $value1, 'addr1' => $addr1,
+                        'val2' => $value2, 'addr2' => $addr2,
+                    ]);
                     if ($value1 === 0) {
                         $this->setInstructionPointer($value2);
                     } else {
@@ -186,19 +264,40 @@ class IntCodeComputer
                     break;
                 case 7:
                     if ($value1 < $value2) {
-                        $this->memory[$this->memory[$this->instructionPointer + 3]] = 1;
+                        $this->memory[$addr3] = 1;
                     } else {
-                        $this->memory[$this->memory[$this->instructionPointer + 3]] = 0;
+                        $this->memory[$addr3] = 0;
                     }
+                    $this->_td([
+                        'mod' => $mod, 'opc' => 'LT',
+                        'val1' => $value1, 'addr1' => $addr1,
+                        'val2' => $value2, 'addr2' => $addr2,
+                        'val3' => $this->memory[$addr3], 'addr3' => $addr3,
+                    ]);
                     $this->incrementInstructionPointer(4);
                     break;
                 case 8:
                     if ($value1 === $value2) {
-                        $this->memory[$this->memory[$this->instructionPointer + 3]] = 1;
+                        $this->memory[$addr3] = 1;
                     } else {
-                        $this->memory[$this->memory[$this->instructionPointer + 3]] = 0;
+                        $this->memory[$addr3] = 0;
                     }
+                    $this->_td([
+                        'mod' => $mod, 'opc' => 'EQ',
+                        'val1' => $value1, 'addr1' => $addr1,
+                        'val2' => $value2, 'addr2' => $addr2,
+                        'val3' => $this->memory[$addr3], 'addr3' => $addr3,
+                    ]);
+
                     $this->incrementInstructionPointer(4);
+                    break;
+                case 9:
+                    $this->relativeBase += $value1;
+                    $this->_td([
+                        'mod' => $mod, 'opc' => 'INC RB',
+                        'val1' => $value1, 'addr1' => $addr1,
+                    ]);
+                    $this->incrementInstructionPointer(2);
                     break;
                 default:
                     break 2;
