@@ -24,6 +24,10 @@ trait Debug
 
     protected function _th(): void
     {
+        if (!$this->debug) {
+            return;
+        }
+
         $width = array_sum($this->columns) + 3 * count($this->columns) + 1;
 
         $this->_n(str_repeat('-', $width));
@@ -49,6 +53,10 @@ trait Debug
      */
     protected function _td(array $content): void
     {
+        if (!$this->debug) {
+            return;
+        }
+
         $width = array_sum($this->columns) + 3 * count($this->columns) + 1;
 
         $row = '| ';

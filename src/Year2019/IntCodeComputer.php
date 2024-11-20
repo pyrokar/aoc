@@ -75,6 +75,11 @@ class IntCodeComputer
         $this->instructionPointer = 0;
     }
 
+    public function setMemoryAt(int $addr, int $value): void
+    {
+        $this->memory[$addr] = $value;
+    }
+
     public function reset(): void
     {
         $this->memory = $this->initialMemory;
@@ -113,6 +118,16 @@ class IntCodeComputer
     public function getOutput(): array
     {
         return $this->output;
+    }
+
+    /**
+     * @return list<int>
+     */
+    public function consumeOutput(): array
+    {
+        $output = $this->output;
+        $this->output = [];
+        return $output;
     }
 
     public function getLastOutput(): int
