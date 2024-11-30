@@ -60,7 +60,5 @@ trait Comparator
 
             return $ret;
         }
-
-        return 0;
     }
 }
