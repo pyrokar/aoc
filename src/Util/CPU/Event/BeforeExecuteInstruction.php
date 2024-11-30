@@ -10,8 +10,9 @@ use AOC\Util\Event\Event;
 
 final class BeforeExecuteInstruction implements Event
 {
-    public const NAME = 'beforeExecuteInstruction';
+    public const string NAME = 'beforeExecuteInstruction';
 
+    #[\Override]
     public function getName(): string
     {
         return self::NAME;

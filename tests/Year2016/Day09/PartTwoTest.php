@@ -13,6 +13,7 @@ class PartTwoTest extends \AOCTest\Util\SolutionTestCase
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function data(): array
     {
         return [

@@ -16,6 +16,7 @@ class ReflectionClass extends \ReflectionClass
     /**
      * @throws FilesystemException
      */
+    #[\Override]
     public function getFileName(): string
     {
         error_clear_last();

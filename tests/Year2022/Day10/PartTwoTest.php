@@ -15,6 +15,7 @@ class PartTwoTest extends SolutionTestCase
     /**
      * @return array<int, array<mixed>>
      */
+    #[\Override]
     public function data(): array
     {
         return [

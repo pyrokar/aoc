@@ -7,7 +7,7 @@
 	}],
 	"type": "project",
 	"platform": {
-		"php": ">=8.2"
+		"php": ">=8.3"
 	},
 	"require": {
 		"thecodingmachine/safe": "~2.5",
@@ -22,7 +22,8 @@
 		"friendsofphp/php-cs-fixer": "~3.40",
 		"thecodingmachine/phpstan-safe-rule": "~1.2",
         "symfony/console": "~7",
-        "nette/php-generator": "~4"
+        "nette/php-generator": "~4",
+        "rector/rector": "~1"
 	},
 	"autoload": {
         "files": [
@@ -49,6 +50,7 @@
 		"phpstan-generate-baseline": "./vendor/bin/phpstan analyse --generate-baseline",
 		"fix-style": "./vendor/bin/php-cs-fixer fix",
 		"test-fast": "./vendor/bin/phpunit -c phpunit.xml",
-        "test-intcodecomputer": "./vendor/bin/phpunit -c phpunit.xml --group intcodecomputer"
+        "test-intcodecomputer": "./vendor/bin/phpunit -c phpunit.xml --group intcodecomputer",
+        "rector": "./vendor/bin/rector"
 	}
 }

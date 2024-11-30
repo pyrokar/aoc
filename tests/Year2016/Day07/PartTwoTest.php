@@ -16,6 +16,7 @@ class PartTwoTest extends \AOCTest\Util\SolutionTestCase
      *
      * @throws FilesystemException
      */
+    #[\Override]
     public function data(): array
     {
         return [

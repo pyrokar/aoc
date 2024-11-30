@@ -30,6 +30,7 @@ class GenerateCommand extends Command
 
     private string $day;
 
+    #[\Override]
     protected function configure()
     {
         $this
@@ -42,6 +43,7 @@ class GenerateCommand extends Command
      * @throws DirException
      * @throws FilesystemException
      */
+    #[\Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->year = (string) $input->getArgument('year');
@@ -79,6 +81,7 @@ class GenerateCommand extends Command
         return Command::SUCCESS;
     }
 
+    #[\Override]
     public function getName(): string
     {
         return 'generate';

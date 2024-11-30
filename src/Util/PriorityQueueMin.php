@@ -20,6 +20,7 @@ class PriorityQueueMin extends SplPriorityQueue
      *
      * @return int
      */
+    #[\Override]
     public function compare(mixed $priority1, mixed $priority2): int
     {
         return parent::compare($priority2, $priority1);
@@ -28,6 +29,7 @@ class PriorityQueueMin extends SplPriorityQueue
     /**
      * @return TValue
      */
+    #[\Override]
     public function extract(): mixed
     {
         /** @phpstan-ignore-next-line */

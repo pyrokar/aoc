@@ -15,6 +15,7 @@ class SolutionTest extends SolutionTestCase
     /**
      * @throws FilesystemException
      */
+    #[\Override]
     public function data(): array
     {
         return [

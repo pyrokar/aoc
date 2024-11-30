@@ -73,6 +73,7 @@ class Display2D
         return $count;
     }
 
+    #[\Override]
     public function __toString(): string
     {
         $output = '';

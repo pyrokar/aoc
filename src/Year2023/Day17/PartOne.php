@@ -19,6 +19,7 @@ class PartOne
      *
      * @return int
      */
+    #[\Override]
     protected function findPath(array $grid, Position2D $start, Position2D $end): int
     {
         /** @var PriorityQueueMin<int, array{Position2D, string, int, array<string, int>}> $frontier */

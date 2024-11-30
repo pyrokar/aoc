@@ -10,6 +10,7 @@ class PartOne
 {
     use Shared;
 
+    #[\Override]
     protected function addPosition(int $x, int $y, string $char): void
     {
         $this->grid[Position2D::key($x, $y)] = $char;

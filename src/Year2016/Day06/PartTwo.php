@@ -29,6 +29,7 @@ class PartTwo
      *
      * @return int
      */
+    #[\Override]
     public function getNeedle(array $charCounts): int
     {
         return \AOC\Util\Safe\min($charCounts);

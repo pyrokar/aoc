@@ -11,6 +11,7 @@ class DefaultDispatcher implements Dispatcher
      */
     private array $listeners = [];
 
+    #[\Override]
     public function __invoke(Event $event): bool
     {
         if (!isset($this->listeners[$event->getName()])) {
@@ -26,6 +27,7 @@ class DefaultDispatcher implements Dispatcher
         return true;
     }
 
+    #[\Override]
     public function addListener(string $eventName, callable $listener): void
     {
         if (!isset($this->listeners[$eventName])) {

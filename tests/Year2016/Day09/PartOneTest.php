@@ -17,6 +17,7 @@ class PartOneTest extends SolutionTestCase
      *
      * @throws FilesystemException
      */
+    #[\Override]
     public function data(): array
     {
         return [

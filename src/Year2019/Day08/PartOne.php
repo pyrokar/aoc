@@ -11,11 +11,11 @@ use const PHP_INT_MAX;
 
 final class PartOne
 {
-    private const ZERO = 48;
+    private const int ZERO = 48;
 
-    private const ONE = 49;
+    private const int ONE = 49;
 
-    private const TWO = 50;
+    private const int TWO = 50;
 
     /**
      * @param string $input

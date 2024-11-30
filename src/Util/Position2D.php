@@ -272,6 +272,7 @@ class Position2D
         return ($this->x === $position2D->x || $this->y === $position2D->y);
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->getKey();

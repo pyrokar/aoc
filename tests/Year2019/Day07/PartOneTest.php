@@ -22,6 +22,7 @@ final class PartOneTest extends SolutionTestCase
      *
      * @return array<int, array<mixed>>
      */
+    #[\Override]
     public function data(): array
     {
         return [

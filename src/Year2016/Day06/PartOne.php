@@ -31,6 +31,7 @@ class PartOne
      *
      * @return int
      */
+    #[\Override]
     public function getNeedle(array $charCounts): int
     {
         return max($charCounts);

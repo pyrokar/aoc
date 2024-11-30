@@ -16,6 +16,7 @@ class PartOneTest extends SolutionTestCase
     /**
      * @inheritDoc
      */
+    #[\Override]
     public function data(): array
     {
         return [
