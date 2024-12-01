@@ -25,4 +25,7 @@ return $config
         'phpdoc_separation' => true,
 
         'no_unused_imports' => true,
+        'fully_qualified_strict_types' => [
+            'import_symbols' => true,
+        ],
     ]);

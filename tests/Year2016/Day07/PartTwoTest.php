@@ -6,8 +6,9 @@ namespace AOCTest\Year2016\Day07;
 
 use AOC\Year2016\Day07\PartTwo;
 use Safe\Exceptions\FilesystemException;
+use AOCTest\Util\SolutionTestCase;
 
-class PartTwoTest extends \AOCTest\Util\SolutionTestCase
+class PartTwoTest extends SolutionTestCase
 {
     protected string $solutionClass = PartTwo::class;
 

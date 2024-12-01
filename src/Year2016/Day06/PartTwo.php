@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace AOC\Year2016\Day06;
 
 use Generator;
+use Safe\Exceptions\ArrayException;
 
 class PartTwo
 {
@@ -13,7 +14,7 @@ class PartTwo
     /**
      * @param Generator<void, string, void, void> $input
      *
-     * @throws \Safe\Exceptions\ArrayException
+     * @throws ArrayException
      *
      * @return string
      */
@@ -25,7 +26,7 @@ class PartTwo
     /**
      * @param array<int> $charCounts
      *
-     * @throws \Safe\Exceptions\ArrayException
+     * @throws ArrayException
      *
      * @return int
      */
