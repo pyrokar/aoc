@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace AOCTest\Year2024\Day25;
+namespace AOCTest\Year2024\Day04;
 
-use AOC\Year2024\Day25\PartOne;
+use AOC\Year2024\Day04\PartTwo;
 use AOCTest\Util\SolutionTestCase;
-use Override;
 use Safe\Exceptions\FilesystemException;
+use Override;
 
-final class PartOneTest extends SolutionTestCase
+final class PartTwoTest extends SolutionTestCase
 {
     /** @var class-string */
-    public string $solutionClass = PartOne::class;
+    public string $solutionClass = PartTwo::class;
 
     /**
      * @throws FilesystemException
@@ -23,8 +23,8 @@ final class PartOneTest extends SolutionTestCase
     public function data(): array
     {
         return [
-            [[$this->generatorFromFile(__DIR__ . DS . 'test')], 3],
-            [[$this->generatorFromFile(__DIR__ . DS . 'input')], 3483],
+            [[$this->generatorFromFile(__DIR__ . DS . 'test')], 9],
+            [[$this->generatorFromFile(__DIR__ . DS . 'input')], 1974],
         ];
     }
 }

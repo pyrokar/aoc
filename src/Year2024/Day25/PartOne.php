@@ -5,17 +5,18 @@ declare(strict_types=1);
 namespace AOC\Year2024\Day25;
 
 use Generator;
+
 use function str_split;
 
 final class PartOne
 {
-	/**
-	 * @param Generator<int, string> $input
-	 *
-	 * @return int
-	 */
-	public function __invoke(Generator $input): int
-	{
+    /**
+     * @param Generator<int, string> $input
+     *
+     * @return int
+     */
+    public function __invoke(Generator $input): int
+    {
         $locks = [];
         $keys = [];
 
@@ -70,6 +71,6 @@ final class PartOne
             }
         }
 
-		return $fits;
-	}
+        return $fits;
+    }
 }
