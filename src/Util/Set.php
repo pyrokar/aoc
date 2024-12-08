@@ -8,6 +8,7 @@ use Generator;
 
 use function array_slice;
 use function count;
+use function range;
 
 /**
  * @template T
@@ -56,8 +57,37 @@ class Set
 
         $listLength = count($this->array);
 
-        foreach (range($start, $listLength - $size) as $i) {
-            yield from $this->getCombinationsOfSize($size - 1, $i + 1, [...$partial, $this->array[$i]]);
+        if ($size > $listLength) {
+            foreach ($this->array as $element) {
+                yield from $this->getCombinationsOfSize($size - 1, 0, [...$partial, $element]);
+            }
+        } else {
+            foreach (range($start, $listLength - $size) as $i) {
+                yield from $this->getCombinationsOfSize($size - 1, $i + 1, [...$partial, $this->array[$i]]);
+            }
+        }
+
+
+    }
+
+    /**
+     * @param int $size
+     * @param array<T> $partial
+     *
+     * @return Generator<int, List<T>>
+     */
+    public function getCombinationsWithRepetition(int $size, array $partial = []): Generator
+    {
+        if ($size === 1) {
+            foreach ($this->array as $el) {
+                yield [...$partial, $el];
+            }
+
+            return;
+        }
+
+        foreach ($this->array as $el) {
+            yield from $this->getCombinationsWithRepetition($size - 1, [...$partial, $el]);
         }
     }
 
