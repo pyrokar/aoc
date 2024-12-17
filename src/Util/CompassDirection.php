@@ -40,4 +40,14 @@ enum CompassDirection: string
     {
         return $this->turnRight();
     }
+
+    public function isOpposite(self $direction): bool
+    {
+        return match ($this) {
+            self::North => $direction === self::South,
+            self::East => $direction === self::West,
+            self::South => $direction === self::North,
+            self::West => $direction === self::East,
+        };
+    }
 }
