@@ -139,6 +139,28 @@ class Position2D
     }
 
     /**
+     * @return array{string, string}
+     */
+    public function getVerticalNeighborKeys(): array
+    {
+        return [
+            $this->getPositionForDirection(CompassDirection::North)->getKey(),
+            $this->getPositionForDirection(CompassDirection::South)->getKey(),
+        ];
+    }
+
+    /**
+     * @return array{string, string}
+     */
+    public function getHorizontalNeighborKeys(): array
+    {
+        return [
+            $this->getPositionForDirection(CompassDirection::West)->getKey(),
+            $this->getPositionForDirection(CompassDirection::East)->getKey(),
+        ];
+    }
+
+    /**
      * @return array<string>
      */
     public function getNeighborKeys(): array
