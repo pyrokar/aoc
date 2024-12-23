@@ -36,6 +36,4 @@ class PriorityQueueMin extends SplPriorityQueue
         /** @phpstan-ignore-next-line */
         return parent::extract();
     }
-
-
 }

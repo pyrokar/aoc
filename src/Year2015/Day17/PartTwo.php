@@ -27,7 +27,6 @@ class PartTwo
 
         $minSizeFound = false;
 
-
         for ($size = 1; $size <= $containers->size(); $size++) {
             foreach ($containers->getCombinationsOfSize($size) as $combination) {
                 if (array_sum($combination) === $liters) {

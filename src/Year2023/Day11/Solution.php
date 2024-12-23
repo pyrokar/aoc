@@ -93,7 +93,6 @@ class Solution
             }
         }
 
-
         return (int) array_sum($distances) / 2;
     }
 }

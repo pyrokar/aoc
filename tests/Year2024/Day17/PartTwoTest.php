@@ -13,7 +13,6 @@ final class PartTwoTest extends SolutionTestCase
     /** @var class-string */
     public string $solutionClass = PartTwo::class;
 
-
     /**
      * @return array<int, array<mixed>>
      */

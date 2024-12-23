@@ -22,7 +22,6 @@ trait Shared
     protected array $walls;
     protected Position2D $robot;
 
-
     protected function calcSumGPS(): int
     {
         $sum = 0;

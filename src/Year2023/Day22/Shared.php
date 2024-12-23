@@ -39,7 +39,6 @@ trait Shared
                 explode('~', $line),
             );
 
-
             $dir = match (true) {
                 $from->x > $to->x => Direction3D::Left,
                 $from->y < $to->y => Direction3D::Forward,

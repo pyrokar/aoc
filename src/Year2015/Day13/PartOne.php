@@ -23,7 +23,6 @@ class PartOne
     {
         $happiness = [];
 
-
         foreach ($input as $line) {
             if (preg_match('/(?P<P1>\w+) would (?P<gl>gain|lose) (?P<amount>\d+) happiness units by sitting next to (?P<P2>\w+)\./', $line, $m)) {
                 $person1 = $m['P1'];
@@ -32,7 +31,6 @@ class PartOne
                 if ($m['gl'] === 'lose') {
                     $amount *= -1;
                 }
-
 
                 $people = [$person1, $person2];
                 sort($people);

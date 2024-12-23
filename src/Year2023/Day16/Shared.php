@@ -28,7 +28,6 @@ trait Shared
      */
     protected array $splitters = [];
 
-
     /**
      * @var array<string, int>
      */

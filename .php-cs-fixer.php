@@ -33,4 +33,6 @@ return $config
             'import_functions' => true,
             'import_classes' => true,
         ],
+
+        'no_extra_blank_lines' => true,
     ]);

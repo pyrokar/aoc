@@ -28,7 +28,6 @@ class PartTwo
         $start = new Position2D(1, 0);
         $end = $this->getEnd($input);
 
-
         $minutes = [
             $this->findMinDistance($start, $end),
             $this->findMinDistance($end, $start),

@@ -66,8 +66,6 @@ class Set
                 yield from $this->getCombinationsOfSize($size - 1, $i + 1, [...$partial, $this->array[$i]]);
             }
         }
-
-
     }
 
     /**

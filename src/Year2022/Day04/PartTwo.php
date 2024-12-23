@@ -40,7 +40,6 @@ class PartTwo
             }
         }
 
-
         return $sum;
     }
 }

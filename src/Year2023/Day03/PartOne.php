@@ -83,7 +83,6 @@ class PartOne
             $lastRowSymbols = $currentRowSymbols;
         }
 
-
         return $sum;
     }
 }

@@ -49,7 +49,6 @@ class PartOne
             $sumOfIds += $id;
         }
 
-
         return $sumOfIds;
     }
 }

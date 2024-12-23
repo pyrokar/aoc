@@ -49,6 +49,4 @@ class Path
         $position = $this->positions[$player];
         return [$position, $this->openValves[$position] ?? 0];
     }
-
-
 }

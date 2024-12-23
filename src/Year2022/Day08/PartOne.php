@@ -87,7 +87,6 @@ class PartOne
             }
         }
 
-
         return count(array_filter($grid, static function (Tree $tree) {
             return $tree->isVisible;
         }));

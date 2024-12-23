@@ -69,8 +69,6 @@ final class PartTwo
             foreach ([$fencesTop, $fencesBottom, $fencesLeft, $fencesRight] as $fence) {
                 foreach ($fence as $f) {
                     $fences += $this->countFences($f);
-
-
                 }
             }
 

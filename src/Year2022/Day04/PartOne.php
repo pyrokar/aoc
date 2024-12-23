@@ -40,7 +40,6 @@ class PartOne
             }
         }
 
-
         return $sum;
     }
 }

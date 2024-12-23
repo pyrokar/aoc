@@ -24,7 +24,6 @@ class PartOne
         return $this->solve($input);
     }
 
-
     /**
      * @param array<int> $charCounts
      *

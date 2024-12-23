@@ -47,7 +47,6 @@ class PartOne
                 $seeds[$dest] = [];
                 $map = true;
 
-
                 continue;
             }
 

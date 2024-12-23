@@ -35,7 +35,6 @@ class CPU
      */
     private int $instructionPointer = 0;
 
-
     /**
      * @param array<string, int> $initRegisters
      */

@@ -19,7 +19,6 @@ final class BeforeExecuteInstruction implements Event
         return self::NAME;
     }
 
-
     public function __construct(
         readonly public CPU $cpu,
         readonly public Instruction $instruction,

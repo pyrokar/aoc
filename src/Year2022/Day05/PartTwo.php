@@ -46,7 +46,6 @@ class PartTwo
             $message .= $stack[array_key_last($stack)];
         }
 
-
         return $message;
     }
 }

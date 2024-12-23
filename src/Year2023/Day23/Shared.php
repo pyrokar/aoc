@@ -156,7 +156,6 @@ trait Shared
                 continue;
             }
 
-
             if ($graph->hasVertex($nodeKey)) {
                 if ($hadSlope[$nodeKey]) {
                     $graph->addEdge($parents[$nodeKey], $nodeKey, $distances[$nodeKey]);

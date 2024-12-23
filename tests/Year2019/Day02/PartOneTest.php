@@ -17,7 +17,6 @@ final class PartOneTest extends SolutionTestCase
     /** @var class-string */
     public string $solutionClass = PartOne::class;
 
-
     /**
      * @throws FilesystemException
      *
