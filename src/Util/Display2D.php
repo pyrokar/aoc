@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace AOC\Util;
 
+use Override;
+
 class Display2D
 {
     /**
@@ -73,7 +75,7 @@ class Display2D
         return $count;
     }
 
-    #[\Override]
+    #[Override]
     public function __toString(): string
     {
         $output = '';

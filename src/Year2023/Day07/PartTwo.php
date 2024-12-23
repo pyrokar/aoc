@@ -4,18 +4,20 @@ declare(strict_types=1);
 
 namespace AOC\Year2023\Day07;
 
+use Override;
+
 class PartTwo
 {
     use Shared;
 
-    #[\Override]
+    #[Override]
     protected function init(): void
     {
         $this->cardStrength = array_flip(['J', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'Q', 'K', 'A']);
         $this->typeStrength = array_flip(['hc', 'op', 'tp', 'three', 'fh', 'four', 'five']);
     }
 
-    #[\Override]
+    #[Override]
     protected function getStrength(string $hand): int
     {
         $cardsCount = [];

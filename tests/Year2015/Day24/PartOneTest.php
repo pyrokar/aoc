@@ -7,6 +7,7 @@ namespace AOCTest\Year2015\Day24;
 use AOC\Year2015\Day24\PartOne;
 use AOCTest\Util\SolutionTestCase;
 use Safe\Exceptions\FilesystemException;
+use Override;
 
 /**
  * @medium
@@ -21,7 +22,7 @@ class PartOneTest extends SolutionTestCase
      *
      * @return array<int, array<mixed>>
      */
-    #[\Override]
+    #[Override]
     public function data(): array
     {
         return [

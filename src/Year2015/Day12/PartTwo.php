@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 namespace AOC\Year2015\Day12;
 
+use JsonException;
+
 class PartTwo
 {
     /**
      * @param string $input
      *
-     * @throws \JsonException
+     * @throws JsonException
      *
      * @return int
      */

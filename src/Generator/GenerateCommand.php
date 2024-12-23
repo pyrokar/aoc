@@ -15,6 +15,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Override;
 
 use function is_file;
 use function Safe\file_put_contents;
@@ -30,7 +31,7 @@ class GenerateCommand extends Command
 
     private string $day;
 
-    #[\Override]
+    #[Override]
     protected function configure()
     {
         $this
@@ -43,7 +44,7 @@ class GenerateCommand extends Command
      * @throws DirException
      * @throws FilesystemException
      */
-    #[\Override]
+    #[Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $this->year = (string) $input->getArgument('year');
@@ -81,7 +82,7 @@ class GenerateCommand extends Command
         return Command::SUCCESS;
     }
 
-    #[\Override]
+    #[Override]
     public function getName(): string
     {
         return 'generate';
@@ -153,6 +154,7 @@ class GenerateCommand extends Command
             ->addUse('AOC\Year' . $this->year . '\Day' . $this->day . '\Part' . $part->name)
             ->addUse('AOCTest\Util\SolutionTestCase')
             ->addUse('Safe\Exceptions\FilesystemException')
+            ->addUse('Override')
         ;
 
         $testClass = new ClassType('Part' . $part->name . 'Test');
@@ -168,6 +170,7 @@ class GenerateCommand extends Command
             ->addComment('@throws FilesystemException' . PHP_EOL)
             ->addComment('@return array<int, array<mixed>>')
             ->setReturnType('array')
+            ->addAttribute('Override')
             ->addBody('return [')
             ->addBody('    [[$this->generatorFromFile(__DIR__ . DS . \'test\')], 0],')
             ->addBody('    [[$this->generatorFromFile(__DIR__ . DS . \'input\')], 0],')

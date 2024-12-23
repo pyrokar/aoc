@@ -9,6 +9,7 @@ use Generator;
 use function explode;
 use function implode;
 use function str_starts_with;
+use function sort;
 
 final class PartOne
 {

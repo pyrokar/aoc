@@ -7,12 +7,13 @@ namespace AOC\Util\CPU\Event;
 use AOC\Util\CPU\CPU;
 use AOC\Util\CPU\Instruction;
 use AOC\Util\Event\Event;
+use Override;
 
 final class BeforeExecuteInstruction implements Event
 {
     public const string NAME = 'beforeExecuteInstruction';
 
-    #[\Override]
+    #[Override]
     public function getName(): string
     {
         return self::NAME;

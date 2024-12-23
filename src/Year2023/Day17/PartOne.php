@@ -7,6 +7,7 @@ namespace AOC\Year2023\Day17;
 use AOC\Util\CompassDirection;
 use AOC\Util\Position2D;
 use AOC\Util\PriorityQueueMin;
+use Override;
 
 class PartOne
 {
@@ -19,7 +20,7 @@ class PartOne
      *
      * @return int
      */
-    #[\Override]
+    #[Override]
     protected function findPath(array $grid, Position2D $start, Position2D $end): int
     {
         /** @var PriorityQueueMin<int, array{Position2D, string, int, array<string, int>}> $frontier */

@@ -6,6 +6,7 @@ namespace AOCTest\Year2015\Day22;
 
 use AOC\Year2015\Day22\PartOne;
 use AOCTest\Util\SolutionTestCase;
+use Override;
 
 /**
  * @medium
@@ -18,7 +19,7 @@ class PartOneTest extends SolutionTestCase
     /**
      * @return array<int, array<mixed>>
      */
-    #[\Override]
+    #[Override]
     public function data(): array
     {
         return [

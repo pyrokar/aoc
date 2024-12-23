@@ -8,6 +8,7 @@ use AOC\Util\CompassDirection;
 use AOC\Util\Position2D;
 use Generator;
 use Safe\Exceptions\PcreException;
+use SplStack;
 
 use function Safe\preg_match;
 use function str_split;
@@ -121,7 +122,7 @@ final class PartTwo
                 }
 
                 $oldBoxeKeys = [];
-                $positionStack = new \SplStack();
+                $positionStack = new SplStack();
                 $positionStack->push($currentPos);
 
                 while (!$positionStack->isEmpty()) {

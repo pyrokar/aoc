@@ -7,6 +7,7 @@ namespace AOC\Util;
 use ArrayAccess;
 use Iterator;
 use OutOfBoundsException;
+use Override;
 
 use function array_keys;
 
@@ -86,7 +87,7 @@ class CachedCallableArray implements ArrayAccess, Iterator
      *
      * @return bool
      */
-    #[\Override]
+    #[Override]
     public function offsetExists(mixed $offset): bool
     {
         return isset($this->array[$offset]);
@@ -97,7 +98,7 @@ class CachedCallableArray implements ArrayAccess, Iterator
      *
      * @return TValue
      */
-    #[\Override]
+    #[Override]
     public function offsetGet(mixed $offset): mixed
     {
         return $this->get($offset);
@@ -109,13 +110,13 @@ class CachedCallableArray implements ArrayAccess, Iterator
      *
      * @return void
      */
-    #[\Override]
+    #[Override]
     public function offsetSet(mixed $offset, mixed $value): void
     {
         $this->cache[$offset] = $value;
     }
 
-    #[\Override]
+    #[Override]
     public function offsetUnset(mixed $offset): void
     {
         unset($this->array[$offset], $this->cache[$offset]);
@@ -124,7 +125,7 @@ class CachedCallableArray implements ArrayAccess, Iterator
     /**
      * @return TValue
      */
-    #[\Override]
+    #[Override]
     public function current(): mixed
     {
         if (!$key = $this->key()) {
@@ -134,7 +135,7 @@ class CachedCallableArray implements ArrayAccess, Iterator
         return $this->get($key);
     }
 
-    #[\Override]
+    #[Override]
     public function next(): void
     {
         $this->_position++;
@@ -143,19 +144,19 @@ class CachedCallableArray implements ArrayAccess, Iterator
     /**
      * @return TKey | null
      */
-    #[\Override]
+    #[Override]
     public function key(): int|string|null
     {
         return array_keys($this->array)[$this->_position] ?? null;
     }
 
-    #[\Override]
+    #[Override]
     public function valid(): bool
     {
         return isset($this->array[$this->key()]);
     }
 
-    #[\Override]
+    #[Override]
     public function rewind(): void
     {
         $this->_position = 0;

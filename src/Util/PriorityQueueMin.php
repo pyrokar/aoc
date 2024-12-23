@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace AOC\Util;
 
 use SplPriorityQueue;
+use Override;
 
 /**
  * @template TPriority
@@ -20,7 +21,7 @@ class PriorityQueueMin extends SplPriorityQueue
      *
      * @return int
      */
-    #[\Override]
+    #[Override]
     public function compare(mixed $priority1, mixed $priority2): int
     {
         return parent::compare($priority2, $priority1);
@@ -29,7 +30,7 @@ class PriorityQueueMin extends SplPriorityQueue
     /**
      * @return TValue
      */
-    #[\Override]
+    #[Override]
     public function extract(): mixed
     {
         /** @phpstan-ignore-next-line */

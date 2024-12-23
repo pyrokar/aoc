@@ -28,4 +28,9 @@ return $config
         'fully_qualified_strict_types' => [
             'import_symbols' => true,
         ],
+        'global_namespace_import' => [
+            'import_constants' => true,
+            'import_functions' => true,
+            'import_classes' => true,
+        ],
     ]);

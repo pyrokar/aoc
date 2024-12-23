@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace AOC\Util\Safe;
 
 use Safe\Exceptions\FilesystemException;
+use Override;
 
 /**
  * @template T of object
@@ -16,7 +17,7 @@ class ReflectionClass extends \ReflectionClass
     /**
      * @throws FilesystemException
      */
-    #[\Override]
+    #[Override]
     public function getFileName(): string
     {
         error_clear_last();

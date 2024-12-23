@@ -6,6 +6,7 @@ namespace AOC\Year2016\Day06;
 
 use Generator;
 use Safe\Exceptions\ArrayException;
+use Override;
 
 class PartTwo
 {
@@ -30,7 +31,7 @@ class PartTwo
      *
      * @return int
      */
-    #[\Override]
+    #[Override]
     public function getNeedle(array $charCounts): int
     {
         return \AOC\Util\Safe\min($charCounts);

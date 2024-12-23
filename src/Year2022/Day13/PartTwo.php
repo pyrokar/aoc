@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace AOC\Year2022\Day13;
 
 use Generator;
+use JsonException;
 
 use function Safe\json_decode;
 use function Safe\json_encode;
@@ -16,7 +17,7 @@ class PartTwo
     /**
      * @param Generator<string> $input
      *
-     * @throws \JsonException
+     * @throws JsonException
      *
      * @return int
      */

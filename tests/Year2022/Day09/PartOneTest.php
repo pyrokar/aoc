@@ -6,6 +6,7 @@ namespace AOCTest\Year2022\Day09;
 
 use AOC\Year2022\Day09\PartOne;
 use AOCTest\Util\SolutionTestCase;
+use Override;
 
 /**
  * @large
@@ -18,7 +19,7 @@ class PartOneTest extends SolutionTestCase
     /**
      * @return array<int, array<mixed>>
      */
-    #[\Override]
+    #[Override]
     public function data(): array
     {
         return [
