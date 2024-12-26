@@ -14,23 +14,6 @@ trait Shared
     protected array $blocked;
 
     /**
-     * @param Generator<int, string> $input
-     */
-    protected function init(Generator $input): void
-    {
-        $this->blocked = [];
-
-        foreach ($input as $line) {
-            [$from, $to] = array_map(static fn(string $a) => (int) $a, explode('-', $line));
-
-            $this->blocked[] = [$from, $to];
-
-        }
-
-        $this->blocked = $this->mergeRange($this->blocked);
-    }
-
-    /**
      * @param array<array<int, int>> $ranges
      *
      * @return array<array<int, int>>
@@ -51,5 +34,22 @@ trait Shared
         }
 
         return array_slice($ranges, 0, $prevIndex + 1);
+    }
+
+    /**
+     * @param Generator<int, string> $input
+     */
+    protected function init(Generator $input): void
+    {
+        $this->blocked = [];
+
+        foreach ($input as $line) {
+            [$from, $to] = array_map(static fn(string $a) => (int) $a, explode('-', $line));
+
+            $this->blocked[] = [$from, $to];
+
+        }
+
+        $this->blocked = $this->mergeRange($this->blocked);
     }
 }

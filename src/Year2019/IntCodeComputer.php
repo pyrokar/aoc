@@ -145,16 +145,6 @@ class IntCodeComputer
         return $this->hasFinished;
     }
 
-    private function incrementInstructionPointer(int $amount = 1): void
-    {
-        $this->instructionPointer += $amount;
-    }
-
-    private function setInstructionPointer(int $ip): void
-    {
-        $this->instructionPointer = $ip;
-    }
-
     public function execute(): void
     {
         $this->_th();
@@ -318,6 +308,16 @@ class IntCodeComputer
                     break 2;
             }
         }
+    }
+
+    private function incrementInstructionPointer(int $amount = 1): void
+    {
+        $this->instructionPointer += $amount;
+    }
+
+    private function setInstructionPointer(int $ip): void
+    {
+        $this->instructionPointer = $ip;
     }
 
 }

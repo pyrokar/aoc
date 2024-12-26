@@ -9,6 +9,7 @@ use Safe\Exceptions\ArrayException;
 
 trait Solution
 {
+    abstract public function getNeedle(array $charCounts): int;
     /**
      * @param Generator<void, string, void, void> $input
      *
@@ -44,6 +45,4 @@ trait Solution
 
         return $message;
     }
-
-    abstract public function getNeedle(array $charCounts): int;
 }

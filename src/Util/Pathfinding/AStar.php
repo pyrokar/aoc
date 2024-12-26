@@ -12,11 +12,6 @@ abstract class AStar
 {
     private Position2D $end;
 
-    protected function setEnd(Position2D $end): void
-    {
-        $this->end = $end;
-    }
-
     public function findMinDistance(Position2D $start): int
     {
         $frontier = new PriorityQueueMin();
@@ -49,6 +44,11 @@ abstract class AStar
         }
 
         throw new DomainException('End not found');
+    }
+
+    protected function setEnd(Position2D $end): void
+    {
+        $this->end = $end;
     }
 
     /**

@@ -12,6 +12,17 @@ class Position2D
 
     public static int $yDirection = 1; // or -1 for inverted
 
+    public function __construct(
+        public int $x,
+        public int $y,
+    ) {}
+
+    #[Override]
+    public function __toString(): string
+    {
+        return $this->getKey();
+    }
+
     /**
      * normal: north = y++
      * inverted : north = y--
@@ -28,11 +39,6 @@ class Position2D
         [$x, $y] = explode('|', $key);
         return new self((int) $x, (int) $y);
     }
-
-    public function __construct(
-        public int $x,
-        public int $y,
-    ) {}
 
     /**
      * @mutable
@@ -250,16 +256,6 @@ class Position2D
         return new self(...$this->applyDifferentials(HexagonalDirection::getDifferentials($direction)));
     }
 
-    /**
-     * @param array{int, int} $differentials
-     *
-     * @return array{int, int}
-     */
-    private function applyDifferentials(array $differentials): array
-    {
-        return [$this->x + $differentials[0], $this->y + $differentials[1] * static::$yDirection];
-    }
-
     public function getOrthogonalDirectionTo(Position2D $position): ?CompassDirection
     {
         if ($this->x > $position->x) {
@@ -296,9 +292,13 @@ class Position2D
         return ($this->x === $position2D->x || $this->y === $position2D->y);
     }
 
-    #[Override]
-    public function __toString(): string
+    /**
+     * @param array{int, int} $differentials
+     *
+     * @return array{int, int}
+     */
+    private function applyDifferentials(array $differentials): array
     {
-        return $this->getKey();
+        return [$this->x + $differentials[0], $this->y + $differentials[1] * static::$yDirection];
     }
 }

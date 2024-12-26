@@ -57,6 +57,34 @@ class Rope
         }
     }
 
+    protected function printPath(): void
+    {
+        for ($y = $this->dimensions['y'][1]; $y >= $this->dimensions['y'][0]; $y--) {
+            for ($x = $this->dimensions['x'][0]; $x <= $this->dimensions['x'][1]; $x++) {
+                $output = '.';
+
+                $key = Position2D::key($x, $y);
+                if ($key === $this->head->getKey()) {
+                    $output = 'H';
+                } elseif ($x === 0 && $y === 0) {
+                    $output = 's';
+                } else {
+                    foreach ($this->knots as $i => $knot) {
+                        if ($key === $knot->getKey()) {
+                            $output = (string) ($i + 1);
+                            break;
+                        }
+                    }
+                }
+
+                echo $output;
+            }
+
+            echo PHP_EOL;
+        }
+        echo PHP_EOL;
+    }
+
     private function followKnot(Position2D $knot, Position2D $predecessor): void
     {
         $distance = $predecessor->calcManhattanDistanceTo($knot);
@@ -91,33 +119,5 @@ class Rope
                 $knot->move(CompassDirection::West, 1);
             }
         }
-    }
-
-    public function printPath(): void
-    {
-        for ($y = $this->dimensions['y'][1]; $y >= $this->dimensions['y'][0]; $y--) {
-            for ($x = $this->dimensions['x'][0]; $x <= $this->dimensions['x'][1]; $x++) {
-                $output = '.';
-
-                $key = Position2D::key($x, $y);
-                if ($key === $this->head->getKey()) {
-                    $output = 'H';
-                } elseif ($x === 0 && $y === 0) {
-                    $output = 's';
-                } else {
-                    foreach ($this->knots as $i => $knot) {
-                        if ($key === $knot->getKey()) {
-                            $output = (string) ($i + 1);
-                            break;
-                        }
-                    }
-                }
-
-                echo $output;
-            }
-
-            echo PHP_EOL;
-        }
-        echo PHP_EOL;
     }
 }

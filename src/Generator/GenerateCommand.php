@@ -32,6 +32,12 @@ class GenerateCommand extends Command
     private string $day;
 
     #[Override]
+    public function getName(): string
+    {
+        return 'generate';
+    }
+
+    #[Override]
     protected function configure()
     {
         $this
@@ -80,12 +86,6 @@ class GenerateCommand extends Command
         $this->generateFileOrIgnore($pathTest . DS . 'input', '');
 
         return Command::SUCCESS;
-    }
-
-    #[Override]
-    public function getName(): string
-    {
-        return 'generate';
     }
 
     /**

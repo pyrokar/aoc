@@ -20,17 +20,6 @@ trait WizardGame
     protected int $bossDamage;
     protected int $minCost;
 
-    protected function init(int $bossDamage): void
-    {
-        $this->bossDamage = $bossDamage;
-        $this->minCost = PHP_INT_MAX;
-    }
-
-    protected function beforePlayerTurn(GameState $state): GameState
-    {
-        return $state;
-    }
-
     /**
      * @param GameState $state
      *
@@ -59,6 +48,17 @@ trait WizardGame
             }
         }
         return new GameState($bossHP, $state->playerHP, $playerArmor, $playerMana, $state->playerManaSpend, $activeSpells);
+    }
+
+    protected function init(int $bossDamage): void
+    {
+        $this->bossDamage = $bossDamage;
+        $this->minCost = PHP_INT_MAX;
+    }
+
+    protected function beforePlayerTurn(GameState $state): GameState
+    {
+        return $state;
     }
 
     protected function playerTurn(GameState $state): void

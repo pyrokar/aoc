@@ -26,6 +26,25 @@ class Display2D
         $this->rows = array_fill(0, $this->height, []);
     }
 
+    #[Override]
+    public function __toString(): string
+    {
+        $output = '';
+        for ($y = 0; $y < $this->height; ++$y) {
+            for ($x = 0; $x < $this->width; ++$x) {
+                if (isset($this->rows[$y][Point2D::key($x, $y)])) {
+                    $output .= '#';
+                } else {
+                    $output .= '.';
+                }
+            }
+
+            $output .= PHP_EOL;
+        }
+
+        return $output;
+    }
+
     public function set(int $x, int $y): void
     {
         $pixel = new Point2D($x, $y);
@@ -73,24 +92,5 @@ class Display2D
             $count += count($row);
         }
         return $count;
-    }
-
-    #[Override]
-    public function __toString(): string
-    {
-        $output = '';
-        for ($y = 0; $y < $this->height; ++$y) {
-            for ($x = 0; $x < $this->width; ++$x) {
-                if (isset($this->rows[$y][Point2D::key($x, $y)])) {
-                    $output .= '#';
-                } else {
-                    $output .= '.';
-                }
-            }
-
-            $output .= PHP_EOL;
-        }
-
-        return $output;
     }
 }

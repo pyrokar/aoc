@@ -12,6 +12,25 @@ use function Safe\preg_match;
 class PartOne
 {
     /**
+     * @param Generator<void, string, void, void> $input
+     *
+     * @throws PcreException
+     *
+     * @return int
+     *
+     */
+    public function __invoke(Generator $input): int
+    {
+        $count = 0;
+
+        foreach ($input as $line) {
+            if (self::doesSupportTls(trim($line))) {
+                $count++;
+            }
+        }
+        return $count;
+    }
+    /**
      * @param string $ip
      *
      * @throws PcreException
@@ -31,25 +50,5 @@ class PartOne
         }
 
         return true;
-    }
-
-    /**
-     * @param Generator<void, string, void, void> $input
-     *
-     * @throws PcreException
-     *
-     * @return int
-     *
-     */
-    public function __invoke(Generator $input): int
-    {
-        $count = 0;
-
-        foreach ($input as $line) {
-            if (self::doesSupportTls(trim($line))) {
-                $count++;
-            }
-        }
-        return $count;
     }
 }

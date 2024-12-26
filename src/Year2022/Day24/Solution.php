@@ -31,6 +31,25 @@ trait Solution
     protected int $maxX;
     protected int $maxY;
 
+    protected function printBlizzards(): void
+    {
+        for ($y = 1; $y <= $this->maxY; $y++) {
+            for ($x = 1; $x <= $this->maxX; $x++) {
+                $key = Position2D::key($x, $y);
+                if (isset($this->blizzardKeys[$key])) {
+                    echo '#';
+                } elseif (isset($this->positions[$key])) {
+                    echo 'o';
+                } else {
+                    echo '.';
+                }
+            }
+
+            echo PHP_EOL;
+        }
+        echo PHP_EOL;
+    }
+
     /**
      * @param Generator<int, string, void, void> $input
      *
@@ -162,24 +181,5 @@ trait Solution
         }
 
         return $neighbors;
-    }
-
-    public function printBlizzards(): void
-    {
-        for ($y = 1; $y <= $this->maxY; $y++) {
-            for ($x = 1; $x <= $this->maxX; $x++) {
-                $key = Position2D::key($x, $y);
-                if (isset($this->blizzardKeys[$key])) {
-                    echo '#';
-                } elseif (isset($this->positions[$key])) {
-                    echo 'o';
-                } else {
-                    echo '.';
-                }
-            }
-
-            echo PHP_EOL;
-        }
-        echo PHP_EOL;
     }
 }

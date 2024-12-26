@@ -35,4 +35,6 @@ return $config
         ],
 
         'no_extra_blank_lines' => true,
+
+        'ordered_class_elements' => true,
     ]);

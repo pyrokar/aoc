@@ -10,8 +10,6 @@ use SplQueue;
 
 trait Shared
 {
-    private int $number;
-
     /**
      * @var array<string, int>
      */
@@ -21,6 +19,15 @@ trait Shared
      * @var SplQueue<array{0: Position2D, 1: int}> $pointsToExplore
      */
     protected SplQueue $pointsToExplore;
+
+    private int $number;
+
+    protected function breakCondition(Position2D $currentPoint, int $distance): bool
+    {
+        return false;
+    }
+
+    protected function processPoint(Position2D $point, int $distance): void {}
 
     /**
      * Breadth First Search
@@ -91,11 +98,4 @@ trait Shared
 
         return $positions;
     }
-
-    protected function breakCondition(Position2D $currentPoint, int $distance): bool
-    {
-        return false;
-    }
-
-    protected function processPoint(Position2D $point, int $distance): void {}
 }

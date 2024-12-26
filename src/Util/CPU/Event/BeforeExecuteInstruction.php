@@ -13,14 +13,14 @@ final class BeforeExecuteInstruction implements Event
 {
     public const string NAME = 'beforeExecuteInstruction';
 
+    public function __construct(
+        readonly public CPU $cpu,
+        readonly public Instruction $instruction,
+    ) {}
+
     #[Override]
     public function getName(): string
     {
         return self::NAME;
     }
-
-    public function __construct(
-        readonly public CPU $cpu,
-        readonly public Instruction $instruction,
-    ) {}
 }

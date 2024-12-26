@@ -28,6 +28,33 @@ trait Shared
     protected array $distances;
 
     /**
+     * @return void
+     */
+    protected function calcDistances(): void
+    {
+        $this->distances = [$this->startKey => 0];
+        $currentKey = $this->startKey;
+
+        $distance = 0;
+        while ($currentKey !== $this->endKey) {
+            foreach (Position2D::fromKey($currentKey)->getOrthogonalNeighborKeys() as $neighborKey) {
+                if (isset($this->distances[$neighborKey])) {
+                    continue;
+                }
+                if (!isset($this->track[$neighborKey])) {
+                    continue;
+                }
+
+                $this->distances[$neighborKey] = ++$distance;
+                $currentKey = $neighborKey;
+                continue 2;
+            }
+        }
+
+        $this->trackKeys = array_flip($this->distances);
+    }
+
+    /**
      * @param Generator $input
      * @param int $height
      * @param int $width
@@ -70,32 +97,5 @@ trait Shared
         }
 
         $this->calcDistances();
-    }
-
-    /**
-     * @return void
-     */
-    public function calcDistances(): void
-    {
-        $this->distances = [$this->startKey => 0];
-        $currentKey = $this->startKey;
-
-        $distance = 0;
-        while ($currentKey !== $this->endKey) {
-            foreach (Position2D::fromKey($currentKey)->getOrthogonalNeighborKeys() as $neighborKey) {
-                if (isset($this->distances[$neighborKey])) {
-                    continue;
-                }
-                if (!isset($this->track[$neighborKey])) {
-                    continue;
-                }
-
-                $this->distances[$neighborKey] = ++$distance;
-                $currentKey = $neighborKey;
-                continue 2;
-            }
-        }
-
-        $this->trackKeys = array_flip($this->distances);
     }
 }

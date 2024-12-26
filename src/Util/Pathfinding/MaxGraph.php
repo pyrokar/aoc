@@ -12,6 +12,11 @@ class MaxGraph
     private array $adjacencyList = [];
 
     /**
+     * @var array<int, array<string, int>>
+     */
+    private array $cost = [];
+
+    /**
      * @param non-empty-string $sep
      */
     public function __construct(private readonly string $sep = '_') {}
@@ -31,11 +36,6 @@ class MaxGraph
         $this->addVertex($to);
         $this->adjacencyList[$to][$from] = $value;
     }
-
-    /**
-     * @var array<int, array<string, int>>
-     */
-    private array $cost = [];
 
     /**
      * @param string|null $start
