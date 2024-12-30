@@ -15,6 +15,9 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Regex;
+use Symfony\Component\Validator\Validation;
 use Override;
 
 use function is_file;
@@ -53,8 +56,18 @@ class GenerateCommand extends Command
     #[Override]
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $this->year = (string) $input->getArgument('year');
-        $this->day = (string) $input->getArgument('day');
+        $validateYear = Validation::createCallable(
+            new NotBlank(message: 'Year should not be blank'),
+            new Regex(pattern: '/^\d{4}$/', message: 'Year should be exactly 4 digits'),
+        );
+
+        $validateDay = Validation::createCallable(
+            new NotBlank(message: 'Day should not be blank'),
+            new Regex(pattern: '/^\d{2}$/', message: 'Day should be exactly 2 digits'),
+        );
+
+        $this->year = (string) $validateYear($input->getArgument('year'));
+        $this->day = (string) $validateDay($input->getArgument('day'));
 
         $output->writeln('Generating files for day ' . $this->day . ' in ' . $this->year);
 

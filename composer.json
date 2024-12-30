@@ -22,6 +22,7 @@
 		"friendsofphp/php-cs-fixer": "~3.40",
 		"thecodingmachine/phpstan-safe-rule": "~1.2",
         "symfony/console": "~7",
+        "symfony/validator": "~7",
         "nette/php-generator": "~4",
         "rector/rector": "~1"
 	},
