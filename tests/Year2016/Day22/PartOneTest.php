@@ -8,10 +8,9 @@ use AOC\Year2016\Day22\PartOne;
 use AOCTest\Util\SolutionTestCase;
 use Safe\Exceptions\FilesystemException;
 use Override;
+use PHPUnit\Framework\Attributes\Large;
 
-/**
- * @large
- */
+#[Large]
 class PartOneTest extends SolutionTestCase
 {
     /** @var class-string */

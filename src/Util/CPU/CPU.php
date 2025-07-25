@@ -40,7 +40,7 @@ class CPU
      */
     public function __construct(
         array $initRegisters = [],
-        readonly private Dispatcher $eventDispatcher = new DefaultDispatcher(),
+        private readonly Dispatcher $eventDispatcher = new DefaultDispatcher(),
     ) {
         $this->registers = array_merge($this->registers, $initRegisters);
     }

@@ -7,10 +7,9 @@ namespace AOCTest\Year2022\Day11;
 use AOC\Year2022\Day11\PartOne;
 use AOCTest\Util\SolutionTestCase;
 use Override;
+use PHPUnit\Framework\Attributes\Group;
 
-/**
- * @group fail
- */
+#[Group('fail')]
 class PartOneTest extends SolutionTestCase
 {
     /** @var class-string */

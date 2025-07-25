@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace AOCTest\Year2022\Day25;
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 use function AOC\Year2022\Day25\decToSnafu;
 use function AOC\Year2022\Day25\snafuToDec;
@@ -27,13 +28,13 @@ class SnafuTest extends TestCase
     }
 
     /**
-     * @dataProvider dataSnafuToDec
      *
      * @param string $snafu
      * @param int $expectedDec
      *
      * @return void
      */
+    #[DataProvider('dataSnafuToDec')]
     public function testSnafuToDec(string $snafu, int $expectedDec): void
     {
         self::assertEquals($expectedDec, snafuToDec($snafu));
@@ -62,13 +63,13 @@ class SnafuTest extends TestCase
     }
 
     /**
-     * @dataProvider dataDecToSnafu
      *
      * @param int $dec
      * @param string $expectedSnafu
      *
      * @return void
      */
+    #[DataProvider('dataDecToSnafu')]
     public function testDecToSnafu(int $dec, string $expectedSnafu): void
     {
         self::assertEquals($expectedSnafu, decToSnafu($dec));

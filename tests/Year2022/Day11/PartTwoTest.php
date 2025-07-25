@@ -8,10 +8,9 @@ use AOC\Year2022\Day11\ModuloNumber;
 use AOC\Year2022\Day11\PartTwo;
 use AOCTest\Util\SolutionTestCase;
 use Override;
+use PHPUnit\Framework\Attributes\Large;
 
-/**
- * @large
- */
+#[Large]
 class PartTwoTest extends SolutionTestCase
 {
     /** @var class-string */

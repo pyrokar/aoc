@@ -19,8 +19,8 @@ class Display2D
     private array $rows;
 
     public function __construct(
-        readonly public int $width,
-        readonly public int $height,
+        public readonly int $width,
+        public readonly int $height,
     ) {
         $this->columns = array_fill(0, $this->width, []);
         $this->rows = array_fill(0, $this->height, []);

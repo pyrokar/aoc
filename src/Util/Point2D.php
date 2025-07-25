@@ -9,7 +9,7 @@ class Point2D
     use TwoDimensional;
 
     public function __construct(
-        readonly public int $x,
-        readonly public int $y,
+        public readonly int $x,
+        public readonly int $y,
     ) {}
 }

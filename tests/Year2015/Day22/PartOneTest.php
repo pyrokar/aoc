@@ -7,10 +7,9 @@ namespace AOCTest\Year2015\Day22;
 use AOC\Year2015\Day22\PartOne;
 use AOCTest\Util\SolutionTestCase;
 use Override;
+use PHPUnit\Framework\Attributes\Medium;
 
-/**
- * @medium
- */
+#[Medium]
 class PartOneTest extends SolutionTestCase
 {
     /** @var class-string */
