@@ -14,8 +14,8 @@ final class BeforeExecuteInstruction implements Event
     public const string NAME = 'beforeExecuteInstruction';
 
     public function __construct(
-        readonly public CPU $cpu,
-        readonly public Instruction $instruction,
+        public readonly CPU $cpu,
+        public readonly Instruction $instruction,
     ) {}
 
     #[Override]

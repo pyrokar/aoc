@@ -8,10 +8,9 @@ use AOC\Year2019\Day02\PartTwo;
 use AOCTest\Util\SolutionTestCase;
 use Safe\Exceptions\FilesystemException;
 use Override;
+use PHPUnit\Framework\Attributes\Group;
 
-/**
- * @group intcodecomputer
- */
+#[Group('intcodecomputer')]
 final class PartTwoTest extends SolutionTestCase
 {
     /** @var class-string */

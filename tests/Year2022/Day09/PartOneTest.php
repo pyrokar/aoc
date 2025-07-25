@@ -7,10 +7,9 @@ namespace AOCTest\Year2022\Day09;
 use AOC\Year2022\Day09\PartOne;
 use AOCTest\Util\SolutionTestCase;
 use Override;
+use PHPUnit\Framework\Attributes\Large;
 
-/**
- * @large
- */
+#[Large]
 class PartOneTest extends SolutionTestCase
 {
     /** @var class-string */

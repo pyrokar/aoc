@@ -9,8 +9,8 @@ class Vector2D
     use TwoDimensional;
 
     public function __construct(
-        readonly public int $x,
-        readonly public int $y,
+        public readonly int $x,
+        public readonly int $y,
     ) {}
 
     public static function fromPoint(Point2D $point): self

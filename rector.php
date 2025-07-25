@@ -10,4 +10,6 @@ return RectorConfig::configure()
         __DIR__ . '/src',
         __DIR__ . '/tests',
     ])
-    ->withSets([SetList::PHP_83]);
+    ->withSets([SetList::PHP_83])
+    ->withAttributesSets(phpunit: true)
+;

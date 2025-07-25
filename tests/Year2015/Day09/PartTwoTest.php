@@ -8,12 +8,12 @@ use AOCTest\Util\SolutionTestCase;
 use AOC\Year2015\Day09\PartTwo;
 use Safe\Exceptions\FilesystemException;
 use Override;
+use PHPUnit\Framework\Attributes\CoversNothing;
 
 /**
  * @internal
- *
- * @coversNothing
  */
+#[CoversNothing]
 class PartTwoTest extends SolutionTestCase
 {
     /** @var class-string */
