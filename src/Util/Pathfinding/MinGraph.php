@@ -42,7 +42,7 @@ class MinGraph
      *
      * @return int
      */
-    public function minPath(string $start = null): int
+    public function minPath(?string $start = null): int
     {
         $count = count($this->adjacencyList);
 

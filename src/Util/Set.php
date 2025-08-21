@@ -107,7 +107,7 @@ class Set
      *
      * @return Generator<int, List<T>>
      */
-    public function getPermutations(array $partial = [], array $rest = null): Generator
+    public function getPermutations(array $partial = [], ?array $rest = null): Generator
     {
         if (!$rest) {
             $rest = $this->array;

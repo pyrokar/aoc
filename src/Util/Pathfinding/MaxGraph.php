@@ -42,7 +42,7 @@ class MaxGraph
      *
      * @return int
      */
-    public function maxCycle(string $start = null): int
+    public function maxCycle(?string $start = null): int
     {
         $maxPathValue = $this->maxPath($start);
         $lastCost = end($this->cost);
@@ -66,7 +66,7 @@ class MaxGraph
      *
      * @return int
      */
-    public function maxPath(string $start = null): int
+    public function maxPath(?string $start = null): int
     {
         $count = count($this->adjacencyList);
 
