@@ -21,7 +21,7 @@ class PartTwo
      */
     public function __invoke(Generator $input): int
     {
-        return reduceInputByLine($input, function (int $sum, string $line) {
+        return reduceInputByLine($input, function (int $sum, string $line): int {
 
             if (!preg_match('/^(\d+)x(\d+)x(\d+)$/', $line, $matches)) {
                 return $sum;
@@ -31,7 +31,7 @@ class PartTwo
 
             $mins = array_slice(array_sort([$l, $w, $h]), 0, 2);
 
-            return $sum + (2 * array_sum($mins)) + ($l * $w * $h);
+            return $sum + (2 * (int) array_sum($mins)) + (int) ($l * $w * $h);
 
         }, 0);
     }

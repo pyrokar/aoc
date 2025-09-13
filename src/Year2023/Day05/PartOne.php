@@ -7,6 +7,8 @@ namespace AOC\Year2023\Day05;
 use Generator;
 use Safe\Exceptions\PcreException;
 
+use DomainException;
+
 use function Safe\preg_match;
 
 class PartOne
@@ -67,6 +69,10 @@ class PartOne
 
         if (!empty($sourceNumbers)) {
             $seeds[$dest] = array_merge($seeds[$dest], $sourceNumbers);
+        }
+
+        if (empty($seeds['location'])) {
+            throw new DomainException();
         }
 
         return min($seeds['location']);

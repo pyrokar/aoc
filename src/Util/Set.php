@@ -7,6 +7,7 @@ namespace AOC\Util;
 use Generator;
 
 use function array_slice;
+use function array_values;
 use function count;
 use function range;
 
@@ -70,9 +71,9 @@ class Set
 
     /**
      * @param int $size
-     * @param array<T> $partial
+     * @param list<T> $partial
      *
-     * @return Generator<int, List<T>>
+     * @return Generator<int, non-empty-list<T>>
      */
     public function getCombinationsWithRepetition(int $size, array $partial = []): Generator
     {
@@ -121,7 +122,7 @@ class Set
         foreach ($rest as $i => $el) {
             $restCopy = $rest;
             unset($restCopy[$i]);
-            yield from $this->getPermutations([...$partial, $el], $restCopy);
+            yield from $this->getPermutations([...$partial, $el], array_values($restCopy));
         }
     }
 }

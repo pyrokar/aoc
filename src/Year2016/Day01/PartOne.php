@@ -7,7 +7,6 @@ namespace AOC\Year2016\Day01;
 use AOC\Util\CompassDirection;
 use AOC\Util\Position2D;
 use Generator;
-use RuntimeException;
 use Safe\Exceptions\PcreException;
 
 use function Safe\preg_match;
@@ -35,7 +34,6 @@ class PartOne
             $currentDirection = match ($m[1]) {
                 'L' => $currentDirection->turnLeft(),
                 'R' => $currentDirection->turnRight(),
-                default => throw new RuntimeException(),
             };
 
             $position->move($currentDirection, (int) $m[2]);

@@ -40,7 +40,7 @@ abstract class SolutionTestCase extends TestCase
         }
 
         /** @var callable $solutionProvider */
-        $solutionProvider = new ($this->solutionClass)();
+        $solutionProvider = new ($this->solutionClass);
 
         /**
          * @var  array<mixed> $args

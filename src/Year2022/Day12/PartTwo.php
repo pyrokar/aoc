@@ -57,6 +57,10 @@ class PartTwo extends AStar
             }
         }
 
+        if (empty($steps)) {
+            throw new DomainException();
+        }
+
         return min($steps);
     }
 }

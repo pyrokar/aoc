@@ -7,11 +7,13 @@ namespace AOC\Year2016\Day06;
 use Generator;
 use Safe\Exceptions\ArrayException;
 
+use function array_values;
+
 trait Solution
 {
     abstract public function getNeedle(array $charCounts): int;
     /**
-     * @param Generator<void, string, void, void> $input
+     * @param Generator<void, non-empty-string, void, void> $input
      *
      * @throws ArrayException
      *
@@ -20,6 +22,8 @@ trait Solution
     private function solve(Generator $input): string
     {
         $message = '';
+
+        /** @var non-empty-array<int, non-empty-array<numeric-string, int>> $columns */
         $columns = [];
 
         foreach ($input as $line) {
@@ -39,7 +43,11 @@ trait Solution
         }
 
         foreach ($columns as $charCounts) {
-            $needle = $this->getNeedle($charCounts);
+            if (empty($charCounts)) {
+                continue;
+            }
+
+            $needle = $this->getNeedle(array_values($charCounts));
             $message .= array_search($needle, $charCounts, true);
         }
 

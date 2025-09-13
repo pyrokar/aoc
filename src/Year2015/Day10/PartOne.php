@@ -26,7 +26,7 @@ class PartOne
             $result = '';
             preg_match_all('/(?P<m>(\d)\2*)/', $input, $m);
 
-            $numbers = is_array($m['m']) ? $m['m'] : [$m['m']];
+            $numbers = $m['m'];
 
             foreach ($numbers as $number) {
                 $result .= strlen($number) . $number[0];

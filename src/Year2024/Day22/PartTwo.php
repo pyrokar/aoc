@@ -6,6 +6,8 @@ namespace AOC\Year2024\Day22;
 
 use Generator;
 
+use LogicException;
+
 use function AOC\Util\Safe\array_shift;
 use function array_slice;
 use function implode;
@@ -33,6 +35,10 @@ final class PartTwo
             $number = (int) $number;
 
             $this->determineSequences($number, $nth);
+        }
+
+        if (empty($this->sequences)) {
+            throw new LogicException();
         }
 
         arsort($this->sequences);

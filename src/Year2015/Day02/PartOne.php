@@ -21,7 +21,7 @@ class PartOne
      */
     public function __invoke(Generator $input): int
     {
-        return reduceInputByLine($input, function (int $sum, string $line) {
+        return reduceInputByLine($input, function (int $sum, string $line): int {
 
             if (!preg_match('/^(\d+)x(\d+)x(\d+)$/', $line, $matches)) {
                 return $sum;
@@ -31,7 +31,7 @@ class PartOne
 
             $sides = [$l * $w, $w * $h, $h * $l];
 
-            return $sum + 2 * array_sum($sides) + min($sides);
+            return $sum + 2 * (int) array_sum($sides) + (int) min($sides);
 
         }, 0);
     }

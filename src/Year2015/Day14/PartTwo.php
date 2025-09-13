@@ -21,8 +21,12 @@ class PartTwo
      */
     public function __invoke(Generator $input, int $seconds): int
     {
-        $reindeers = [];
+        $allReindeer = [];
+
+        /** @var non-empty-array<string, int> $currentDistance */
         $currentDistance = [];
+
+        /** @var non-empty-array<string, int> $points */
         $points = [];
 
         foreach ($input as $line) {
@@ -36,7 +40,7 @@ class PartTwo
             $flying = (int) $m['seconds'];
             $rest = (int) $m['rest'];
 
-            $reindeers[$reindeer] = [
+            $allReindeer[$reindeer] = [
                 'speed' => $speed,
                 'flying' => $flying,
                 'rest' => $rest,
@@ -55,7 +59,7 @@ class PartTwo
 
         while (++$second < $seconds) {
 
-            foreach ($reindeers as $reindeer => $stats) {
+            foreach ($allReindeer as $reindeer => $stats) {
                 if ($second % $stats['cycle'] < $stats['flying']) {
                     // reindeer is flying
                     $currentDistance[$reindeer] += $stats['speed'];

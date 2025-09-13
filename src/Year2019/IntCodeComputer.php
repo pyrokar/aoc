@@ -34,13 +34,13 @@ class IntCodeComputer
     private int $relativeBase = 0;
 
     /**
-     * @var list<int>
+     * @var array<int, int>
      */
     private array $initialMemory;
 
     /**
-     * @param list<int> $memory
-     * @param list<int> $input
+     * @param array<int, int> $memory
+     * @param array<int> $input
      */
     public function __construct(
         private array $memory = [],
@@ -65,7 +65,7 @@ class IntCodeComputer
     }
 
     /**
-     * @param list<int> $memory
+     * @param array<int, int> $memory
      *
      * @return void
      */
@@ -90,7 +90,7 @@ class IntCodeComputer
     }
 
     /**
-     * @return list<int>
+     * @return array<int, int>
      */
     public function getMemory(): array
     {
@@ -98,7 +98,7 @@ class IntCodeComputer
     }
 
     /**
-     * @param list<int> $input
+     * @param array<int> $input
      *
      * @return void
      */

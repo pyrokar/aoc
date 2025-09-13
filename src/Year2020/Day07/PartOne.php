@@ -47,6 +47,10 @@ class PartOne
 
         $this->countBags('shiny gold', $bags, $containingBags);
 
+        if (!$containingBags) {
+            return 0;
+        }
+
         return count($containingBags);
     }
 

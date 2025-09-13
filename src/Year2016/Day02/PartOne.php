@@ -17,7 +17,7 @@ class PartOne
      */
     public function __invoke(Generator $input): string
     {
-        /** @var array<string, array<string, string>> $keypad */
+        /** @var array<numeric-string, array<string, string>> $keypad */
         $keypad = [
             '1' => ['U' => '1', 'R' => '2', 'D' => '4', 'L' => '1'],
             '2' => ['U' => '2', 'R' => '3', 'D' => '5', 'L' => '1'],

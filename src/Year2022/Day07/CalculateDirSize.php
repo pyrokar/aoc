@@ -17,11 +17,11 @@ trait CalculateDirSize
      *
      * @throws PcreException
      *
-     * @return array<string, int>
+     * @return non-empty-array<string, int>
      */
     protected function calculateDirSize(Generator $input): array
     {
-        $ls = [];
+        $ls = ['/' => []];
         $cwd = '';
 
         foreach ($input as $line) {
@@ -60,7 +60,7 @@ trait CalculateDirSize
             }
         }
 
-        $dirSizes = [];
+        $dirSizes = ['/' => 0];
 
         foreach ($ls as $dir => $content) {
             $dirSizes[$dir] = $this->totalSize($content, $ls);

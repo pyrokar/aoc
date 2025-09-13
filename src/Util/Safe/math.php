@@ -9,7 +9,7 @@ use Safe\Exceptions\ArrayException;
 /**
  * @template T
  *
- * @param T[] $value
+ * @param non-empty-list<T> $value
  *
  * @throws ArrayException
  *
@@ -28,7 +28,7 @@ function max(array $value): mixed
 /**
  * @template T
  *
- * @param T[] $value
+ * @param non-empty-list<T> $value
  *
  * @throws ArrayException
  *

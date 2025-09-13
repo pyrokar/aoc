@@ -10,7 +10,7 @@ trait Shared
 {
     /**
      * @param Generator<void, string, void, void> $input
-     * @param array<string, array<string, string>> $keypad
+     * @param array<numeric-string, array<string, string>> $keypad
      *
      * @return string
      */

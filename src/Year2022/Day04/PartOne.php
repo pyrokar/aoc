@@ -23,7 +23,9 @@ class PartOne
         $sum = 0;
 
         foreach ($input as $line) {
-            preg_match('/(?<e1>\d+)-(?<e2>\d+),(?<e3>\d+)-(?<e4>\d+)/', $line, $m);
+            if (!preg_match('/(?<e1>\d+)-(?<e2>\d+),(?<e3>\d+)-(?<e4>\d+)/', $line, $m)) {
+                continue;
+            }
 
             $e1 = (int) $m['e1'];
             $e2 = (int) $m['e2'];

@@ -8,7 +8,6 @@ use AOC\Util\CompassDirection;
 use AOC\Util\Point2D;
 use AOC\Util\Position2D;
 use Generator;
-use RuntimeException;
 use Safe\Exceptions\PcreException;
 
 use function Safe\preg_match;
@@ -37,7 +36,6 @@ class PartTwo
             $currentDirection = match ($m[1]) {
                 'L' => $currentDirection->turnLeft(),
                 'R' => $currentDirection->turnRight(),
-                default => throw new RuntimeException(),
             };
 
             foreach ($position->walk($currentDirection, (int) $m[2]) as $point) {

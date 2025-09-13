@@ -123,7 +123,7 @@ class Position2D
     }
 
     /**
-     * @return array<string, Position2D>
+     * @return non-empty-array<string, Position2D>
      */
     public function getOrthogonalNeighbors(): array
     {
@@ -134,7 +134,7 @@ class Position2D
     }
 
     /**
-     * @return array<string>
+     * @return non-empty-list<string>
      */
     public function getOrthogonalNeighborKeys(): array
     {
@@ -169,7 +169,7 @@ class Position2D
     }
 
     /**
-     * @return array<string>
+     * @return non-empty-list<string>
      */
     public function getNeighborKeys(): array
     {
@@ -186,7 +186,7 @@ class Position2D
     }
 
     /**
-     * @return array<string>
+     * @return non-empty-list<string>
      */
     public function getNorthernNeighborKeys(): array
     {
@@ -198,7 +198,7 @@ class Position2D
     }
 
     /**
-     * @return array<string>
+     * @return non-empty-list<string>
      */
     public function getEasternNeighborKeys(): array
     {
@@ -210,7 +210,7 @@ class Position2D
     }
 
     /**
-     * @return array<string>
+     * @return non-empty-list<string>
      */
     public function getSouthernNeighborKeys(): array
     {
@@ -222,7 +222,7 @@ class Position2D
     }
 
     /**
-     * @return array<string>
+     * @return non-empty-list<string>
      */
     public function getWesternNeighborKeys(): array
     {

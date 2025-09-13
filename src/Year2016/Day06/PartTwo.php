@@ -13,7 +13,7 @@ class PartTwo
     use Solution;
 
     /**
-     * @param Generator<void, string, void, void> $input
+     * @param Generator<void, non-empty-string, void, void> $input
      *
      * @throws ArrayException
      *
@@ -25,7 +25,7 @@ class PartTwo
     }
 
     /**
-     * @param array<int> $charCounts
+     * @param non-empty-list<int> $charCounts
      *
      * @throws ArrayException
      *

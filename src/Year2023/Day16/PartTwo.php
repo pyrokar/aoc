@@ -7,6 +7,7 @@ namespace AOC\Year2023\Day16;
 use AOC\Util\CompassDirection;
 use AOC\Util\Position2D;
 use Generator;
+use DomainException;
 
 class PartTwo
 {
@@ -41,6 +42,10 @@ class PartTwo
             $this->sendBeam(new Position2D($this->width - 1, $y), CompassDirection::West);
             $counts[] = count($this->energized);
             $this->reset();
+        }
+
+        if (empty($counts)) {
+            throw new DomainException();
         }
 
         return max($counts);

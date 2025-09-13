@@ -12,7 +12,7 @@ class MaxGraph
     private array $adjacencyList = [];
 
     /**
-     * @var array<int, array<string, int>>
+     * @var array<int, non-empty-array<string, int>>
      */
     private array $cost = [];
 

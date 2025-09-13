@@ -7,6 +7,8 @@ namespace AOC\Year2023\Day05;
 use Generator;
 use Safe\Exceptions\PcreException;
 
+use DomainException;
+
 use function Safe\preg_match;
 
 class PartTwo
@@ -113,6 +115,10 @@ class PartTwo
             if ($k % 2 === 0) {
                 $locations[] = $location;
             }
+        }
+
+        if (empty($locations)) {
+            throw new DomainException();
         }
 
         return min($locations);

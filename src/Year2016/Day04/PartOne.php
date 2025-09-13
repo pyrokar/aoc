@@ -24,7 +24,9 @@ class PartOne
     {
         $count = 0;
         foreach ($input as $line) {
-            preg_match('/^(?<name>[a-z\-]+)-(?<id>\d+)\[(?<checksum>[a-z]+)]$/', trim($line), $m);
+            if (!preg_match('/^(?<name>[a-z\-]+)-(?<id>\d+)\[(?<checksum>[a-z]+)]$/', trim($line), $m)) {
+                continue;
+            }
 
             [
                 'name' => $encryptedName,

@@ -8,6 +8,7 @@ use AOC\Util\CompassDirection;
 use AOC\Util\Position2D;
 use Generator;
 use Safe\Exceptions\PcreException;
+use DomainException;
 
 class PartTwo
 {
@@ -53,6 +54,10 @@ class PartTwo
 
                 $scenicScores[] = $scenicScore;
             }
+        }
+
+        if (empty($scenicScores)) {
+            throw new DomainException();
         }
 
         return max($scenicScores);

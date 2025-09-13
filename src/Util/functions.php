@@ -35,7 +35,7 @@ function array_map_key(?callable $callback, array $array): array
 /**
  * Returns all keys with the maximum value
  *
- * @param array<string, mixed> $array
+ * @param non-empty-array<string, mixed> $array
  *
  * @return array<string>
  */
