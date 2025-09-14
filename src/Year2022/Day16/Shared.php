@@ -50,7 +50,7 @@ trait Shared
         foreach ($this->valves as $start => $a) {
             $this->shortestPaths[$start] = [];
 
-            foreach ($this->valves as $end => $b) {
+            foreach (array_keys($this->valves) as $end) {
                 if ($start === $end) {
                     continue;
                 }

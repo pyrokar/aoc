@@ -31,7 +31,7 @@ final class PartTwo
                 continue;
             }
 
-            foreach ($levels as $i => $level) {
+            foreach (array_keys($levels) as $i) {
 
                 $levelsCopy = $levels;
                 unset($levelsCopy[$i]);

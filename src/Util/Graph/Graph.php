@@ -14,12 +14,7 @@ final class Graph
     /**
      * @var array<string, array<string, int>>
      */
-    private array $adjacentList;
-
-    public function __construct()
-    {
-        $this->adjacentList = [];
-    }
+    private array $adjacentList = [];
 
     public function addVertex(string $vertex): void
     {

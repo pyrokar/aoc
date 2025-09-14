@@ -45,7 +45,7 @@ class PartTwo
                 }
             }
 
-            foreach ($lastRowGears as $gearX => $gear) {
+            foreach (array_keys($lastRowGears) as $gearX) {
                 $adjacentNumbers = [];
 
                 for ($i = $gearX - 3; $i <= $gearX + 1; ++$i) {

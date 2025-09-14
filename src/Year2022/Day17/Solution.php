@@ -84,7 +84,7 @@ trait Solution
 
     protected function hasColision(RockShape $rock, Position2D $rockPosition): bool
     {
-        foreach ($rock->getPositionKeys($rockPosition) as $r => $j) {
+        foreach (array_keys($rock->getPositionKeys($rockPosition)) as $r) {
             if (isset($this->ground[$r])) {
                 return true;
             }

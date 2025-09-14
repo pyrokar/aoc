@@ -31,13 +31,13 @@ class PartTwo
         for ($day = 1; $day <= 100; ++$day) {
             $newBlackTiles = [];
 
-            foreach ($this->blackTiles as $blackTileKey => $v) {
+            foreach (array_keys($this->blackTiles) as $blackTileKey) {
                 if (!$this->flipBlackTile($blackTileKey)) {
                     $newBlackTiles[$blackTileKey] = 1;
                 }
             }
 
-            foreach ($this->whiteTiles as $whiteTileKey => $v) {
+            foreach (array_keys($this->whiteTiles) as $whiteTileKey) {
                 if ($this->flipWhiteTile($whiteTileKey)) {
                     $newBlackTiles[$whiteTileKey] = 1;
                 }

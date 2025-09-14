@@ -27,7 +27,7 @@ class PartTwo
 
         $sum = 0;
 
-        foreach ($this->bricks as $brickId => $_) {
+        foreach (array_keys($this->bricks) as $brickId) {
             if (isset($disintegratedBricks[$brickId])) {
                 continue;
             }

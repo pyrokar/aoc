@@ -61,7 +61,7 @@ class Solution
                 continue;
             }
 
-            foreach ($galaxiesXY[$x] as $y => $galaxy) {
+            foreach (array_keys($galaxiesXY[$x]) as $y) {
                 $galaxiesInCluster[Position2D::key($x, $y)] = [$cx];
             }
         }
@@ -72,7 +72,7 @@ class Solution
                 continue;
             }
 
-            foreach ($galaxiesYX[$y] as $x => $galaxy) {
+            foreach (array_keys($galaxiesYX[$y]) as $x) {
                 $galaxiesInCluster[Position2D::key($x, $y)][] = $cy;
             }
         }

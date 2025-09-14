@@ -28,7 +28,7 @@ trait Shared
                     break;
                 case 1:
                     // bxl
-                    $this->registers['B'] = $this->registers['B'] ^ $operand;
+                    $this->registers['B'] ^= $operand;
                     $this->ip += 2;
                     break;
                 case 2:
@@ -46,7 +46,7 @@ trait Shared
                     break;
                 case 4:
                     // bxc
-                    $this->registers['B'] = $this->registers['B'] ^ $this->registers['C'];
+                    $this->registers['B'] ^= $this->registers['C'];
                     $this->ip += 2;
                     break;
                 case 5:

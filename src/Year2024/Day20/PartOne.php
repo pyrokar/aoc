@@ -27,7 +27,7 @@ final class PartOne
 
         $cheats = 0;
 
-        foreach ($this->walls as $key => $_) {
+        foreach (array_keys($this->walls) as $key) {
             $pos = Position2D::fromKey($key);
 
             [$p1, $p2] = $pos->getVerticalNeighborKeys();

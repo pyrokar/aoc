@@ -93,7 +93,7 @@ trait Shared
         do {
             $change = false;
             foreach ($reactions as $node => $resources) {
-                foreach ($resources as $resource => $_) {
+                foreach (array_keys($resources) as $resource) {
                     if (!isset($distancesFromOre[$node])) {
                         $distancesFromOre[$node] = ($distancesFromOre[$resource] ?? 0) + 1;
                         $change = true;

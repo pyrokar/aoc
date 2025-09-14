@@ -51,7 +51,7 @@ class PartTwo
             }
         }
 
-        foreach ($allPeople as $p => $v) {
+        foreach (array_keys($allPeople) as $p) {
             $happiness[$p . '_me'] = 0;
         }
 

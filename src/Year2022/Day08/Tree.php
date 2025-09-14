@@ -8,7 +8,7 @@ use AOC\Util\Position2D;
 
 class Tree extends Position2D
 {
-    public bool $isVisible;
+    public bool $isVisible = false;
 
     public function __construct(
         int          $x,
@@ -16,6 +16,5 @@ class Tree extends Position2D
         public readonly int $height,
     ) {
         parent::__construct($x, $y);
-        $this->isVisible = false;
     }
 }

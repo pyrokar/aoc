@@ -9,27 +9,17 @@ class Grid2D
     /**
      * @var array<string, Position2D>
      */
-    private array $positions;
+    private array $positions = [];
 
     /**
      * @var array<int, array<int, Position2D>>
      */
-    private array $columns;
+    private array $columns = [];
 
     /**
      * @var array<int, array<int, Position2D>>
      */
-    private array $rows;
-
-    /**
-     */
-    public function __construct(
-
-    ) {
-        $this->positions = [];
-        $this->columns = [];
-        $this->rows = [];
-    }
+    private array $rows = [];
 
     public function insert(Position2D $position2D): void
     {
