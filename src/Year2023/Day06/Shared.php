@@ -19,8 +19,6 @@ trait Shared
 
         $lowerPoint = (int) ceil($halfTime - $det + 0.0001);
         $upperPoint = (int) floor($halfTime + $det - 0.0001);
-
-        $options = $upperPoint - $lowerPoint + 1;
-        return $options;
+        return $upperPoint - $lowerPoint + 1;
     }
 }

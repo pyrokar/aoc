@@ -7,12 +7,6 @@ parameters:
 			path: src/Util/ShortestPath/AStar.php
 
 		-
-			message: '#^Method AOC\\Year2022\\Day07\\PartOne\:\:calculateDirSize\(\) should return non\-empty\-array\<string, int\> but returns array\<string, int\>\.$#'
-			identifier: return.type
-			count: 1
-			path: src/Year2022/Day07/PartOne.php
-
-		-
 			message: '#^Parameter \#1 \.\.\.\$arg1 of function min expects non\-empty\-array, array\<string, int\> given\.$#'
 			identifier: argument.type
 			count: 1

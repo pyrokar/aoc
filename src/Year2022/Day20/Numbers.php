@@ -96,8 +96,6 @@ class Numbers
         $next->prev = $node;
         $node->next = $next;
         $node->prev = $prev;
-
-        $a = 0;
     }
 
     /**

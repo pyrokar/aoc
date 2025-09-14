@@ -45,10 +45,7 @@ class PartTwo
                 return $carry;
             }, []);
 
-            $bags->set($color, fn(): float|int => array_reduce($containedBags, static function ($carry, array $item) use ($bags): float|int {
-                $carry += $item['number'] * ($bags->get($item['color']) + 1);
-                return $carry;
-            }, 0));
+            $bags->set($color, fn(): float|int => array_reduce($containedBags, static fn($carry, array $item): float|int => $carry + $item['number'] * ($bags->get($item['color']) + 1), 0));
         }
 
         return $bags->get('shiny gold');

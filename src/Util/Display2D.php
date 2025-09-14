@@ -69,7 +69,7 @@ class Display2D implements Stringable
             $this->unset($pixel->x, $pixel->y);
         }
 
-        foreach ($oldColumn as $key => $pixel) {
+        foreach ($oldColumn as $pixel) {
             $this->set($x, ($pixel->y + $by) % $this->height);
         }
     }
@@ -81,7 +81,7 @@ class Display2D implements Stringable
         foreach ($oldRow as $pixel) {
             $this->unset($pixel->x, $pixel->y);
         }
-        foreach ($oldRow as $key => $pixel) {
+        foreach ($oldRow as $pixel) {
             $this->set(($pixel->x + $by) % $this->width, $y);
         }
     }

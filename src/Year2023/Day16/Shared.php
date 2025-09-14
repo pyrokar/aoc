@@ -92,7 +92,7 @@ trait Shared
             $key = $pos->getKey();
             $mirror = $this->mirrors[$key] ?? null;
 
-            if (!$mirror && isset($this->beams[$key][$direction->value])) {
+            if (isset($this->beams[$key][$direction->value])) {
                 // beam already on this position with same direction
                 return;
             }

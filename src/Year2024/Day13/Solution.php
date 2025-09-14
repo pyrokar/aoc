@@ -28,7 +28,7 @@ final class Solution
 
         foreach ($input as $line) {
             if (\Safe\preg_match('/Button (?<b>\w): X\+(?<x>\d+), Y\+(?<y>\d+)/', $line, $m)) {
-                $machine[(string) $m['b']] = ['x' => (int) $m['x'], 'y' => (int) $m['y']];
+                $machine[$m['b']] = ['x' => (int) $m['x'], 'y' => (int) $m['y']];
                 continue;
             }
 

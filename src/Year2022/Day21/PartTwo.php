@@ -36,15 +36,15 @@ class PartTwo
 
         foreach ($input as $line) {
             if (preg_match('/(?<monkey>\w+): (?<number>\d+)/', $line, $m)) {
-                $this->monkeys[(string) $m['monkey']] = (int) $m['number'];
+                $this->monkeys[$m['monkey']] = (int) $m['number'];
                 continue;
             }
 
             if (preg_match('/(?<monkey>\w+): (?<left>\w+) (?<op>[+\-*\/]) (?<right>\w+)/', $line, $m)) {
-                $this->monkeys[(string) $m['monkey']] = [$m['op'], $m['left'], $m['right']];
+                $this->monkeys[$m['monkey']] = [$m['op'], $m['left'], $m['right']];
 
-                $this->reverseLookup[(string) $m['left']] = $m['monkey'];
-                $this->reverseLookup[(string) $m['right']] = $m['monkey'];
+                $this->reverseLookup[$m['left']] = $m['monkey'];
+                $this->reverseLookup[$m['right']] = $m['monkey'];
             }
         }
 

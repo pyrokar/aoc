@@ -3,8 +3,10 @@
 declare(strict_types=1);
 
 use Rector\Config\RectorConfig;
+use Rector\DeadCode\Rector\ClassMethod\RemoveUselessParamTagRector;
+use Rector\DeadCode\Rector\ClassMethod\RemoveUselessReturnTagRector;
+use Rector\DeadCode\Rector\Plus\RemoveDeadZeroAndOneOperationRector;
 use Rector\Php84\Rector\Param\ExplicitNullableParamTypeRector;
-use Rector\Set\ValueObject\SetList;
 
 return RectorConfig::configure()
     ->withPaths([
@@ -17,7 +19,14 @@ return RectorConfig::configure()
         ExplicitNullableParamTypeRector::class,
     ])
     ->withPreparedSets(
-        typeDeclarations: true
+        deadCode: true,
+        typeDeclarations: true,
     )
+    ->withSkip([
+        // for readability
+        RemoveDeadZeroAndOneOperationRector::class,
+        RemoveUselessReturnTagRector::class,
+        RemoveUselessParamTagRector::class,
+    ])
     ->withAttributesSets(phpunit: true)
 ;

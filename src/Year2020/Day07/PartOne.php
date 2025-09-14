@@ -35,7 +35,7 @@ class PartOne
                     continue;
                 }
 
-                $containedColor = (string) $m['color'];
+                $containedColor = $m['color'];
 
                 if (!isset($bags[$containedColor])) {
                     $bags[$containedColor] = [];

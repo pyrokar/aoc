@@ -38,7 +38,7 @@ trait Shared
                 continue;
             }
 
-            $valve = (string) $nextMinute['valve'];
+            $valve = $nextMinute['valve'];
             $flow = (int) $nextMinute['flow'];
             $valves = explode(', ', $nextMinute['valves']);
 

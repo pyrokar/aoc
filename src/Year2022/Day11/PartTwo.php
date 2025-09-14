@@ -27,7 +27,7 @@ class PartTwo
         $monkeys = $this->inputToMonkeys($input);
 
         for ($round = 0; $round < 10000; $round++) {
-            foreach ($monkeys as $i => $monkey) {
+            foreach ($monkeys as $monkey) {
                 while ($monkey->hasItems()) {
                     $monkey->inspectAndThrowItem($monkeys);
                 }

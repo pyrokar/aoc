@@ -35,7 +35,7 @@ class PartTwo
                 continue;
             }
 
-            $reindeer = (string) $m['r'];
+            $reindeer = $m['r'];
             $speed = (int) $m['speed'];
             $flying = (int) $m['seconds'];
             $rest = (int) $m['rest'];
