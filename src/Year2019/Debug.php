@@ -33,7 +33,7 @@ trait Debug
         $this->_n(str_repeat('-', $width));
         $headRow = '| ';
         foreach ($this->columns as $key => $value) {
-            $headRow .= str_pad($key, $value, ' ') . ' | ';
+            $headRow .= str_pad((string) $key, $value, ' ') . ' | ';
         }
         $this->_n($headRow);
         $this->_n(str_repeat('-', $width));

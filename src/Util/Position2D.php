@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace AOC\Util;
 
 use Override;
+use Stringable;
 
-class Position2D
+class Position2D implements Stringable
 {
     use TwoDimensional;
 

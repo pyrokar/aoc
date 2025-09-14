@@ -21,7 +21,7 @@ trait Shared
         $regions = [];
 
         foreach ($input as $y => $line) {
-            foreach (str_split($line) as $x => $char) {
+            foreach (str_split((string) $line) as $x => $char) {
                 $key = Position2D::key($x, $y);
                 $regions[$char][$key] = $key;
                 $map[$key] = $char;

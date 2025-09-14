@@ -9,13 +9,13 @@ use AOC\Util\CPU\Instruction;
 use AOC\Util\Event\Event;
 use Override;
 
-final class BeforeExecuteInstruction implements Event
+final readonly class BeforeExecuteInstruction implements Event
 {
     public const string NAME = 'beforeExecuteInstruction';
 
     public function __construct(
-        public readonly CPU $cpu,
-        public readonly Instruction $instruction,
+        public CPU $cpu,
+        public Instruction $instruction,
     ) {}
 
     #[Override]

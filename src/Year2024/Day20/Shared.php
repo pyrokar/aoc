@@ -74,7 +74,7 @@ trait Shared
                 continue;
             }
 
-            foreach (str_split($line) as $x => $char) {
+            foreach (str_split((string) $line) as $x => $char) {
                 if ($x === 0 || $x === $width - 1) {
                     continue;
                 }

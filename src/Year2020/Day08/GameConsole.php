@@ -11,7 +11,7 @@ use AOC\Util\Event\DefaultDispatcher;
 
 class GameConsole
 {
-    private CPU $cpu;
+    private readonly CPU $cpu;
 
     private bool $hasLoop = false;
 

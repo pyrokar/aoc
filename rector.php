@@ -11,7 +11,7 @@ return RectorConfig::configure()
         __DIR__ . '/src',
         __DIR__ . '/tests',
     ])
-    ->withSets([SetList::PHP_83])
+    ->withPhpSets(php83: true)
     ->withRules([
         // non-breaking PHP_84 rules
         ExplicitNullableParamTypeRector::class,

@@ -52,7 +52,7 @@ class PartTwo extends AStar
         foreach ($startPoints as $startPoint) {
             try {
                 $steps[] = $this->findMinDistance($startPoint);
-            } catch (DomainException $e) {
+            } catch (DomainException) {
                 continue;
             }
         }

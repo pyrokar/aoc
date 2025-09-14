@@ -69,7 +69,7 @@ trait Shared
         $distancesFromOre = ['ORE' => 0];
 
         foreach ($input as $line) {
-            [$in, $out] = explode(' => ', $line);
+            [$in, $out] = explode(' => ', (string) $line);
 
             $out = explode(' ', $out);
 

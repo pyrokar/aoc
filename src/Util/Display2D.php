@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace AOC\Util;
 
 use Override;
+use Stringable;
 
-class Display2D
+class Display2D implements Stringable
 {
     /**
      * @var array<int, array<Point2D>>

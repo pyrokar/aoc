@@ -22,7 +22,7 @@ trait Shared
         $this->map = [];
 
         foreach ($input as $y => $line) {
-            foreach (str_split($line) as $x => $char) {
+            foreach (str_split((string) $line) as $x => $char) {
                 $key = Position2D::key($x, $y);
                 $height = (int) $char;
                 $this->map[$height][$key] = $height === 9 ? 1 : -1;

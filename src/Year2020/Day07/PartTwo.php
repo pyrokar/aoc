@@ -45,12 +45,10 @@ class PartTwo
                 return $carry;
             }, []);
 
-            $bags->set($color, function () use ($containedBags, $bags) {
-                return array_reduce($containedBags, static function ($carry, $item) use ($bags) {
-                    $carry += $item['number'] * ($bags->get($item['color']) + 1);
-                    return $carry;
-                }, 0);
-            });
+            $bags->set($color, fn() => array_reduce($containedBags, static function ($carry, $item) use ($bags) {
+                $carry += $item['number'] * ($bags->get($item['color']) + 1);
+                return $carry;
+            }, 0));
         }
 
         return $bags->get('shiny gold');

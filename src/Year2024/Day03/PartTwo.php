@@ -31,11 +31,11 @@ final class PartTwo
             }
 
             foreach ($matches['ins'] as $i => $instruction) {
-                if (str_starts_with($instruction, 'mul') && $mulEnabled) {
+                if (str_starts_with((string) $instruction, 'mul') && $mulEnabled) {
                     $sum += ((int) $matches['v1'][$i]) * ((int) $matches['v2'][$i]);
-                } elseif (str_starts_with($instruction, 'don\'t')) {
+                } elseif (str_starts_with((string) $instruction, 'don\'t')) {
                     $mulEnabled = false;
-                } elseif (str_starts_with($instruction, 'do')) {
+                } elseif (str_starts_with((string) $instruction, 'do')) {
                     $mulEnabled = true;
                 }
             }

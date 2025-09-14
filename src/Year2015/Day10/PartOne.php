@@ -29,7 +29,7 @@ class PartOne
             $numbers = $m['m'];
 
             foreach ($numbers as $number) {
-                $result .= strlen($number) . $number[0];
+                $result .= strlen((string) $number) . $number[0];
             }
             $input = $result;
         }

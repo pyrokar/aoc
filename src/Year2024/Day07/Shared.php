@@ -20,7 +20,7 @@ trait Shared
         $sum = 0;
 
         foreach ($input as $line) {
-            [$value, $eq] = explode(': ', $line);
+            [$value, $eq] = explode(': ', (string) $line);
             $value = (int) $value;
             $numbers = array_map('intval', explode(' ', $eq));
 

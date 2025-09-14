@@ -37,7 +37,7 @@ final class PartTwo
 
                 try {
                     $pathAlgorithm->findMinDistance('0|0', $endKey);
-                } catch (DomainException $_) {
+                } catch (DomainException) {
                     return $x . ',' . $y;
                 }
             }

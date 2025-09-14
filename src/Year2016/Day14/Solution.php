@@ -38,7 +38,7 @@ trait Solution
                     continue;
                 }
 
-                if (str_contains($hash, $possibleKey['five'])) {
+                if (str_contains((string) $hash, $possibleKey['five'])) {
                     $tripleIndex = $possibleKey['i'] - 1000;
                     $keysFoundIndex[] = $tripleIndex;
                     ++$keysFound;

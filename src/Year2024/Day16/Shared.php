@@ -43,7 +43,7 @@ trait Shared
         $this->grid = [];
 
         foreach ($input as $y => $line) {
-            foreach (str_split($line) as $x => $char) {
+            foreach (str_split((string) $line) as $x => $char) {
                 if ($char === '#') {
                     continue;
                 }

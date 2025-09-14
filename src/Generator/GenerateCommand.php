@@ -19,6 +19,7 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Validation;
 use Override;
+use AOCTest\Util\SolutionTestCase;
 
 use function is_file;
 use function Safe\file_put_contents;
@@ -165,15 +166,15 @@ class GenerateCommand extends Command
 
         $namespace
             ->addUse('AOC\Year' . $this->year . '\Day' . $this->day . '\Part' . $part->name)
-            ->addUse('AOCTest\Util\SolutionTestCase')
-            ->addUse('Safe\Exceptions\FilesystemException')
+            ->addUse(SolutionTestCase::class)
+            ->addUse(FilesystemException::class)
             ->addUse('Override')
         ;
 
         $testClass = new ClassType('Part' . $part->name . 'Test');
         $testClass
             ->setFinal()
-            ->setExtends('AOCTest\Util\SolutionTestCase')
+            ->setExtends(SolutionTestCase::class)
             ->addProperty('solutionClass', new Literal('Part' . $part->name . '::class'))
                 ->addComment('@var class-string')
                 ->setType('string')

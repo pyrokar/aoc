@@ -24,8 +24,6 @@ class PartTwo
 
         $target = $dirSizes['/'] - 40000000;
 
-        return min(array_filter($dirSizes, static function ($dirSize) use ($target) {
-            return $dirSize > $target;
-        }));
+        return min(array_filter($dirSizes, static fn($dirSize) => $dirSize > $target));
     }
 }

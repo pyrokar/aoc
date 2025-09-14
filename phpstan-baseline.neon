@@ -13,12 +13,6 @@ parameters:
 			path: src/Year2022/Day07/PartOne.php
 
 		-
-			message: '#^Method AOC\\Year2022\\Day07\\PartTwo\:\:calculateDirSize\(\) should return non\-empty\-array\<string, int\> but returns array\<string, int\>\.$#'
-			identifier: return.type
-			count: 1
-			path: src/Year2022/Day07/PartTwo.php
-
-		-
 			message: '#^Parameter \#1 \.\.\.\$arg1 of function min expects non\-empty\-array, array\<string, int\> given\.$#'
 			identifier: argument.type
 			count: 1

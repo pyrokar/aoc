@@ -8,9 +8,6 @@ class Path
 {
     public static int $totalMinutes = 0;
 
-    /** @var array<string, string> */
-    public array $positions = [];
-
     /**
      * @var array<string, int>
      */
@@ -19,11 +16,10 @@ class Path
     public int $pressure = 0;
 
     /**
-     * @param array<string, string> $startPositions
+     * @param array<string, string> $positions
      */
-    public function __construct(array $startPositions)
+    public function __construct(public array $positions)
     {
-        $this->positions = $startPositions;
         $this->openValves['AA'] = 0;
     }
 

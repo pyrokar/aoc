@@ -34,7 +34,7 @@ trait Shared
         $this->free = [];
 
         foreach ($input as $y => $line) {
-            foreach (str_split($line) as $x => $char) {
+            foreach (str_split((string) $line) as $x => $char) {
                 $posKey = Position2D::key($x, $y);
                 switch ($char) {
                     case '.':
