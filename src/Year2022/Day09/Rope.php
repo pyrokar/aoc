@@ -82,6 +82,7 @@ class Rope
 
             echo PHP_EOL;
         }
+
         echo PHP_EOL;
     }
 

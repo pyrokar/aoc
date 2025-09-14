@@ -35,6 +35,7 @@ trait Debug
         foreach ($this->columns as $key => $value) {
             $headRow .= str_pad((string) $key, $value, ' ') . ' | ';
         }
+
         $this->_n($headRow);
         $this->_n(str_repeat('-', $width));
     }
@@ -70,6 +71,7 @@ trait Debug
 
             $row .= str_pad((string) $v, $value, ' ') . ' | ';
         }
+
         $this->_n($row);
         $this->_n(str_repeat('-', $width));
 

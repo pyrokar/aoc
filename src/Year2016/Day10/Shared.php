@@ -25,6 +25,7 @@ trait Shared
      * @var array<int, array<string, int>>
      */
     protected array $instructions;
+
     /**
      * @var array<int, int[]>
      */
@@ -45,6 +46,7 @@ trait Shared
         } else {
             $this->botsWithTwoValues->insert($bot);
         }
+
         $this->bots[$bot][] = $value;
     }
 
@@ -99,6 +101,7 @@ trait Shared
                 } else {
                     $instruction['lowToOutput'] = $lowTo;
                 }
+
                 if ($m[4] === 'bot') {
                     $instruction['highToBot'] = $highTo;
                 } else {

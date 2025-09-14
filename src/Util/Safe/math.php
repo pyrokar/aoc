@@ -22,6 +22,7 @@ function max(array $value): mixed
     if ($result === false) {
         throw ArrayException::createFromPhpError();
     }
+
     return $result;
 }
 
@@ -41,5 +42,6 @@ function min(array $value): mixed
     if ($result === false) {
         throw ArrayException::createFromPhpError();
     }
+
     return $result;
 }

@@ -48,6 +48,7 @@ class PartTwo
                             break;
                         }
                     }
+
                     $scenicScore *= $viewingDistance;
 
                 }

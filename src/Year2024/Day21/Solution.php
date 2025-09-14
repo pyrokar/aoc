@@ -91,6 +91,7 @@ final class Solution
 
                 $startButton = $nextButton;
             }
+
             $curLength += $this->getDirPadSeqLength($startButton, 'A');
 
             if ($curLength < $length) {
@@ -138,6 +139,7 @@ final class Solution
                     $curLength += $this->getDirPadSeqLength($startButton1, $char, $robot + 1);
                     $startButton1 = $char;
                 }
+
                 $curLength += $this->getDirPadSeqLength($startButton1, 'A', $robot + 1);
             } else {
                 $curLength = strlen($sequence) + 1;

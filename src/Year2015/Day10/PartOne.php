@@ -31,6 +31,7 @@ class PartOne
             foreach ($numbers as $number) {
                 $result .= strlen((string) $number) . $number[0];
             }
+
             $input = $result;
         }
 

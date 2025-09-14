@@ -39,28 +39,34 @@ class PartTwo
                             if (!isset($grid[$key])) {
                                 $grid[$key] = 0;
                             }
+
                             $grid[$key]++;
                         }
+
                         break;
                     case 'turn off':
                         foreach ($this->rangeKeys($x1, $y1, $x2, $y2) as $key) {
                             if (!isset($grid[$key])) {
                                 $grid[$key] = 0;
                             }
+
                             $grid[$key]--;
 
                             if ($grid[$key] < 0) {
                                 $grid[$key] = 0;
                             }
                         }
+
                         break;
                     case 'toggle':
                         foreach ($this->rangeKeys($x1, $y1, $x2, $y2) as $key) {
                             if (!isset($grid[$key])) {
                                 $grid[$key] = 0;
                             }
+
                             $grid[$key] += 2;
                         }
+
                         break;
                 }
             }

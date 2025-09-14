@@ -28,8 +28,10 @@ class PartOne
                 $count++;
             }
         }
+
         return $count;
     }
+
     /**
      * @param string $ip
      *

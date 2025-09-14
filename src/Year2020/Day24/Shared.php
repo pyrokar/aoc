@@ -50,6 +50,7 @@ trait Shared
                 $blackTiles[$key] = 1;
             }
         }
+
         return $blackTiles;
     }
 }

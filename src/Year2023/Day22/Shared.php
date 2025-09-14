@@ -58,6 +58,7 @@ trait Shared
                     $i->move($dir);
                 }
             }
+
             $brickCubes[] = $to;
 
             $this->bricks[str_pad((string) $from->z, 3, '0', STR_PAD_LEFT) . '_' . $brickId] = $brickCubes;
@@ -134,6 +135,7 @@ trait Shared
                 $disintegratedBricks[$brickId] = 1;
             }
         }
+
         return $disintegratedBricks;
     }
 }

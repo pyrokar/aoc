@@ -16,6 +16,7 @@ trait Shared
      * @var array<string, array<string, int>>
      */
     protected array $shortestPaths;
+
     /**
      * @var array<string, array{flow: int, valves: array<string>}>
      */

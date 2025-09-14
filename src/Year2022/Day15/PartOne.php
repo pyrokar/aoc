@@ -58,6 +58,7 @@ class PartOne
                 if (!isset($row[$k])) {
                     $row[$k] = '#';
                 }
+
                 $k = Position2D::key($pointOnRow->x + $i, $rowY);
                 if (!isset($row[$k])) {
                     $row[$k] = '#';

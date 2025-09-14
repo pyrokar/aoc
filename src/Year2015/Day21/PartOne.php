@@ -43,6 +43,7 @@ class PartOne
             if ($bossHitpoints <= 0) {
                 break;
             }
+
             $playerHitpoints -= $playerDec;
         } while (true);
 

@@ -20,6 +20,7 @@ class Dimension2D
         } elseif ($x >= $this->xMax) {
             $this->xMax = $x + 1;
         }
+
         if ($y < $this->yMin) {
             $this->yMin = $y;
         } elseif ($y >= $this->yMax) {

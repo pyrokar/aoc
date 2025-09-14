@@ -32,11 +32,13 @@ class Grid2D
         if (!isset($this->columns[$x])) {
             $this->columns[$x] = [];
         }
+
         $this->columns[$x][$y] = $position2D;
 
         if (!isset($this->rows[$y])) {
             $this->rows[$y] = [];
         }
+
         $this->columns[$y][$x] = $position2D;
     }
 

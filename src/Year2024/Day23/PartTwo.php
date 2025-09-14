@@ -59,6 +59,7 @@ final class PartTwo
                     $set[$v1] = 1;
                 }
             }
+
             unset($set);
         }
 

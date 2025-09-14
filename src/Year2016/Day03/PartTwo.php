@@ -36,6 +36,7 @@ class PartTwo
                     $sides = array_sort($triangle);
                     $possibleCount += ($sides[0] + $sides[1] > $sides[2]) ? 1 : 0;
                 }
+
                 $triangles = [[], [], []];
             }
         }

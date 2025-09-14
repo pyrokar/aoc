@@ -14,14 +14,17 @@ trait Shared
      * @var array<string, array<string, int>>
      */
     protected array $path;
+
     /**
      * @var array<string, int>
      */
     protected array $obstructions;
+
     /**
      * @var array<string, int>
      */
     protected array $free;
+
     protected Position2D $startPosition;
 
     /**

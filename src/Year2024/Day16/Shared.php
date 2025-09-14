@@ -21,6 +21,7 @@ trait Shared
     protected array $grid;
 
     protected PositionDir $start;
+
     protected Position2D $end;
 
     protected function getDistance(Position2D $position, Position2D $end): int

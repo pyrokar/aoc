@@ -43,6 +43,7 @@ trait Shared
                     } else {
                         $this->ip = $operand;
                     }
+
                     break;
                 case 4:
                     // bxc

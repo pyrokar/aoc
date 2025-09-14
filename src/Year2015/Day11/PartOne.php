@@ -56,6 +56,7 @@ class PartOne
             } else {
                 $secondLastOrd = -1;
             }
+
             $lastOrd = $ord;
 
         }

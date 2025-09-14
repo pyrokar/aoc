@@ -12,6 +12,7 @@ trait Shared
      * @var array<string, int>
      */
     protected array $typeStrength;
+
     /**
      * @var array<int | string, int>
      */
@@ -75,6 +76,7 @@ trait Shared
         for ($i = 0; $i < 5; ++$i) {
             $strength += (int) ($this->cardStrength[$hand[$i]] * (13 ** (5 - $i)));
         }
+
         return $strength;
     }
 

@@ -99,6 +99,7 @@ final class PartTwo
             if ($numbers[$i] - $prev !== 1) {
                 $count++;
             }
+
             $prev = $numbers[$i];
         }
 

@@ -225,6 +225,7 @@ class IntCodeComputer
                     if (count($this->input) === 0) {
                         break 2;
                     }
+
                     $this->memory[$addr1] = array_shift($this->input);
                     $this->_td([
                         'mod' => $mod, 'opc' => 'INPUT',
@@ -242,6 +243,7 @@ class IntCodeComputer
                     if ($this->haltOnOutput) {
                         break 2;
                     }
+
                     break;
                 case 5:
                     $this->_td([
@@ -254,6 +256,7 @@ class IntCodeComputer
                     } else {
                         $this->incrementInstructionPointer(3);
                     }
+
                     break;
                 case 6:
                     $this->_td([
@@ -266,6 +269,7 @@ class IntCodeComputer
                     } else {
                         $this->incrementInstructionPointer(3);
                     }
+
                     break;
                 case 7:
                     if ($value1 < $value2) {
@@ -273,6 +277,7 @@ class IntCodeComputer
                     } else {
                         $this->memory[$addr3] = 0;
                     }
+
                     $this->_td([
                         'mod' => $mod, 'opc' => 'LT',
                         'val1' => $value1, 'addr1' => $addr1,
@@ -287,6 +292,7 @@ class IntCodeComputer
                     } else {
                         $this->memory[$addr3] = 0;
                     }
+
                     $this->_td([
                         'mod' => $mod, 'opc' => 'EQ',
                         'val1' => $value1, 'addr1' => $addr1,

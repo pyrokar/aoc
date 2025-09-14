@@ -24,6 +24,7 @@ trait Shared
             $amounts[0] = $fuel;
             $amounts[1] *= $fuel;
         }
+
         unset($amounts);
 
         while (true) {

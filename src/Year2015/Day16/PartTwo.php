@@ -48,12 +48,14 @@ class PartTwo
                         if ($amount <= $myList[$thing]) {
                             continue 3;
                         }
+
                         break;
                     case 'pomeranians':
                     case 'goldfish':
                         if ($amount >= $myList[$thing]) {
                             continue 3;
                         }
+
                         break;
                     default:
                         if ($amount !== $myList[$thing]) {

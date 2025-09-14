@@ -43,6 +43,7 @@ final class Solution
                 $machine = [];
             }
         }
+
         return $token;
     }
 

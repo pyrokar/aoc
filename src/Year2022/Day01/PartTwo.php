@@ -27,6 +27,7 @@ class PartTwo
 
             $currentElf += (int) $line;
         }
+
         $elfs[] = $currentElf;
 
         rsort($elfs);

@@ -29,6 +29,7 @@ trait Solution
     protected array $positions;
 
     protected int $maxX;
+
     protected int $maxY;
 
     protected function printBlizzards(): void
@@ -47,6 +48,7 @@ trait Solution
 
             echo PHP_EOL;
         }
+
         echo PHP_EOL;
     }
 

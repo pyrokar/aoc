@@ -63,6 +63,7 @@ class PartOne
                         if (!isset($newPositions[$newPositionKey])) {
                             $newPositions[$newPositionKey] = [];
                         }
+
                         $newPositions[$newPositionKey][] = $elfPosition;
                         $elfMoved = true;
                         break;

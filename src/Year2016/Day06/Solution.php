@@ -12,6 +12,7 @@ use function array_values;
 trait Solution
 {
     abstract public function getNeedle(array $charCounts): int;
+
     /**
      * @param Generator<void, non-empty-string, void, void> $input
      *

@@ -20,6 +20,7 @@ trait Shared
      * @var array<string, string>
      */
     protected array $walls;
+
     protected Position2D $robot;
 
     protected function calcSumGPS(): int

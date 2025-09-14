@@ -25,6 +25,7 @@ trait Machine
             } else {
                 $cpu->writeRegister($args[1], (int) $args[0]);
             }
+
             $cpu->incrementInstructionPointer();
         });
 

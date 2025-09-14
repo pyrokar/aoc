@@ -56,6 +56,7 @@ class MaxGraph
         if (!$maxEdge) {
             return 0;
         }
+
         $maxPath = explode($this->sep, $maxEdge);
 
         return $lastCost[$maxEdge] + $this->adjacencyList[reset($maxPath)][end($maxPath)];

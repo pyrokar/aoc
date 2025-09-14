@@ -45,6 +45,7 @@ final class PartTwo
             if (!isset($this->map[$nextHeight][$neighborKey])) {
                 continue;
             }
+
             $score += $this->hike($neighborKey, $nextHeight);
         }
 

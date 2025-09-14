@@ -46,6 +46,7 @@ class Solution
                     if (!isset($galaxiesXY[$x])) {
                         $freeColumns[$x] = 1;
                     }
+
                     if (!isset($galaxiesYX[$y])) {
                         $freeRows[$y] = 1;
                     }

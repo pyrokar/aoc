@@ -23,6 +23,7 @@ class PartOne
                 if ($currentElf > $max) {
                     $max = $currentElf;
                 }
+
                 $currentElf = 0;
                 continue;
             }

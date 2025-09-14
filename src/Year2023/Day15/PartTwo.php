@@ -38,6 +38,7 @@ class PartTwo
                         break;
                     }
                 }
+
                 unset($lens);
 
                 if (!$found) {

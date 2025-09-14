@@ -17,7 +17,9 @@ trait WizardGame
 
     /** @var list<string>  */
     protected array $spells = ['magicMissile', 'drain', 'shield', 'poison', 'recharge'];
+
     protected int $bossDamage;
+
     protected int $minCost;
 
     /**
@@ -43,10 +45,12 @@ trait WizardGame
                     $playerMana += 101;
                     break;
             }
+
             if ($lasts > 1) {
                 $activeSpells[$activeSpell] = --$lasts;
             }
         }
+
         return new GameState($bossHP, $state->playerHP, $playerArmor, $playerMana, $state->playerManaSpend, $activeSpells);
     }
 

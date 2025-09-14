@@ -56,6 +56,7 @@ trait Shop
                         if ($ring1 === $ring2 && $ring1 > 0) {
                             continue;
                         }
+
                         yield [
                             'cost' => $this->weapons[$weapon]['cost'] + $this->armor[$armor]['cost'] + $this->rings[$ring1]['cost'] + $this->rings[$ring2]['cost'],
                             'damage' => $this->weapons[$weapon]['damage'] + $this->rings[$ring1]['damage'] + $this->rings[$ring2]['damage'],

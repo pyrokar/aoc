@@ -41,6 +41,7 @@ trait Shared
                 if (isset($this->distances[$neighborKey])) {
                     continue;
                 }
+
                 if (!isset($this->track[$neighborKey])) {
                     continue;
                 }

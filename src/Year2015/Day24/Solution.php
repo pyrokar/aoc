@@ -37,6 +37,7 @@ trait Solution
             if ($sum >= $groupWeight) {
                 break;
             }
+
             ++$groupSize;
         }
 

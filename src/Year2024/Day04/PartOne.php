@@ -56,9 +56,11 @@ final class PartOne
                 if (!isset($mPositions[$posKeysForDir[0]])) {
                     continue;
                 }
+
                 if (!isset($aPositions[$posKeysForDir[1]])) {
                     continue;
                 }
+
                 if (!isset($sPositions[$posKeysForDir[2]])) {
                     continue;
                 }

@@ -35,6 +35,7 @@ class PartTwo
                 if ($p1[1] > $maxY) {
                     $maxY = (int) $p1[1];
                 }
+
                 if ($p2[1] > $maxY) {
                     $maxY = (int) $p2[1];
                 }
@@ -77,6 +78,7 @@ class PartTwo
             if ($currentSandUnit->getKey() === '(500|0)') {
                 break;
             }
+
             $currentSandUnit = new Position2D(500, 0);
         }
 

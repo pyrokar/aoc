@@ -30,6 +30,7 @@ class PartTwo
                 $count++;
             }
         }
+
         return $count;
     }
 

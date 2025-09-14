@@ -11,6 +11,7 @@ use Generator;
 trait Shared
 {
     protected int $width = 0;
+
     protected int $height = 0;
 
     /**

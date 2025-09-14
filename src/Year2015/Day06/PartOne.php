@@ -38,11 +38,13 @@ class PartOne
                         foreach ($this->rangeKeys($x1, $y1, $x2, $y2) as $key) {
                             $grid[$key] = 1;
                         }
+
                         break;
                     case 'turn off':
                         foreach ($this->rangeKeys($x1, $y1, $x2, $y2) as $key) {
                             unset($grid[$key]);
                         }
+
                         break;
                     case 'toggle':
                         foreach ($this->rangeKeys($x1, $y1, $x2, $y2) as $key) {
@@ -52,6 +54,7 @@ class PartOne
                                 $grid[$key] = 1;
                             }
                         }
+
                         break;
                 }
             }

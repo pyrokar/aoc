@@ -36,6 +36,7 @@ final class PartTwo
                 $result .= $pixel;
                 // echo $pixel === '1' ? '#' : ' ';
             }
+
             // echo PHP_EOL;
         }
 

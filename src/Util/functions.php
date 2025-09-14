@@ -60,12 +60,15 @@ function str_rot(string $s, int $n = 13): string
     if (!$n) {
         return $s;
     }
+
     if ($n < 0) {
         $n += 26;
     }
+
     if ($n === 13) {
         return str_rot13($s);
     }
+
     $rep = substr((string) $letters, $n * 2) . substr((string) $letters, 0, $n * 2);
     return strtr($s, $letters, $rep);
 }

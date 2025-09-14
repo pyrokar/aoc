@@ -11,6 +11,7 @@ use function floor;
 class BinarySearch
 {
     private int $next;
+
     private bool $lower = true;
 
     public function __construct(

@@ -50,6 +50,7 @@ final class PartOne
                             break;
                     }
                 }
+
                 continue;
             }
 

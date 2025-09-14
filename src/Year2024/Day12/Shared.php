@@ -43,6 +43,7 @@ trait Shared
                 $i++;
             }
         }
+
         return [$map, $newRegions];
     }
 

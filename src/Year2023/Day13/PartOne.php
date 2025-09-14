@@ -36,6 +36,7 @@ class PartOne
                     if ($column === $lastColumn) {
                         $possibleReflectionColumns[] = $x - 1;
                     }
+
                     $lastColumn = $column;
                 }
 
@@ -84,6 +85,7 @@ class PartOne
             if ($lastLine === $line) {
                 $possibleReflectionRows[] = $y - 1;
             }
+
             $lastLine = $line;
 
             $rows[] = $line;

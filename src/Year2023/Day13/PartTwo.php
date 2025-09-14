@@ -36,6 +36,7 @@ class PartTwo
                     if ($column === $lastColumn || $this->equalWithSmudge($lastColumn, $column)) {
                         $possibleReflectionColumns[] = $x - 1;
                     }
+
                     $lastColumn = $column;
                 }
 
@@ -47,6 +48,7 @@ class PartTwo
                                 $countLines += $reflectionColumn + 1;
                                 break 2;
                             }
+
                             continue 2;
                         }
 
@@ -73,6 +75,7 @@ class PartTwo
                                 $countLines += 100 * ($reflectionRow + 1);
                                 break 2;
                             }
+
                             continue 2;
                         }
 
@@ -106,6 +109,7 @@ class PartTwo
             if ($lastLine === $line || $this->equalWithSmudge($lastLine, $line)) {
                 $possibleReflectionRows[] = $y - 1;
             }
+
             $lastLine = $line;
 
             $rows[] = $line;

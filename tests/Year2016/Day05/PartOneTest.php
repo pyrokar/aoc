@@ -13,6 +13,7 @@ use PHPUnit\Framework\Attributes\Large;
 class PartOneTest extends SolutionTestCase
 {
     protected string $solutionClass = PartOne::class;
+
     /**
      * @inheritDoc
      */

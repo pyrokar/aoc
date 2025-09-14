@@ -17,8 +17,11 @@ trait Shared
      * @var array<string, string>
      */
     protected array $grid;
+
     protected string $target;
+
     protected Graph $graph;
+
     protected int $maxEndDistance;
 
     /**
@@ -162,6 +165,7 @@ trait Shared
                 } else {
                     $graph->addUndirectedEdge($nodeKey, $parents[$nodeKey], $distances[$nodeKey]);
                 }
+
                 $hadSlope[$nodeKey] = false;
                 continue;
             }
@@ -171,6 +175,7 @@ trait Shared
             } else {
                 $graph->addUndirectedEdge($nodeKey, $parents[$nodeKey], $distances[$nodeKey]);
             }
+
             $hadSlope[$nodeKey] = false;
 
             foreach ($successors as $successor) {

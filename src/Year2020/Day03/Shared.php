@@ -27,6 +27,7 @@ trait Shared
                 ++$treesEncountered;
             }
         }
+
         return $treesEncountered;
     }
 
@@ -46,6 +47,7 @@ trait Shared
                 }
             }
         }
+
         return $trees;
     }
 }

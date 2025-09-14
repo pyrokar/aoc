@@ -63,6 +63,7 @@ class PartTwo
                 if (isset($endNodes[$currentNode])) {
                     $endNodeReached = true;
                 }
+
                 $ip = ($ip + 1) % $l;
                 ++$steps;
             }

@@ -15,6 +15,7 @@ trait Solution
 
     /** @var array<string, int>  */
     protected array $ground;
+
     protected int $height;
 
     protected static function initRockShapes(): void
@@ -144,6 +145,7 @@ trait Solution
                     foreach ($rock->getPositionKeys($rockPosition) as $r => $j) {
                         $this->ground[$r] = 1;
                     }
+
                     $rest = true;
 
                     if ($rockPosition->y >= $this->height) {

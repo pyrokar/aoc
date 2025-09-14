@@ -38,6 +38,7 @@ trait CalculateDirSize
                     default:
                         $cwd .= ($cwd === '/') ? $dir : '/' . $dir;
                 }
+
                 continue;
             }
 
@@ -81,6 +82,7 @@ trait CalculateDirSize
         foreach ($dir as $entry) {
             $size += $entry instanceof File ? $entry->size : $this->totalSize($dirs[$entry->name], $dirs);
         }
+
         return $size;
     }
 }

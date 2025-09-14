@@ -32,6 +32,7 @@ class PartOne
                 if ($p1[1] > $maxY) {
                     $maxY = $p1[1];
                 }
+
                 if ($p2[1] > $maxY) {
                     $maxY = $p2[1];
                 }

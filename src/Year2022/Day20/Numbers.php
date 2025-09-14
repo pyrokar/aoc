@@ -14,8 +14,11 @@ class Numbers
      * @var array<Node>
      */
     private array $list = [];
+
     private ?Node $head = null;
+
     private ?Node $tail = null;
+
     private ?Node $zero = null;
 
     /**

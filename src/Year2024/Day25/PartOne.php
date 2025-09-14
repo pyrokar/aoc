@@ -32,6 +32,7 @@ final class PartOne
                 } else {
                     $locks[] = $currentHeights;
                 }
+
                 $new = true;
                 continue;
             }

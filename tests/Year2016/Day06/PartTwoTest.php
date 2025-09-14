@@ -12,6 +12,7 @@ use Override;
 class PartTwoTest extends SolutionTestCase
 {
     protected string $solutionClass = PartTwo::class;
+
     /**
      * @inheritDoc
      *

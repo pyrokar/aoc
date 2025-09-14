@@ -54,6 +54,7 @@ final class PartTwo
                             break;
                     }
                 }
+
                 continue;
             }
 

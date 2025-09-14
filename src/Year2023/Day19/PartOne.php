@@ -84,6 +84,7 @@ class PartOne
                 if ($partRating[$category] < $acceptedRange[$category][0]) {
                     continue 2;
                 }
+
                 if ($partRating[$category] >= $acceptedRange[$category][1]) {
                     continue 2;
                 }

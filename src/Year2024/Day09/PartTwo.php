@@ -37,8 +37,10 @@ final class PartTwo
                 if ($a[$i] === 0) {
                     continue;
                 }
+
                 $spaces[$currentPosition] = ['l' => $a[$i], 'p' => $currentPosition];
             }
+
             $currentPosition += $a[$i];
         }
 
@@ -64,6 +66,7 @@ final class PartTwo
                     if ($restSpace > 0) {
                         $spaces[$spacePos + $block['l']] = ['l' => $restSpace, 'p' => $spacePos + $block['l']];
                     }
+
                     continue 2;
                 }
             }
