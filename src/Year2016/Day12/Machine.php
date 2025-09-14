@@ -19,7 +19,7 @@ trait Machine
     {
         $cpu = new CPU($initRegisters);
 
-        $cpu->addOpCode('cpy', function (CPU $cpu, array $args) {
+        $cpu->addOpCode('cpy', function (CPU $cpu, array $args): void {
             if (!is_numeric($args[0])) {
                 $cpu->copyRegister($args[1], $args[0]);
             } else {
@@ -28,17 +28,17 @@ trait Machine
             $cpu->incrementInstructionPointer();
         });
 
-        $cpu->addOpCode('inc', function (CPU $cpu, array $args) {
+        $cpu->addOpCode('inc', function (CPU $cpu, array $args): void {
             $cpu->incrementRegister($args[0]);
             $cpu->incrementInstructionPointer();
         });
 
-        $cpu->addOpCode('dec', function (CPU $cpu, array $args) {
+        $cpu->addOpCode('dec', function (CPU $cpu, array $args): void {
             $cpu->decrementRegister($args[0]);
             $cpu->incrementInstructionPointer();
         });
 
-        $cpu->addOpCode('jnz', function (CPU $cpu, array $args) {
+        $cpu->addOpCode('jnz', function (CPU $cpu, array $args): void {
             if (!is_numeric($args[0]) && $cpu->readRegister($args[0]) !== 0) {
                 $cpu->incrementInstructionPointer((int) $args[1]);
             } elseif ((int) $args[0] !== 0) {

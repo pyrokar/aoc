@@ -20,30 +20,30 @@ trait Solution
     {
         $cpu = new CPU($initRegisters);
 
-        $cpu->addOpCode('hlf', function (CPU $cpu, array $args) {
+        $cpu->addOpCode('hlf', function (CPU $cpu, array $args): void {
             $register = $args[0];
             $cpu->writeRegister($register, $cpu->readRegister($register) / 2);
             $cpu->incrementInstructionPointer();
         });
 
-        $cpu->addOpCode('tpl', function (CPU $cpu, array $args) {
+        $cpu->addOpCode('tpl', function (CPU $cpu, array $args): void {
             $register = $args[0];
             $cpu->writeRegister($register, $cpu->readRegister($register) * 3);
             $cpu->incrementInstructionPointer();
         });
 
-        $cpu->addOpCode('inc', function (CPU $cpu, array $args) {
+        $cpu->addOpCode('inc', function (CPU $cpu, array $args): void {
             $register = $args[0];
             $cpu->incrementRegister($register);
             $cpu->incrementInstructionPointer();
         });
 
-        $cpu->addOpCode('jmp', function (CPU $cpu, array $args) {
+        $cpu->addOpCode('jmp', function (CPU $cpu, array $args): void {
             $offset = (int) $args[0];
             $cpu->incrementInstructionPointer($offset);
         });
 
-        $cpu->addOpCode('jie', function (CPU $cpu, array $args) {
+        $cpu->addOpCode('jie', function (CPU $cpu, array $args): void {
             $register = $args[0];
             $offset = (int) $args[1];
 
@@ -54,7 +54,7 @@ trait Solution
             }
         });
 
-        $cpu->addOpCode('jio', function (CPU $cpu, array $args) {
+        $cpu->addOpCode('jio', function (CPU $cpu, array $args): void {
             $register = $args[0];
             $offset = (int) $args[1];
 

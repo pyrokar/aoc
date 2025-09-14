@@ -47,7 +47,7 @@ trait Util
             if (preg_match('/Starting items: (?<items>.*)/', $line, $m)) {
                 /** @var list<int> $items */
                 $items = json_decode('[' . $m['items'] . ']', true, 512, JSON_THROW_ON_ERROR);
-                $monkeyData['items'] = array_map(static fn(int $i) => new ModuloNumber($i), $items);
+                $monkeyData['items'] = array_map(static fn(int $i): ModuloNumber => new ModuloNumber($i), $items);
 
                 continue;
             }

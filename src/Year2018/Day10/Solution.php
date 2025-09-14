@@ -86,7 +86,7 @@ final class Solution
      */
     private function print(array $positions, SpanningRectangle $spanningRectangle): void
     {
-        $positions = array_reduce($positions, static function ($initial, $position) {
+        $positions = array_reduce($positions, static function (array $initial, array $position) {
             $initial[Position2D::key($position[0], $position[1])] = 1;
             return $initial;
         }, []);

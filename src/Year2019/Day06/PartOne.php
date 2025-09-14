@@ -21,7 +21,7 @@ final class PartOne
         foreach ($input as $line) {
             [$a, $b] = explode(')', $line);
 
-            $orbits->set($b, static fn() => $orbits->isset($a) ? $orbits->get($a) + 1 : 1);
+            $orbits->set($b, static fn(): int|float => $orbits->isset($a) ? $orbits->get($a) + 1 : 1);
         }
 
         $total = 0;

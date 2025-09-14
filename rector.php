@@ -16,5 +16,8 @@ return RectorConfig::configure()
         // non-breaking PHP_84 rules
         ExplicitNullableParamTypeRector::class,
     ])
+    ->withPreparedSets(
+        typeDeclarations: true
+    )
     ->withAttributesSets(phpunit: true)
 ;

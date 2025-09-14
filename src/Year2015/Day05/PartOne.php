@@ -18,14 +18,14 @@ class PartOne
      */
     public function __invoke(Generator $input): int
     {
-        return reduceInputByLine($input, static function (int $niceStrings, string $line) {
+        return reduceInputByLine($input, static function (int $niceStrings, string $line): int {
 
             $countVowels = 0;
             $lastChar = '';
             $containsDoubleLetter = false;
             $containsNotNaughty = true;
 
-            reduceLineByChar($line, function ($nice, $char) use (&$countVowels, &$lastChar, &$containsDoubleLetter, &$containsNotNaughty) {
+            reduceLineByChar($line, function ($nice, string $char) use (&$countVowels, &$lastChar, &$containsDoubleLetter, &$containsNotNaughty): int {
 
                 if (str_contains('aeiou', $char)) {
                     $countVowels++;

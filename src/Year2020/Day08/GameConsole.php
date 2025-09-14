@@ -25,20 +25,20 @@ class GameConsole
         $dispatcher = new DefaultDispatcher();
         $this->cpu = new CPU(['acc' => 0], $dispatcher);
 
-        $this->cpu->addOpCode('nop', function (CPU $cpu) {
+        $this->cpu->addOpCode('nop', function (CPU $cpu): void {
             $cpu->incrementInstructionPointer();
         });
 
-        $this->cpu->addOpCode('acc', function (CPU $cpu, array $args) {
+        $this->cpu->addOpCode('acc', function (CPU $cpu, array $args): void {
             $cpu->incrementRegister('acc', (int) $args[0]);
             $cpu->incrementInstructionPointer();
         });
 
-        $this->cpu->addOpCode('jmp', function (CPU $cpu, array $args) {
+        $this->cpu->addOpCode('jmp', function (CPU $cpu, array $args): void {
             $cpu->incrementInstructionPointer((int) $args[0]);
         });
 
-        $dispatcher->addListener(BeforeExecuteInstruction::NAME, function (BeforeExecuteInstruction $event) {
+        $dispatcher->addListener(BeforeExecuteInstruction::NAME, function (BeforeExecuteInstruction $event): bool {
             $ip = $event->cpu->getInstructionPointer();
             if (isset($this->visitedInstructions[$ip])) {
                 // loop detected

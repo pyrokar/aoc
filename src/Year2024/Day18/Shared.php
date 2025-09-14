@@ -47,7 +47,7 @@ trait Shared
 
                 return $neighbors;
             },
-            fn(string $key, $endKey) => Position2D::fromKey($endKey)->calcManhattanDistanceTo(Position2D::fromKey($key)),
+            fn(string $key, $endKey): int => Position2D::fromKey($endKey)->calcManhattanDistanceTo(Position2D::fromKey($key)),
         );
     }
 }

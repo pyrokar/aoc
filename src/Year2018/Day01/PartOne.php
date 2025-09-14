@@ -17,6 +17,6 @@ final class PartOne
      */
     public function __invoke(Generator $input): int
     {
-        return reduceInputByLine($input, fn(int $result, string $f) => $result + (int) $f, 0);
+        return reduceInputByLine($input, fn(int $result, string $f): int => $result + (int) $f, 0);
     }
 }

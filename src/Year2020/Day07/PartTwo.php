@@ -32,7 +32,7 @@ class PartTwo
             $color = $m['color'];
 
             if ($m['contain'] === 'no other bags') {
-                $bags->set($color, fn() => 0);
+                $bags->set($color, fn(): int => 0);
                 continue;
             }
 
@@ -45,7 +45,7 @@ class PartTwo
                 return $carry;
             }, []);
 
-            $bags->set($color, fn() => array_reduce($containedBags, static function ($carry, $item) use ($bags) {
+            $bags->set($color, fn(): float|int => array_reduce($containedBags, static function ($carry, array $item) use ($bags): float|int {
                 $carry += $item['number'] * ($bags->get($item['color']) + 1);
                 return $carry;
             }, 0));

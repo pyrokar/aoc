@@ -30,16 +30,16 @@ final class PartOne
 
         foreach ($input as $line) {
             if (preg_match('/^(?<var>\w+): (?<value>\d)$/', $line, $m)) {
-                $a->set($m['var'], static fn() => (int) $m['value']);
+                $a->set($m['var'], static fn(): int => (int) $m['value']);
                 continue;
             }
 
             if (preg_match('/^(?<in0>\w+) XOR (?<in1>\w+) -> (?<out>\w+)/', $line, $m)) {
-                $a->set($m['out'], fn() => (int) $a->get($m['in0']) ^ (int) $a->get($m['in1']));
+                $a->set($m['out'], fn(): int => (int) $a->get($m['in0']) ^ (int) $a->get($m['in1']));
             } elseif (preg_match('/^(?<in0>\w+) AND (?<in1>\w+) -> (?<out>\w+)/', $line, $m)) {
-                $a->set($m['out'], fn() => (int) $a->get($m['in0']) & (int) $a->get($m['in1']));
+                $a->set($m['out'], fn(): int => (int) $a->get($m['in0']) & (int) $a->get($m['in1']));
             } elseif (preg_match('/^(?<in0>\w+) OR (?<in1>\w+) -> (?<out>\w+)/', $line, $m)) {
-                $a->set($m['out'], fn() => (int) $a->get($m['in0']) | (int) $a->get($m['in1']));
+                $a->set($m['out'], fn(): int => (int) $a->get($m['in0']) | (int) $a->get($m['in1']));
             }
 
             if (isset($m['out']) && str_starts_with($m['out'], 'z')) {

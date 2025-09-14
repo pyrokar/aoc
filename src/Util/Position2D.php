@@ -99,10 +99,10 @@ class Position2D implements Stringable
         $this->move($direction, $distance);
 
         return match ($direction) {
-            CompassDirection::North => array_map(static fn($step) => new Point2D($startX, $startY + $step), $steps),
-            CompassDirection::East  => array_map(static fn($step) => new Point2D($startX + $step, $startY), $steps),
-            CompassDirection::South => array_map(static fn($step) => new Point2D($startX, $startY - $step), $steps),
-            CompassDirection::West  => array_map(static fn($step) => new Point2D($startX - $step, $startY), $steps),
+            CompassDirection::North => array_map(static fn(int $step): Point2D => new Point2D($startX, $startY + $step), $steps),
+            CompassDirection::East  => array_map(static fn(int $step): Point2D => new Point2D($startX + $step, $startY), $steps),
+            CompassDirection::South => array_map(static fn(int $step): Point2D => new Point2D($startX, $startY - $step), $steps),
+            CompassDirection::West  => array_map(static fn(int $step): Point2D => new Point2D($startX - $step, $startY), $steps),
         };
     }
 
@@ -128,7 +128,7 @@ class Position2D implements Stringable
      */
     public function getOrthogonalNeighbors(): array
     {
-        return array_reduce(CompassDirection::cases(), function ($arr, CompassDirection $dir) {
+        return array_reduce(CompassDirection::cases(), function (array $arr, CompassDirection $dir) {
             $arr[$dir->value] = $this->getPositionForDirection($dir);
             return $arr;
         }, []);
@@ -239,7 +239,7 @@ class Position2D implements Stringable
      */
     public function getHexagonalNeighborKeys(): array
     {
-        return array_map(fn(HexagonalDirection $direction) => $this->getHexagonalNeighborKeyForDirection($direction), HexagonalDirection::cases());
+        return array_map(fn(HexagonalDirection $direction): string => $this->getHexagonalNeighborKeyForDirection($direction), HexagonalDirection::cases());
     }
 
     /**

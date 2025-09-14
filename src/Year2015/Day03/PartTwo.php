@@ -27,7 +27,7 @@ class PartTwo
             $santaPosition->getKey() => 1,
         ];
 
-        array_map_key(function (int $index, string $char) use ($santaPosition, $roboPosition) {
+        array_map_key(function (int $index, string $char) use ($santaPosition, $roboPosition): void {
             if ($index % 2 === 1) {
                 $this->deliver($santaPosition, $char);
             } else {

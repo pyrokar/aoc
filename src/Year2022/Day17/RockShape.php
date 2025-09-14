@@ -26,7 +26,7 @@ class RockShape
      */
     public function getPositionKeys(Position2D $position): array
     {
-        return array_flip(array_map(fn($rockPosition) => $this->addPositions($position, $rockPosition)->getKey(), $this->rockPositions));
+        return array_flip(array_map(fn(Position2D $rockPosition): string => $this->addPositions($position, $rockPosition)->getKey(), $this->rockPositions));
     }
 
     /**

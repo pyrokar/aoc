@@ -21,16 +21,16 @@ class PartOne
         $dispatcher = new DefaultDispatcher();
         $cpu = new CPU(['acc' => 0], $dispatcher);
 
-        $cpu->addOpCode('nop', function (CPU $cpu) {
+        $cpu->addOpCode('nop', function (CPU $cpu): void {
             $cpu->incrementInstructionPointer();
         });
 
-        $cpu->addOpCode('acc', function (CPU $cpu, array $args) {
+        $cpu->addOpCode('acc', function (CPU $cpu, array $args): void {
             $cpu->incrementRegister('acc', (int) $args[0]);
             $cpu->incrementInstructionPointer();
         });
 
-        $cpu->addOpCode('jmp', function (CPU $cpu, array $args) {
+        $cpu->addOpCode('jmp', function (CPU $cpu, array $args): void {
             $cpu->incrementInstructionPointer((int) $args[0]);
         });
 
@@ -40,7 +40,7 @@ class PartOne
 
         $visitedInstructions = [];
 
-        $dispatcher->addListener(BeforeExecuteInstruction::NAME, function (BeforeExecuteInstruction $event) use (&$visitedInstructions) {
+        $dispatcher->addListener(BeforeExecuteInstruction::NAME, function (BeforeExecuteInstruction $event) use (&$visitedInstructions): bool {
             $ip = $event->cpu->getInstructionPointer();
             if (isset($visitedInstructions[$ip])) {
                 // loop detected

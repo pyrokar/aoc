@@ -45,7 +45,7 @@ class PartTwo
             $newPositions = [];
 
             foreach ($lastElfPositions as $elfPosition) {
-                $neighborElves = array_filter($elfPosition->getNeighborKeys(), static fn(string $neighborKey) => isset($lastElfPositions[$neighborKey]));
+                $neighborElves = array_filter($elfPosition->getNeighborKeys(), static fn(string $neighborKey): bool => isset($lastElfPositions[$neighborKey]));
 
                 if (empty($neighborElves)) {
                     $newPositions[$elfPosition->getKey()] = [$elfPosition];
@@ -57,7 +57,7 @@ class PartTwo
                 $elfMoved = false;
 
                 for ($i = 0; $i < 4; $i++) {
-                    $adjacentElves = array_filter($this->getNeighborKeysForDirection($elfPosition, $elfDirection), static fn(string $neighborKey) => isset($lastElfPositions[$neighborKey]));
+                    $adjacentElves = array_filter($this->getNeighborKeysForDirection($elfPosition, $elfDirection), static fn(string $neighborKey): bool => isset($lastElfPositions[$neighborKey]));
 
                     if (empty($adjacentElves)) {
                         $newPosition = $elfPosition->getPositionForDirection($elfDirection);

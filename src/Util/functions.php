@@ -42,7 +42,7 @@ function array_map_key(?callable $callback, array $array): array
 function max_value_keys(array $array): array
 {
     $maxValue = max($array);
-    return array_keys(array_filter($array, static fn($el) => $el === $maxValue));
+    return array_keys(array_filter($array, static fn($el): bool => $el === $maxValue));
 }
 
 /**

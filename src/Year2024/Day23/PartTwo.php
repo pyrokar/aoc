@@ -62,7 +62,7 @@ final class PartTwo
             unset($set);
         }
 
-        uasort($sets, fn($a, $b) => count($a) <=> count($b));
+        uasort($sets, fn($a, $b): int => count($a) <=> count($b));
 
         $maxSet = array_pop($sets) ?? [];
         ksort($maxSet);

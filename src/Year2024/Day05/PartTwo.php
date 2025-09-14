@@ -39,7 +39,7 @@ final class PartTwo
                     if (preg_match($rule, $line)) {
                         $update = explode(',', $line);
 
-                        usort($update, static fn($a, $b) => match (true) {
+                        usort($update, static fn($a, $b): int => match (true) {
                             isset($rules[$a . '|' . $b]) => -1,
                             isset($rules[$b . '|' . $a]) => 1,
                             default => 0,

@@ -20,7 +20,7 @@ trait Shared
      */
     public function mergeRange(array $ranges): array
     {
-        usort($ranges, static fn(array $a, array $b) => $a[0] <=> $b[0]);
+        usort($ranges, static fn(array $a, array $b): int => $a[0] <=> $b[0]);
 
         $prevIndex = 0;
 
@@ -44,7 +44,7 @@ trait Shared
         $this->blocked = [];
 
         foreach ($input as $line) {
-            [$from, $to] = array_map(static fn(string $a) => (int) $a, explode('-', $line));
+            [$from, $to] = array_map(static fn(string $a): int => (int) $a, explode('-', $line));
 
             $this->blocked[] = [$from, $to];
 

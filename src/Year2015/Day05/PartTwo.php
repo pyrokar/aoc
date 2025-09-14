@@ -21,7 +21,7 @@ class PartTwo
      */
     public function __invoke(Generator $input): int
     {
-        return reduceInputByLine($input, static function (int $niceStrings, string $line) {
+        return reduceInputByLine($input, static function (int $niceStrings, string $line): int {
 
             $pairTwoLetters = preg_match('/([a-z]{2}).*\1/', $line);
 

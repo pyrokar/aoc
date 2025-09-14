@@ -35,7 +35,7 @@ trait Shared
 
         foreach ($input as $brickId => $line) {
             [$from, $to] = array_map(
-                static fn(string $coordinates) => Position3D::fromKey($coordinates, ','),
+                static fn(string $coordinates): Position3D => Position3D::fromKey($coordinates, ','),
                 explode('~', $line),
             );
 

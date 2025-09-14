@@ -25,13 +25,13 @@ trait Shared
 
         foreach ($input as $line) {
             if (preg_match('/(?<ruleNumber>\d+): "(?<char>\w)"$/', $line, $m)) {
-                $rules->set((int) $m['ruleNumber'], fn() => $m['char']);
+                $rules->set((int) $m['ruleNumber'], fn(): string => $m['char']);
                 continue;
             }
 
             if (preg_match('/(?<ruleNumber>\d+): (?<rule>[^|]*)$/', $line, $m)) {
                 $parts = explode(' ', $m['rule']);
-                $rules->set((int) $m['ruleNumber'], fn() => '(' . implode('', array_map(static fn($r) => $rules->get((int) $r), $parts)) . ')');
+                $rules->set((int) $m['ruleNumber'], fn(): string => '(' . implode('', array_map(static fn(string $r) => $rules->get((int) $r), $parts)) . ')');
                 continue;
             }
 
@@ -39,10 +39,10 @@ trait Shared
                 $parts = explode(' | ', $m['rule']);
                 $rules->set(
                     (int) $m['ruleNumber'],
-                    fn() => '(' .
-                        implode('', array_map(static fn($r) => $rules->get((int) $r), explode(' ', $parts[0]))) .
+                    fn(): string => '(' .
+                        implode('', array_map(static fn(string $r) => $rules->get((int) $r), explode(' ', $parts[0]))) .
                         '|' .
-                        implode('', array_map(static fn($r) => $rules->get((int) $r), explode(' ', $parts[1]))) .
+                        implode('', array_map(static fn(string $r) => $rules->get((int) $r), explode(' ', $parts[1]))) .
                         ')',
                 );
                 continue;

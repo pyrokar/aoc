@@ -11,7 +11,7 @@ trait Shared
         $chars = array_count_values(str_split($encryptedName));
         unset($chars['-']);
 
-        uksort($chars, static function (string $k1, string $k2) use ($chars) {
+        uksort($chars, static function (string $k1, string $k2) use ($chars): int {
             if ($chars[$k1] === $chars[$k2]) {
                 return strcmp($k1, $k2);
             }

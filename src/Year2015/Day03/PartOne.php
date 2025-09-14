@@ -23,7 +23,7 @@ class PartOne
             $santaPosition->getKey() => 1,
         ];
 
-        array_map(function (string $char) use ($santaPosition) {
+        array_map(function (string $char) use ($santaPosition): void {
             $this->deliver($santaPosition, $char);
         }, str_split($input));
 

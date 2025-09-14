@@ -78,7 +78,7 @@ final class PartOne
      */
     private function getPosKeysForVector(array $position, array $vector): array
     {
-        return array_map(static fn($distance) => Position2D::key(
+        return array_map(static fn(int $distance): string => Position2D::key(
             $position[0] + $vector[0] * $distance,
             $position[1] + $vector[1] * $distance,
         ), range(1, 3));

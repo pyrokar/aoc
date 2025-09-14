@@ -34,7 +34,7 @@ class PartTwo
 
         $this->findAcceptedRanges();
 
-        return (int) array_sum(array_map(static fn(array $ranges) => array_product(array_map(fn(array $range) => $range[1] - $range[0], $ranges)), $this->acceptedRanges));
+        return (int) array_sum(array_map(static fn(array $ranges): float|int => array_product(array_map(fn(array $range): int => $range[1] - $range[0], $ranges)), $this->acceptedRanges));
     }
 
 }

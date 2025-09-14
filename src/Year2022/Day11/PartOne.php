@@ -32,7 +32,7 @@ class PartOne
             }
         }
 
-        usort($monkeys, fn(Monkey $m1, Monkey $m2) => $m2->countInspections <=> $m1->countInspections);
+        usort($monkeys, fn(Monkey $m1, Monkey $m2): int => $m2->countInspections <=> $m1->countInspections);
 
         return $monkeys[0]->countInspections * $monkeys[1]->countInspections;
     }

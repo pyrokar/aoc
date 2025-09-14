@@ -24,8 +24,8 @@ class PartTwo
     {
         [$rules, $messages] = $this->processInput($input);
 
-        $rules->set(8, fn() => '(' . $rules->get(42) . ')+');
-        $rules->set(11, fn() => '(?<R>' . $rules->get(42) . $rules->get(31) . '|(' . $rules->get(42) . '(?&R)' . $rules->get(31) . '))');
+        $rules->set(8, fn(): string => '(' . $rules->get(42) . ')+');
+        $rules->set(11, fn(): string => '(?<R>' . $rules->get(42) . $rules->get(31) . '|(' . $rules->get(42) . '(?&R)' . $rules->get(31) . '))');
 
         $regex = '/^' . $rules->get(0) . '$/';
 

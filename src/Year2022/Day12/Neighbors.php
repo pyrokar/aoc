@@ -16,7 +16,7 @@ trait Neighbors
         $currentKey = $current->getKey();
         $currentHeight = $this->heightMap[$currentKey];
 
-        return array_filter($current->getOrthogonalNeighbors(), function (Position2D $neighbor) use ($currentHeight) {
+        return array_filter($current->getOrthogonalNeighbors(), function (Position2D $neighbor) use ($currentHeight): bool {
             $neighborKey = $neighbor->getKey();
             return (isset($this->heightMap[$neighborKey]) && $this->heightMap[$neighborKey] - $currentHeight <= 1);
         });
