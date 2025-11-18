@@ -4,39 +4,33 @@ declare(strict_types=1);
 
 namespace AOCTest\Util;
 
+use AOC\Util\Position2D;
 use AOC\Util\SpanningRectangle;
 use PHPUnit\Framework\TestCase;
 
 class SpanningRectangleTest extends TestCase
 {
-    public function testGrowX(): void
+    public function testAddPoint(): void
     {
-        $rectangle = new SpanningRectangle(0, 0);
+        $sr = new SpanningRectangle();
 
-        $rectangle->growX(2);
+        $p00 = new Position2D(0, 0);
 
-        $this->assertEquals(0, $rectangle->x);
-        $this->assertEquals(2, $rectangle->width);
+        $this->assertFalse($sr->isPositionInside($p00));
 
-        $rectangle->growX(-2);
+        $p11 = new Position2D(1, 1);
 
-        $this->assertEquals(-2, $rectangle->x);
-        $this->assertEquals(4, $rectangle->width);
-    }
+        $sr->addPoint($p11);
 
-    public function testGrowY(): void
-    {
-        $rectangle = new SpanningRectangle(0, 0);
+        $this->assertFalse($sr->isPositionInside($p00));
+        $this->assertTrue($sr->isPositionInside($p11));
 
-        $rectangle->growY(2);
+        $p22 = new Position2D(2, 2);
 
-        $this->assertEquals(0, $rectangle->y);
-        $this->assertEquals(2, $rectangle->height);
+        $sr->addPoint($p22);
 
-        $rectangle->growY(-2);
-
-        $this->assertEquals(-2, $rectangle->y);
-        $this->assertEquals(4, $rectangle->height);
-
+        $this->assertFalse($sr->isPositionInside($p00));
+        $this->assertTrue($sr->isPositionInside($p11));
+        $this->assertTrue($sr->isPositionInside($p22));
     }
 }

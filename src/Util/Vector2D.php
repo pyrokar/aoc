@@ -23,11 +23,6 @@ class Vector2D
         return new self($this->x * $k, $this->y * $k);
     }
 
-    public function add(self $vector): self
-    {
-        return new self($this->x + $vector->x, $this->y + $vector->y);
-    }
-
     public function toPoint(): Point2D
     {
         return new Point2D($this->x, $this->y);

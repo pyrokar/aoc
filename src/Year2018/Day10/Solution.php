@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace AOC\Year2018\Day10;
 
+use AOC\Util\Position2D;
 use AOC\Util\SpanningRectangle;
+use AOC\Util\Vector2D;
 use Generator;
 
 use Safe\Exceptions\PcreException;
@@ -27,12 +29,15 @@ final class Solution
      */
     public function __invoke(Generator $input): int
     {
-        /** @var non-empty-list<Point> $points */
+        /** @var non-empty-list<array{Position2D, Vector2D}> $points */
         $points = [];
 
         foreach ($input as $line) {
             if (preg_match('/^position=<(?<px>.+),(?<py>.+)> velocity=<(?<vx>.+),(?<vy>.+)>$/', $line, $m)) {
-                $points[] = [(int) $m['px'], (int) $m['py'], (int) $m['vx'], (int) $m['vy']];
+                $points[] = [
+                    new Position2D((int) $m['px'], (int) $m['py']),
+                    new Vector2D((int) $m['vx'], (int) $m['vy']),
+                ];
             }
         }
 
@@ -42,23 +47,20 @@ final class Solution
         while (true) {
             $newPositions = [];
 
-            $spanningRectangle = null;
+            $spanningRectangle = new SpanningRectangle();
 
-            foreach ($points as $point) {
-                $newX = $point[0] + $point[2];
-                $newY = $point[1] + $point[3];
-                $newPositions[] = [$newX, $newY, $point[2], $point[3]];
-
-                if (!$spanningRectangle) {
-                    $spanningRectangle = new SpanningRectangle($newX, $newY);
-                }
-
-                $spanningRectangle->growX($newX);
-                $spanningRectangle->growY($newY);
+            /**
+             * @var Position2D $point
+             * @var Vector2D $velocity
+             */
+            foreach ($points as [$point, $velocity]) {
+                $newPosition = $point->add($velocity);
+                $spanningRectangle->addPoint($newPosition);
+                $newPositions[] = [$newPosition, $velocity];
             }
 
-            if ($lastHeight > $spanningRectangle->height) {
-                $lastHeight = $spanningRectangle->height;
+            if ($lastHeight > $spanningRectangle->getHeight()) {
+                $lastHeight = $spanningRectangle->getHeight();
             } else {
                 break;
             }

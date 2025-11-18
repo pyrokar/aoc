@@ -35,12 +35,6 @@ class Position2D implements Stringable
         static::$yDirection = -1;
     }
 
-    public static function fromKey(string $key): self
-    {
-        [$x, $y] = explode('|', $key);
-        return new self((int) $x, (int) $y);
-    }
-
     /**
      * @mutable
      *
