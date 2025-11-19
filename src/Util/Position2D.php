@@ -35,6 +35,11 @@ class Position2D implements Stringable
         static::$yDirection = -1;
     }
 
+    public static function resetY(): void
+    {
+        static::$yDirection = 1;
+    }
+
     /**
      * @mutable
      *

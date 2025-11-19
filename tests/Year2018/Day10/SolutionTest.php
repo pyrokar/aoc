@@ -7,8 +7,10 @@ namespace AOCTest\Year2018\Day10;
 use AOC\Year2018\Day10\Solution;
 use AOCTest\Util\SolutionTestCase;
 use Override;
+use PHPUnit\Framework\Attributes\Large;
 use Safe\Exceptions\FilesystemException;
 
+#[Large]
 final class SolutionTest extends SolutionTestCase
 {
     /** @var class-string */

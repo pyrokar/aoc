@@ -30,9 +30,14 @@ trait TwoDimensional
         return $x . $separator . $y;
     }
 
-    public function getKey(): string
+    /**
+     * @param non-empty-string $separator
+     *
+     * @return string
+     */
+    public function getKey(string $separator = '|'): string
     {
-        return self::key($this->x, $this->y);
+        return self::key($this->x, $this->y, $separator);
     }
 
     public function calcManhattanDistanceTo(self $point): int

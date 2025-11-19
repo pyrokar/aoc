@@ -4,13 +4,16 @@ declare(strict_types=1);
 
 namespace AOCTest\Util;
 
+use AOC\Util\Position2D;
 use Generator;
 use PHPUnit\Framework\TestCase;
 use ReflectionException;
 use Safe\Exceptions\FilesystemException;
 
+use function fgets;
 use function Safe\fclose;
 use function Safe\fopen;
+use function trim;
 
 abstract class SolutionTestCase extends TestCase
 {
@@ -18,6 +21,11 @@ abstract class SolutionTestCase extends TestCase
      * @var class-string of callable
      */
     protected string $solutionClass;
+
+    protected function tearDown(): void
+    {
+        Position2D::resetY();
+    }
 
     /**
      * @return array<mixed>
@@ -66,6 +74,21 @@ abstract class SolutionTestCase extends TestCase
         }
     }
 
+    /**
+     * @throws FilesystemException
+     */
+    protected function generatorFromFileNoTrim(string $filename): Generator
+    {
+        $file = fopen($filename, 'rb');
+        try {
+            while ($line = fgets($file)) {
+                yield $line;
+            }
+        } finally {
+            fclose($file);
+        }
+    }
+
     protected function generatorFromString(string $input): Generator
     {
         yield $input;
@@ -82,4 +105,5 @@ abstract class SolutionTestCase extends TestCase
 
         return $line;
     }
+
 }
