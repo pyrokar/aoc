@@ -20,7 +20,7 @@ final class Solution
      */
     public function __invoke(Generator $input, int $id = 1): int
     {
-        $memory = array_map('intval', explode(',', $input->current()));
+        $memory = array_map(intval(...), explode(',', $input->current()));
 
         $icc = new IntCodeComputer($memory, [$id]);
 

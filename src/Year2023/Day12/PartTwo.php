@@ -33,7 +33,7 @@ class PartTwo
             $record = implode('?', array_fill(0, 5, $record));
             $list = implode(',', array_fill(0, 5, $list));
 
-            $list = array_map('intval', explode(',', $list));
+            $list = array_map(intval(...), explode(',', $list));
 
             $arrangementsCount += $this->countArrangements($record, $list);
         }

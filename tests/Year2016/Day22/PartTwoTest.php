@@ -20,7 +20,6 @@ class PartTwoTest extends SolutionTestCase
      * @throws FilesystemException
      *
      * @return array<int, array<mixed>>
-     *
      */
     #[Override]
     public function data(): array

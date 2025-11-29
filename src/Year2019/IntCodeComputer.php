@@ -61,7 +61,7 @@ class IntCodeComputer
      */
     public static function parseMemory(string $input): array
     {
-        return array_map('intval', explode(',', $input));
+        return array_map(intval(...), explode(',', $input));
     }
 
     /**

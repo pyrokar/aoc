@@ -63,7 +63,7 @@ class PartOne
         }
 
         /** @var Rating $partRating */
-        $partRating = array_reduce(explode(',', $m['obj']), static function (array $arr, $p) {
+        $partRating = array_reduce(explode(',', $m['obj']), static function (array $arr, $p): array {
             [$k, $v] = explode('=', $p);
             $arr[$k] = (int) $v;
             return $arr;

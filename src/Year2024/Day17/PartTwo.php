@@ -18,7 +18,7 @@ final class PartTwo
      */
     public function __invoke(string $input): int
     {
-        $this->program = array_map('intval', explode(',', $input));
+        $this->program = array_map(intval(...), explode(',', $input));
 
         // TODO generic solution
 

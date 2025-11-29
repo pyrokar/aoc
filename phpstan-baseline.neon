@@ -35,9 +35,3 @@ parameters:
 			identifier: varTag.nativeType
 			count: 1
 			path: tests/Util/SolutionTestCase.php
-
-		-
-			message: '#^Method AOCTest\\Year2016\\Day22\\PartTwoTest\:\:data\(\) has Safe\\Exceptions\\FilesystemException in PHPDoc @throws tag but it''s not thrown\.$#'
-			identifier: throws.unusedType
-			count: 1
-			path: tests/Year2016/Day22/PartTwoTest.php

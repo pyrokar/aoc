@@ -28,7 +28,7 @@ final class PartOne
                 break;
             }
 
-            [$x, $y] = array_map('intval', explode(',', $line));
+            [$x, $y] = array_map(intval(...), explode(',', $line));
             $this->map[Position2D::key($x, $y)] = '#';
         }
 

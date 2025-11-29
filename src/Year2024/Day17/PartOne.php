@@ -19,7 +19,7 @@ final class PartOne
      */
     public function __invoke(string $input, int $a = 0): string
     {
-        $this->program = array_map('intval', explode(',', $input));
+        $this->program = array_map(intval(...), explode(',', $input));
 
         $this->reset($a);
 

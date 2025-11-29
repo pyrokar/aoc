@@ -11,6 +11,8 @@ use ValueError;
  *
  * @param non-empty-array<T> $array
  *
+ * @param-out array<T> $array
+ *
  * @return T
  */
 function array_shift(array &$array): mixed

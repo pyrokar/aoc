@@ -26,7 +26,7 @@ trait Shared
         foreach ($input as $line) {
             ++$height;
             $width = strlen($line);
-            $grid[] = array_map('intval', str_split($line));
+            $grid[] = array_map(intval(...), str_split($line));
         }
 
         return $this->findPath($grid, new Position2D(0, 0), new Position2D($width - 1, $height - 1));

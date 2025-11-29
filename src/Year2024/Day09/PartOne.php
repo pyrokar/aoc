@@ -19,7 +19,7 @@ final class PartOne
      */
     public function __invoke(string $input): int
     {
-        $a = array_map('intval', str_split($input));
+        $a = array_map(intval(...), str_split($input));
 
         $checksum = 0;
         $position = 0;

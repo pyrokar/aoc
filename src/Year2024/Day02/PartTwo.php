@@ -24,7 +24,7 @@ final class PartTwo
         $safeReports = 0;
 
         foreach ($input as $report) {
-            $levels = array_map('intval', explode(' ', $report));
+            $levels = array_map(intval(...), explode(' ', $report));
 
             if ($this->checkLevels($levels)) {
                 ++$safeReports;

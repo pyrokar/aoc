@@ -22,7 +22,7 @@ trait Shared
         foreach ($input as $line) {
             [$value, $eq] = explode(': ', (string) $line);
             $value = (int) $value;
-            $numbers = array_map('intval', explode(' ', $eq));
+            $numbers = array_map(intval(...), explode(' ', $eq));
 
             foreach ($operators->getCombinationsWithRepetition(count($numbers) - 1) as $operatorSet) {
                 if ($this->isValidEquation($numbers, $operatorSet, $value)) {

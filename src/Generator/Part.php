@@ -7,5 +7,6 @@ namespace AOC\Generator;
 enum Part: string
 {
     case One = 'One';
+
     case Two = 'Two';
 }

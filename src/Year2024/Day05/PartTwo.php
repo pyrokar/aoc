@@ -45,7 +45,7 @@ final class PartTwo
                             default => 0,
                         });
 
-                        $sum += (int) $update[(count($update) - 1) / 2];
+                        $sum += (int) $update[(int) ((count($update) - 1) / 2)];
 
                         continue 2;
                     }

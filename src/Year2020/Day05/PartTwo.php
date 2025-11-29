@@ -9,6 +9,7 @@ use Generator;
 class PartTwo
 {
     use Shared;
+
     /**
      * @param Generator<int, string> $input
      *

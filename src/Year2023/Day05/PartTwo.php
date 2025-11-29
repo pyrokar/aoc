@@ -30,7 +30,7 @@ class PartTwo
 
         foreach ($input as $line) {
             if (preg_match('/seeds: (?<seeds>.*)/', $line, $m)) {
-                $seeds['seed'] = array_map('intval', explode(' ', $m['seeds']));
+                $seeds['seed'] = array_map(intval(...), explode(' ', $m['seeds']));
                 continue;
             }
 

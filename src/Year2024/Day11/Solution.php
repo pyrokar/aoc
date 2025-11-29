@@ -24,7 +24,7 @@ final class Solution
      */
     public function __invoke(string $input, int $times): int
     {
-        $stones = array_map('intval', explode(' ', $input));
+        $stones = array_map(intval(...), explode(' ', $input));
 
         $this->cache = [];
 

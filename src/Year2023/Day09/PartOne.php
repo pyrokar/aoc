@@ -18,7 +18,7 @@ class PartOne
         $sum = 0;
 
         foreach ($input as $line) {
-            $sequence = array_map('intval', explode(' ', $line));
+            $sequence = array_map(intval(...), explode(' ', $line));
 
             $sum += $this->getNextValue($sequence);
         }

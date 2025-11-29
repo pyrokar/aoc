@@ -46,7 +46,7 @@ trait Shared
             $this->valves[$valve] = ['flow' => $flow, 'valves' => $valves];
         }
 
-        $astar = new AStar(fn($start) => $this->valves[$start]['valves'], fn(): int => 1);
+        $astar = new AStar(fn($start): array => $this->valves[$start]['valves'], fn(): int => 1);
 
         foreach ($this->valves as $start => $a) {
             $this->shortestPaths[$start] = [];

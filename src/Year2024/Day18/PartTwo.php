@@ -30,7 +30,7 @@ final class PartTwo
         $endKey = Position2D::key($width - 1, $height - 1);
 
         foreach ($input as $i => $line) {
-            [$x, $y] = array_map('intval', explode(',', $line));
+            [$x, $y] = array_map(intval(...), explode(',', $line));
             $this->map[Position2D::key($x, $y)] = '#';
 
             if ($i >= $count) {

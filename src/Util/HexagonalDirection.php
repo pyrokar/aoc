@@ -7,10 +7,15 @@ namespace AOC\Util;
 enum HexagonalDirection
 {
     case NorthWest;
+
     case NorthEast;
+
     case East;
+
     case SouthEast;
+
     case SouthWest;
+
     case West;
 
     /**

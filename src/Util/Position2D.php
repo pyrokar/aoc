@@ -127,7 +127,7 @@ class Position2D implements Stringable
      */
     public function getOrthogonalNeighbors(): array
     {
-        return array_reduce(CompassDirection::cases(), function (array $arr, CompassDirection $dir) {
+        return array_reduce(CompassDirection::cases(), function (array $arr, CompassDirection $dir): array {
             $arr[$dir->value] = $this->getPositionForDirection($dir);
             return $arr;
         }, []);
@@ -238,7 +238,7 @@ class Position2D implements Stringable
      */
     public function getHexagonalNeighborKeys(): array
     {
-        return array_map(fn(HexagonalDirection $direction): string => $this->getHexagonalNeighborKeyForDirection($direction), HexagonalDirection::cases());
+        return array_map($this->getHexagonalNeighborKeyForDirection(...), HexagonalDirection::cases());
     }
 
     /**

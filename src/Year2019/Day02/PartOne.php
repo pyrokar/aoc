@@ -22,7 +22,7 @@ final class PartOne
      */
     public function __invoke(Generator $input, array $overrideMem = []): int
     {
-        $memory = array_map('intval', explode(',', $input->current()));
+        $memory = array_map(intval(...), explode(',', $input->current()));
 
         $icc = new IntCodeComputer(array_replace($memory, $overrideMem));
 

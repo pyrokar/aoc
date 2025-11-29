@@ -28,7 +28,7 @@ final class PartTwo
             $graph->addUndirectedEdge($a, $b);
         }
 
-        $astar = new AStar(fn(string $v) => array_keys($graph->getNeighbors($v)), fn(string $a, string $b): int => 1);
+        $astar = new AStar(fn(string $v): array => array_keys($graph->getNeighbors($v)), fn(string $a, string $b): int => 1);
 
         return $astar->findMinDistance('YOU', 'SAN') - 2;
     }

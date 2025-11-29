@@ -39,7 +39,7 @@ final class PartOne
                 }
 
                 $update = explode(',', $line);
-                $sum += (int) $update[(count($update) - 1) / 2];
+                $sum += (int) $update[(int) ((count($update) - 1) / 2)];
             }
         }
 

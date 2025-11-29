@@ -28,7 +28,7 @@ class PartOne
         foreach ($input as $line) {
             [$record, $list] = explode(' ', $line);
 
-            $list = array_map('intval', explode(',', $list));
+            $list = array_map(intval(...), explode(',', $list));
 
             $arrangementsCount += $this->countArrangements($record, $list);
         }

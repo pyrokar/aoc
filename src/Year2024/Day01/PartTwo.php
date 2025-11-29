@@ -24,7 +24,7 @@ final class PartTwo
         $listR = [];
 
         foreach ($input as $line) {
-            [$l, $r] = array_map('intval', explode('   ', $line));
+            [$l, $r] = array_map(intval(...), explode('   ', $line));
             $listL[$l] = ($listL[$l] ?? 0) + 1;
             $listR[$r] = ($listR[$r] ?? 0) + 1;
         }

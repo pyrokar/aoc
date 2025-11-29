@@ -7,8 +7,11 @@ namespace AOC\Util;
 enum CompassDirection: string
 {
     case North = 'n';
+
     case East = 'e';
+
     case South = 's';
+
     case West = 'w';
 
     public function turnLeft(): CompassDirection

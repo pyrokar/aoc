@@ -67,7 +67,7 @@ class PartOne
 
         }
 
-        return array_reduce($row, static function ($count, $element) {
+        return array_reduce($row, static function ($count, string $element) {
             if ($element === '#') {
                 return ++$count;
             }

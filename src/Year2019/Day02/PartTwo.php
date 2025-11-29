@@ -23,7 +23,7 @@ final class PartTwo
      */
     public function __invoke(Generator $input): int
     {
-        $memory = array_map('intval', explode(',', $input->current()));
+        $memory = array_map(intval(...), explode(',', $input->current()));
         $targetOutput = 19690720;
 
         $icc = new IntCodeComputer();

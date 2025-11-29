@@ -31,7 +31,7 @@ trait Shared
         $this->height = $height;
 
         return new AStar(
-            function (string $currentKey) {
+            function (string $currentKey): array {
                 $neighbors = [];
                 foreach (Position2D::fromKey($currentKey)->getOrthogonalNeighbors() as $neighborPos) {
                     if (isset($this->map[$neighborPos->getKey()])) {
@@ -47,7 +47,7 @@ trait Shared
 
                 return $neighbors;
             },
-            fn(string $key, $endKey): int => Position2D::fromKey($endKey)->calcManhattanDistanceTo(Position2D::fromKey($key)),
+            fn(string $key, string $endKey): int => Position2D::fromKey($endKey)->calcManhattanDistanceTo(Position2D::fromKey($key)),
         );
     }
 }
