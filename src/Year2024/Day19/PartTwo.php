@@ -15,10 +15,10 @@ use function str_starts_with;
 final class PartTwo
 {
     /** @var array<string, int> */
-    protected array $cache;
+    private array $cache;
 
     /** @var array<string> */
-    protected array $towels;
+    private array $towels;
 
     /**
      * @param Generator<int, string> $input
@@ -56,7 +56,7 @@ final class PartTwo
         return $ways;
     }
 
-    protected function countWays(string $design): int
+    private function countWays(string $design): int
     {
         if ($design === '') {
             return 1;

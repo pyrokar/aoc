@@ -31,7 +31,7 @@ final class PartTwo
      *
      * @return bool
      */
-    protected function isValidEquation(array $numbers, array $operators, int $value): bool
+    private function isValidEquation(array $numbers, array $operators, int $value): bool
     {
         $result = \AOC\Util\Safe\array_shift($numbers);
 

@@ -22,8 +22,11 @@ class PartTwo
         foreach ($input as $i => $line) {
             $number = (int) $line;
             $numbers[] = $number;
+            if ($i < $preamble) {
+                continue;
+            }
 
-            if ($i < $preamble || $weakNumber !== 0) {
+            if ($weakNumber !== 0) {
                 continue;
             }
 

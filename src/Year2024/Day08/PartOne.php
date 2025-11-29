@@ -44,7 +44,19 @@ final class PartOne
                     ];
 
                     foreach ($antinodes as $antinode) {
-                        if ($antinode[0] < 0 || $antinode[0] >= $width || $antinode[1] < 0 || $antinode[1] >= $height) {
+                        if ($antinode[0] < 0) {
+                            continue;
+                        }
+
+                        if ($antinode[0] >= $width) {
+                            continue;
+                        }
+
+                        if ($antinode[1] < 0) {
+                            continue;
+                        }
+
+                        if ($antinode[1] >= $height) {
                             continue;
                         }
 

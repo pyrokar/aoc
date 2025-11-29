@@ -26,7 +26,11 @@ trait Shared
 
         foreach ($input as $y => $line) {
             foreach (str_split($line) as $x => $char) {
-                if ($char === ' ' || $char === "\n") {
+                if ($char === ' ') {
+                    continue;
+                }
+
+                if ($char === "\n") {
                     continue;
                 }
 

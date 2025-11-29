@@ -27,6 +27,8 @@ return RectorConfig::configure()
         codeQuality: true,
         codingStyle: true,
         typeDeclarations: true,
+        privatization: true,
+        earlyReturn: true,
     )
     ->withSkip([
         // readability (deadCode)

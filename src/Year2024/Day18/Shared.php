@@ -38,7 +38,19 @@ trait Shared
                         continue;
                     }
 
-                    if ($neighborPos->x < 0 || $neighborPos->y < 0 || $neighborPos->x >= $this->width || $neighborPos->y >= $this->height) {
+                    if ($neighborPos->x < 0) {
+                        continue;
+                    }
+
+                    if ($neighborPos->y < 0) {
+                        continue;
+                    }
+
+                    if ($neighborPos->x >= $this->width) {
+                        continue;
+                    }
+
+                    if ($neighborPos->y >= $this->height) {
                         continue;
                     }
 

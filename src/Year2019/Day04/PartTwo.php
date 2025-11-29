@@ -30,7 +30,11 @@ final class PartTwo
                 }
 
                 if ($n[$i] === $n[$i + 1]) {
-                    if (($i > 0 && $n[$i - 1] === $n[$i]) || ($i < 4 && $n[$i + 1] === $n[$i + 2])) {
+                    if ($i > 0 && $n[$i - 1] === $n[$i]) {
+                        continue;
+                    }
+
+                    if ($i < 4 && $n[$i + 1] === $n[$i + 2]) {
                         continue;
                     }
 

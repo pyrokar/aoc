@@ -19,13 +19,13 @@ use const PHP_INT_MAX;
  */
 final class Solution
 {
-    protected int $robots;
+    private int $robots;
 
     /** @var array<string, string> */
-    protected array $sequenceCache;
+    private array $sequenceCache;
 
     /** @var array<int, array<string, int>> */
-    protected array $dirPadCache;
+    private array $dirPadCache;
 
     /**
      * @param Generator<int, string> $input
@@ -52,7 +52,7 @@ final class Solution
         return $sum;
     }
 
-    protected function findShortestSequence(string $line): int
+    private function findShortestSequence(string $line): int
     {
         $startButton = 'A';
         $length = 0;
@@ -65,7 +65,7 @@ final class Solution
         return $length;
     }
 
-    protected function getNumPadSeqLength(string $start, string $end): int
+    private function getNumPadSeqLength(string $start, string $end): int
     {
         $startPos = $this->getNumPadPosition($start);
         $endPos = $this->getNumPadPosition($end);
@@ -103,7 +103,7 @@ final class Solution
 
     }
 
-    protected function getDirPadSeqLength(string $start, string $end, int $robot = 1): int
+    private function getDirPadSeqLength(string $start, string $end, int $robot = 1): int
     {
         if ($start === $end) {
             return 1;
@@ -161,7 +161,7 @@ final class Solution
      *
      * @return string
      */
-    protected function getSequence(array $startPos, array $endPos): string
+    private function getSequence(array $startPos, array $endPos): string
     {
         $cacheKey = implode('_', $startPos) . '_' . implode('_', $endPos);
 
@@ -199,7 +199,7 @@ final class Solution
      *
      * @return bool
      */
-    protected function isNumPadSeqForbidden(array $startPos, string $sequence): bool
+    private function isNumPadSeqForbidden(array $startPos, string $sequence): bool
     {
         return match (implode('_', $startPos)) {
             '0_0' => str_starts_with($sequence, 'vvv'),
@@ -218,7 +218,7 @@ final class Solution
      *
      * @return bool
      */
-    protected function isDirPadSeqForbidden(array $startPos, string $sequence): bool
+    private function isDirPadSeqForbidden(array $startPos, string $sequence): bool
     {
         return match (implode('_', $startPos)) {
             '1_0' => str_starts_with($sequence, '<'),
@@ -233,7 +233,7 @@ final class Solution
      *
      * @return Position
      */
-    protected function getNumPadPosition(string $button): array
+    private function getNumPadPosition(string $button): array
     {
         static $numPadPositions = [
             '7' => [0, 0],
@@ -257,7 +257,7 @@ final class Solution
      *
      * @return Position
      */
-    protected function getDirPadPosition(string $button): array
+    private function getDirPadPosition(string $button): array
     {
         static $dirPadPositions = [
             '^' => [1, 0],

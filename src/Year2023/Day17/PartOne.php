@@ -48,8 +48,11 @@ class PartOne
 
             foreach (CompassDirection::cases() as $direction) {
                 $next = $current->getPositionForDirection($direction);
+                if (!isset($grid[$next->y][$next->x])) {
+                    continue;
+                }
 
-                if (!isset($grid[$next->y][$next->x]) || isset($path[$next->getKey()])) {
+                if (isset($path[$next->getKey()])) {
                     continue;
                 }
 

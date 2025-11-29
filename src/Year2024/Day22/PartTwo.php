@@ -18,7 +18,7 @@ final class PartTwo
     use Shared;
 
     /** @var array<string, int> */
-    protected array $sequences;
+    private array $sequences;
 
     /**
      * @param Generator<int, string> $input
@@ -46,7 +46,7 @@ final class PartTwo
         return array_shift($this->sequences);
     }
 
-    protected function determineSequences(int $number, int $nth): void
+    private function determineSequences(int $number, int $nth): void
     {
         $changes = [];
         $prize = (int) substr((string) $number, -1);

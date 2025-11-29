@@ -71,12 +71,20 @@ trait Shared
         $this->endKey = '';
 
         foreach ($input as $y => $line) {
-            if ($y === 0 || $y === $height - 1) {
+            if ($y === 0) {
+                continue;
+            }
+
+            if ($y === $height - 1) {
                 continue;
             }
 
             foreach (str_split((string) $line) as $x => $char) {
-                if ($x === 0 || $x === $width - 1) {
+                if ($x === 0) {
+                    continue;
+                }
+
+                if ($x === $width - 1) {
                     continue;
                 }
 

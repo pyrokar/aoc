@@ -37,7 +37,11 @@ final class PartOne
             $v1MustStartWithT = !str_starts_with($s, 't') && !str_starts_with($e, 't');
 
             foreach ($adjacentList as $v1 => $list) {
-                if ($v1 === $s || $v1 === $e) {
+                if ($v1 === $s) {
+                    continue;
+                }
+
+                if ($v1 === $e) {
                     continue;
                 }
 

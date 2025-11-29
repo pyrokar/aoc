@@ -15,7 +15,11 @@ trait Shared
     {
         for ($y = 1, $h = count($platform); $y < $h; ++$y) {
             foreach ($platform[$y] as $x => $char) {
-                if ($char === '.' || $char === '#') {
+                if ($char === '.') {
+                    continue;
+                }
+
+                if ($char === '#') {
                     continue;
                 }
 

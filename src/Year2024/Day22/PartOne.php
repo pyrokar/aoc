@@ -29,7 +29,7 @@ final class PartOne
         return $sum;
     }
 
-    protected function generateNthSecret(int $number, int $nth): int
+    private function generateNthSecret(int $number, int $nth): int
     {
         for ($i = 1; $i <= $nth; $i++) {
             $number = $this->calcNextNumber($number);

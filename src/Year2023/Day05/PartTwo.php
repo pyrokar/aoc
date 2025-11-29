@@ -66,7 +66,11 @@ class PartTwo
                     $length = $sourceRanges[$i + 1];
                     $rangeEnd = $rangeStart + $length - 1;
 
-                    if ($rangeStart > $srcRangeEnd || $rangeEnd < $srcRangeStart) {
+                    if ($rangeStart > $srcRangeEnd) {
+                        continue;
+                    }
+
+                    if ($rangeEnd < $srcRangeStart) {
                         continue;
                     }
 

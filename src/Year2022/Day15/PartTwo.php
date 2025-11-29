@@ -78,9 +78,9 @@ class PartTwo
             if (count($row) === 2) {
                 if ($row[0]->end < $row[1]->start) {
                     return ($row[0]->end + 1) * 4000000 + $y;
-                } else {
-                    return ($row[1]->end + 1) * 4000000 + $y;
                 }
+
+                return ($row[1]->end + 1) * 4000000 + $y;
             }
         }
 

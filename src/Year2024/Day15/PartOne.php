@@ -69,7 +69,7 @@ final class PartOne
      *
      * @return void
      */
-    protected function moveRobot(array $movements): void
+    private function moveRobot(array $movements): void
     {
         foreach ($movements as $movement) {
             $direction = match ($movement) {
