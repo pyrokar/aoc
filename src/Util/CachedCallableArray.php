@@ -153,7 +153,9 @@ class CachedCallableArray implements ArrayAccess, Iterator
     #[Override]
     public function valid(): bool
     {
-        return isset($this->array[$this->key()]);
+        $key = $this->key();
+
+        return $key && isset($this->array[$key]);
     }
 
     #[Override]
