@@ -49,6 +49,11 @@ class SpanningRectangle
         return $this->point1->y - $this->point0->y + 1;
     }
 
+    public function getArea(): int
+    {
+        return $this->getWidth() * $this->getHeight();
+    }
+
     public function isPositionInside(Position2D $point): bool
     {
         if (!$this->initialized) {
@@ -93,15 +98,13 @@ class SpanningRectangle
 
     private function initialize(Position2D $point0, ?Position2D $point1 = null): void
     {
-        $this->point0 = clone $point0;
+        $this->initialized = true;
 
-        if (!$point1) {
-            $this->point1 = clone $this->point0;
-        } else {
+        $this->point0 = clone $point0;
+        $this->point1 = clone $this->point0;
+
+        if ($point1) {
             $this->addPoint($point1);
         }
-
-        $this->initialized = true;
     }
-
 }
