@@ -14,7 +14,6 @@ use Rector\Config\RectorConfig;
 use Rector\DeadCode\Rector\ClassMethod\RemoveUselessParamTagRector;
 use Rector\DeadCode\Rector\ClassMethod\RemoveUselessReturnTagRector;
 use Rector\DeadCode\Rector\Plus\RemoveDeadZeroAndOneOperationRector;
-use Rector\Php84\Rector\Param\ExplicitNullableParamTypeRector;
 use Rector\Strict\Rector\Empty_\DisallowedEmptyRuleFixerRector;
 
 return RectorConfig::configure()
@@ -22,11 +21,7 @@ return RectorConfig::configure()
         __DIR__ . '/src',
         __DIR__ . '/tests',
     ])
-    ->withPhpSets(php83: true)
-    ->withRules([
-        // non-breaking PHP_84 rules
-        ExplicitNullableParamTypeRector::class,
-    ])
+    ->withPhpSets(php85: true)
     ->withPreparedSets(
         deadCode: true,
         codeQuality: true,

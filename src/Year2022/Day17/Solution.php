@@ -83,15 +83,9 @@ trait Solution
         return self::$rockShapes[$i % 5];
     }
 
-    protected function hasColision(RockShape $rock, Position2D $rockPosition): bool
+    protected function hasCollision(RockShape $rock, Position2D $rockPosition): bool
     {
-        foreach (array_keys($rock->getPositionKeys($rockPosition)) as $r) {
-            if (isset($this->ground[$r])) {
-                return true;
-            }
-        }
-
-        return false;
+        return array_any(array_keys($rock->getPositionKeys($rockPosition)), fn($r): bool => isset($this->ground[$r]));
     }
 
     /**
@@ -132,16 +126,16 @@ trait Solution
                 $jet = $jetPattern[$jetPointer];
                 $jetPointer = ($jetPointer + 1) % $jetPatternLength;
 
-                if ($jet === '<' && $rockPosition->x > 0 && !$this->hasColision($rock, $rockPosition->getPositionForDirection(CompassDirection::West))) {
+                if ($jet === '<' && $rockPosition->x > 0 && !$this->hasCollision($rock, $rockPosition->getPositionForDirection(CompassDirection::West))) {
                     $rockPosition->move(CompassDirection::West, 1);
-                } elseif ($jet === '>' && $rockPosition->x + $rock->width < 7 && !$this->hasColision($rock, $rockPosition->getPositionForDirection(CompassDirection::East))) {
+                } elseif ($jet === '>' && $rockPosition->x + $rock->width < 7 && !$this->hasCollision($rock, $rockPosition->getPositionForDirection(CompassDirection::East))) {
                     $rockPosition->move(CompassDirection::East, 1);
                 }
 
                 // Falling
                 $newPosition = $rockPosition->getPositionForDirection(CompassDirection::South);
 
-                if ($this->hasColision($rock, $newPosition)) {
+                if ($this->hasCollision($rock, $newPosition)) {
                     foreach ($rock->getPositionKeys($rockPosition) as $r => $j) {
                         $this->ground[$r] = 1;
                     }
