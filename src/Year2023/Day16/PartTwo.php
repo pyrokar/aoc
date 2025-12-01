@@ -6,8 +6,8 @@ namespace AOC\Year2023\Day16;
 
 use AOC\Util\CompassDirection;
 use AOC\Util\Position2D;
-use Generator;
 use DomainException;
+use Generator;
 
 class PartTwo
 {

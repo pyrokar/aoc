@@ -7,9 +7,10 @@
 	}],
 	"type": "project",
 	"platform": {
-		"php": ">=8.3"
+		"php": ">=8.4"
 	},
 	"require": {
+        "php": ">=8.4",
 		"thecodingmachine/safe": "^v3.3",
         "league/climate": "^3.10",
         "symfony/event-dispatcher": "^v8.0"

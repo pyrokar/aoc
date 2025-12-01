@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace AOC\Year2019;
 
+use function AOC\Util\Safe\array_shift;
 use function array_map;
 use function array_slice;
 use function explode;
 use function implode;
 use function str_pad;
 use function str_split;
-use function AOC\Util\Safe\array_shift;
 
 use const STR_PAD_LEFT;
 

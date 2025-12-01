@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace AOCTest\Year2016\Day05;
 
-use AOCTest\Util\SolutionTestCase;
 use AOC\Year2016\Day05\PartTwo;
+use AOCTest\Util\SolutionTestCase;
 use Override;
 use PHPUnit\Framework\Attributes\Large;
 

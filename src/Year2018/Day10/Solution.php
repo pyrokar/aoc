@@ -8,7 +8,6 @@ use AOC\Util\Position2D;
 use AOC\Util\SpanningRectangle;
 use AOC\Util\Vector2D;
 use Generator;
-
 use Safe\Exceptions\PcreException;
 
 use function Safe\preg_match;

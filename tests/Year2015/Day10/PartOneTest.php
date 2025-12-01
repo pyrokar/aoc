@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace AOCTest\Year2015\Day10;
 
-use AOCTest\Util\SolutionTestCase;
 use AOC\Year2015\Day10\PartOne;
+use AOCTest\Util\SolutionTestCase;
 use Override;
 
 class PartOneTest extends SolutionTestCase

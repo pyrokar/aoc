@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace AOCTest\Year2015\Day09;
 
-use AOCTest\Util\SolutionTestCase;
 use AOC\Year2015\Day09\PartTwo;
-use Safe\Exceptions\FilesystemException;
+use AOCTest\Util\SolutionTestCase;
 use Override;
 use PHPUnit\Framework\Attributes\CoversNothing;
+use Safe\Exceptions\FilesystemException;
 
 /**
  * @internal

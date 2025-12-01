@@ -47,15 +47,15 @@ final class PartTwo
             $neighborKeys = $this->getDiagonalNeighborKeys($aPos);
 
             if (
-                !(isset($mPositions[$neighborKeys[0]], $sPositions[$neighborKeys[2]])) &&
-                !(isset($sPositions[$neighborKeys[0]], $mPositions[$neighborKeys[2]]))
+                !(isset($mPositions[$neighborKeys[0]], $sPositions[$neighborKeys[2]]))
+                && !(isset($sPositions[$neighborKeys[0]], $mPositions[$neighborKeys[2]]))
             ) {
                 continue;
             }
 
             if (
-                !(isset($mPositions[$neighborKeys[1]], $sPositions[$neighborKeys[3]])) &&
-                !(isset($sPositions[$neighborKeys[1]], $mPositions[$neighborKeys[3]]))
+                !(isset($mPositions[$neighborKeys[1]], $sPositions[$neighborKeys[3]]))
+                && !(isset($sPositions[$neighborKeys[1]], $mPositions[$neighborKeys[3]]))
             ) {
                 continue;
             }

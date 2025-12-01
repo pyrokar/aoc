@@ -13,7 +13,7 @@ $config
 return $config
     ->setFinder($finder)
     ->setRules([
-        '@PER-CS2.0' => true,
+        '@PER-CS3x0' => true,
 
         'declare_strict_types' => true,
         'strict_comparison' => true,
@@ -33,8 +33,12 @@ return $config
             'import_functions' => true,
             'import_classes' => true,
         ],
+        'ordered_imports' => [
+            'imports_order' => ['class', 'function', 'const'],
+            'sort_algorithm' => 'alpha',
+        ],
 
-        'no_extra_blank_lines' => true,
+        'no_extra_blank_lines' => ['tokens' => ['extra', 'use']],
 
         'ordered_class_elements' => true,
     ]);

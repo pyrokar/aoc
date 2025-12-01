@@ -6,9 +6,9 @@ namespace AOCTest\Year2019\Day13;
 
 use AOC\Year2019\Day13\PartOne;
 use AOCTest\Util\SolutionTestCase;
-use Safe\Exceptions\FilesystemException;
 use Override;
 use PHPUnit\Framework\Attributes\Group;
+use Safe\Exceptions\FilesystemException;
 
 #[Group('intcodecomputer')]
 final class PartOneTest extends SolutionTestCase

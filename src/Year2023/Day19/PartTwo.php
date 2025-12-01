@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace AOC\Year2023\Day19;
 
 use Generator;
-
 use Safe\Exceptions\PcreException;
 
 use function array_map;

@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace AOCTest\Year2016\Day07;
 
 use AOC\Year2016\Day07\PartTwo;
-use Safe\Exceptions\FilesystemException;
 use AOCTest\Util\SolutionTestCase;
 use Override;
+use Safe\Exceptions\FilesystemException;
 
 class PartTwoTest extends SolutionTestCase
 {

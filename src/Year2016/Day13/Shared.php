@@ -90,8 +90,8 @@ trait Shared
 
         foreach (CompassDirection::cases() as $direction) {
             $p = $point->getPositionForDirection($direction);
-            if ($p->x >= 0 && $p->y >= 0 &&
-                $this->isOpenSpace($p)
+            if ($p->x >= 0 && $p->y >= 0
+                && $this->isOpenSpace($p)
             ) {
                 $positions[] = $p;
             }

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace AOC\Util\Safe;
 
-use Safe\Exceptions\FilesystemException;
 use Override;
+use Safe\Exceptions\FilesystemException;
 
 /**
  * @template T of object

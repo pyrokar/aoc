@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace AOCTest\Year2015\Day10;
 
-use AOCTest\Util\SolutionTestCase;
 use AOC\Year2015\Day10\PartTwo;
+use AOCTest\Util\SolutionTestCase;
 use Override;
 use PHPUnit\Framework\Attributes\Medium;
 

@@ -9,9 +9,9 @@ use AOC\Util\Position2D;
 use Generator;
 use Safe\Exceptions\PcreException;
 
+use function Safe\preg_match;
 use function str_split;
 use function str_starts_with;
-use function Safe\preg_match;
 
 /**
  * @phpstan-import-type Move from Shared

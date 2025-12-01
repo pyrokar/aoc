@@ -6,9 +6,9 @@ namespace AOC\Year2022\Day08;
 
 use AOC\Util\CompassDirection;
 use AOC\Util\Position2D;
+use DomainException;
 use Generator;
 use Safe\Exceptions\PcreException;
-use DomainException;
 
 class PartTwo
 {

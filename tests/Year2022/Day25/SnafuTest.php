@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace AOCTest\Year2022\Day25;
 
-use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 
 use function AOC\Year2022\Day25\decToSnafu;
 use function AOC\Year2022\Day25\snafuToDec;

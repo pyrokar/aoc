@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace AOC\Year2023\Day05;
 
+use DomainException;
 use Generator;
 use Safe\Exceptions\PcreException;
-
-use DomainException;
 
 use function Safe\preg_match;
 

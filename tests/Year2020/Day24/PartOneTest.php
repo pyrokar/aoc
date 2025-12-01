@@ -6,8 +6,8 @@ namespace AOCTest\Year2020\Day24;
 
 use AOC\Year2020\Day24\PartOne;
 use AOCTest\Util\SolutionTestCase;
-use Safe\Exceptions\FilesystemException;
 use Override;
+use Safe\Exceptions\FilesystemException;
 
 class PartOneTest extends SolutionTestCase
 {

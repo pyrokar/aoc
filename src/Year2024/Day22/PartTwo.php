@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace AOC\Year2024\Day22;
 
 use Generator;
-
 use LogicException;
 
 use function AOC\Util\Safe\array_shift;

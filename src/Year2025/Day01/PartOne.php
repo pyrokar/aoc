@@ -7,6 +7,8 @@ namespace AOC\Year2025\Day01;
 use Generator;
 use Safe\Exceptions\PcreException;
 
+use function Safe\preg_match;
+
 final class PartOne
 {
     /**
@@ -22,7 +24,7 @@ final class PartOne
         $initial = 50;
 
         foreach ($input as $line) {
-            if (!\Safe\preg_match('/(?<dir>[RL])(?<dist>\d+)/', $line, $m)) {
+            if (!preg_match('/(?<dir>[RL])(?<dist>\d+)/', $line, $m)) {
                 continue;
             }
 

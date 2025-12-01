@@ -6,9 +6,9 @@ namespace AOCTest\Year2015\Day17;
 
 use AOC\Year2015\Day17\PartTwo;
 use AOCTest\Util\SolutionTestCase;
-use Safe\Exceptions\FilesystemException;
 use Override;
 use PHPUnit\Framework\Attributes\Small;
+use Safe\Exceptions\FilesystemException;
 
 #[Small]
 class PartTwoTest extends SolutionTestCase

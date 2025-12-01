@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace AOC\Generator;
 
+use AOCTest\Util\SolutionTestCase;
 use Nette\PhpGenerator\ClassType;
 use Nette\PhpGenerator\Literal;
 use Nette\PhpGenerator\PhpFile;
 use Nette\PhpGenerator\PhpNamespace;
+use Override;
 use Safe\Exceptions\DirException;
 use Safe\Exceptions\FilesystemException;
 use Symfony\Component\Console\Attribute\AsCommand;
@@ -18,8 +20,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Validation;
-use Override;
-use AOCTest\Util\SolutionTestCase;
 
 use function is_file;
 use function Safe\file_put_contents;

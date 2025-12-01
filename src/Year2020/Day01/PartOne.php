@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace AOC\Year2020\Day01;
 
-use Generator;
 use Exception;
+use Generator;
 
 class PartOne
 {

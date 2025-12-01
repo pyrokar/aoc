@@ -93,7 +93,7 @@ class CPU
         return $this->instructionPointer;
     }
 
-    public function addInstruction(Instruction | string $instruction): void
+    public function addInstruction(Instruction|string $instruction): void
     {
         if (is_string($instruction)) {
             $this->memory[] = Instruction::fromString($instruction);

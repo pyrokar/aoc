@@ -39,11 +39,11 @@ trait Shared
                 $parts = explode(' | ', $m['rule']);
                 $rules->set(
                     (int) $m['ruleNumber'],
-                    fn(): string => '(' .
-                        implode('', array_map(static fn(string $r) => $rules->get((int) $r), explode(' ', $parts[0]))) .
-                        '|' .
-                        implode('', array_map(static fn(string $r) => $rules->get((int) $r), explode(' ', $parts[1]))) .
-                        ')',
+                    fn(): string => '('
+                        . implode('', array_map(static fn(string $r) => $rules->get((int) $r), explode(' ', $parts[0])))
+                        . '|'
+                        . implode('', array_map(static fn(string $r) => $rules->get((int) $r), explode(' ', $parts[1])))
+                        . ')',
                 );
                 continue;
             }

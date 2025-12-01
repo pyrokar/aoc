@@ -8,8 +8,8 @@ use Generator;
 use Safe\Exceptions\JsonException;
 use Safe\Exceptions\PcreException;
 
-use function Safe\preg_match;
 use function Safe\json_decode;
+use function Safe\preg_match;
 
 trait Util
 {

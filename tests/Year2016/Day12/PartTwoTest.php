@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace AOCTest\Year2016\Day12;
 
-use AOCTest\Util\SolutionTestCase;
 use AOC\Year2016\Day12\PartTwo;
-use Safe\Exceptions\FilesystemException;
+use AOCTest\Util\SolutionTestCase;
 use Override;
 use PHPUnit\Framework\Attributes\Large;
+use Safe\Exceptions\FilesystemException;
 
 #[Large]
 class PartTwoTest extends SolutionTestCase
