@@ -21,7 +21,7 @@ final class PartTwo
     public function __invoke(Generator $input): int
     {
         $count = 0;
-        $initial = 50;
+        $dialValue = 50;
 
         foreach ($input as $line) {
             if (!preg_match('/(?<dir>[RL])(?<dist>\d+)/', $line, $m)) {
@@ -32,16 +32,20 @@ final class PartTwo
 
             switch ($m['dir']) {
                 case 'R':
-                    $count += intdiv($initial + $distance, 100);
-                    $initial = ($initial + $distance) % 100;
+                    $count += intdiv($dialValue + $distance, 100);
+                    $dialValue = ($dialValue + $distance) % 100;
                     break;
                 case 'L':
-                    $count -= intdiv($initial - 100 - $distance, 100);
-                    if ($initial === 0) {
+                    $count -= intdiv($dialValue - 100 - $distance, 100);
+                    if ($dialValue === 0) {
                         $count--;
                     }
 
-                    $initial = ($initial - $distance + 100 * (1 + intdiv($distance, 100))) % 100;
+                    $dialValue = ($dialValue - $distance) % 100;
+                    if ($dialValue < 0) {
+                        $dialValue += 100;
+                    }
+
                     break;
             }
         }
