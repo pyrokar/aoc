@@ -21,7 +21,7 @@
 		"roave/security-advisories": "dev-latest",
 		"friendsofphp/php-cs-fixer": "^3.86",
 		"thecodingmachine/phpstan-safe-rule": "^v1.4",
-        "symfony/console": "^7",
+        "symfony/console": "^8",
         "symfony/validator": "^8",
         "nette/php-generator": "^v4",
         "rector/rector": "^2.1"
