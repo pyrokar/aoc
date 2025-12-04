@@ -11,6 +11,7 @@ $config
 ;
 
 return $config
+    ->setParallelConfig(PhpCsFixer\Runner\Parallel\ParallelConfigFactory::detect())
     ->setFinder($finder)
     ->setRules([
         '@PER-CS3x0' => true,
@@ -41,4 +42,5 @@ return $config
         'no_extra_blank_lines' => ['tokens' => ['extra', 'use']],
 
         'ordered_class_elements' => true,
-    ]);
+    ])
+;
