@@ -30,7 +30,7 @@ final class PartTwo
             $to = (int) $to;
 
             for ($n = $from; $n <= $to; $n++) {
-                if (preg_match('/^(\d+)(=?\1)+$/', (string) $n)) {
+                if (preg_match('/^(\d+)(\1)+$/', (string) $n)) {
                     $count += $n;
                 }
             }
