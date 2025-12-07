@@ -11,6 +11,7 @@ use ReflectionException;
 use Safe\Exceptions\FilesystemException;
 
 use function fgets;
+use function rtrim;
 use function Safe\fclose;
 use function Safe\fopen;
 use function trim;
@@ -82,7 +83,7 @@ abstract class SolutionTestCase extends TestCase
         $file = fopen($filename, 'rb');
         try {
             while ($line = fgets($file)) {
-                yield $line;
+                yield rtrim($line);
             }
         } finally {
             fclose($file);
