@@ -31,7 +31,7 @@ final class PartTwo
 
         for ($i = 0; $i < $l; $i++) {
             if ($i % 2 === 0) {
-                $blockId = (int) ($i / 2);
+                $blockId = $i / 2;
                 $blocks[$currentPosition] = ['id' => $blockId, 'l' => $a[$i], 'p' => $currentPosition];
             } else {
                 if ($a[$i] === 0) {

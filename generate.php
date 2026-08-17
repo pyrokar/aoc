@@ -15,7 +15,7 @@ if (!defined('DS')) {
 $command = new GenerateCommand();
 
 $app = new Application();
-$app->add($command);
+$app->addCommand($command);
 $app->setDefaultCommand($command->getName(), true);
 
 $app->run();

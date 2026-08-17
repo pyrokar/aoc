@@ -36,7 +36,6 @@ class PartOne
         while (!empty($paths)) {
             foreach ($paths as $path) {
                 [$currentValve, $minute] = $path->getCurrent('H');
-                $minute = (int) $minute;
 
                 foreach ($this->shortestPaths[$currentValve] as $next => $dist) {
                     if ($this->valves[$next]['flow'] === 0) {

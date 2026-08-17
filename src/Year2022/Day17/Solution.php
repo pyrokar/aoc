@@ -85,7 +85,7 @@ trait Solution
 
     protected function hasCollision(RockShape $rock, Position2D $rockPosition): bool
     {
-        return array_any(array_keys($rock->getPositionKeys($rockPosition)), fn($r): bool => isset($this->ground[$r]));
+        return array_any(array_keys($rock->getPositionKeys($rockPosition)), fn(string $r): bool => isset($this->ground[$r]));
     }
 
     /**

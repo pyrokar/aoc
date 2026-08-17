@@ -43,9 +43,7 @@ return RectorConfig::configure()
         SimplifyEmptyCheckOnEmptyArrayRector::class,
         DisallowedEmptyRuleFixerRector::class,
         // readability (codeStyle)
-        CountArrayToEmptyArrayComparisonRector::class,
         FlipTypeControlToUseExclusiveTypeRector::class,
-        NullableCompareToNullRector::class,
     ])
     ->withAttributesSets(phpunit: true)
 ;

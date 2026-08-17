@@ -42,7 +42,7 @@ class GenerateCommand extends Command
     }
 
     #[Override]
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->addArgument('year', InputArgument::REQUIRED)

@@ -34,7 +34,7 @@ final class PartOne
 
             if ($i % 2 === 0) {
                 // file block
-                $blockId = (int) ($i / 2);
+                $blockId = $i / 2;
                 $blockLength = $a[$i];
 
                 $blockCheckSum = $this->calcBlockChecksum($blockId, $blockLength, $position);

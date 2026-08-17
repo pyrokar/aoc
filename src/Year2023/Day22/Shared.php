@@ -122,7 +122,7 @@ trait Shared
                 continue;
             }
 
-            $canDisintegrate = array_all(array_keys($this->brickSupports[$brickId]), fn($supportedBrickId): bool => count($this->brickIsSupportedBy[$supportedBrickId]) !== 1);
+            $canDisintegrate = array_all(array_keys($this->brickSupports[$brickId]), fn(int|string $supportedBrickId): bool => count($this->brickIsSupportedBy[$supportedBrickId]) !== 1);
 
             if ($canDisintegrate) {
                 $disintegratedBricks[$brickId] = 1;

@@ -54,8 +54,8 @@ final class Solution
         } else {
             $l = strlen((string) $stone);
             if ($l % 2 === 0) {
-                $countStones += $this->getStones((int) substr((string) $stone, 0, (int) ($l / 2)), $times - 1);
-                $countStones += $this->getStones((int) substr((string) $stone, (int) ($l / 2)), $times - 1);
+                $countStones += $this->getStones((int) substr((string) $stone, 0, $l / 2), $times - 1);
+                $countStones += $this->getStones((int) substr((string) $stone, $l / 2), $times - 1);
             } else {
                 $countStones += $this->getStones($stone * 2024, $times - 1);
             }

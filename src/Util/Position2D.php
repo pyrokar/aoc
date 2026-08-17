@@ -45,8 +45,6 @@ class Position2D implements Stringable
      *
      * @param CompassDirection $direction
      * @param int $distance
-     *
-     * @return Position2D
      */
     public function move(CompassDirection $direction, int $distance): self
     {

@@ -141,9 +141,6 @@ class CachedCallableArray implements ArrayAccess, Iterator
         $this->_position++;
     }
 
-    /**
-     * @return TKey | null
-     */
     #[Override]
     public function key(): int|string|null
     {

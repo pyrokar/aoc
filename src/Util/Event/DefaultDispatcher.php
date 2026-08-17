@@ -19,14 +19,7 @@ class DefaultDispatcher implements Dispatcher
         if (!isset($this->listeners[$event->getName()])) {
             return true;
         }
-
-        foreach ($this->listeners[$event->getName()] as $listener) {
-            if (!$listener($event)) {
-                return false;
-            }
-        }
-
-        return true;
+        return array_all($this->listeners[$event->getName()], fn(callable $listener) => $listener($event));
     }
 
     #[Override]

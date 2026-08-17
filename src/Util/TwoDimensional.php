@@ -9,8 +9,6 @@ trait TwoDimensional
     /**
      * @param string $key
      * @param non-empty-string $separator
-     *
-     * @return self
      */
     public static function fromKey(string $key, string $separator = '|'): self
     {

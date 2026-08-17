@@ -37,7 +37,7 @@ class PartTwo
             $packets[] = json_decode($line, true, 512, JSON_THROW_ON_ERROR);
         }
 
-        usort($packets, [$this, 'compare']);
+        usort($packets, $this->compare(...));
 
         $product = 1;
 
