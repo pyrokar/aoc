@@ -24,7 +24,9 @@ class PartOne
         $possibleCount = 0;
 
         foreach ($input as $line) {
-            preg_match('/(\d+)\s+(\d+)\s+(\d+)/', trim($line), $m);
+            if (!preg_match('/(\d+)\s+(\d+)\s+(\d+)/', trim($line), $m)) {
+                continue;
+            }
 
             $sides = array_sort([(int) $m[1], (int) $m[2], (int) $m[3]]);
 

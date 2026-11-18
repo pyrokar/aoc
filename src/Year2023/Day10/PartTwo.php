@@ -8,6 +8,7 @@ use AOC\Util\CompassDirection;
 use AOC\Util\Position2D;
 use Exception;
 use Generator;
+use ValueError;
 
 class PartTwo
 {
@@ -16,6 +17,7 @@ class PartTwo
     /**
      * @param Generator<int, string> $input
      *
+     * @throws ValueError
      * @throws Exception
      *
      * @return int
@@ -42,12 +44,11 @@ class PartTwo
             }
         }
 
-        $positions = [];
         $directions = [];
 
         foreach (CompassDirection::cases() as $dir) {
             try {
-                [$direction, $position] = $this->getNextPosition($dir, Position2D::fromKey($start), $grid);
+                [$direction, ] = $this->getNextPosition($dir, Position2D::fromKey($start), $grid);
             } catch (Exception) {
                 continue;
             }
@@ -57,12 +58,12 @@ class PartTwo
             }
 
             $directions[] = $dir->value;
-            $positions[] = $position;
         }
 
+        /** @var array{value-of<CompassDirection>, value-of<CompassDirection>} $directions */
         $s = match (true) {
-            ($directions === ['n', 'e'] || $directions === ['e', 'n']) => 'L',
-            ($directions === ['e', 's'] || $directions === ['s', 'e']) => 'F',
+            ($directions === ['n', 'e']) => 'L',
+            ($directions === ['e', 's']) => 'F',
             ($directions === ['s', 'w'] || $directions === ['w', 's']) => '7',
             ($directions === ['w', 'n'] || $directions === ['n', 'w']) => 'J',
             default => 'S',
@@ -89,7 +90,7 @@ class PartTwo
         $within = false;
 
         for ($y = 1; $y < $height - 1; ++$y) {
-            $lastLineBeginn = '';
+            $lastLineBegin = '';
             for ($x = 0; $x < $width; ++$x) {
                 $key = Position2D::key($x, $y);
                 $char = $grid[$key];
@@ -98,25 +99,25 @@ class PartTwo
                         ++$enclosed;
                     } elseif ($char === '|') {
                         $within = false;
-                    } elseif ($lastLineBeginn === '') {
-                        $lastLineBeginn = $char;
-                    } elseif (($lastLineBeginn === 'F' && $char === 'J') || ($lastLineBeginn === 'L' && $char === '7')) {
+                    } elseif ($lastLineBegin === '') {
+                        $lastLineBegin = $char;
+                    } elseif (($lastLineBegin === 'F' && $char === 'J') || ($lastLineBegin === 'L' && $char === '7')) {
                         $within = false;
-                        $lastLineBeginn = '';
+                        $lastLineBegin = '';
                     } elseif ($char !== '-') {
-                        $lastLineBeginn = '';
+                        $lastLineBegin = '';
                     }
                 } else {
                     if (isset($loop[$key])) {
                         if ($char === '|') {
                             $within  = true;
-                        } elseif ($lastLineBeginn === '') {
-                            $lastLineBeginn = $char;
-                        } elseif (($lastLineBeginn === 'F' && $char === 'J') || ($lastLineBeginn === 'L' && $char === '7')) {
+                        } elseif ($lastLineBegin === '') {
+                            $lastLineBegin = $char;
+                        } elseif (($lastLineBegin === 'F' && $char === 'J') || ($lastLineBegin === 'L' && $char === '7')) {
                             $within = true;
-                            $lastLineBeginn = '';
+                            $lastLineBegin = '';
                         } elseif ($char !== '-') {
-                            $lastLineBeginn = '';
+                            $lastLineBegin = '';
                         }
                     }
                 }

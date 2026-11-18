@@ -31,7 +31,9 @@ class PartTwo
         $directions = explode(', ', $input->current());
 
         foreach ($directions as $direction) {
-            preg_match('/([LR])(\d+)/', $direction, $m);
+            if (!preg_match('/([LR])(\d+)/', $direction, $m)) {
+                continue;
+            }
 
             $currentDirection = match ($m[1]) {
                 'L' => $currentDirection->turnLeft(),

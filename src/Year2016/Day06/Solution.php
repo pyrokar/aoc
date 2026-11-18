@@ -44,10 +44,6 @@ trait Solution
         }
 
         foreach ($columns as $charCounts) {
-            if (empty($charCounts)) {
-                continue;
-            }
-
             $needle = $this->getNeedle(array_values($charCounts));
             $message .= array_search($needle, $charCounts, true);
         }

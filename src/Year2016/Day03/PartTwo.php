@@ -25,7 +25,9 @@ class PartTwo
         $triangles = [[], [], []];
 
         foreach ($input as $i => $line) {
-            preg_match('/(\d+)\s+(\d+)\s+(\d+)/', trim($line), $m);
+            if (!preg_match('/(\d+)\s+(\d+)\s+(\d+)/', trim($line), $m)) {
+                continue;
+            }
 
             $triangles[0][] = (int) $m[1];
             $triangles[1][] = (int) $m[2];

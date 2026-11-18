@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace AOC\Year2016\Day09;
 
+use LogicException;
 use Safe\Exceptions\PcreException;
 
 use function Safe\preg_match;
@@ -27,7 +28,9 @@ trait Solution
             } elseif ($char === '(' && !$inMarker) {
                 $inMarker = true;
             } elseif ($char === ')' && $inMarker) {
-                preg_match('/(\d+)x(\d+)/', $marker, $m);
+                if (!preg_match('/(\d+)x(\d+)/', $marker, $m)) {
+                    throw new LogicException('Invalid marker');
+                }
 
                 if ($recursive) {
                     $length +=  (int) $m[2] * $this->decompress(substr($input, $i + 1, (int) $m[1]), true);
